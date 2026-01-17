@@ -5,17 +5,17 @@
     {
       "id": "welcome-featured",
       "title": "Welcome to VO Tracker",
-      "message": "Tap for quick tips, what’s new, and recommended resources.",
-      "detail": "Welcome! This page updates without app updates. Check back for new announcements, featured partners, and curated VO resources.\n\n• Tip: Pull down to refresh\n• Suggest a resource any time\n• Watch for featured announcements like this one",
-      "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/26211139-f13f-40e9-ae82-25a2ef8f6f32.png",
+      "message": "",
+      "detail": "Welcome to VOTracker! This is an app made by Voice Actors FOR Voice Actors. NO Longer will you forget that producer/director/engineer/random person you met at your sessions name! .\n\n• Tip: You can now Track your auditions too! (enable in settings)\n• Thank you for being here\n• Tell your friends!!",
+      "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/welcomesparkle.gif",
       "links": [
         {
-          "title": "Suggest a Resource",
-          "url": "https://yourwebsite.com/suggest"
+          "title": "Suggest a Feature",
+          "url": "https://forms.gle/X7vUtTHSk8hgnGv48"
         }
       ],
       "linkText": "Learn More",
-      "linkURL": "https://yourwebsite.com/welcome",
+      "linkURL": "https://arussellactor.wixsite.com/vo-tracker-1",
       "type": "featured",
       "expiresAt": null,
       "color": null
