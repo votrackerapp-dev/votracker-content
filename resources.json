@@ -47,6 +47,42 @@
   ],
   "sponsors": [
     {
+  "id": "golden-mic-studios",
+  "name": "Golden Mic Studios",
+  "tagline": "Remote-ready VO sessions with broadcast-grade gear — first session discount for VO Tracker users.",
+  "logoURL": null,
+  "icon": "mic.circle.fill",
+  "linkURL": "https://example.com/golden-mic",
+  "tier": "featured"
+},
+{
+  "id": "the-booth-clinic",
+  "name": "The Booth Clinic",
+  "tagline": "Home studio tune-ups, acoustic consults, and Source-Connect troubleshooting — fast turnaround.",
+  "logoURL": null,
+  "icon": "waveform.circle.fill",
+  "linkURL": "https://example.com/booth-clinic",
+  "tier": "featured"
+},
+{
+  "id": "vo-legal-lite",
+  "name": "VO Legal Lite",
+  "tagline": "Simple contract reviews + usage red flags for VO talent — clear notes, no fluff.",
+  "logoURL": null,
+  "icon": "doc.text.fill",
+  "linkURL": "https://example.com/vo-legal",
+  "tier": "featured"
+},
+{
+  "id": "demo-lab",
+  "name": "Demo Lab",
+  "tagline": "Demo production + performance coaching packages — tailored for animation, games, and commercial.",
+  "logoURL": null,
+  "icon": "sparkles",
+  "linkURL": "https://example.com/demo-lab",
+  "tier": "featured"
+},
+    {
       "id": "example-studio",
       "name": "Example Recording Studio",
       "tagline": "Professional VO recording in downtown LA. First session 20% off!",
