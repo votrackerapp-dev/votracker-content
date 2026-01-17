@@ -3,6 +3,24 @@
   "lastUpdated": "2026-01-16",
   "announcements": [
     {
+  "id": "welcome-featured",
+  "title": "Welcome to VO Tracker",
+  "message": "Tap for quick tips, what’s new, and recommended resources.",
+  "detail": "Welcome! This page updates without app updates. Check back for new announcements, featured partners, and curated VO resources.\n\n• Tip: Pull down to refresh\n• Suggest a resource any time\n• Watch for featured announcements like this one",
+  "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/26211139-f13f-40e9-ae82-25a2ef8f6f32.png",
+  "links": [
+    {
+      "title": "Suggest a Resource",
+      "url": "https://yourwebsite.com/suggest"
+    }
+  ],
+  "linkText": "Learn More",
+  "linkURL": "https://yourwebsite.com/welcome",
+  "type": "featured",
+  "expiresAt": null,
+  "color": null
+},
+    {
       "id": "meetup-jan-2026",
       "title": "VO Meetup - Los Angeles!",
       "message": "Join us Saturday, Feb 15th at 2PM for a casual voice actor meetup. Network, share tips, and grab some coffee with fellow VO professionals!",
