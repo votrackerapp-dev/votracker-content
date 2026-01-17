@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-01-16",
+  "announcements": [
+    {
+      "id": "meetup-jan-2026",
+      "title": "VO Meetup - Los Angeles!",
+      "message": "Join us Saturday, Feb 15th at 2PM for a casual voice actor meetup. Network, share tips, and grab some coffee with fellow VO professionals!",
+      "linkText": "RSVP Now",
+      "linkURL": "https://yourwebsite.com/meetup",
+      "type": "event",
+      "expiresAt": "2026-02-16T00:00:00Z",
+      "color": null
+    },
+    {
+      "id": "new-feature-auditions",
+      "title": "New: Audition Tracking!",
+      "message": "VO Tracker now tracks your auditions too! Enable it in Settings → Track Auditions to start logging your submissions.",
+      "linkText": null,
+      "linkURL": null,
+      "type": "news",
+      "expiresAt": "2026-03-01T00:00:00Z",
+      "color": null
+    }
+  ],
+  "sponsors": [
+    {
+      "id": "example-studio",
+      "name": "Example Recording Studio",
+      "tagline": "Professional VO recording in downtown LA. First session 20% off!",
+      "logoURL": "https://example.com/logo.png",
+      "icon": "waveform.circle.fill",
+      "linkURL": "https://examplestudio.com",
+      "tier": "featured"
+    },
+    {
+      "id": "vo-coaching",
+      "name": "Jane Doe VO Coaching",
+      "tagline": "One-on-one coaching for animation and commercial VO",
+      "logoURL": null,
+      "icon": "person.wave.2.fill",
+      "linkURL": "https://janedoevocoaching.com",
+      "tier": "partner"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Rates & Industry Guides",
+      "items": [
+        {
+          "title": "GVAA Rate Guide",
+          "subtitle": "Rate standards, best practices, and usage guidance.",
+          "icon": "doc.text.magnifyingglass",
+          "url": "https://globalvoiceacademy.com/gvaa-rate-guide-2/",
+          "isPremium": false
+        },
+        {
+          "title": "I Want To Be A Voice Actor",
+          "subtitle": "Straightforward VO info — training, demos, agents, and more.",
+          "icon": "sparkles",
+          "url": "https://iwanttobeavoiceactor.com/",
+          "isPremium": false
+        },
+        {
+          "title": "Adventures in Voice Acting",
+          "subtitle": "Interviews, community, and tons of VO resources.",
+          "icon": "headphones",
+          "url": "https://www.adventuresinvoiceacting.com/",
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "title": "Casting & Auditions",
+      "items": [
+        {
+          "title": "Voices.com",
+          "subtitle": "One of the largest online voice acting marketplaces.",
+          "icon": "mic.fill",
+          "url": "https://www.voices.com/",
+          "isPremium": false
+        },
+        {
+          "title": "Voice123",
+          "subtitle": "Connect with clients looking for voice talent.",
+          "icon": "person.wave.2.fill",
+          "url": "https://voice123.com/",
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "title": "Learning & Community",
+      "items": [
+        {
+          "title": "VO Meter Podcast",
+          "subtitle": "Weekly discussions on the voice acting industry.",
+          "icon": "waveform.badge.mic",
+          "url": "https://example.com/vo-meter",
+          "isPremium": false
+        }
+      ]
+    }
+  ],
+  "footerMessage": "Resources updated monthly. Have a suggestion? Let us know!"
+}
