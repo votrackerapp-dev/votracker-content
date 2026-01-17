@@ -37,7 +37,7 @@
       "title": "New: Audition Tracking!",
       "message": "VO Tracker now can track your auditions too!",
       "detail": "VO Tracker now can track your auditions! To enable this feature, head to Settings -> Track auditions to start logging your submissions!",
-      "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/add audition.png",
+      "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/add-audition.png",
       "linkText": null,
       "linkURL": null,
       "type": "news",
