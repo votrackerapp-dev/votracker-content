@@ -21,15 +21,17 @@
       "color": null
     },
     {
-      "id": "meetup-jan-2026",
-      "title": "VO Meetup - Los Angeles!",
-      "message": "Join us Saturday, Feb 15th at 2PM for a casual voice actor meetup. Network, share tips, and grab some coffee with fellow VO professionals!",
-      "linkText": "RSVP Now",
-      "linkURL": "https://yourwebsite.com/meetup",
-      "type": "event",
-      "expiresAt": "2026-02-16T00:00:00Z",
-      "color": null
-    },
+  "id": "meetup-jan-2026",
+  "title": "VO Meetup - Los Angeles!",
+  "message": "Join us Saturday, Feb 15th at 2PM",
+  "detail": "Join us this Saturday at 2pm for a casual voice actor meetup. Network, share tips, and grab some coffee with fellow VO professionals!Coffee, vibes, and VO talk — bring a friend if you want.\n\n• Casual networking\n• Share tips + resources\n• Meet local VO folks",
+  "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/Friend group.png",
+  "linkText": "RSVP Now",
+  "linkURL": "https://arussellactor.wixsite.com/vo-tracker-1",
+  "type": "event",
+  "expiresAt": "2026-02-16T00:00:00Z",
+  "color": null
+},
     {
       "id": "new-feature-auditions",
       "title": "New: Audition Tracking!",
