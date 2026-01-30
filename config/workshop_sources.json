@@ -1,0 +1,63 @@
+{
+  "sources": [
+    {
+      "id": "voiceactorsnetwork",
+      "name": "Voice Actors Network",
+      "url": "https://voiceactorsnetwork.com/",
+      "extractor": "jsonld_events"
+    },
+    {
+      "id": "thevopros",
+      "name": "The VO Pros",
+      "url": "https://www.thevopros.com/shop/",
+      "extractor": "html_fallback"
+    },
+    {
+      "id": "redscythe",
+      "name": "Red Scythe",
+      "url": "https://redscythe.com/",
+      "extractor": "jsonld_events"
+    },
+    {
+      "id": "soundonstudio",
+      "name": "Sound On Studio",
+      "url": "https://www.soundonstudio.com/classsignup",
+      "extractor": "soundonstudio_classsignup"
+    },
+    {
+      "id": "halp_academy",
+      "name": "HALP Academy",
+      "url": "https://halpacademy.com/events/",
+      "extractor": "jsonld_events"
+    },
+    {
+      "id": "voicetraxwest",
+      "name": "Voice Trax West",
+      "url": "https://www.voicetraxwest.com/guest-instructors",
+      "extractor": "jsonld_events"
+    },
+    {
+      "id": "adventuresinvoiceacting",
+      "name": "Adventures in Voice Acting",
+      "url": "https://www.adventuresinvoiceacting.com/",
+      "extractor": "jsonld_events"
+    },
+    {
+      "id": "realvoicela",
+      "name": "Real Voice LA",
+      "url": "https://www.realvoicela.com/classes",
+      "extractor": "jsonld_events"
+    },
+    {
+      "id": "thevodojo",
+      "name": "The VO Dojo",
+      "url": "https://www.thevodojo.com/upcoming-events-nav",
+      "extractor": "jsonld_events"
+    }
+  ],
+  "settings": {
+    "max_events_per_source": 50,
+    "prune_days_past": 7,
+    "keep_days_future": 365
+  }
+}
