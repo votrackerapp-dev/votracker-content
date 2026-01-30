@@ -21,17 +21,17 @@
       "color": null
     },
     {
-  "id": "meetup-jan-2026",
-  "title": "VO Meetup - Los Angeles!",
-  "message": "Join us Saturday, Feb 15th at 2PM",
-  "detail": "Join us this Saturday at 2pm for a casual voice actor meetup. Network, share tips, and grab some coffee with fellow VO professionals!Coffee, vibes, and VO talk — bring a friend if you want.\n\n• Casual networking\n• Share tips + resources\n• Meet local VO folks",
-  "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/Friend group.png",
-  "linkText": "RSVP Now",
-  "linkURL": "https://arussellactor.wixsite.com/vo-tracker-1",
-  "type": "event",
-  "expiresAt": "2026-02-16T00:00:00Z",
-  "color": null
-},
+      "id": "meetup-jan-2026",
+      "title": "VO Meetup - Los Angeles!",
+      "message": "Join us Saturday, Feb 15th at 2PM",
+      "detail": "Join us this Saturday at 2pm for a casual voice actor meetup. Network, share tips, and grab some coffee with fellow VO professionals!Coffee, vibes, and VO talk — bring a friend if you want.\n\n• Casual networking\n• Share tips + resources\n• Meet local VO folks",
+      "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/Friend group.png",
+      "linkText": "RSVP Now",
+      "linkURL": "https://arussellactor.wixsite.com/vo-tracker-1",
+      "type": "event",
+      "expiresAt": "2026-02-16T00:00:00Z",
+      "color": null
+    },
     {
       "id": "new-feature-auditions",
       "title": "New: Audition Tracking!",
@@ -47,41 +47,41 @@
   ],
   "sponsors": [
     {
-  "id": "golden-mic-studios",
-  "name": "Golden Mic Studios",
-  "tagline": "Remote-ready VO sessions with broadcast-grade gear — first session discount for VO Tracker users.",
-  "logoURL": null,
-  "icon": "mic.circle.fill",
-  "linkURL": "https://example.com/golden-mic",
-  "tier": "featured"
-},
-{
-  "id": "the-booth-clinic",
-  "name": "The Booth Clinic",
-  "tagline": "Home studio tune-ups, acoustic consults, and Source-Connect troubleshooting — fast turnaround.",
-  "logoURL": null,
-  "icon": "waveform.circle.fill",
-  "linkURL": "https://example.com/booth-clinic",
-  "tier": "featured"
-},
-{
-  "id": "vo-legal-lite",
-  "name": "VO Legal Lite",
-  "tagline": "Simple contract reviews + usage red flags for VO talent — clear notes, no fluff.",
-  "logoURL": null,
-  "icon": "doc.text.fill",
-  "linkURL": "https://example.com/vo-legal",
-  "tier": "featured"
-},
-{
-  "id": "demo-lab",
-  "name": "Demo Lab",
-  "tagline": "Demo production + performance coaching packages — tailored for animation, games, and commercial.",
-  "logoURL": null,
-  "icon": "sparkles",
-  "linkURL": "https://example.com/demo-lab",
-  "tier": "featured"
-},
+      "id": "golden-mic-studios",
+      "name": "Golden Mic Studios",
+      "tagline": "Remote-ready VO sessions with broadcast-grade gear — first session discount for VO Tracker users.",
+      "logoURL": null,
+      "icon": "mic.circle.fill",
+      "linkURL": "https://example.com/golden-mic",
+      "tier": "featured"
+    },
+    {
+      "id": "the-booth-clinic",
+      "name": "The Booth Clinic",
+      "tagline": "Home studio tune-ups, acoustic consults, and Source-Connect troubleshooting — fast turnaround.",
+      "logoURL": null,
+      "icon": "waveform.circle.fill",
+      "linkURL": "https://example.com/booth-clinic",
+      "tier": "featured"
+    },
+    {
+      "id": "vo-legal-lite",
+      "name": "VO Legal Lite",
+      "tagline": "Simple contract reviews + usage red flags for VO talent — clear notes, no fluff.",
+      "logoURL": null,
+      "icon": "doc.text.fill",
+      "linkURL": "https://example.com/vo-legal",
+      "tier": "featured"
+    },
+    {
+      "id": "demo-lab",
+      "name": "Demo Lab",
+      "tagline": "Demo production + performance coaching packages — tailored for animation, games, and commercial.",
+      "logoURL": null,
+      "icon": "sparkles",
+      "linkURL": "https://example.com/demo-lab",
+      "tier": "featured"
+    },
     {
       "id": "example-studio",
       "name": "Example Recording Studio",
@@ -155,6 +155,61 @@
           "subtitle": "Weekly discussions on the voice acting industry.",
           "icon": "waveform.badge.mic",
           "url": "https://example.com/vo-meter",
+          "isPremium": false
+        }
+      ]
+    },
+
+    {
+      "title": "VOTracker Workshop Calendar",
+      "items": [
+        {
+          "title": "Submit a Workshop / Class",
+          "subtitle": "Coaches + studios: add your listing for review.",
+          "icon": "plus.circle.fill",
+          "url": "https://forms.gle/X7vUtTHSk8hgnGv48",
+          "imageURL": null,
+          "detail": "Use this form to submit your workshop, workout group, class, or meetup for inclusion in the VOTracker Workshop Calendar.\n\n• Please include date/time, city, and registration link.\n• Listings are reviewed before going live.",
+          "links": [
+            {
+              "title": "Open Submission Form",
+              "url": "https://forms.gle/X7vUtTHSk8hgnGv48"
+            }
+          ],
+          "isPremium": false
+        },
+        {
+          "title": "Animation VO Workout (Sample Listing)",
+          "subtitle": "Feb 20 • 7–9 PM • Burbank, CA",
+          "icon": "calendar",
+          "url": "https://example.com/register-animation-workout",
+          "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/workshop_sample_1.png",
+          "detail": "A practical animation workout with live redirects.\n\n• Cold reads\n• Direction rounds\n• Group feedback\n\nBring: headphones + a printed copy of sides (or iPad).",
+          "links": [
+            {
+              "title": "Register",
+              "url": "https://example.com/register-animation-workout"
+            },
+            {
+              "title": "Details",
+              "url": "https://example.com/details-animation-workout"
+            }
+          ],
+          "isPremium": false
+        },
+        {
+          "title": "Commercial Copy Clinic (Sample Listing)",
+          "subtitle": "Mar 3 • 6–8 PM • Santa Monica, CA",
+          "icon": "mic.fill",
+          "url": "https://example.com/register-commercial-clinic",
+          "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/workshop_sample_2.png",
+          "detail": "A focused commercial clinic covering reads, pacing, and mic technique.\n\n• 2 reads per person\n• Playback notes\n• Q&A at end",
+          "links": [
+            {
+              "title": "Register",
+              "url": "https://example.com/register-commercial-clinic"
+            }
+          ],
           "isPremium": false
         }
       ]
