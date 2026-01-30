@@ -123,6 +123,46 @@
       "provider": "Real Voice LA"
     },
     {
+      "id": "realvoicela-f7a119768dc53efb",
+      "title": "January Accents for Video Games",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-01-28T18:30:00-08:00",
+      "endAt": "2026-01-28T21:30:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/january-accents-for-video-games",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/january-accents-for-video-games"
+        }
+      ],
+      "provider": "Real Voice LA"
+    },
+    {
+      "id": "realvoicela-19ca254699d175a4",
+      "title": "IN-PERSON Games, Auditioning, and Advice",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-01-31T11:00:00-08:00",
+      "endAt": "2026-01-31T14:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/in-person-games-auditioning-and-advice-3",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/in-person-games-auditioning-and-advice-3"
+        }
+      ],
+      "provider": "Real Voice LA"
+    },
+    {
       "id": "soundonstudio-0c0d62f335140168",
       "title": "Dubbing Live Action TV with Andy Roth!",
       "host": "Sound On Studio",
@@ -143,74 +183,14 @@
       "provider": "Sound On Studio"
     },
     {
-      "id": "thevodojo-506c4bc2d3757983",
-      "title": "Refer-A-Friend: Spread the VO Love Contest",
+      "id": "thevodojo-817483b06993dbe0",
+      "title": "When you refer a friend to the V.O. Dojo and they enroll in a program, you receive $100 in Dojo credit as a thank-you. It’s our way of honoring the tr",
       "host": "The VO Dojo",
       "city": null,
       "state": null,
       "venue": "See listing",
       "startAt": "2026-02-01T18:00:00-08:00",
       "endAt": "2026-02-01T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
-      "id": "thevodojo-50f10d98fc455bc4",
-      "title": "When you refer a friend to the V.O. Dojo and they enroll in a program, you receive $100 in Dojo credit as a thank-you. I",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-01T18:00:00-08:00",
-      "endAt": "2026-02-01T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
-      "id": "thevodojo-73a52e47d96255ae",
-      "title": "VO Dojo Event",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-01T18:00:00-08:00",
-      "endAt": "2026-02-01T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
-      "id": "thevodojo-622e81f7212ee261",
-      "title": "You Should Do Voiceover February",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-02T18:00:00-08:00",
-      "endAt": "2026-02-02T20:00:00-08:00",
       "registrationURL": null,
       "imageURL": null,
       "detail": null,
@@ -225,26 +205,6 @@
     {
       "id": "thevodojo-f30a86b590ced744",
       "title": "Missed your chance to join in January?",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-02T18:00:00-08:00",
-      "endAt": "2026-02-02T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
-      "id": "thevodojo-3f8ed7b64950bf5e",
-      "title": "VO Dojo Event",
       "host": "The VO Dojo",
       "city": null,
       "state": null,
@@ -342,54 +302,14 @@
       "provider": "The VO Dojo"
     },
     {
-      "id": "thevodojo-cc64ac9510bb3a8a",
-      "title": "This month’s",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-04T18:00:00-08:00",
-      "endAt": "2026-02-04T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
-      "id": "thevodojo-2bdf80c9ca0427a3",
-      "title": "VO Dojo Event",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-04T18:00:00-08:00",
-      "endAt": "2026-02-04T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
       "id": "realvoicela-bacb71afd3e2baec",
       "title": "Mastering Nerves: With Trine C. Jensen",
       "host": "Real Voice LA",
       "city": null,
       "state": null,
       "venue": "See listing",
-      "startAt": "2026-02-05T18:30:00-08:00",
-      "endAt": "2026-02-05T21:00:00-08:00",
+      "startAt": "2026-02-05T21:00:00-08:00",
+      "endAt": "2026-02-05T23:00:00-08:00",
       "registrationURL": "https://www.realvoicela.com/service-page/mastering-nerves-with-trine-c-jensen-1",
       "imageURL": null,
       "detail": null,
@@ -397,6 +317,26 @@
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/mastering-nerves-with-trine-c-jensen-1"
+        }
+      ],
+      "provider": "Real Voice LA"
+    },
+    {
+      "id": "realvoicela-4f99c256126f9d8b",
+      "title": "February-Games, Auditioning, and Advice",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-07T11:00:00-08:00",
+      "endAt": "2026-02-07T14:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/february-games-auditioning-and-advice",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/february-games-auditioning-and-advice"
         }
       ],
       "provider": "Real Voice LA"
@@ -421,48 +361,28 @@
       ]
     },
     {
+      "id": "thevodojo-ec4012e49aa4fd5f",
+      "title": "Thursday, February 12, 2026 - 5:30 PM 8:30 PM PST",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-12T17:30:00-08:00",
+      "endAt": "2026-02-12T19:30:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
+    },
+    {
       "id": "thevodojo-8967f94762c55ae8",
       "title": "Thursday, February 12th • VO Pro Fight Club • ANIMATION with BRENNA LARSEN",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-12T18:00:00-08:00",
-      "endAt": "2026-02-12T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
-      "id": "thevodojo-5cb5c8a49dc5fd90",
-      "title": "Brenna Larsen",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-12T18:00:00-08:00",
-      "endAt": "2026-02-12T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
-      "id": "thevodojo-0638589045cb6b28",
-      "title": "VO Dojo Event",
       "host": "The VO Dojo",
       "city": null,
       "state": null,
@@ -541,26 +461,6 @@
       "provider": "The VO Dojo"
     },
     {
-      "id": "thevodojo-b3c614316feee218",
-      "title": "VO Dojo Event",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-18T18:00:00-08:00",
-      "endAt": "2026-02-18T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
       "id": "realvoicela-3d693743363f0c95",
       "title": "In-Person Level Two Video Game Intensive",
       "host": "Real Voice LA",
@@ -576,6 +476,26 @@
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/in-person-level-two-video-game-intensive"
+        }
+      ],
+      "provider": "Real Voice LA"
+    },
+    {
+      "id": "realvoicela-d2fe891185490c0b",
+      "title": "February - Level Up: Anime & Video Game",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-19T18:30:00-08:00",
+      "endAt": "2026-02-19T21:30:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/february-level-up-anime-video-game",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/february-level-up-anime-video-game"
         }
       ],
       "provider": "Real Voice LA"
@@ -640,6 +560,26 @@
       "provider": "HALP Academy"
     },
     {
+      "id": "realvoicela-19d86e536c222950",
+      "title": "ONLINE Conversational Voice Over",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-21T11:00:00-08:00",
+      "endAt": "2026-02-21T14:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/online-conversational-voice-over",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/online-conversational-voice-over"
+        }
+      ],
+      "provider": "Real Voice LA"
+    },
+    {
       "id": "soundonstudio-2a5daf33f6e7dbbe",
       "title": "VO Pajama Party with Kirsten Day!",
       "host": "Sound On Studio",
@@ -680,26 +620,6 @@
       "provider": "The VO Dojo"
     },
     {
-      "id": "thevodojo-e44e0218c1327d2e",
-      "title": "VO Dojo Event",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-22T18:00:00-08:00",
-      "endAt": "2026-02-22T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
       "id": "soundonstudio-35229c58b154f154",
       "title": "Making Promos Pop! with Darius Marquis Johnson",
       "host": "Sound On Studio",
@@ -722,26 +642,6 @@
     {
       "id": "thevodojo-88366bfb2f6b6a29",
       "title": "Tuesday, February 24th • VO Pro Fight Club • COMMERCIALS with LISA FISCHOFF",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-24T18:00:00-08:00",
-      "endAt": "2026-02-24T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
-      "id": "thevodojo-a01842a1097b8688",
-      "title": "VO Dojo Event",
       "host": "The VO Dojo",
       "city": null,
       "state": null,
@@ -818,6 +718,26 @@
       "provider": "Real Voice LA"
     },
     {
+      "id": "realvoicela-2121f3998d2acf33",
+      "title": "March - Games, Auditioning, and Advice",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-03-07T11:00:00-08:00",
+      "endAt": "2026-03-07T14:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/march-games-auditioning-and-advice",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/march-games-auditioning-and-advice"
+        }
+      ],
+      "provider": "Real Voice LA"
+    },
+    {
       "id": "realvoicela-57384177dc978872",
       "title": "Creating Characters with Arianna Ratner",
       "host": "Real Voice LA",
@@ -838,48 +758,28 @@
       "provider": "Real Voice LA"
     },
     {
-      "id": "thevodojo-494b2c6eabcecdf5",
-      "title": "VOA Breakout: Dude, B*tches, & Mothaf***ers: Activating Your POV for Infinite, Effortless, Badass ABC Takes with Tish Hi",
-      "host": "The VO Dojo",
+      "id": "realvoicela-a8de862a00508a85",
+      "title": "March - Level Up: Anime & Video Game",
+      "host": "Real Voice LA",
       "city": null,
       "state": null,
       "venue": "See listing",
-      "startAt": "2026-03-27T18:00:00-07:00",
-      "endAt": "2026-03-27T20:00:00-07:00",
-      "registrationURL": null,
+      "startAt": "2026-03-12T18:30:00-07:00",
+      "endAt": "2026-03-12T21:30:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/march-level-up-anime-video-game",
       "imageURL": null,
       "detail": null,
       "links": [
         {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/march-level-up-anime-video-game"
         }
       ],
-      "provider": "The VO Dojo"
+      "provider": "Real Voice LA"
     },
     {
-      "id": "thevodojo-418a76eae397b15b",
-      "title": "Ready to level up your takes in real time?",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-03-27T18:00:00-07:00",
-      "endAt": "2026-03-27T20:00:00-07:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
-      "id": "thevodojo-24de962abe964240",
-      "title": "Join the VO Dojo Email List!",
+      "id": "thevodojo-0c217ab09131e310",
+      "title": "VOA Breakout: Dude, B*tches, & Mothaf***ers: Activating Your POV for Infinite, Effortless, Badass ABC Takes with Tish Hicks",
       "host": "The VO Dojo",
       "city": null,
       "state": null,
