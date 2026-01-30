@@ -122,6 +122,25 @@
       ]
     },
     {
+      "id": "soundonstudio-17ae1b4e8397ab32",
+      "title": "Dubbing Live Action TV with Andy Roth!",
+      "host": "Sound On Studio",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-01-31T18:00:00-08:00",
+      "endAt": "2026-01-31T20:00:00-08:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Class Signup",
+          "url": "https://www.soundonstudio.com/classsignup"
+        }
+      ]
+    },
+    {
       "id": "van-commercial-carli-silver-2026-02-03",
       "title": "Commercial Clinic",
       "host": "Carli Silver",
@@ -160,6 +179,25 @@
       ]
     },
     {
+      "id": "soundonstudio-88145c8db74a3d90",
+      "title": "Booking Video Games with Katelyn Gault",
+      "host": "Sound On Studio",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-15T18:00:00-08:00",
+      "endAt": "2026-02-15T20:00:00-08:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Class Signup",
+          "url": "https://www.soundonstudio.com/classsignup"
+        }
+      ]
+    },
+    {
       "id": "van-videogame-patrick-michalak-2026-02-19",
       "title": "Video Game Clinic",
       "host": "Patrick Michalak",
@@ -175,6 +213,44 @@
         {
           "title": "VAN Listing",
           "url": "https://voiceactorsnetwork.com/collections/february-clinics/products/video-game-clinic-patrick-michalak-thursday-february-19th-2026-7-10pm-pt-in-person"
+        }
+      ]
+    },
+    {
+      "id": "soundonstudio-200734a4e19a8d3c",
+      "title": "VO Pajama Party with Kirsten Day!",
+      "host": "Sound On Studio",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-21T18:00:00-08:00",
+      "endAt": "2026-02-21T20:00:00-08:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Class Signup",
+          "url": "https://www.soundonstudio.com/classsignup"
+        }
+      ]
+    },
+    {
+      "id": "soundonstudio-ce47369ee9486277",
+      "title": "Making Promos Pop! with Darius Marquis Johnson",
+      "host": "Sound On Studio",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-23T18:00:00-08:00",
+      "endAt": "2026-02-23T20:00:00-08:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Class Signup",
+          "url": "https://www.soundonstudio.com/classsignup"
         }
       ]
     },
