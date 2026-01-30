@@ -3,14 +3,14 @@
     {
       "id": "voiceactorsnetwork",
       "name": "Voice Actors Network",
-      "url": "https://voiceactorsnetwork.com/",
-      "extractor": "jsonld_events"
+      "url": "https://voiceactorsnetwork.com/collections/all",
+      "extractor": "van_shopify_products"
     },
     {
       "id": "thevopros",
       "name": "The VO Pros",
-      "url": "https://www.thevopros.com/shop/",
-      "extractor": "html_fallback"
+      "url": "https://www.thevopros.com/events/",
+      "extractor": "thevopros_events_index"
     },
     {
       "id": "redscythe",
@@ -27,8 +27,8 @@
     {
       "id": "halp_academy",
       "name": "HALP Academy",
-      "url": "https://halpacademy.com/events/",
-      "extractor": "jsonld_events"
+      "url": "https://halpacademy.com/events/search/",
+      "extractor": "halp_events_search"
     },
     {
       "id": "voicetraxwest",
@@ -40,19 +40,19 @@
       "id": "adventuresinvoiceacting",
       "name": "Adventures in Voice Acting",
       "url": "https://www.adventuresinvoiceacting.com/",
-      "extractor": "jsonld_events"
+      "extractor": "wix_service_list"
     },
     {
       "id": "realvoicela",
       "name": "Real Voice LA",
       "url": "https://www.realvoicela.com/classes",
-      "extractor": "jsonld_events"
+      "extractor": "wix_service_list"
     },
     {
       "id": "thevodojo",
       "name": "The VO Dojo",
       "url": "https://www.thevodojo.com/upcoming-events-nav",
-      "extractor": "jsonld_events"
+      "extractor": "vodojo_upcoming"
     }
   ],
   "settings": {
