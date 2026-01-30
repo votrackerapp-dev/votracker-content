@@ -103,6 +103,63 @@
   ],
   "workshops": [
     {
+      "id": "realvoicela-fd95f3047470fc13",
+      "title": "Online Video Game Intensive",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-01-26T14:00:00-08:00",
+      "endAt": "2026-01-26T17:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/online-video-game-intensive-1",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/online-video-game-intensive-1"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-30644d18d3b8b4d9",
+      "title": "Crafting Characters for your Auditions - Carrie Keranen | Wednesday, January 28th, 2026 | 7-10pm PT | In Person",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-01-28T22:00:00-08:00",
+      "endAt": "2026-01-29T00:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/crafting-characters-for-your-auditions-carrie-keranen-wednesday-january-28th-2026-7-10pm-pt-in-person",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/crafting-characters-for-your-auditions-carrie-keranen-wednesday-january-28th-2026-7-10pm-pt-in-person"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-7ddecdd983f9c9a8",
+      "title": "Animation Clinic - Katie McWane| Thursday, January 29th, 2026 | 5-8pm PT | Zoom",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-01-29T20:00:00-08:00",
+      "endAt": "2026-01-29T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-january-29th-2026-5-8pm-pt-zoom",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-january-29th-2026-5-8pm-pt-zoom"
+        }
+      ]
+    },
+    {
       "id": "soundonstudio-ac42c9acb794a02e",
       "title": "Dubbing Live Action TV with Andy Roth!",
       "host": "Sound On Studio",
@@ -141,6 +198,63 @@
       ]
     },
     {
+      "id": "soundonstudio-0c0d62f335140168",
+      "title": "Dubbing Live Action TV with Andy Roth!",
+      "host": "Sound On Studio",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-01-31T18:00:00-08:00",
+      "endAt": "2026-01-31T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Class Signup",
+          "url": "https://www.soundonstudio.com/classsignup"
+        }
+      ]
+    },
+    {
+      "id": "thevodojo-76443d1e938d404d",
+      "title": "VO Dojo Event",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-01T11:15:00-08:00",
+      "endAt": "2026-02-01T13:15:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ]
+    },
+    {
+      "id": "thevodojo-7b8369d69af6ed97",
+      "title": "VO Dojo Event",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-02T11:15:00-08:00",
+      "endAt": "2026-02-02T13:15:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ]
+    },
+    {
       "id": "van-commercial-carli-silver-2026-02-03",
       "title": "Commercial Clinic",
       "host": "Carli Silver",
@@ -156,6 +270,101 @@
         {
           "title": "VAN Listing",
           "url": "https://voiceactorsnetwork.com/collections/february-clinics/products/commercial-clinic-cari-silver-tuesday-february-3rd-2026-4-7pm-pt-zoom"
+        }
+      ]
+    },
+    {
+      "id": "realvoicela-819e8f459fb28614",
+      "title": "February Kids & Teens Workout Class Pack",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-03T18:00:00-08:00",
+      "endAt": "2026-02-03T20:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/february-kids-teens-workout-class-pack",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/february-kids-teens-workout-class-pack"
+        }
+      ]
+    },
+    {
+      "id": "realvoicela-62f3751575a06451",
+      "title": "February IN-PERSON Intro to Voiceover",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-03T18:30:00-08:00",
+      "endAt": "2026-02-03T21:30:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/february-in-person-intro-to-voiceover",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/february-in-person-intro-to-voiceover"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-0fd2f9a6ba1c1489",
+      "title": "Commercial Clinic - Carli Silver| Tuesday, February 3rd, 2026 | 4-7pm PT | Zoom",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-02-03T19:00:00-08:00",
+      "endAt": "2026-02-03T21:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-cari-silver-tuesday-february-3rd-2026-4-7pm-pt-zoom",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-cari-silver-tuesday-february-3rd-2026-4-7pm-pt-zoom"
+        }
+      ]
+    },
+    {
+      "id": "thevodojo-90bfd354d8d78031",
+      "title": "VO Dojo Event",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-04T11:15:00-08:00",
+      "endAt": "2026-02-04T13:15:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ]
+    },
+    {
+      "id": "realvoicela-bacb71afd3e2baec",
+      "title": "Mastering Nerves: With Trine C. Jensen",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-05T21:00:00-08:00",
+      "endAt": "2026-02-05T23:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/mastering-nerves-with-trine-c-jensen-1",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/mastering-nerves-with-trine-c-jensen-1"
         }
       ]
     },
@@ -179,6 +388,44 @@
       ]
     },
     {
+      "id": "voiceactorsnetwork-8db34e8192be3ec9",
+      "title": "Narration Clinic - Jon Armond| Wednesday, February 11th, 2026 | 7-10pm PT | In Person",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-02-11T22:00:00-08:00",
+      "endAt": "2026-02-12T00:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person"
+        }
+      ]
+    },
+    {
+      "id": "thevodojo-75999d61f78c1a22",
+      "title": "VO Dojo Event",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-12T11:15:00-08:00",
+      "endAt": "2026-02-12T13:15:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ]
+    },
+    {
       "id": "soundonstudio-88145c8db74a3d90",
       "title": "Booking Video Games with Katelyn Gault",
       "host": "Sound On Studio",
@@ -194,6 +441,82 @@
         {
           "title": "Class Signup",
           "url": "https://www.soundonstudio.com/classsignup"
+        }
+      ]
+    },
+    {
+      "id": "soundonstudio-2d5ed3b51725404e",
+      "title": "Booking Video Games with Katelyn Gault",
+      "host": "Sound On Studio",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-15T18:00:00-08:00",
+      "endAt": "2026-02-15T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Class Signup",
+          "url": "https://www.soundonstudio.com/classsignup"
+        }
+      ]
+    },
+    {
+      "id": "thevodojo-94cae34e2fc32530",
+      "title": "VO Dojo Event",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-18T11:15:00-08:00",
+      "endAt": "2026-02-18T13:15:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ]
+    },
+    {
+      "id": "halp_academy-e44ebdff752d328c",
+      "title": "VO Workshop with Lexington Vanderberg!",
+      "host": "HALP Academy",
+      "city": null,
+      "state": null,
+      "venue": "Zoom",
+      "startAt": "2026-02-18T18:00:00-08:00",
+      "endAt": "2026-02-18T21:00:00-08:00",
+      "registrationURL": "https://halpacademy.com/product/vo-workshop-with-lexington-vanderberg",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://halpacademy.com/product/vo-workshop-with-lexington-vanderberg"
+        }
+      ]
+    },
+    {
+      "id": "realvoicela-3d693743363f0c95",
+      "title": "In-Person Level Two Video Game Intensive",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-18T18:30:00-08:00",
+      "endAt": "2026-02-18T21:30:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/in-person-level-two-video-game-intensive",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/in-person-level-two-video-game-intensive"
         }
       ]
     },
@@ -217,6 +540,82 @@
       ]
     },
     {
+      "id": "voiceactorsnetwork-5379d726b79a76d5",
+      "title": "Video Game Clinic - Patrick Michalak| Thursday, February 19th, 2026 | 7-10pm PT | In Person",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-02-19T22:00:00-08:00",
+      "endAt": "2026-02-20T00:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-thursday-february-19th-2026-7-10pm-pt-in-person",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-thursday-february-19th-2026-7-10pm-pt-in-person"
+        }
+      ]
+    },
+    {
+      "id": "realvoicela-b44e7f37f854bef1",
+      "title": "February - ONLINE Intro to Voiceover",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-20T14:00:00-08:00",
+      "endAt": "2026-02-20T17:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/february-online-intro-to-voiceover",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/february-online-intro-to-voiceover"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-a68fa77a7f92e2a3",
+      "title": "AUDIT A CLINIC - FEBRUARY 2026",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-02-20T19:00:00-08:00",
+      "endAt": "2026-02-20T21:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-february-2026",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-february-2026"
+        }
+      ]
+    },
+    {
+      "id": "halp_academy-5a883a3faacedfac",
+      "title": "VO Workshop with Tasia Valenza!",
+      "host": "HALP Academy",
+      "city": null,
+      "state": null,
+      "venue": "Zoom",
+      "startAt": "2026-02-21T10:00:00-08:00",
+      "endAt": "2026-02-21T13:00:00-08:00",
+      "registrationURL": "https://halpacademy.com/product/vo-workshop-with-tasia-valenza",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://halpacademy.com/product/vo-workshop-with-tasia-valenza"
+        }
+      ]
+    },
+    {
       "id": "soundonstudio-200734a4e19a8d3c",
       "title": "VO Pajama Party with Kirsten Day!",
       "host": "Sound On Studio",
@@ -232,6 +631,44 @@
         {
           "title": "Class Signup",
           "url": "https://www.soundonstudio.com/classsignup"
+        }
+      ]
+    },
+    {
+      "id": "soundonstudio-2a5daf33f6e7dbbe",
+      "title": "VO Pajama Party with Kirsten Day!",
+      "host": "Sound On Studio",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-21T18:00:00-08:00",
+      "endAt": "2026-02-21T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Class Signup",
+          "url": "https://www.soundonstudio.com/classsignup"
+        }
+      ]
+    },
+    {
+      "id": "thevodojo-53c81692e9d482c5",
+      "title": "VO Dojo Event",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-22T11:15:00-08:00",
+      "endAt": "2026-02-22T13:15:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
         }
       ]
     },
@@ -255,6 +692,44 @@
       ]
     },
     {
+      "id": "soundonstudio-35229c58b154f154",
+      "title": "Making Promos Pop! with Darius Marquis Johnson",
+      "host": "Sound On Studio",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-23T18:00:00-08:00",
+      "endAt": "2026-02-23T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Class Signup",
+          "url": "https://www.soundonstudio.com/classsignup"
+        }
+      ]
+    },
+    {
+      "id": "thevodojo-f0574e12032c2275",
+      "title": "VO Dojo Event",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-24T11:15:00-08:00",
+      "endAt": "2026-02-24T13:15:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ]
+    },
+    {
       "id": "van-animation-bob-bergen-2026-02-25",
       "title": "Animation Clinic",
       "host": "Bob Bergen",
@@ -274,6 +749,25 @@
       ]
     },
     {
+      "id": "voiceactorsnetwork-6a14484f1d7ffb32",
+      "title": "Animation Clinic - Bob Bergen| Wednesday, February 25th, 2026 | 7-10pm PT | Zoom",
+      "host": "The Groundlings",
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-02-25T22:00:00-08:00",
+      "endAt": "2026-02-26T00:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom"
+        }
+      ]
+    },
+    {
       "id": "van-animation-katie-mcwane-2026-02-26",
       "title": "Wait Lister Exclusive! Animation Clinic",
       "host": "Katie McWane",
@@ -289,6 +783,215 @@
         {
           "title": "VAN Listing",
           "url": "https://voiceactorsnetwork.com/collections/february-clinics/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-8a5b3e1de9cab813",
+      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-02-26T20:00:00-08:00",
+      "endAt": "2026-02-26T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom"
+        }
+      ]
+    },
+    {
+      "id": "realvoicela-b44ddcffd693a98a",
+      "title": "March - ONLINE Commercial Bootcamp",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-03-02T14:00:00-08:00",
+      "endAt": "2026-03-02T17:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/march-online-commercial-bootcamp",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/march-online-commercial-bootcamp"
+        }
+      ]
+    },
+    {
+      "id": "realvoicela-57384177dc978872",
+      "title": "Creating Characters with Arianna Ratner",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-03-10T12:00:00-07:00",
+      "endAt": "2026-03-10T15:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/creating-characters-with-arianna-ratner-1",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/creating-characters-with-arianna-ratner-1"
+        }
+      ]
+    },
+    {
+      "id": "thevodojo-f8729ef399fbae0e",
+      "title": "VO Dojo Event",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-03-27T11:15:00-07:00",
+      "endAt": "2026-03-27T13:15:00-07:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-6c9148819e50cf34",
+      "title": "Animation Clinic - Adam Weisman - Casting and Voice Director | Wednesday, November 12th, 2025 from 7-10pm PT | IN PERSON",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-08-07T22:00:00-07:00",
+      "endAt": "2026-08-08T00:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-adam-weisman-casting-and-voice-director-wednesday-november-12th-2025-from-7-10pm-pt-in-person",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-adam-weisman-casting-and-voice-director-wednesday-november-12th-2025-from-7-10pm-pt-in-person"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-4be456536fb07d78",
+      "title": "AUDIT A CLINIC - SEPTEMBER 2025",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-09-20T10:30:00-07:00",
+      "endAt": "2026-09-20T13:30:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-september-2025",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-september-2025"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-f9789eccd58907ef",
+      "title": "Animation Clinic - Andrea Hennen- Nickelodeon| Wednesday, October 8th, 2025 -7-10pm PST | In Person",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-10-08T22:00:00-07:00",
+      "endAt": "2026-10-09T00:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-andrea-hennen-nickelodeon-wednesday-october-8th-2025-7-10pm-pst-in-person",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-andrea-hennen-nickelodeon-wednesday-october-8th-2025-7-10pm-pst-in-person"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-4b1c8ff26096f837",
+      "title": "AUDIT A CLINIC - OCTOBER 2025",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-10-20T20:00:00-07:00",
+      "endAt": "2026-10-20T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-october-2025",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-october-2025"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-49951f2b00a09033",
+      "title": "Animation Clinic - Jennifer Abraham - Casting Director - Wednesday, November 5th | 6-9pm PST - ZOOM",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-11-05T21:00:00-08:00",
+      "endAt": "2026-11-05T23:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-jennifer-abraham-casting-director-wednesday-november-5th-6-9pm-pst-zoom",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-jennifer-abraham-casting-director-wednesday-november-5th-6-9pm-pst-zoom"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-a2063d921d1173ec",
+      "title": "Video Game Clinic - Darragh O'Farrell- Casting and Voice Director - Thursday, November 6th | 5-8pm PST - ZOOM",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-11-06T20:00:00-08:00",
+      "endAt": "2026-11-06T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-darragh-ofarrell-casting-and-voice-director-thursday-november-6th-6-9pm-pst-zoom-copy",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-darragh-ofarrell-casting-and-voice-director-thursday-november-6th-6-9pm-pst-zoom-copy"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-3e498d2747f4d3c8",
+      "title": "AUDIT A CLINIC - NOVEMBER 2025",
+      "host": null,
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-11-20T21:00:00-08:00",
+      "endAt": "2026-11-20T23:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-november-2025",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-november-2025"
         }
       ]
     }
