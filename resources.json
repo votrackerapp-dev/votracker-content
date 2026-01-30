@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-01-17",
+  "lastUpdated": "2026-01-30",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -101,6 +101,52 @@
       "tier": "partner"
     }
   ],
+
+  "workshops": [
+    {
+      "id": "la-animation-workout-2026-02-20",
+      "title": "Animation VO Workout",
+      "host": "Jane Coach",
+      "city": "Burbank",
+      "state": "CA",
+      "venue": "Studio Name Here",
+      "startAt": "2026-02-20T19:00:00-08:00",
+      "endAt": "2026-02-20T21:00:00-08:00",
+      "registrationURL": "https://example.com/register-animation-workout",
+      "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/workshop_sample_1.png",
+      "detail": "A practical animation workout with live redirects.\n\n• Cold reads\n• Direction rounds\n• Group feedback\n\nBring: headphones + a printed copy of sides (or iPad).",
+      "links": [
+        {
+          "title": "Register",
+          "url": "https://example.com/register-animation-workout"
+        },
+        {
+          "title": "Details",
+          "url": "https://example.com/details-animation-workout"
+        }
+      ]
+    },
+    {
+      "id": "la-commercial-clinic-2026-03-03",
+      "title": "Commercial Copy Clinic",
+      "host": "Studio / Coach Name",
+      "city": "Santa Monica",
+      "state": "CA",
+      "venue": "Studio Name Here",
+      "startAt": "2026-03-03T18:00:00-08:00",
+      "endAt": "2026-03-03T20:00:00-08:00",
+      "registrationURL": "https://example.com/register-commercial-clinic",
+      "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/workshop_sample_2.png",
+      "detail": "A focused commercial clinic covering reads, pacing, and mic technique.\n\n• 2 reads per person\n• Playback notes\n• Q&A at end",
+      "links": [
+        {
+          "title": "Register",
+          "url": "https://example.com/register-commercial-clinic"
+        }
+      ]
+    }
+  ],
+
   "sections": [
     {
       "title": "Rates & Industry Guides",
@@ -155,61 +201,6 @@
           "subtitle": "Weekly discussions on the voice acting industry.",
           "icon": "waveform.badge.mic",
           "url": "https://example.com/vo-meter",
-          "isPremium": false
-        }
-      ]
-    },
-
-    {
-      "title": "VOTracker Workshop Calendar",
-      "items": [
-        {
-          "title": "Submit a Workshop / Class",
-          "subtitle": "Coaches + studios: add your listing for review.",
-          "icon": "plus.circle.fill",
-          "url": "https://forms.gle/X7vUtTHSk8hgnGv48",
-          "imageURL": null,
-          "detail": "Use this form to submit your workshop, workout group, class, or meetup for inclusion in the VOTracker Workshop Calendar.\n\n• Please include date/time, city, and registration link.\n• Listings are reviewed before going live.",
-          "links": [
-            {
-              "title": "Open Submission Form",
-              "url": "https://forms.gle/X7vUtTHSk8hgnGv48"
-            }
-          ],
-          "isPremium": false
-        },
-        {
-          "title": "Animation VO Workout (Sample Listing)",
-          "subtitle": "Feb 20 • 7–9 PM • Burbank, CA",
-          "icon": "calendar",
-          "url": "https://example.com/register-animation-workout",
-          "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/workshop_sample_1.png",
-          "detail": "A practical animation workout with live redirects.\n\n• Cold reads\n• Direction rounds\n• Group feedback\n\nBring: headphones + a printed copy of sides (or iPad).",
-          "links": [
-            {
-              "title": "Register",
-              "url": "https://example.com/register-animation-workout"
-            },
-            {
-              "title": "Details",
-              "url": "https://example.com/details-animation-workout"
-            }
-          ],
-          "isPremium": false
-        },
-        {
-          "title": "Commercial Copy Clinic (Sample Listing)",
-          "subtitle": "Mar 3 • 6–8 PM • Santa Monica, CA",
-          "icon": "mic.fill",
-          "url": "https://example.com/register-commercial-clinic",
-          "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/workshop_sample_2.png",
-          "detail": "A focused commercial clinic covering reads, pacing, and mic technique.\n\n• 2 reads per person\n• Playback notes\n• Q&A at end",
-          "links": [
-            {
-              "title": "Register",
-              "url": "https://example.com/register-commercial-clinic"
-            }
-          ],
           "isPremium": false
         }
       ]
