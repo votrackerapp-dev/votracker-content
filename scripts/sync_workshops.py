@@ -767,20 +767,28 @@ def main():
     incoming_all: List[Dict[str, Any]] = []
 
     for s in sources:
-        extractor_name = s.get("extractor", "jsonld_events")
-        fn = EXTRACTORS.get(extractor_name)
-        if not fn:
-            print(f"[WARN] Unknown extractor '{extractor_name}' for {s.get('id')}, skipping.")
-            continue
+    extractor_name = s.get("extractor", "jsonld_events")
+    fn = EXTRACTORS.get(extractor_name)
+    if not fn:
+        print(f"[WARN] Unknown extractor '{extractor_name}' for {s.get('id')}, skipping.")
+        continue
 
-        try:
-            events = fn(s, args.default_tz)
-            # safety cap
-            events = events[:max_events_per_source]
-            print(f"[OK] {s.get('id')}: {len(events)} events")
-            incoming_all.extend(events)
-        except Exception as ex:
-            print(f"[ERROR] {s.get('id')}: {ex}")
+    try:
+        events = fn(s, args.default_tz)
+
+        # ✅ ADD THIS RIGHT HERE
+        # Ensure each event carries the provider/studio/site name for the app UI
+        for e in events:
+            if isinstance(e, dict):
+                e.setdefault("provider", s.get("name"))
+
+        # safety cap
+        events = events[:max_events_per_source]
+        print(f"[OK] {s.get('id')}: {len(events)} events")
+        incoming_all.extend(events)
+    except Exception as ex:
+        print(f"[ERROR] {s.get('id')}: {ex}")
+
 
     merged = merge_workshops(existing, incoming_all)
     merged = prune_events(merged, prune_days_past, keep_days_future, args.default_tz)
