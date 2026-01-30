@@ -91,35 +91,48 @@ def compute_event_id(source_id: str, title: str, start_at: str, reg_url: Optiona
         key = f"{source_id}|ts|{title.strip().lower()}|{start_at}"
     return f"{source_id}-{sha1(key)[:16]}"
 
-def merge_workshops(existing: List[Dict[str, Any]], incoming: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    by_id: Dict[str, Dict[str, Any]] = {}
+def rebuild_workshops(
+    existing: List[Dict[str, Any]], 
+    incoming: List[Dict[str, Any]],
+    successfully_scraped_sources: set
+) -> List[Dict[str, Any]]:
+    """
+    Rebuild workshop list preferring NEW data.
+    
+    Logic:
+    - For sources that were successfully scraped: USE ONLY NEW DATA (removes stale events)
+    - For sources that failed to scrape: KEEP OLD DATA (don't lose everything if site is down)
+    - This ensures removed/changed events don't linger
+    """
+    result: List[Dict[str, Any]] = []
+    
+    # Step 1: Keep existing events ONLY from sources that failed to scrape
+    # (so we don't lose data if a website is temporarily down)
     for w in (existing or []):
-        wid = w.get("id")
-        if wid:
-            by_id[wid] = dict(w)
+        event_id = w.get("id", "")
+        # Extract source_id from event ID (format: "sourceid-hash")
+        source_id = event_id.split("-")[0] if "-" in event_id else None
+        
+        # Only keep if this source WASN'T successfully scraped
+        # (meaning we couldn't get fresh data, so keep the old)
+        if source_id and source_id not in successfully_scraped_sources:
+            result.append(dict(w))
+            log(f"  [KEEP] Keeping old event from failed source '{source_id}': {w.get('title', '')[:40]}")
+    
+    # Step 2: Add ALL incoming events (fresh data from successful scrapes)
     for w in (incoming or []):
-        wid = w.get("id")
-        if not wid:
-            continue
-        if wid in by_id:
-            cur = by_id[wid]
-            for k, v in w.items():
-                if v is None:
-                    continue
-                if isinstance(v, str) and v.strip() == "":
-                    continue
-                cur[k] = v
-            by_id[wid] = cur
-        else:
-            by_id[wid] = dict(w)
-    merged = list(by_id.values())
+        if w.get("id"):
+            result.append(dict(w))
+    
+    # Step 3: Sort by start date
     def keyfn(x):
         try:
             return dateparser.parse(x.get("startAt")).timestamp()
         except Exception:
             return float("inf")
-    merged.sort(key=keyfn)
-    return merged
+    
+    result.sort(key=keyfn)
+    return result
 
 def prune_events(items: List[Dict[str, Any]], prune_days_past: int, keep_days_future: int, default_tz: str) -> List[Dict[str, Any]]:
     now = dt.datetime.now(tz=datetz.gettz(default_tz))
@@ -834,15 +847,17 @@ def main():
 
     existing = resources.get("workshops", []) or []
     incoming_all: List[Dict[str, Any]] = []
+    successfully_scraped_sources: set = set()  # Track which sources succeeded
 
     for s in sources:
+        source_id = s.get("id")
         extractor_name = s.get("extractor", "jsonld_events")
         fn = EXTRACTORS.get(extractor_name)
         if not fn:
-            print(f"[WARN] Unknown extractor '{extractor_name}' for {s.get('id')}, skipping.")
+            print(f"[WARN] Unknown extractor '{extractor_name}' for {source_id}, skipping.")
             continue
 
-        print(f"[INFO] Processing {s.get('name', s.get('id'))}...")
+        print(f"[INFO] Processing {s.get('name', source_id)}...")
         
         try:
             events = fn(s, args.default_tz)
@@ -850,17 +865,29 @@ def main():
                 if isinstance(e, dict):
                     e.setdefault("provider", s.get("name"))
             events = events[:max_events_per_source]
-            print(f"[OK] {s.get('id')}: {len(events)} events")
+            print(f"[OK] {source_id}: {len(events)} events")
             incoming_all.extend(events)
+            
+            # Mark this source as successfully scraped
+            # (even if 0 events - that means the site has no current events)
+            successfully_scraped_sources.add(source_id)
+            
         except Exception as ex:
-            print(f"[ERROR] {s.get('id')}: {ex}")
+            # Source FAILED - we'll keep old data for this source
+            print(f"[ERROR] {source_id}: {ex}")
+            print(f"  -> Will keep existing events for this source")
 
-    merged = merge_workshops(existing, incoming_all)
-    merged = prune_events(merged, prune_days_past, keep_days_future, args.default_tz)
+    # Rebuild using new data, keeping old only for failed sources
+    print(f"\n[INFO] Successfully scraped {len(successfully_scraped_sources)}/{len(sources)} sources")
+    rebuilt = rebuild_workshops(existing, incoming_all, successfully_scraped_sources)
+    
+    # Prune old/future events
+    rebuilt = prune_events(rebuilt, prune_days_past, keep_days_future, args.default_tz)
 
+    # Final deduplication (same title + date)
     seen_keys = set()
     deduped = []
-    for w in merged:
+    for w in rebuilt:
         title_norm = re.sub(r'[^a-z0-9]', '', (w.get('title') or '').lower())[:30]
         date_part = (w.get('startAt') or '')[:10]
         key = f"{title_norm}|{date_part}"
@@ -876,6 +903,12 @@ def main():
         f.write("\n")
 
     print(f"\n[DONE] Total workshops: {len(deduped)}")
+    if len(existing) > 0:
+        diff = len(deduped) - len(existing)
+        if diff > 0:
+            print(f"  (+{diff} new events)")
+        elif diff < 0:
+            print(f"  ({diff} events removed - likely expired or no longer listed)")
 
 if __name__ == "__main__":
     main()
