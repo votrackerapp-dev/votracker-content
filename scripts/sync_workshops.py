@@ -295,7 +295,10 @@ def infer_year_for_month_day(month_day_str: str, default_tz: str) -> dt.datetime
 # -----------------------------
 
 def extract_jsonld_events(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
-    """Extract events from JSON-LD structured data - most reliable source!"""
+    """
+    Extract events from JSON-LD structured data - most reliable source!
+    Falls back to HTML parsing if no JSON-LD found.
+    """
     html = fetch_html(source["url"])
     soup = BeautifulSoup(html, "html.parser")
     scripts = soup.find_all("script", attrs={"type": "application/ld+json"})
@@ -374,7 +377,139 @@ def extract_jsonld_events(source: Dict[str, Any], default_tz: str) -> List[Dict[
         except Exception:
             continue
 
+    # If no JSON-LD events found, try HTML parsing as fallback
+    if not out:
+        log(f"  [JSON-LD] No JSON-LD found for {source.get('name')}, trying HTML fallback...")
+        out = extract_html_events_fallback(source, soup, default_tz)
+
     return out
+
+def extract_html_events_fallback(source: Dict[str, Any], soup: BeautifulSoup, default_tz: str) -> List[Dict[str, Any]]:
+    """
+    Fallback HTML parser for sites without JSON-LD.
+    Looks for common event patterns in HTML.
+    """
+    events: List[Dict[str, Any]] = []
+    txt = soup.get_text("\n")
+    
+    # Look for event-like elements
+    event_containers = soup.find_all(['article', 'div', 'li'], class_=lambda x: x and any(
+        kw in str(x).lower() for kw in ['event', 'workshop', 'class', 'session', 'seminar', 'course']
+    ))
+    
+    # Date pattern
+    date_re = re.compile(r"([A-Za-z]{3,9}\s+\d{1,2}(?:st|nd|rd|th)?,?\s+\d{4})")
+    
+    # Process containers
+    for container in event_containers[:50]:
+        try:
+            container_text = container.get_text(" ", strip=True)
+            
+            # Find date
+            date_match = date_re.search(container_text)
+            if not date_match:
+                continue
+            
+            base = parse_date_any(date_match.group(1), default_tz)
+            if not base:
+                continue
+            
+            # Find title
+            title_el = container.find(['h1', 'h2', 'h3', 'h4', 'a', 'strong'])
+            title = safe_text(title_el.get_text(" ", strip=True), 150) if title_el else "Workshop"
+            
+            # Skip junk
+            if len(title) < 5 or any(junk in title.lower() for junk in ['sign up', 'subscribe', 'contact']):
+                continue
+            
+            # Extract time
+            start, end = apply_time_to_date(base, container_text, default_tz)
+            start_s = isoformat_with_tz(start, default_tz)
+            end_s = isoformat_with_tz(end, default_tz)
+            
+            # Find link
+            link_el = container.find('a', href=True)
+            reg_url = None
+            if link_el:
+                href = link_el.get('href', '')
+                reg_url = normalize_url(urljoin(source["url"], href))
+            
+            wid = compute_event_id(source["id"], title, start_s, reg_url)
+            
+            log(f"  [HTML-Fallback] {title[:50]}... @ {start_s}")
+            
+            events.append({
+                "id": wid,
+                "title": title,
+                "host": source.get("name"),
+                "city": None,
+                "state": None,
+                "venue": "See listing",
+                "startAt": start_s,
+                "endAt": end_s,
+                "registrationURL": reg_url,
+                "imageURL": None,
+                "detail": None,
+                "links": [{"title": "Event Page", "url": reg_url or source["url"]}]
+            })
+        except Exception as e:
+            log(f"  [HTML-Fallback] Error: {e}")
+            continue
+    
+    # If still no events, try scanning the full page text
+    if not events:
+        dates = date_re.findall(txt)
+        for date_str in dates[:20]:
+            base = parse_date_any(date_str, default_tz)
+            if not base:
+                continue
+            
+            # Find context around the date
+            date_pos = txt.find(date_str)
+            context_start = max(0, date_pos - 100)
+            context_end = min(len(txt), date_pos + 200)
+            context = txt[context_start:context_end]
+            
+            # Try to extract a title from context
+            lines = context.split('\n')
+            title = None
+            for line in lines:
+                line = line.strip()
+                if len(line) > 10 and line != date_str and not re.fullmatch(r"[\d\s:apm-]+", line, re.IGNORECASE):
+                    title = safe_text(line, 120)
+                    break
+            
+            if not title:
+                continue
+            
+            start, end = apply_time_to_date(base, context, default_tz)
+            start_s = isoformat_with_tz(start, default_tz)
+            end_s = isoformat_with_tz(end, default_tz)
+            
+            wid = compute_event_id(source["id"], title, start_s, None)
+            
+            # Avoid duplicates
+            if any(e.get("startAt", "")[:16] == start_s[:16] for e in events):
+                continue
+            
+            log(f"  [HTML-Scan] {title[:50]}... @ {start_s}")
+            
+            events.append({
+                "id": wid,
+                "title": title,
+                "host": source.get("name"),
+                "city": None,
+                "state": None,
+                "venue": "See listing",
+                "startAt": start_s,
+                "endAt": end_s,
+                "registrationURL": source["url"],
+                "imageURL": None,
+                "detail": None,
+                "links": [{"title": "Event Page", "url": source["url"]}]
+            })
+    
+    return events
 
 def extract_soundonstudio_classsignup(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
     """Sound On Studio class signup page."""
@@ -426,19 +561,24 @@ def extract_soundonstudio_classsignup(source: Dict[str, Any], default_tz: str) -
     return events
 
 def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
-    """Scrape The VO Pros events pages."""
+    """
+    Scrape The VO Pros events pages.
+    IMPROVED: More flexible date/time patterns
+    """
     index_html = fetch_html(source["url"])
     soup = BeautifulSoup(index_html, "html.parser")
 
     links = []
     for a in soup.find_all("a", href=True):
         href = a["href"]
-        if "/events/" in href and not href.endswith("/events/"):
+        if "/events/" in href and not href.endswith("/events/") and not href.endswith("/events"):
             full = href if href.startswith("http") else urljoin(source["url"], href)
             full = normalize_url(full)
             if full and full not in links:
                 links.append(full)
 
+    log(f"  [VOPros] Found {len(links)} event links")
+    
     events: List[Dict[str, Any]] = []
     for ev_url in links[:120]:
         try:
@@ -451,25 +591,58 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
             if not title:
                 title = safe_text(ps.title.get_text(" ", strip=True), 200) if ps.title else "Workshop"
 
-            date_m = re.search(r"Event Date:\s*([A-Za-z]+\s+\d{1,2},\s*\d{4})", txt)
-            time_m = re.search(r"Event Time:\s*([0-9:]+\s*(?:am|pm)?(?:\s*[-–to]+\s*[0-9:]+\s*(?:am|pm))?)", txt, re.IGNORECASE)
-            loc_m = re.search(r"Event Location:\s*([^\n]+)", txt)
+            # Try multiple date patterns
+            date_patterns = [
+                r"Event Date:\s*([A-Za-z]+\s+\d{1,2},?\s*\d{4})",
+                r"Date:\s*([A-Za-z]+\s+\d{1,2},?\s*\d{4})",
+                r"([A-Za-z]+\s+\d{1,2}(?:st|nd|rd|th)?,?\s+\d{4})",
+            ]
+            
+            base_date = None
+            for pattern in date_patterns:
+                date_m = re.search(pattern, txt, re.IGNORECASE)
+                if date_m:
+                    base_date = parse_date_any(date_m.group(1), default_tz)
+                    if base_date:
+                        break
 
-            if not date_m:
-                continue
-
-            base_date = parse_date_any(date_m.group(1), default_tz)
             if not base_date:
+                log(f"  [VOPros] No date found in {ev_url}")
                 continue
 
-            time_str = time_m.group(1) if time_m else ""
+            # Try multiple time patterns
+            time_patterns = [
+                r"Event Time:\s*([0-9:]+\s*(?:am|pm)?(?:\s*[-–to]+\s*[0-9:]+\s*(?:am|pm))?)",
+                r"Time:\s*([0-9:]+\s*(?:am|pm)?(?:\s*[-–to]+\s*[0-9:]+\s*(?:am|pm))?)",
+                r"(\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*[-–to]+\s*\d{1,2}(?::\d{2})?\s*(?:am|pm))",
+                r"(\d{1,2}(?::\d{2})?\s*(?:am|pm))",
+            ]
+            
+            time_str = ""
+            for pattern in time_patterns:
+                time_m = re.search(pattern, txt, re.IGNORECASE)
+                if time_m:
+                    time_str = time_m.group(1)
+                    break
+            
             log(f"  [VOPros] {title[:40]}... time_str='{time_str}'")
-            start, end = apply_time_to_date(base_date, time_str, default_tz)
+            start, end = apply_time_to_date(base_date, time_str if time_str else txt, default_tz)
 
             start_s = isoformat_with_tz(start, default_tz)
             end_s = isoformat_with_tz(end, default_tz)
 
-            venue = safe_text(loc_m.group(1), 160) if loc_m else None
+            # Location
+            loc_patterns = [
+                r"Event Location:\s*([^\n]+)",
+                r"Location:\s*([^\n]+)",
+                r"Venue:\s*([^\n]+)",
+            ]
+            venue = None
+            for pattern in loc_patterns:
+                loc_m = re.search(pattern, txt, re.IGNORECASE)
+                if loc_m:
+                    venue = safe_text(loc_m.group(1), 160)
+                    break
 
             reg = normalize_url(ev_url)
             wid = compute_event_id(source["id"], title or "Workshop", start_s, reg)
@@ -489,7 +662,7 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
                 "links": [{"title": "Event Page", "url": reg}] if reg else None
             })
         except Exception as e:
-            log(f"  [VOPros] Error: {e}")
+            log(f"  [VOPros] Error on {ev_url}: {e}")
             continue
 
     return events
@@ -650,21 +823,37 @@ def extract_van_shopify_products(source: Dict[str, Any], default_tz: str) -> Lis
     return events
 
 def extract_wix_service_list(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
-    """Wix service pages (Real Voice LA, etc.)"""
+    """
+    Wix service pages (Real Voice LA, Adventures in Voice Acting, etc.)
+    IMPROVED: Better time extraction patterns for Wix sites
+    """
     html = fetch_html(source["url"])
     soup = BeautifulSoup(html, "html.parser")
 
     service_urls: List[str] = []
     for a in soup.find_all("a", href=True):
         href = a["href"]
-        if "service-page" in href:
+        if "service-page" in href or "book-online" in href:
             full = href if href.startswith("http") else urljoin(source["url"], href)
             full = normalize_url(full)
             if full and full not in service_urls:
                 service_urls.append(full)
 
     events: List[Dict[str, Any]] = []
-    starts_re = re.compile(r"\b(Start(?:s|ed))\s+([A-Za-z]{3,9}\s+\d{1,2})\b", re.IGNORECASE)
+    
+    # Multiple date patterns to try
+    date_patterns = [
+        (r"\b(Start(?:s|ed))\s+([A-Za-z]{3,9}\s+\d{1,2})", 2),  # "Starts Feb 15"
+        (r"\b([A-Za-z]{3,9}\s+\d{1,2}(?:st|nd|rd|th)?),?\s+(\d{4})", 0),  # "February 15th, 2026"
+        (r"\b([A-Za-z]{3,9}\s+\d{1,2})", 1),  # Just "Feb 15"
+    ]
+    
+    # Time patterns specific to Wix sites
+    time_patterns = [
+        r"(\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*[-–to]+\s*\d{1,2}(?::\d{2})?\s*(?:am|pm))",  # "2pm - 5pm"
+        r"(\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*(?:PT|PST|PDT|ET|EST)?)",  # "2pm PT"
+        r"Duration:\s*(\d+)\s*hr",  # "Duration: 3 hr"
+    ]
 
     for surl in service_urls[:120]:
         try:
@@ -676,21 +865,51 @@ def extract_wix_service_list(source: Dict[str, Any], default_tz: str) -> List[Di
             title = safe_text(h1.get_text(" ", strip=True), 200) if h1 else None
             if not title:
                 title = "Workshop"
-
-            m = starts_re.search(txt)
-            if not m:
+            
+            # Skip non-class pages
+            lower_title = title.lower()
+            if any(skip in lower_title for skip in ["contact", "about", "policy", "terms", "faq"]):
                 continue
 
-            md = m.group(2)
-            base_date = infer_year_for_month_day(md, default_tz)
-
-            date_pos = txt.find(md)
-            context_start = max(0, date_pos - 150)
-            context_end = min(len(txt), date_pos + 250)
-            time_context = txt[context_start:context_end]
+            # Try to find a date
+            base_date = None
+            for pattern, group_idx in date_patterns:
+                m = re.search(pattern, txt, re.IGNORECASE)
+                if m:
+                    if group_idx == 0:
+                        # Full date with year
+                        date_str = m.group(1) + " " + m.group(2)
+                    else:
+                        date_str = m.group(group_idx)
+                    base_date = parse_date_any(date_str, default_tz)
+                    if base_date is None:
+                        base_date = infer_year_for_month_day(date_str, default_tz)
+                    if base_date:
+                        break
             
-            log(f"  [Wix] {title[:40]}...")
-            start, end = apply_time_to_date(base_date, time_context, default_tz)
+            if not base_date:
+                continue
+
+            # Try to find time - look at the whole page but prioritize specific patterns
+            time_found = None
+            for time_pat in time_patterns:
+                m = re.search(time_pat, txt, re.IGNORECASE)
+                if m:
+                    time_found = m.group(1) if m.lastindex >= 1 else m.group(0)
+                    break
+            
+            log(f"  [Wix] {title[:40]}... time_found='{time_found}'")
+            
+            if time_found:
+                start, end = apply_time_to_date(base_date, time_found, default_tz)
+            else:
+                # Fall back to context around date
+                txt_lower = txt.lower()
+                date_pos = txt_lower.find(str(base_date.day))
+                context_start = max(0, date_pos - 200)
+                context_end = min(len(txt), date_pos + 300)
+                time_context = txt[context_start:context_end]
+                start, end = apply_time_to_date(base_date, time_context, default_tz)
 
             start_s = isoformat_with_tz(start, default_tz)
             end_s = isoformat_with_tz(end, default_tz)
@@ -719,13 +938,47 @@ def extract_wix_service_list(source: Dict[str, Any], default_tz: str) -> List[Di
     return events
 
 def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
-    """VO Dojo - COMPLETELY REWRITTEN to parse per-event"""
+    """
+    VO Dojo - IMPROVED to filter junk and avoid duplicates
+    """
     html = fetch_html(source["url"])
     soup = BeautifulSoup(html, "html.parser")
     full_text = soup.get_text("\n")
     
+    # Junk titles to skip
+    JUNK_PATTERNS = [
+        r"^vo\s*dojo\s*event$",
+        r"^join",
+        r"mailing\s*list",
+        r"newsletter",
+        r"subscribe",
+        r"sign\s*up\s*for",
+        r"follow\s*us",
+        r"contact",
+        r"about\s*us",
+        r"home$",
+        r"^menu$",
+        r"privacy",
+        r"terms",
+        r"copyright",
+        r"^\d+$",  # Just numbers
+        r"^[A-Za-z]{1,3}$",  # Very short strings
+    ]
+    
+    def is_junk_title(title: str) -> bool:
+        lower = title.lower().strip()
+        if len(lower) < 5:
+            return True
+        for pattern in JUNK_PATTERNS:
+            if re.search(pattern, lower, re.IGNORECASE):
+                return True
+        return False
+    
     events: List[Dict[str, Any]] = []
     date_re = re.compile(r"([A-Za-z]{3,9}\s+\d{1,2},?\s+\d{4})")
+    
+    # Track events by date+time to avoid duplicates
+    events_by_datetime: Dict[str, Dict[str, Any]] = {}
     
     lines = full_text.split('\n')
     
@@ -756,32 +1009,51 @@ def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dic
                 
                 event_text = '\n'.join(event_lines)
                 
-                log(f"  [VODojo] Processing event at {date_str}...")
+                # Extract time
                 start, end = apply_time_to_date(base, event_text, default_tz)
-                
                 start_s = isoformat_with_tz(start, default_tz)
                 end_s = isoformat_with_tz(end, default_tz)
                 
-                title = "VO Dojo Event"
+                # Find best title from event lines
+                title = None
                 for el in event_lines:
                     el_clean = el.strip()
-                    if el_clean == date_str or date_re.fullmatch(el_clean):
+                    # Skip date-only lines
+                    if date_re.fullmatch(el_clean):
                         continue
-                    if len(el_clean) > 10 and not el_clean.isdigit():
-                        title = safe_text(el_clean, 120)
-                        break
+                    # Skip very short or junk
+                    if is_junk_title(el_clean):
+                        continue
+                    # Skip lines that look like times only
+                    if re.fullmatch(r"[\d:]+\s*(am|pm)?(\s*[-–]\s*[\d:]+\s*(am|pm)?)?", el_clean, re.IGNORECASE):
+                        continue
+                    # Found a good title
+                    title = safe_text(el_clean, 150)
+                    break
                 
-                wid = compute_event_id(source["id"], title, start_s, None)
+                # Skip if no good title found
+                if not title:
+                    log(f"  [VODojo] Skipping event at {date_str} - no good title found")
+                    i = j
+                    continue
                 
-                is_dupe = any(
-                    e.get("startAt", "")[:10] == start_s[:10] and 
-                    e.get("title", "").lower()[:20] == title.lower()[:20]
-                    for e in events
-                )
+                # Use date+time as key for deduplication
+                datetime_key = start_s[:16]  # "2026-01-30T19:00"
                 
-                if not is_dupe:
-                    events.append({
-                        "id": wid,
+                # If we already have an event at this datetime, prefer the better title
+                if datetime_key in events_by_datetime:
+                    existing = events_by_datetime[datetime_key]
+                    existing_title = existing.get("title", "")
+                    # Keep the more descriptive title (longer, not generic)
+                    if len(title) > len(existing_title) or "event" in existing_title.lower():
+                        log(f"  [VODojo] Replacing '{existing_title[:30]}' with '{title[:30]}' at {datetime_key}")
+                        existing["title"] = title
+                        existing["id"] = compute_event_id(source["id"], title, start_s, None)
+                else:
+                    # New event
+                    log(f"  [VODojo] Found: {title[:50]}... @ {start_s}")
+                    events_by_datetime[datetime_key] = {
+                        "id": compute_event_id(source["id"], title, start_s, None),
                         "title": title,
                         "host": source.get("name"),
                         "city": None,
@@ -793,17 +1065,19 @@ def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dic
                         "imageURL": None,
                         "detail": None,
                         "links": [{"title": "Upcoming Events", "url": normalize_url(source["url"])}]
-                    })
+                    }
                 
                 i = j
                 continue
         
         i += 1
     
-    log(f"  [VODojo] Found {len(events)} events")
+    events = list(events_by_datetime.values())
+    log(f"  [VODojo] Found {len(events)} unique events")
     return events
 
 def extract_html_fallback(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
+    """Generic HTML fallback - tries JSON-LD first, then HTML parsing"""
     return extract_jsonld_events(source, default_tz)
 
 EXTRACTORS = {
