@@ -1,16 +1,18 @@
 name: Sync Workshops
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   schedule:
-    # Every day at 10:15am PT-ish (GitHub runs UTC; adjust if you want exact)
     - cron: "15 18 * * *"
+
+permissions:
+  contents: write
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     env:
-      RESOURCES_JSON_PATH: "votracker-content/resources.json"
+      RESOURCES_JSON_PATH: "resources.json"
       SOURCES_JSON_PATH: "config/workshop_sources.json"
       DEFAULT_TZ: "America/Los_Angeles"
 
