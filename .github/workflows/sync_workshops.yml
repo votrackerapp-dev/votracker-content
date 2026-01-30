@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: sync-workshops
+  cancel-in-progress: true
+
 jobs:
   sync:
     runs-on: ubuntu-latest
