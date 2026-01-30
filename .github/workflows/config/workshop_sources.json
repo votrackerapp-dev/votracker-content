@@ -1,0 +1,31 @@
+{
+  "sources": [
+    {
+      "id": "van_shopify_feb",
+      "type": "shopify_collection",
+      "name": "Voice Actors Network (Clinics)",
+      "collection_url": "https://voiceactorsnetwork.com/collections/february-clinics",
+      "timezone": "America/Los_Angeles"
+    }
+
+    /*
+      Add more sources like:
+
+      {
+        "id": "some_ics_feed",
+        "type": "ics",
+        "name": "Some Studio Calendar Feed",
+        "ics_url": "https://example.com/calendar.ics",
+        "timezone": "America/Los_Angeles"
+      },
+
+      {
+        "id": "some_rss_feed",
+        "type": "rss",
+        "name": "Some VO Training RSS",
+        "rss_url": "https://example.com/rss.xml",
+        "timezone": "America/Los_Angeles"
+      }
+    */
+  ]
+}
