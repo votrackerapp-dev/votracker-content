@@ -1,351 +1,421 @@
+#!/usr/bin/env python3
+import argparse
+import datetime as dt
+import hashlib
 import json
-import os
 import re
-from dataclasses import dataclass
-from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
+from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode
+
 import requests
 from bs4 import BeautifulSoup
-
-import feedparser
 from dateutil import parser as dateparser
-from icalendar import Calendar
-
-RESOURCES_JSON_PATH = os.environ.get("RESOURCES_JSON_PATH", "resources.json")
-SOURCES_CONFIG_PATH = os.environ.get("SOURCES_CONFIG_PATH", "config/workshop_sources.json")
-
-USER_AGENT = "VOTrackerWorkshopBot/1.0 (+https://github.com/)"
-TIMEOUT = 20
-
-# ---------- Models ----------
-
-@dataclass
-class Workshop:
-  id: str
-  title: str
-  host: Optional[str]
-  city: Optional[str]
-  state: Optional[str]
-  venue: Optional[str]
-  startAt: str
-  endAt: Optional[str]
-  registrationURL: Optional[str]
-  imageURL: Optional[str]
-  detail: Optional[str]
-  links: Optional[List[Dict[str, str]]]
-
-  def to_dict(self) -> Dict[str, Any]:
-    out = {
-      "id": self.id,
-      "title": self.title,
-      "host": self.host,
-      "city": self.city,
-      "state": self.state,
-      "venue": self.venue,
-      "startAt": self.startAt,
-      "endAt": self.endAt,
-      "registrationURL": self.registrationURL,
-      "imageURL": self.imageURL,
-      "detail": self.detail,
-      "links": self.links
-    }
-    # Remove null keys (keeps JSON clean)
-    return {k: v for k, v in out.items() if v is not None}
+from dateutil import tz as datetz
 
 
-# ---------- Helpers ----------
+# -----------------------------
+# Helpers
+# -----------------------------
 
-def http_get(url: str) -> str:
-  r = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=TIMEOUT)
-  r.raise_for_status()
-  return r.text
-
-def normalize_iso(dt: datetime) -> str:
-  # Always output offset ISO8601
-  if dt.tzinfo is None:
-    dt = dt.replace(tzinfo=timezone.utc)
-  return dt.isoformat()
-
-def safe_id(prefix: str, title: str, start_iso: str) -> str:
-  base = f"{prefix}-{title}-{start_iso}"
-  base = base.lower()
-  base = re.sub(r"[^a-z0-9]+", "-", base).strip("-")
-  return base[:80]
-
-def parse_datetime(s: str) -> Optional[datetime]:
-  try:
-    return dateparser.parse(s)
-  except Exception:
-    return None
-
-def load_json(path: str) -> Dict[str, Any]:
-  with open(path, "r", encoding="utf-8") as f:
-    return json.load(f)
-
-def save_json(path: str, data: Dict[str, Any]) -> None:
-  with open(path, "w", encoding="utf-8") as f:
-    json.dump(data, f, ensure_ascii=False, indent=2)
-    f.write("\n")
-
-def merge_workshops(existing: List[Dict[str, Any]], incoming: List[Workshop]) -> List[Dict[str, Any]]:
-  """
-  Merge by registrationURL if present, else by id.
-  Incoming overwrites matching existing entries.
-  """
-  by_key: Dict[str, Dict[str, Any]] = {}
-
-  def key_of(w: Dict[str, Any]) -> str:
-    reg = w.get("registrationURL")
-    if reg:
-      return f"url:{reg}"
-    return f"id:{w.get('id')}"
-
-  for w in existing:
-    by_key[key_of(w)] = w
-
-  for w in incoming:
-    wd = w.to_dict()
-    k = key_of(wd)
-    by_key[k] = wd
-
-  # Sort by startAt ascending
-  merged = list(by_key.values())
-  merged.sort(key=lambda x: x.get("startAt", "9999"))
-  return merged
-
-def prune_past(workshops: List[Dict[str, Any]], keep_days_past: int = 1) -> List[Dict[str, Any]]:
-  """
-  Optional: keep very recent past events (yesterday) so users can still click them.
-  """
-  now = datetime.now(timezone.utc)
-  kept: List[Dict[str, Any]] = []
-  for w in workshops:
-    start = parse_datetime(w.get("startAt", ""))
-    if not start:
-      kept.append(w)
-      continue
-    if start.tzinfo is None:
-      start = start.replace(tzinfo=timezone.utc)
-    delta_days = (start - now).total_seconds() / 86400.0
-    if delta_days >= -keep_days_past:
-      kept.append(w)
-  return kept
-
-# ---------- Extractors ----------
-
-def extract_shopify_collection(source: Dict[str, Any]) -> List[Workshop]:
-  """
-  For Shopify sites like VAN:
-  - Crawl collection page for product links
-  - For each product page, parse title and time string in page text
-  This is fragile (HTML changes break it), but works well enough with low frequency.
-  """
-  collection_url = source["collection_url"]
-  html = http_get(collection_url)
-  soup = BeautifulSoup(html, "html.parser")
-
-  # Shopify product links tend to include /products/
-  product_links = []
-  for a in soup.select("a[href]"):
-    href = a.get("href", "")
-    if "/products/" in href:
-      if href.startswith("/"):
-        href = "https://voiceactorsnetwork.com" + href
-      product_links.append(href)
-
-  # Deduplicate
-  product_links = list(dict.fromkeys(product_links))[:30]  # safety cap
-
-  workshops: List[Workshop] = []
-  for url in product_links:
+def canonicalize_url(url: Optional[str]) -> Optional[str]:
+    if not url:
+        return None
     try:
-      wh = http_get(url)
-      psoup = BeautifulSoup(wh, "html.parser")
+        u = url.strip()
+        p = urlparse(u)
+        scheme = p.scheme or "https"
+        netloc = p.netloc.lower()
+        path = p.path.rstrip("/") or "/"
 
-      title = (psoup.select_one("h1") or psoup.select_one("title"))
-      title_text = title.get_text(strip=True) if title else "Workshop"
+        # Drop common tracking params
+        q = [(k, v) for (k, v) in parse_qsl(p.query, keep_blank_values=True)
+             if not k.lower().startswith("utm_") and k.lower() not in {"fbclid", "gclid"}]
+        query = urlencode(q, doseq=True)
 
-      # Pull a best-effort time string from the page body
-      body_text = psoup.get_text(" ", strip=True)
-
-      # VAN titles often embed: "Tuesday February 3rd 2026 4-7pm PT Zoom"
-      # We'll try to find a "February" date + "pm" time chunk.
-      m = re.search(r"(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}.*?\d{4}.*?(\d{1,2}(:\d{2})?\s*(am|pm))", body_text, re.IGNORECASE)
-      start_dt: Optional[datetime] = None
-      if m:
-        # grab a slice around the match
-        start_idx = max(0, m.start() - 40)
-        end_idx = min(len(body_text), m.end() + 80)
-        snippet = body_text[start_idx:end_idx]
-        # try parse snippet
-        start_dt = parse_datetime(snippet)
-
-      # Fallback: use today (but we’d rather skip than inject garbage)
-      if not start_dt:
-        continue
-
-      # Venue hint
-      venue = "Zoom" if "zoom" in body_text.lower() else None
-      if "in person" in body_text.lower():
-        venue = "In Person"
-
-      # Host guess (VAN product titles often: "Commercial Clinic - Carli Silver")
-      host = None
-      host_match = re.search(r"clinic\s*[-–]\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)", title_text)
-      if host_match:
-        host = host_match.group(1).strip()
-
-      start_iso = normalize_iso(start_dt)
-      wid = safe_id(source["id"], title_text, start_iso)
-
-      workshops.append(
-        Workshop(
-          id=wid,
-          title=title_text,
-          host=host,
-          city=None,
-          state=None,
-          venue=venue,
-          startAt=start_iso,
-          endAt=None,
-          registrationURL=url,
-          imageURL=None,
-          detail=None,
-          links=[{"title": "Listing", "url": url}]
-        )
-      )
+        return urlunparse((scheme, netloc, path, "", query, ""))
     except Exception:
-      continue
+        return url
 
-  return workshops
 
-def extract_ics(source: Dict[str, Any]) -> List[Workshop]:
-  ics_url = source["ics_url"]
-  text = http_get(ics_url)
-  cal = Calendar.from_ical(text)
-  out: List[Workshop] = []
+def sha1(s: str) -> str:
+    return hashlib.sha1(s.encode("utf-8")).hexdigest()
 
-  for component in cal.walk():
-    if component.name != "VEVENT":
-      continue
 
-    summary = str(component.get("summary", "Workshop"))
-    dtstart = component.get("dtstart")
-    dtend = component.get("dtend")
-    location = str(component.get("location", "")) if component.get("location") else None
-    url = str(component.get("url", "")) if component.get("url") else None
-    desc = str(component.get("description", "")) if component.get("description") else None
+def isoformat_with_tz(d: dt.datetime) -> str:
+    # Always include offset
+    if d.tzinfo is None:
+        d = d.replace(tzinfo=datetz.UTC)
+    return d.isoformat()
 
-    if not dtstart:
-      continue
 
-    start_dt = dtstart.dt
-    if isinstance(start_dt, datetime) is False:
-      # date-only events -> skip
-      continue
-    start_iso = normalize_iso(start_dt)
+def parse_date(value: Any, default_tz: str) -> Optional[dt.datetime]:
+    """
+    Parses many date formats into a timezone-aware datetime.
+    If the parsed datetime has no tz, we apply default_tz.
+    """
+    if not value:
+        return None
+    try:
+        d = dateparser.parse(str(value))
+        if d is None:
+            return None
+        if d.tzinfo is None:
+            d = d.replace(tzinfo=datetz.gettz(default_tz))
+        return d
+    except Exception:
+        return None
 
-    end_iso = None
-    if dtend and isinstance(dtend.dt, datetime):
-      end_iso = normalize_iso(dtend.dt)
 
-    wid = safe_id(source["id"], summary, start_iso)
-    out.append(
-      Workshop(
-        id=wid,
-        title=summary,
-        host=source.get("name"),
-        city=None,
-        state=None,
-        venue=location,
-        startAt=start_iso,
-        endAt=end_iso,
-        registrationURL=url or ics_url,
-        imageURL=None,
-        detail=desc if desc else None,
-        links=[{"title": "Calendar Source", "url": ics_url}]
-      )
+def safe_text(s: Optional[str], max_len: int = 6000) -> Optional[str]:
+    if s is None:
+        return None
+    t = re.sub(r"\s+", " ", s).strip()
+    if not t:
+        return None
+    return t[:max_len]
+
+
+# -----------------------------
+# Extractors
+# -----------------------------
+
+def fetch_html(url: str) -> str:
+    r = requests.get(url, timeout=25, headers={"User-Agent": "VOTrackerWorkshopBot/1.0"})
+    r.raise_for_status()
+    return r.text
+
+
+def extract_jsonld_events(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
+    """
+    Looks for schema.org Event JSON-LD blocks and extracts events.
+    Works on many sites that publish structured Event data.
+    """
+    html = fetch_html(source["url"])
+    soup = BeautifulSoup(html, "html.parser")
+    scripts = soup.find_all("script", attrs={"type": "application/ld+json"})
+    events: List[Dict[str, Any]] = []
+
+    def handle_obj(obj: Any):
+        if isinstance(obj, list):
+            for it in obj:
+                handle_obj(it)
+            return
+        if not isinstance(obj, dict):
+            return
+
+        # Sometimes Event is inside @graph
+        if "@graph" in obj and isinstance(obj["@graph"], list):
+            for g in obj["@graph"]:
+                handle_obj(g)
+            return
+
+        t = obj.get("@type")
+        if isinstance(t, list):
+            if "Event" not in t:
+                return
+        elif t != "Event":
+            return
+
+        name = obj.get("name")
+        start = parse_date(obj.get("startDate"), default_tz)
+        end = parse_date(obj.get("endDate"), default_tz) or start
+        url = obj.get("url") or source["url"]
+        desc = obj.get("description")
+        image = obj.get("image")
+
+        # Location can be a string or object
+        venue = None
+        city = None
+        state = None
+        loc = obj.get("location")
+        if isinstance(loc, dict):
+            venue = loc.get("name")
+            addr = loc.get("address")
+            if isinstance(addr, dict):
+                city = addr.get("addressLocality")
+                state = addr.get("addressRegion")
+
+        event = {
+            "title": safe_text(name) or "Workshop",
+            "host": source.get("name"),
+            "city": safe_text(city),
+            "state": safe_text(state),
+            "venue": safe_text(venue),
+            "startAt": isoformat_with_tz(start) if start else None,
+            "endAt": isoformat_with_tz(end) if end else None,
+            "registrationURL": canonicalize_url(url),
+            "imageURL": image if isinstance(image, str) else None,
+            "detail": safe_text(desc),
+            "links": [{"title": "Event Page", "url": canonicalize_url(url)}] if url else None,
+            "_source": source["id"]
+        }
+        if event["startAt"]:
+            events.append(event)
+
+    for s in scripts:
+        raw = s.get_text(strip=True)
+        if not raw:
+            continue
+        try:
+            obj = json.loads(raw)
+            handle_obj(obj)
+        except Exception:
+            continue
+
+    return events
+
+
+def extract_soundonstudio_classsignup(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
+    """
+    SoundOnStudio's class signup page shows items like:
+      "2.23.26 - Making Promos Pop! with Darius Marquis Johnson ..."
+    We'll parse those. Times may not exist; we default to 6:00pm local if missing.
+    """
+    html = fetch_html(source["url"])
+    text = BeautifulSoup(html, "html.parser").get_text("\n")
+
+    # date format like 2.23.26
+    pattern = re.compile(r"\b(\d{1,2})\.(\d{1,2})\.(\d{2})\s*-\s*([^\n$]+)")
+    events: List[Dict[str, Any]] = []
+
+    for m in pattern.finditer(text):
+        mm, dd, yy = int(m.group(1)), int(m.group(2)), int(m.group(3))
+        year = 2000 + yy
+        title = safe_text(m.group(4))
+        if not title:
+            continue
+
+        # Default time: 6:00pm PT (reasonable placeholder)
+        start = dt.datetime(year, mm, dd, 18, 0, tzinfo=datetz.gettz(default_tz))
+        end = start + dt.timedelta(hours=2)
+
+        events.append({
+            "title": title,
+            "host": source.get("name"),
+            "city": None,
+            "state": None,
+            "venue": "Online / See listing",
+            "startAt": isoformat_with_tz(start),
+            "endAt": isoformat_with_tz(end),
+            "registrationURL": canonicalize_url(source["url"]),
+            "imageURL": None,
+            "detail": None,
+            "links": [{"title": "Class Signup", "url": canonicalize_url(source["url"])}],
+            "_source": source["id"]
+        })
+
+    return events
+
+
+def extract_html_fallback(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
+    """
+    Fallback extractor:
+    - Try JSON-LD first (many sites have it)
+    - If none found, do nothing (safe)
+    """
+    events = extract_jsonld_events(source, default_tz)
+    return events
+
+
+EXTRACTORS = {
+    "jsonld_events": extract_jsonld_events,
+    "soundonstudio_classsignup": extract_soundonstudio_classsignup,
+    "html_fallback": extract_html_fallback
+}
+
+
+# -----------------------------
+# ID + Merge (NO DUPES)
+# -----------------------------
+
+def compute_event_id(e: Dict[str, Any]) -> str:
+    """
+    Stable ID:
+      - If registrationURL exists, use source + canonical URL
+      - else use source + (title + startAt)
+    """
+    source_id = e.get("_source") or "unknown"
+    url = canonicalize_url(e.get("registrationURL")) or canonicalize_url(
+        (e.get("links") or [{}])[0].get("url") if e.get("links") else None
     )
 
-  return out
+    if url:
+        key = f"{source_id}|url|{url}"
+    else:
+        key = f"{source_id}|ts|{(e.get('title') or '').strip().lower()}|{e.get('startAt') or ''}"
 
-def extract_rss(source: Dict[str, Any]) -> List[Workshop]:
-  rss_url = source["rss_url"]
-  feed = feedparser.parse(rss_url)
-  out: List[Workshop] = []
+    # Nice readable prefix, but still stable
+    return f"{source_id}-{sha1(key)[:16]}"
 
-  for e in feed.entries[:30]:
-    title = getattr(e, "title", "Workshop")
-    link = getattr(e, "link", None)
-    summary = getattr(e, "summary", None)
 
-    # RSS rarely contains structured dates; try common fields
-    dt = None
-    if hasattr(e, "published"):
-      dt = parse_datetime(e.published)
-    if not dt and hasattr(e, "updated"):
-      dt = parse_datetime(e.updated)
+def normalize_workshop(e: Dict[str, Any], default_tz: str) -> Optional[Dict[str, Any]]:
+    # Ensure required
+    start = parse_date(e.get("startAt"), default_tz)
+    if not start:
+        return None
+    end = parse_date(e.get("endAt"), default_tz) or start
 
-    # If no date, skip (we can’t place it on a calendar)
-    if not dt:
-      continue
+    # Normalize urls
+    reg = canonicalize_url(e.get("registrationURL"))
+    links = e.get("links") or None
+    if links:
+        cleaned_links = []
+        for l in links:
+            if not isinstance(l, dict):
+                continue
+            t = safe_text(l.get("title"), 80)
+            u = canonicalize_url(l.get("url"))
+            if t and u:
+                cleaned_links.append({"title": t, "url": u})
+        links = cleaned_links or None
 
-    start_iso = normalize_iso(dt)
-    wid = safe_id(source["id"], title, start_iso)
+    out = {
+        "id": None,  # computed below
+        "title": safe_text(e.get("title"), 200) or "Workshop",
+        "host": safe_text(e.get("host"), 120),
+        "city": safe_text(e.get("city"), 80),
+        "state": safe_text(e.get("state"), 40),
+        "venue": safe_text(e.get("venue"), 160),
+        "startAt": isoformat_with_tz(start),
+        "endAt": isoformat_with_tz(end),
+        "registrationURL": reg,
+        "imageURL": e.get("imageURL"),
+        "detail": safe_text(e.get("detail")),
+        "links": links
+    }
 
-    out.append(
-      Workshop(
-        id=wid,
-        title=title,
-        host=source.get("name"),
-        city=None,
-        state=None,
-        venue=None,
-        startAt=start_iso,
-        endAt=None,
-        registrationURL=link or rss_url,
-        imageURL=None,
-        detail=summary,
-        links=[{"title": "Post", "url": link or rss_url}]
-      )
-    )
+    # Keep source internally to compute stable id, then remove
+    out["_source"] = e.get("_source")
+    out["id"] = compute_event_id(out)
+    out.pop("_source", None)
 
-  return out
+    return out
 
-# ---------- Main ----------
 
-def extract_from_source(src: Dict[str, Any]) -> List[Workshop]:
-  t = src.get("type")
-  if t == "shopify_collection":
-    return extract_shopify_collection(src)
-  if t == "ics":
-    return extract_ics(src)
-  if t == "rss":
-    return extract_rss(src)
-  return []
+def dedupe_by_id(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    seen = {}
+    for it in items:
+        i = it.get("id")
+        if not i:
+            continue
+        # Prefer the one that has a registrationURL
+        if i not in seen:
+            seen[i] = it
+        else:
+            prev = seen[i]
+            if (not prev.get("registrationURL")) and it.get("registrationURL"):
+                seen[i] = it
+    return list(seen.values())
+
+
+def merge_workshops(existing: List[Dict[str, Any]], incoming: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    by_id = {w.get("id"): w for w in existing if w.get("id")}
+    for w in incoming:
+        wid = w.get("id")
+        if not wid:
+            continue
+        if wid in by_id:
+            # Update in place, but don't wipe good old fields with empty new ones
+            cur = by_id[wid]
+            for k, v in w.items():
+                if v is not None and v != "":
+                    cur[k] = v
+        else:
+            by_id[wid] = w
+
+    merged = list(by_id.values())
+    merged = dedupe_by_id(merged)
+
+    # Sort by start date
+    def keyfn(x):
+        try:
+            return dateparser.parse(x.get("startAt")).timestamp()
+        except Exception:
+            return float("inf")
+
+    merged.sort(key=keyfn)
+    return merged
+
+
+def prune_events(items: List[Dict[str, Any]], prune_days_past: int, keep_days_future: int, default_tz: str) -> List[Dict[str, Any]]:
+    now = dt.datetime.now(tz=datetz.gettz(default_tz))
+    past_cut = now - dt.timedelta(days=prune_days_past)
+    future_cut = now + dt.timedelta(days=keep_days_future)
+
+    kept = []
+    for w in items:
+        start = parse_date(w.get("startAt"), default_tz)
+        end = parse_date(w.get("endAt"), default_tz) or start
+        if not start:
+            continue
+        # Keep if it's not too far past, and not too far in the future
+        if end >= past_cut and start <= future_cut:
+            kept.append(w)
+    return kept
+
+
+# -----------------------------
+# Main
+# -----------------------------
 
 def main():
-  resources = load_json(RESOURCES_JSON_PATH)
-  cfg = load_json(SOURCES_CONFIG_PATH)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--resources", required=True)
+    ap.add_argument("--sources", required=True)
+    ap.add_argument("--default-tz", default="America/Los_Angeles")
+    args = ap.parse_args()
 
-  sources = cfg.get("sources", [])
-  incoming: List[Workshop] = []
+    with open(args.sources, "r", encoding="utf-8") as f:
+        cfg = json.load(f)
 
-  for src in sources:
-    try:
-      incoming.extend(extract_from_source(src))
-    except Exception:
-      continue
+    sources = cfg.get("sources", [])
+    settings = cfg.get("settings", {})
+    max_events_per_source = int(settings.get("max_events_per_source", 50))
+    prune_days_past = int(settings.get("prune_days_past", 7))
+    keep_days_future = int(settings.get("keep_days_future", 365))
 
-  existing = resources.get("workshops", [])
-  merged = merge_workshops(existing, incoming)
-  merged = prune_past(merged, keep_days_past=1)
+    with open(args.resources, "r", encoding="utf-8") as f:
+        resources = json.load(f)
 
-  resources["workshops"] = merged
-  resources["lastUpdated"] = datetime.now(timezone.utc).date().isoformat()
+    existing = resources.get("workshops", []) or []
 
-  save_json(RESOURCES_JSON_PATH, resources)
-  print(f"Workshops now: {len(merged)} (incoming: {len(incoming)})")
+    incoming_all: List[Dict[str, Any]] = []
+
+    for s in sources:
+        extractor_name = s.get("extractor", "jsonld_events")
+        fn = EXTRACTORS.get(extractor_name)
+        if not fn:
+            print(f"[WARN] Unknown extractor '{extractor_name}' for {s.get('id')}, skipping.")
+            continue
+
+        try:
+            raw_events = fn(s, args.default_tz)
+            raw_events = raw_events[:max_events_per_source]
+            normalized = []
+            for e in raw_events:
+                e["_source"] = s.get("id")
+                nw = normalize_workshop(e, args.default_tz)
+                if nw:
+                    normalized.append(nw)
+            print(f"[OK] {s.get('id')}: {len(normalized)} events")
+            incoming_all.extend(normalized)
+        except Exception as ex:
+            print(f"[ERROR] {s.get('id')}: {ex}")
+
+    # Merge + prune + final dedupe
+    merged = merge_workshops(existing, incoming_all)
+    merged = prune_events(merged, prune_days_past, keep_days_future, args.default_tz)
+    merged = dedupe_by_id(merged)
+
+    resources["workshops"] = merged
+
+    # bump lastUpdated if changed
+    resources["lastUpdated"] = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
+
+    with open(args.resources, "w", encoding="utf-8") as f:
+        json.dump(resources, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
 
 if __name__ == "__main__":
-  main()
+    main()
