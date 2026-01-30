@@ -3,14 +3,10 @@ name: Sync Workshops
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: "15 18 * * *"
+    - cron: "15 */3 * * *"
 
 permissions:
   contents: write
-
-concurrency:
-  group: sync-workshops
-  cancel-in-progress: true
 
 jobs:
   sync:
