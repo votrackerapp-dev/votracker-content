@@ -101,7 +101,103 @@
       "tier": "partner"
     }
   ],
-
+  "workshops": [
+    {
+      "id": "van-commercial-carli-silver-2026-02-03",
+      "title": "Commercial Clinic",
+      "host": "Carli Silver",
+      "city": null,
+      "state": null,
+      "venue": "Zoom",
+      "startAt": "2026-02-03T16:00:00-08:00",
+      "endAt": "2026-02-03T19:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/february-clinics/products/commercial-clinic-cari-silver-tuesday-february-3rd-2026-4-7pm-pt-zoom",
+      "imageURL": null,
+      "detail": "Commercial copy will be provided 48 hrs ahead of time.",
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/february-clinics/products/commercial-clinic-cari-silver-tuesday-february-3rd-2026-4-7pm-pt-zoom"
+        }
+      ]
+    },
+    {
+      "id": "van-narration-jon-armond-2026-02-11",
+      "title": "Narration Clinic",
+      "host": "Jon Armond",
+      "city": "Burbank",
+      "state": "CA",
+      "venue": "Studio in Burbank (In Person)",
+      "startAt": "2026-02-11T19:00:00-08:00",
+      "endAt": "2026-02-11T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/february-clinics/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person",
+      "imageURL": null,
+      "detail": "Narration copy will be provided 48 hrs ahead of time.",
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/february-clinics/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person"
+        }
+      ]
+    },
+    {
+      "id": "van-videogame-patrick-michalak-2026-02-19",
+      "title": "Video Game Clinic",
+      "host": "Patrick Michalak",
+      "city": "Burbank",
+      "state": "CA",
+      "venue": "Studio in Burbank (In Person)",
+      "startAt": "2026-02-19T19:00:00-08:00",
+      "endAt": "2026-02-19T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/february-clinics/products/video-game-clinic-patrick-michalak-thursday-february-19th-2026-7-10pm-pt-in-person",
+      "imageURL": null,
+      "detail": "Video Game copy will be provided 48 hrs ahead of time.",
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/february-clinics/products/video-game-clinic-patrick-michalak-thursday-february-19th-2026-7-10pm-pt-in-person"
+        }
+      ]
+    },
+    {
+      "id": "van-animation-bob-bergen-2026-02-25",
+      "title": "Animation Clinic",
+      "host": "Bob Bergen",
+      "city": null,
+      "state": null,
+      "venue": "Zoom",
+      "startAt": "2026-02-25T19:00:00-08:00",
+      "endAt": "2026-02-25T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/february-clinics/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom",
+      "imageURL": null,
+      "detail": "Animation copy will be provided 48 hrs ahead of time.",
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/february-clinics/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom"
+        }
+      ]
+    },
+    {
+      "id": "van-animation-katie-mcwane-2026-02-26",
+      "title": "Wait Lister Exclusive! Animation Clinic",
+      "host": "Katie McWane",
+      "city": null,
+      "state": null,
+      "venue": "Zoom",
+      "startAt": "2026-02-26T17:00:00-08:00",
+      "endAt": "2026-02-26T20:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/february-clinics/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
+      "imageURL": null,
+      "detail": "Animation copy will be provided 48 hrs ahead of time.",
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/february-clinics/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom"
+        }
+      ]
+    }
+  ],
   "sections": [
     {
       "title": "Rates & Industry Guides",
