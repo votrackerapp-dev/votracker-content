@@ -102,51 +102,6 @@
     }
   ],
 
-  "workshops": [
-    {
-      "id": "la-animation-workout-2026-02-20",
-      "title": "Animation VO Workout",
-      "host": "Jane Coach",
-      "city": "Burbank",
-      "state": "CA",
-      "venue": "Studio Name Here",
-      "startAt": "2026-02-20T19:00:00-08:00",
-      "endAt": "2026-02-20T21:00:00-08:00",
-      "registrationURL": "https://example.com/register-animation-workout",
-      "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/workshop_sample_1.png",
-      "detail": "A practical animation workout with live redirects.\n\n• Cold reads\n• Direction rounds\n• Group feedback\n\nBring: headphones + a printed copy of sides (or iPad).",
-      "links": [
-        {
-          "title": "Register",
-          "url": "https://example.com/register-animation-workout"
-        },
-        {
-          "title": "Details",
-          "url": "https://example.com/details-animation-workout"
-        }
-      ]
-    },
-    {
-      "id": "la-commercial-clinic-2026-03-03",
-      "title": "Commercial Copy Clinic",
-      "host": "Studio / Coach Name",
-      "city": "Santa Monica",
-      "state": "CA",
-      "venue": "Studio Name Here",
-      "startAt": "2026-03-03T18:00:00-08:00",
-      "endAt": "2026-03-03T20:00:00-08:00",
-      "registrationURL": "https://example.com/register-commercial-clinic",
-      "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/workshop_sample_2.png",
-      "detail": "A focused commercial clinic covering reads, pacing, and mic technique.\n\n• 2 reads per person\n• Playback notes\n• Q&A at end",
-      "links": [
-        {
-          "title": "Register",
-          "url": "https://example.com/register-commercial-clinic"
-        }
-      ]
-    }
-  ],
-
   "sections": [
     {
       "title": "Rates & Industry Guides",
