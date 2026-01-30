@@ -119,7 +119,8 @@
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/online-video-game-intensive-1"
         }
-      ]
+      ],
+      "provider": "Real Voice LA"
     },
     {
       "id": "voiceactorsnetwork-30644d18d3b8b4d9",
@@ -179,44 +180,6 @@
       ]
     },
     {
-      "id": "soundonstudio-17ae1b4e8397ab32",
-      "title": "Dubbing Live Action TV with Andy Roth!",
-      "host": "Sound On Studio",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-01-31T18:00:00-08:00",
-      "endAt": "2026-01-31T20:00:00-08:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Class Signup",
-          "url": "https://www.soundonstudio.com/classsignup"
-        }
-      ]
-    },
-    {
-      "id": "soundonstudio-0c0d62f335140168",
-      "title": "Dubbing Live Action TV with Andy Roth!",
-      "host": "Sound On Studio",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-01-31T18:00:00-08:00",
-      "endAt": "2026-01-31T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Class Signup",
-          "url": "https://www.soundonstudio.com/classsignup"
-        }
-      ]
-    },
-    {
       "id": "thevodojo-76443d1e938d404d",
       "title": "VO Dojo Event",
       "host": "The VO Dojo",
@@ -236,6 +199,46 @@
       ]
     },
     {
+      "id": "thevodojo-506c4bc2d3757983",
+      "title": "Refer-A-Friend: Spread the VO Love Contest",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-01T18:00:00-08:00",
+      "endAt": "2026-02-01T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
+    },
+    {
+      "id": "thevodojo-50f10d98fc455bc4",
+      "title": "When you refer a friend to the V.O. Dojo and they enroll in a program, you receive $100 in Dojo credit as a thank-you. I",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-01T18:00:00-08:00",
+      "endAt": "2026-02-01T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
+    },
+    {
       "id": "thevodojo-7b8369d69af6ed97",
       "title": "VO Dojo Event",
       "host": "The VO Dojo",
@@ -253,6 +256,46 @@
           "url": "https://www.thevodojo.com/upcoming-events-nav"
         }
       ]
+    },
+    {
+      "id": "thevodojo-622e81f7212ee261",
+      "title": "You Should Do Voiceover February",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-02T18:00:00-08:00",
+      "endAt": "2026-02-02T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
+    },
+    {
+      "id": "thevodojo-f30a86b590ced744",
+      "title": "Missed your chance to join in January?",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-02T18:00:00-08:00",
+      "endAt": "2026-02-02T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
     },
     {
       "id": "van-commercial-carli-silver-2026-02-03",
@@ -290,7 +333,8 @@
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/february-kids-teens-workout-class-pack"
         }
-      ]
+      ],
+      "provider": "Real Voice LA"
     },
     {
       "id": "realvoicela-62f3751575a06451",
@@ -309,7 +353,8 @@
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/february-in-person-intro-to-voiceover"
         }
-      ]
+      ],
+      "provider": "Real Voice LA"
     },
     {
       "id": "voiceactorsnetwork-0fd2f9a6ba1c1489",
@@ -350,14 +395,54 @@
       ]
     },
     {
+      "id": "thevodojo-9bf28f3742e97631",
+      "title": "Ask the Sensei with Kelli Tager",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-04T18:00:00-08:00",
+      "endAt": "2026-02-04T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
+    },
+    {
+      "id": "thevodojo-cc64ac9510bb3a8a",
+      "title": "This month’s",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-04T18:00:00-08:00",
+      "endAt": "2026-02-04T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
+    },
+    {
       "id": "realvoicela-bacb71afd3e2baec",
       "title": "Mastering Nerves: With Trine C. Jensen",
       "host": "Real Voice LA",
       "city": null,
       "state": null,
       "venue": "See listing",
-      "startAt": "2026-02-05T21:00:00-08:00",
-      "endAt": "2026-02-05T23:00:00-08:00",
+      "startAt": "2026-02-05T18:30:00-08:00",
+      "endAt": "2026-02-05T21:00:00-08:00",
       "registrationURL": "https://www.realvoicela.com/service-page/mastering-nerves-with-trine-c-jensen-1",
       "imageURL": null,
       "detail": null,
@@ -366,7 +451,8 @@
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/mastering-nerves-with-trine-c-jensen-1"
         }
-      ]
+      ],
+      "provider": "Real Voice LA"
     },
     {
       "id": "van-narration-jon-armond-2026-02-11",
@@ -426,6 +512,46 @@
       ]
     },
     {
+      "id": "thevodojo-8967f94762c55ae8",
+      "title": "Thursday, February 12th • VO Pro Fight Club • ANIMATION with BRENNA LARSEN",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-12T18:00:00-08:00",
+      "endAt": "2026-02-12T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
+    },
+    {
+      "id": "thevodojo-5cb5c8a49dc5fd90",
+      "title": "Brenna Larsen",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-12T18:00:00-08:00",
+      "endAt": "2026-02-12T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
+    },
+    {
       "id": "soundonstudio-88145c8db74a3d90",
       "title": "Booking Video Games with Katelyn Gault",
       "host": "Sound On Studio",
@@ -435,25 +561,6 @@
       "startAt": "2026-02-15T18:00:00-08:00",
       "endAt": "2026-02-15T20:00:00-08:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Class Signup",
-          "url": "https://www.soundonstudio.com/classsignup"
-        }
-      ]
-    },
-    {
-      "id": "soundonstudio-2d5ed3b51725404e",
-      "title": "Booking Video Games with Katelyn Gault",
-      "host": "Sound On Studio",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-15T18:00:00-08:00",
-      "endAt": "2026-02-15T20:00:00-08:00",
-      "registrationURL": null,
       "imageURL": null,
       "detail": null,
       "links": [
@@ -499,7 +606,28 @@
           "title": "Event Page",
           "url": "https://halpacademy.com/product/vo-workshop-with-lexington-vanderberg"
         }
-      ]
+      ],
+      "provider": "HALP Academy"
+    },
+    {
+      "id": "thevodojo-df8f09e3a67cda54",
+      "title": "Get to Know VO: The Playbook for Sports Voiceover with Steven Goard",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-18T18:00:00-08:00",
+      "endAt": "2026-02-18T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
     },
     {
       "id": "realvoicela-3d693743363f0c95",
@@ -518,7 +646,8 @@
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/in-person-level-two-video-game-intensive"
         }
-      ]
+      ],
+      "provider": "Real Voice LA"
     },
     {
       "id": "van-videogame-patrick-michalak-2026-02-19",
@@ -575,7 +704,8 @@
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/february-online-intro-to-voiceover"
         }
-      ]
+      ],
+      "provider": "Real Voice LA"
     },
     {
       "id": "voiceactorsnetwork-a68fa77a7f92e2a3",
@@ -613,7 +743,8 @@
           "title": "Event Page",
           "url": "https://halpacademy.com/product/vo-workshop-with-tasia-valenza"
         }
-      ]
+      ],
+      "provider": "HALP Academy"
     },
     {
       "id": "soundonstudio-200734a4e19a8d3c",
@@ -625,25 +756,6 @@
       "startAt": "2026-02-21T18:00:00-08:00",
       "endAt": "2026-02-21T20:00:00-08:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Class Signup",
-          "url": "https://www.soundonstudio.com/classsignup"
-        }
-      ]
-    },
-    {
-      "id": "soundonstudio-2a5daf33f6e7dbbe",
-      "title": "VO Pajama Party with Kirsten Day!",
-      "host": "Sound On Studio",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-21T18:00:00-08:00",
-      "endAt": "2026-02-21T20:00:00-08:00",
-      "registrationURL": null,
       "imageURL": null,
       "detail": null,
       "links": [
@@ -673,6 +785,26 @@
       ]
     },
     {
+      "id": "thevodojo-6f5e74fc7333f08a",
+      "title": "Sunday, February 22nd • VO Pro Fight Club • ANIME with LISA ORTIZ",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-22T18:00:00-08:00",
+      "endAt": "2026-02-22T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
+    },
+    {
       "id": "soundonstudio-ce47369ee9486277",
       "title": "Making Promos Pop! with Darius Marquis Johnson",
       "host": "Sound On Studio",
@@ -682,25 +814,6 @@
       "startAt": "2026-02-23T18:00:00-08:00",
       "endAt": "2026-02-23T20:00:00-08:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Class Signup",
-          "url": "https://www.soundonstudio.com/classsignup"
-        }
-      ]
-    },
-    {
-      "id": "soundonstudio-35229c58b154f154",
-      "title": "Making Promos Pop! with Darius Marquis Johnson",
-      "host": "Sound On Studio",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-23T18:00:00-08:00",
-      "endAt": "2026-02-23T20:00:00-08:00",
-      "registrationURL": null,
       "imageURL": null,
       "detail": null,
       "links": [
@@ -728,6 +841,26 @@
           "url": "https://www.thevodojo.com/upcoming-events-nav"
         }
       ]
+    },
+    {
+      "id": "thevodojo-88366bfb2f6b6a29",
+      "title": "Tuesday, February 24th • VO Pro Fight Club • COMMERCIALS with LISA FISCHOFF",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-24T18:00:00-08:00",
+      "endAt": "2026-02-24T20:00:00-08:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
     },
     {
       "id": "van-animation-bob-bergen-2026-02-25",
@@ -787,25 +920,6 @@
       ]
     },
     {
-      "id": "voiceactorsnetwork-8a5b3e1de9cab813",
-      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
-      "host": null,
-      "city": null,
-      "state": null,
-      "venue": "In Person",
-      "startAt": "2026-02-26T20:00:00-08:00",
-      "endAt": "2026-02-26T22:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "VAN Listing",
-          "url": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom"
-        }
-      ]
-    },
-    {
       "id": "realvoicela-b44ddcffd693a98a",
       "title": "March - ONLINE Commercial Bootcamp",
       "host": "Real Voice LA",
@@ -822,7 +936,8 @@
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/march-online-commercial-bootcamp"
         }
-      ]
+      ],
+      "provider": "Real Voice LA"
     },
     {
       "id": "realvoicela-57384177dc978872",
@@ -841,7 +956,8 @@
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/creating-characters-with-arianna-ratner-1"
         }
-      ]
+      ],
+      "provider": "Real Voice LA"
     },
     {
       "id": "thevodojo-f8729ef399fbae0e",
@@ -861,6 +977,66 @@
           "url": "https://www.thevodojo.com/upcoming-events-nav"
         }
       ]
+    },
+    {
+      "id": "thevodojo-494b2c6eabcecdf5",
+      "title": "VOA Breakout: Dude, B*tches, & Mothaf***ers: Activating Your POV for Infinite, Effortless, Badass ABC Takes with Tish Hi",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-03-27T18:00:00-07:00",
+      "endAt": "2026-03-27T20:00:00-07:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
+    },
+    {
+      "id": "thevodojo-418a76eae397b15b",
+      "title": "Ready to level up your takes in real time?",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-03-27T18:00:00-07:00",
+      "endAt": "2026-03-27T20:00:00-07:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
+    },
+    {
+      "id": "thevodojo-24de962abe964240",
+      "title": "Join the VO Dojo Email List!",
+      "host": "The VO Dojo",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-03-27T18:00:00-07:00",
+      "endAt": "2026-03-27T20:00:00-07:00",
+      "registrationURL": null,
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Upcoming Events",
+          "url": "https://www.thevodojo.com/upcoming-events-nav"
+        }
+      ],
+      "provider": "The VO Dojo"
     },
     {
       "id": "voiceactorsnetwork-6c9148819e50cf34",
