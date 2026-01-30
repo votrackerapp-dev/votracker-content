@@ -1,17 +1,19 @@
 name: Sync Workshops
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   schedule:
-    # Daily at 16:10 UTC (~8:10am PT, DST may shift)
-    - cron: "10 16 * * *"
-
-permissions:
-  contents: write
+    # Every day at 10:15am PT-ish (GitHub runs UTC; adjust if you want exact)
+    - cron: "15 18 * * *"
 
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      RESOURCES_JSON_PATH: "votracker-content/resources.json"
+      SOURCES_JSON_PATH: "config/workshop_sources.json"
+      DEFAULT_TZ: "America/Los_Angeles"
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,27 +23,22 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 python-dateutil icalendar feedparser
+          pip install requests beautifulsoup4 python-dateutil
 
-      - name: Sync workshops into resources.json
-        env:
-          RESOURCES_JSON_PATH: "resources.json"               # <-- change if needed
-          SOURCES_CONFIG_PATH: "config/workshop_sources.json"  # <-- change if needed
-          TIMEZONE_LABEL: "America/Los_Angeles"
+      - name: Run sync
         run: |
-          python scripts/sync_workshops.py
+          python scripts/sync_workshops.py \
+            --resources "$RESOURCES_JSON_PATH" \
+            --sources "$SOURCES_JSON_PATH" \
+            --default-tz "$DEFAULT_TZ"
 
-      - name: Commit changes if any
+      - name: Commit changes (if any)
         run: |
-          if git diff --quiet; then
-            echo "No changes."
-            exit 0
-          fi
-          git config user.name "vo-tracker-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add "${RESOURCES_JSON_PATH}" || true
-          git commit -m "chore: sync workshops"
+          git config user.name "votracker-bot"
+          git config user.email "actions@github.com"
+          git add "$RESOURCES_JSON_PATH"
+          git diff --cached --quiet || git commit -m "Sync workshops"
           git push
