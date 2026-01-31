@@ -776,7 +776,7 @@ def extract_soundonstudio_classsignup(source: Dict[str, Any], default_tz: str) -
 def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
     """
     Scrape The VO Pros events pages.
-    IMPROVED: Better title extraction to avoid generic "THE VO PROS" titles
+    COMPLETELY REWRITTEN: Now extracts from URL slug as last resort
     """
     index_html = fetch_html(source["url"])
     soup = BeautifulSoup(index_html, "html.parser")
@@ -799,50 +799,74 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
             ps = BeautifulSoup(html, "html.parser")
             txt = ps.get_text("\n")
 
-            # IMPROVED: Better title extraction with multiple fallbacks
+            # REWRITTEN: More aggressive title extraction
             title = None
             
-            # Try 1: Look for h1 that's NOT the site name
+            # Try 1: Look for ANY h1 that's meaningful (>10 chars)
             h1_tags = ps.find_all("h1")
             for h1 in h1_tags:
-                potential_title = safe_text(h1.get_text(" ", strip=True), 200)
-                if potential_title and potential_title.upper() not in ["THE VO PROS", "THEVOPROS", "VO PROS"]:
-                    title = potential_title
+                potential = safe_text(h1.get_text(" ", strip=True), 200)
+                if potential and len(potential) > 10 and potential.upper() not in ["THE VO PROS", "THEVOPROS", "VO PROS", "EVENTS"]:
+                    title = potential
+                    log(f"  [VOPros] Found h1: '{title[:40]}...'")
                     break
             
-            # Try 2: Look for h2 if h1 didn't work
-            if not title or title.upper() in ["THE VO PROS", "THEVOPROS"]:
-                h2_tags = ps.find_all("h2")
-                for h2 in h2_tags:
-                    potential_title = safe_text(h2.get_text(" ", strip=True), 200)
-                    if potential_title and len(potential_title) > 10 and potential_title.upper() not in ["THE VO PROS", "THEVOPROS", "VO PROS"]:
-                        title = potential_title
+            # Try 2: Look for h2/h3 with meaningful content
+            if not title or title.upper() in ["THE VO PROS", "THEVOPROS", "EVENTS"]:
+                for tag in ["h2", "h3"]:
+                    headers = ps.find_all(tag)
+                    for h in headers:
+                        potential = safe_text(h.get_text(" ", strip=True), 200)
+                        if potential and len(potential) > 10 and potential.upper() not in ["THE VO PROS", "THEVOPROS", "VO PROS", "EVENTS", "SHOP", "UPCOMING"]:
+                            title = potential
+                            log(f"  [VOPros] Found {tag}: '{title[:40]}...'")
+                            break
+                    if title:
                         break
             
-            # Try 3: Extract from page title (remove "The VO Pros |" prefix)
-            if not title or title.upper() in ["THE VO PROS", "THEVOPROS"]:
+            # Try 3: Page title tag - aggressively strip site name
+            if not title or title.upper() in ["THE VO PROS", "THEVOPROS", "EVENTS"]:
                 if ps.title:
                     page_title = ps.title.get_text(" ", strip=True)
-                    # Remove site name from title
-                    page_title = re.sub(r'^(The\s+)?VO\s*Pros\s*[|:-]\s*', '', page_title, flags=re.IGNORECASE)
-                    if page_title and len(page_title) > 10:
-                        title = safe_text(page_title, 200)
+                    # Remove ALL variations of site name
+                    cleaned = re.sub(r'^(The\s+)?VO\s*Pros\s*[|:\-–—\s]*', '', page_title, flags=re.IGNORECASE)
+                    cleaned = re.sub(r'[|:\-–—\s]*(The\s+)?VO\s*Pros$', '', cleaned, flags=re.IGNORECASE)
+                    cleaned = cleaned.strip()
+                    if cleaned and len(cleaned) > 10:
+                        title = safe_text(cleaned, 200)
+                        log(f"  [VOPros] From page title: '{title[:40]}...'")
             
-            # Try 4: Extract from meta description
+            # Try 4: Meta tags (og:title, description)
             if not title or title.upper() in ["THE VO PROS", "THEVOPROS"]:
-                meta_desc = ps.find("meta", attrs={"name": "description"}) or ps.find("meta", attrs={"property": "og:title"})
-                if meta_desc and meta_desc.get("content"):
-                    meta_content = meta_desc.get("content", "")
-                    meta_content = re.sub(r'^(The\s+)?VO\s*Pros\s*[|:-]\s*', '', meta_content, flags=re.IGNORECASE)
-                    if meta_content and len(meta_content) > 10:
-                        title = safe_text(meta_content, 200)
+                for meta in ps.find_all("meta"):
+                    if meta.get("property") == "og:title" or meta.get("name") == "description":
+                        content = meta.get("content", "")
+                        cleaned = re.sub(r'^(The\s+)?VO\s*Pros\s*[|:\-–—\s]*', '', content, flags=re.IGNORECASE)
+                        cleaned = re.sub(r'[|:\-–—\s]*(The\s+)?VO\s*Pros$', '', cleaned, flags=re.IGNORECASE)
+                        cleaned = cleaned.strip()
+                        if cleaned and len(cleaned) > 10:
+                            title = safe_text(cleaned, 200)
+                            log(f"  [VOPros] From meta: '{title[:40]}...'")
+                            break
             
-            # If still no good title, skip this event
+            # Try 5: LAST RESORT - Parse URL slug and make it readable
             if not title or title.upper() in ["THE VO PROS", "THEVOPROS", "VO PROS"] or len(title) < 5:
-                log(f"  [VOPros] SKIPPING - no valid title found for {ev_url}")
-                continue
+                # Extract from URL: /events/agent-night-john-smith → "Agent Night John Smith"
+                url_parts = ev_url.split("/events/")
+                if len(url_parts) > 1:
+                    slug = url_parts[1].split("?")[0].rstrip("/")
+                    # Convert slug to title: replace dashes/underscores with spaces, title case
+                    title = slug.replace("-", " ").replace("_", " ").strip()
+                    title = " ".join(word.capitalize() for word in title.split())
+                    if title and len(title) > 5:
+                        log(f"  [VOPros] From URL slug: '{title[:40]}...'")
+                    else:
+                        title = None
             
-            log(f"  [VOPros] Title: '{title[:50]}...'")
+            # If STILL no good title after all attempts, skip
+            if not title or title.upper() in ["THE VO PROS", "THEVOPROS", "VO PROS"] or len(title) < 5:
+                log(f"  [VOPros] SKIPPING - exhausted all title extraction methods for {ev_url}")
+                continue
 
             # Try multiple date patterns
             date_patterns = [
@@ -860,36 +884,19 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
                         break
 
             if not base_date:
-                log(f"  [VOPros] No date found in {ev_url}")
+                log(f"  [VOPros] No date found, skipping")
                 continue
 
-            # Try multiple time patterns - IMPROVED: Check title first
-            sh, sm, eh, em = extract_time_from_text(title)
-            if sh is None:
-                # Try page text
-                time_patterns = [
-                    r"Event Time:\s*([0-9:]+\s*(?:am|pm)?(?:\s*[-–to]+\s*[0-9:]+\s*(?:am|pm))?)",
-                    r"Time:\s*([0-9:]+\s*(?:am|pm)?(?:\s*[-–to]+\s*[0-9:]+\s*(?:am|pm))?)",
-                    r"(\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*[-–to]+\s*\d{1,2}(?::\d{2})?\s*(?:am|pm))",
-                    r"(\d{1,2}(?::\d{2})?\s*(?:am|pm))",
-                ]
-                
-                time_str = ""
-                for pattern in time_patterns:
-                    time_m = re.search(pattern, txt, re.IGNORECASE)
-                    if time_m:
-                        time_str = time_m.group(1)
-                        break
-                
-                log(f"  [VOPros] time_str='{time_str}'")
-                start, end = apply_time_to_date(base_date, time_str if time_str else txt, default_tz)
-            else:
-                # Use extracted time from title
+            # Time extraction - check title AND text
+            sh, sm, eh, em = extract_time_from_text(title + " " + txt[:500])
+            if sh is not None:
                 start = base_date.replace(hour=sh, minute=sm, second=0, microsecond=0)
                 end = base_date.replace(hour=eh, minute=em, second=0, microsecond=0)
                 tzinfo = datetz.gettz(default_tz)
                 start = start.replace(tzinfo=tzinfo)
                 end = end.replace(tzinfo=tzinfo)
+            else:
+                start, end = apply_time_to_date(base_date, txt, default_tz)
 
             start_s = isoformat_with_tz(start, default_tz)
             end_s = isoformat_with_tz(end, default_tz)
@@ -924,6 +931,9 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
                 "detail": None,
                 "links": [{"title": "Event Page", "url": reg}] if reg else None
             })
+            
+            log(f"  [VOPros] ✓ Added: '{title[:40]}...' on {base_date.strftime('%m/%d')}")
+            
         except Exception as e:
             log(f"  [VOPros] Error on {ev_url}: {e}")
             continue
