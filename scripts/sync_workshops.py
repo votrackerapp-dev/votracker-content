@@ -1136,175 +1136,146 @@ def extract_wix_service_list(source: Dict[str, Any], default_tz: str) -> List[Di
 
 def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
     """
-    VO Dojo - IMPROVED to filter junk and avoid duplicates
+    VO Dojo - STRICT parsing:
+    - Must include instructor name ("with First Last" optionally "Sensei")
+    - Must include a date AND time in the same instructor section
+    - No promo / non-class items
+    - Extract the actual time (no 6pm default unless truly missing)
     """
     html = fetch_html(source["url"], source.get("headers"))
     soup = BeautifulSoup(html, "html.parser")
     full_text = soup.get_text("\n")
-    
-    # Junk titles to skip
-    JUNK_PATTERNS = [
-        r"^vo\s*dojo\s*event$",
-        r"^join",
-        r"mailing\s*list",
-        r"newsletter",
-        r"subscribe",
-        r"sign\s*up\s*for",
-        r"follow\s*us",
-        r"contact",
-        r"about\s*us",
-        r"home$",
-        r"^menu$",
-        r"privacy",
-        r"terms",
-        r"copyright",
-        r"^\d+$",  # Just numbers
-        r"^[A-Za-z]{1,3}$",  # Very short strings
+
+    # Normalize lines
+    raw_lines = [ln.strip() for ln in full_text.split("\n")]
+    lines = [ln for ln in raw_lines if ln]
+
+    promo_kws = [
+        "refer a friend",
+        "missed your chance",
+        "join now",
+        "enroll",
+        "enrollment",
+        "limited time",
+        "discount",
+        "coupon",
+        "sale",
+        "newsletter",
+        "mailing list",
+        "subscribe",
+        "donate",
+        "promotion",
+        "promo",
     ]
-    
-    def is_junk_title(title: str) -> bool:
-        lower = title.lower().strip()
-        if len(lower) < 5:
-            return True
-        for pattern in JUNK_PATTERNS:
-            if re.search(pattern, lower, re.IGNORECASE):
-                return True
-        return False
-    
-    events: List[Dict[str, Any]] = []
-    date_re = re.compile(r"([A-Za-z]{3,9}\s+\d{1,2},?\s+\d{4})")
-    
-    # Track events by date+time to avoid duplicates
+
+    # Instructor requirement — this is your hard rule
+    instructor_re = re.compile(r"\bwith\s+(?:sensei\s+)?([a-z]+(?:\s+[a-z]+)+)\b", re.IGNORECASE)
+
+    # Date+time patterns VO Dojo uses (very inconsistent)
+    # Examples:
+    #  - "February 4th @ 10:00-11:15AM PST"
+    #  - "Thursday February 12,2026 - 5:30PM PST"
+    months = r"(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)"
+    weekday = r"(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)"
+
+    # Captures:
+    #   month, day, optional year, time_blob
+    dt_re = re.compile(
+        rf"\b(?:{weekday}\s+)?({months})\s+(\d{{1,2}})(?:st|nd|rd|th)?"
+        rf"(?:\s*,?\s*(\d{{4}}))?\s*"
+        rf"(?:@|[-–—]\s*)\s*"
+        rf"("
+        rf"\d{{1,2}}(?::\d{{2}})?(?:\s*(?:am|pm))?"
+        rf"(?:\s*[-–—to]+\s*\d{{1,2}}(?::\d{{2}})?\s*(?:am|pm))?"
+        rf")\s*(?:pt|pst|pdt)?\b",
+        re.IGNORECASE,
+    )
+
     events_by_datetime: Dict[str, Dict[str, Any]] = {}
-    
-    lines = full_text.split('\n')
-    
-    i = 0
-    while i < len(lines):
-        line = lines[i].strip()
-        date_match = date_re.search(line)
-        
-        if date_match:
-            date_str = date_match.group(1)
-            base = parse_date_any(date_str, default_tz)
-            
-            if base:
-                event_lines = [line]
-                j = i + 1
-                lines_collected = 0
-                
-                while j < len(lines) and lines_collected < 10:
-                    next_line = lines[j].strip()
-                    if not next_line:
-                        j += 1
-                        continue
-                    if date_re.search(next_line):
-                        break
-                    event_lines.append(next_line)
-                    lines_collected += 1
-                    j += 1
-                
-                event_text = '\n'.join(event_lines)
-                
-                # Extract time
-                start, end = apply_time_to_date(base, event_text, default_tz)
-                start_s = isoformat_with_tz(start, default_tz)
-                end_s = isoformat_with_tz(end, default_tz)
-                
-                # Find best title from event lines
-                title = None
-                for el in event_lines:
-                    el_clean = el.strip()
-                    # Skip date-only lines
-                    if date_re.fullmatch(el_clean):
-                        continue
-                    # Skip very short or junk
-                    if is_junk_title(el_clean):
-                        continue
-                    # Skip lines that look like times only
-                    if re.fullmatch(r"[\d:]+\s*(am|pm)?(\s*[-–]\s*[\d:]+\s*(am|pm)?)?", el_clean, re.IGNORECASE):
-                        continue
-                    # Found a good title
-                    title = safe_text(el_clean, 150)
-                    break
-                
-                # Skip if no good title found
-                if not title:
-                    log(f"  [VODojo] Skipping event at {date_str} - no good title found")
-                    i = j
-                    continue
-                
 
-                # Strict VO Dojo rule: ONLY keep real workshops that include an instructor name.
-                # Examples that should pass:
-                #   "... with Brenna Larsen"
-                #   "... with Sensei Lisa Ortiz"
-                # Examples that should fail:
-                #   "Missed your chance to join?"
-                #   "When you refer a friend..."
-                lower_title = title.lower()
-                promo_kws = [
-                    "refer a friend",
-                    "missed your chance",
-                    "join now",
-                    "enroll",
-                    "enrollment",
-                    "limited time",
-                    "discount",
-                    "coupon",
-                    "sale",
-                    "free",
-                    "newsletter",
-                    "mailing list",
-                    "subscribe",
-                    "donate",
-                ]
-                if any(k in lower_title for k in promo_kws):
-                    log(f"  [VODojo] Skipping promo/non-class: {title[:60]}")
-                    i = j
-                    continue
+    def contains_promo(text: str) -> bool:
+        lt = text.lower()
+        return any(k in lt for k in promo_kws)
 
-                # Require "with <First> <Last>" (optionally "Sensei" after with)
-                if not re.search(r"\bwith\s+(?:sensei\s+)?[a-z]+\s+[a-z]+\b", lower_title, re.IGNORECASE):
-                    log(f"  [VODojo] Skipping non-class (no instructor): {title[:60]}")
-                    i = j
-                    continue
+    for i, line in enumerate(lines):
+        # Find an instructor line (this is our "section anchor")
+        if not instructor_re.search(line):
+            continue
 
-                # Use date+time as key for deduplication
-                datetime_key = start_s[:16]  # "2026-01-30T19:00"
-                
-                # If we already have an event at this datetime, prefer the better title
-                if datetime_key in events_by_datetime:
-                    existing = events_by_datetime[datetime_key]
-                    existing_title = existing.get("title", "")
-                    # Keep the more descriptive title (longer, not generic)
-                    if len(title) > len(existing_title) or "event" in existing_title.lower():
-                        log(f"  [VODojo] Replacing '{existing_title[:30]}' with '{title[:30]}' at {datetime_key}")
-                        existing["title"] = title
-                        existing["id"] = compute_event_id(source["id"], title, start_s, None)
-                else:
-                    # New event
-                    log(f"  [VODojo] Found: {title[:50]}... @ {start_s}")
-                    events_by_datetime[datetime_key] = {
-                        "id": compute_event_id(source["id"], title, start_s, None),
-                        "title": title,
-                        "host": source.get("name"),
-                        "city": None,
-                        "state": None,
-                        "venue": "See listing",
-                        "startAt": start_s,
-                        "endAt": end_s,
-                        "registrationURL": None,
-                        "imageURL": None,
-                        "detail": None,
-                        "links": [{"title": "Upcoming Events", "url": normalize_url(source["url"])}]
-                    }
-                
-                i = j
-                continue
-        
-        i += 1
-    
+        # Skip promo anchors outright
+        if contains_promo(line):
+            log(f"  [VODojo] Skipping promo anchor: {line[:70]}")
+            continue
+
+        # Build a “section window” following this instructor line.
+        # VO Dojo often puts the date/time further down, so scan deeper.
+        window = "\n".join(lines[i : i + 120])
+
+        # If the section contains obvious promo garbage, drop it
+        if contains_promo(window):
+            log(f"  [VODojo] Skipping promo section: {line[:70]}")
+            continue
+
+        m = dt_re.search(window)
+        if not m:
+            # If no date+time exists in this instructor section, skip it.
+            # This prevents “promo” or “info” posts from turning into 6pm defaults.
+            log(f"  [VODojo] Skipping (no date+time found near): {line[:70]}")
+            continue
+
+        month_txt = m.group(1)
+        day_txt = m.group(2)
+        year_txt = m.group(3)  # can be None
+        time_blob = m.group(4)
+
+        # Construct a base date
+        if year_txt:
+            base = parse_date_any(f"{month_txt} {day_txt} {year_txt}", default_tz)
+        else:
+            base = infer_year_for_month_day(f"{month_txt} {day_txt}", default_tz)
+
+        if not base:
+            log(f"  [VODojo] Could not parse date for: {month_txt} {day_txt} {year_txt or ''}".strip())
+            continue
+
+        # Apply the extracted time blob (this is the important part)
+        start_dt, end_dt = apply_time_to_date(base, time_blob, default_tz)
+        start_s = isoformat_with_tz(start_dt, default_tz)
+        end_s = isoformat_with_tz(end_dt, default_tz)
+
+        # Title: keep the instructor line as title (it already contains “with Name”)
+        title = safe_text(line, 150)
+
+        # Enforce instructor requirement (again) – hard rule
+        if not re.search(r"\bwith\s+(?:sensei\s+)?[a-z]+\s+[a-z]+\b", title or "", re.IGNORECASE):
+            log(f"  [VODojo] Skipping (no instructor in title): {title[:70] if title else ''}")
+            continue
+
+        # Deduplicate by start date+time
+        datetime_key = start_s[:16]
+        if datetime_key in events_by_datetime:
+            # Keep longer/more descriptive title
+            existing = events_by_datetime[datetime_key]
+            if title and len(title) > len(existing.get("title", "")):
+                existing["title"] = title
+                existing["id"] = compute_event_id(source["id"], title, start_s, None)
+        else:
+            log(f"  [VODojo] Found: {title[:60]} @ {start_s}")
+            events_by_datetime[datetime_key] = {
+                "id": compute_event_id(source["id"], title or "VO Dojo Workshop", start_s, None),
+                "title": title or "VO Dojo Workshop",
+                "host": source.get("name"),
+                "city": None,
+                "state": None,
+                "venue": "See listing",
+                "startAt": start_s,
+                "endAt": end_s,
+                "registrationURL": None,
+                "imageURL": None,
+                "detail": None,
+                "links": [{"title": "Upcoming Events", "url": normalize_url(source["url"])}],
+            }
+
     events = list(events_by_datetime.values())
     log(f"  [VODojo] Found {len(events)} unique events")
     return events
