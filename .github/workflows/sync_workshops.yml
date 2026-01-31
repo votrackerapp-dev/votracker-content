@@ -30,6 +30,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4 python-dateutil
 
+      - name: Debug — show scraper + sources actually used
+        run: |
+          echo "== Repo tree (scripts + config) =="
+          ls -la scripts || true
+          ls -la config || true
+          echo ""
+          echo "== First 80 lines of scripts/sync_workshops.py =="
+          sed -n '1,80p' scripts/sync_workshops.py || true
+          echo ""
+          echo "== Show config/workshop_sources.json =="
+          cat config/workshop_sources.json || true
+          echo ""
+          echo "== Grep for missing studios/extractors =="
+          grep -nE "thevopros|redscythe|voicetraxwest|adventuresinvoiceacting|vodojo" -n scripts/sync_workshops.py || true
+          grep -nE "thevopros|redscythe|voicetraxwest|adventuresinvoiceacting|vodojo" -n config/workshop_sources.json || true
+
       - name: Run sync
         run: |
           python scripts/sync_workshops.py \
