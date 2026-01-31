@@ -30,28 +30,41 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4 python-dateutil
 
-      - name: Debug — show scraper + sources actually used
-        run: |
-          echo "== Repo tree (scripts + config) =="
-          ls -la scripts || true
-          ls -la config || true
-          echo ""
-          echo "== First 80 lines of scripts/sync_workshops.py =="
-          sed -n '1,80p' scripts/sync_workshops.py || true
-          echo ""
-          echo "== Show config/workshop_sources.json =="
-          cat config/workshop_sources.json || true
-          echo ""
-          echo "== Grep for missing studios/extractors =="
-          grep -nE "thevopros|redscythe|voicetraxwest|adventuresinvoiceacting|vodojo" -n scripts/sync_workshops.py || true
-          grep -nE "thevopros|redscythe|voicetraxwest|adventuresinvoiceacting|vodojo" -n config/workshop_sources.json || true
-
       - name: Run sync
         run: |
           python scripts/sync_workshops.py \
             --resources "$RESOURCES_JSON_PATH" \
             --sources "$SOURCES_JSON_PATH" \
             --default-tz "$DEFAULT_TZ"
+
+      # ========================================
+      # NEW: Quality Check with Diagnostics
+      # ========================================
+      - name: Quality Check - Run Diagnostics
+        run: |
+          echo "========================================"
+          echo "🔍 RUNNING WORKSHOP QUALITY DIAGNOSTICS"
+          echo "========================================"
+          python diagnose_workshops.py resources.json || true
+          echo ""
+          echo "========================================"
+        continue-on-error: true
+        # continue-on-error means if diagnostic fails, workflow continues
+
+      # ========================================
+      # NEW: Quick Summary Stats
+      # ========================================
+      - name: Quick Stats
+        run: |
+          echo "📊 Quick Workshop Stats:"
+          echo "  Total workshops: $(cat resources.json | jq '.workshops | length')"
+          echo "  By provider:"
+          cat resources.json | jq -r '.workshops | group_by(.provider) | map("    \(.[0].provider): \(length) events") | .[]' | sort
+          echo ""
+          echo "  Events with generic titles:"
+          cat resources.json | jq '[.workshops[] | select(.title | test("^(THE VO PROS|Workshop|Class|Event)$"; "i"))] | length'
+          echo ""
+        continue-on-error: true
 
       - name: Commit changes (if any)
         run: |
