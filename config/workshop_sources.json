@@ -35,7 +35,9 @@
       "extractor": "tidycal_index",
       "timezone": "America/Los_Angeles",
       "headers": {
-        "User-Agent": "Mozilla/5.0"
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9"
       },
       "filters": {
         "exclude_title_contains": [
@@ -86,6 +88,11 @@
       "calendarSupport": {
         "type": "unknown",
         "notes": "No public .ics/iCal feed found from the source listing page; may exist behind booking/checkout or JS."
+      },
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9"
       }
     },
     {
@@ -112,12 +119,17 @@
     {
       "id": "thevodojo",
       "name": "The VO Dojo",
-      "url": "https://www.thevodojo.com/new-events",
+      "url": "https://www.thevodojo.com/upcoming-events-nav",
       "extractor": "vodojo_upcoming",
       "calendarSupport": {
         "type": "per-event",
         "confirmed": true,
         "notes": "The /new-events listing includes direct ICS links for each event."
+      },
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9"
       }
     }
   ],
