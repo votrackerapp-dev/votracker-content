@@ -17,7 +17,15 @@
         "Accept-Language": "en-US,en;q=0.9"
       },
       "prefer_reader": false,
-      "max_event_pages": 25
+      "max_event_pages": 25,
+      "filters": {
+        "exclude_title_regex": [
+          "(?i)refer[- ]?a[- ]?friend",
+          "(?i)blog",
+          "(?i)podcast",
+          "(?i)announcement"
+        ]
+      }
     },
     {
       "id": "redscythe_tidycal_classes",
@@ -46,7 +54,9 @@
           "(?i)consult",
           "(?i)coach(ing)?",
           "(?i)one\\s*-?on\\s*-?one",
-          "(?i)\\b1\\s*:\\s*1\\b"
+          "(?i)\\b1\\s*:\\s*1\\b",
+          "(?i)private\\s+session",
+          "(?i)individual\\s+session"
         ],
         "require_title_contains_any": [
           "class",
@@ -57,7 +67,9 @@
           "dubbing",
           "commercial",
           "animation",
-          "anime"
+          "anime",
+          "acting",
+          "training"
         ]
       }
     },
@@ -85,13 +97,29 @@
       "name": "Adventures in Voice Acting",
       "url": "https://www.adventuresinvoiceacting.com/",
       "extractor": "aiva_upcoming_schedule",
-      "allow_zero_events": true
+      "allow_zero_events": true,
+      "filters": {
+        "exclude_title_regex": [
+          "(?i)ongoing",
+          "(?i)continuous",
+          "(?i)membership",
+          "(?i)subscription"
+        ]
+      }
     },
     {
       "id": "realvoicela",
       "name": "Real Voice LA",
       "url": "https://www.realvoicela.com/classes",
-      "extractor": "wix_service_list"
+      "extractor": "wix_service_list",
+      "filters": {
+        "exclude_title_regex": [
+          "(?i)\\d+\\s*-?\\s*week",
+          "(?i)\\d+\\s*-?\\s*month",
+          "(?i)ongoing",
+          "(?i)monthly"
+        ]
+      }
     },
     {
       "id": "thevodojo",
@@ -100,24 +128,24 @@
       "extractor": "vodojo_upcoming",
       "filters": {
         "exclude_title_regex": [
-          "refer[- ]?a[- ]?friend",
-          "get to know vo",
-          "missed your chance",
-          "blog",
-          "podcast",
-          "announcement",
-          "advertis",
-          "promo",
-          "coupon",
-          "discount",
-          "giveaway",
-          "waitlist",
-          "gift\\s*card",
-          "contest",
-          "mailing\\s*list",
-          "email\\s*list",
-          "newsletter",
-          "subscribe"
+          "(?i)refer[- ]?a[- ]?friend",
+          "(?i)get to know vo",
+          "(?i)missed your chance",
+          "(?i)blog",
+          "(?i)podcast",
+          "(?i)announcement",
+          "(?i)advertis",
+          "(?i)promo",
+          "(?i)coupon",
+          "(?i)discount",
+          "(?i)giveaway",
+          "(?i)waitlist",
+          "(?i)gift\\s*card",
+          "(?i)contest",
+          "(?i)mailing\\s*list",
+          "(?i)email\\s*list",
+          "(?i)newsletter",
+          "(?i)subscribe"
         ]
       }
     }
