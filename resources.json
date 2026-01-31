@@ -114,13 +114,14 @@
       "registrationURL": "https://www.realvoicela.com/service-page/online-video-game-intensive-1",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/online-video-game-intensive-1"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
     },
     {
       "id": "realvoicela-f7a119768dc53efb",
@@ -134,13 +135,56 @@
       "registrationURL": "https://www.realvoicela.com/service-page/january-accents-for-video-games",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/january-accents-for-video-games"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-30644d18d3b8b4d9",
+      "title": "Crafting Characters for your Auditions - Carrie Keranen | Wednesday, January 28th, 2026 | 7-10pm PT | In Person",
+      "host": "Voice Actors Network",
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-01-28T19:00:00-08:00",
+      "endAt": "2026-01-28T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/crafting-characters-for-your-auditions-carrie-keranen-wednesday-january-28th-2026-7-10pm-pt-in-person",
+      "imageURL": null,
+      "detail": null,
+      "provider": "voiceactorsnetwork",
+      "providerLabel": "Voice Actors Network",
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/crafting-characters-for-your-auditions-carrie-keranen-wednesday-january-28th-2026-7-10pm-pt-in-person"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-7ddecdd983f9c9a8",
+      "title": "Animation Clinic - Katie McWane| Thursday, January 29th, 2026 | 5-8pm PT | Zoom",
+      "host": "Voice Actors Network",
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-01-29T17:00:00-08:00",
+      "endAt": "2026-01-29T20:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-january-29th-2026-5-8pm-pt-zoom",
+      "imageURL": null,
+      "detail": null,
+      "provider": "voiceactorsnetwork",
+      "providerLabel": "Voice Actors Network",
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-january-29th-2026-5-8pm-pt-zoom"
+        }
+      ]
     },
     {
       "id": "realvoicela-19ca254699d175a4",
@@ -154,13 +198,14 @@
       "registrationURL": "https://www.realvoicela.com/service-page/in-person-games-auditioning-and-advice-3",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/in-person-games-auditioning-and-advice-3"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
     },
     {
       "id": "soundonstudio-0c0d62f335140168",
@@ -174,13 +219,14 @@
       "registrationURL": "https://www.soundonstudio.com/classsignup",
       "imageURL": null,
       "detail": null,
+      "provider": "soundonstudio",
+      "providerLabel": "Sound On Studio",
       "links": [
         {
           "title": "Class Signup",
           "url": "https://www.soundonstudio.com/classsignup"
         }
-      ],
-      "provider": "Sound On Studio"
+      ]
     },
     {
       "id": "thevopros-1cc9edb0d1e9185e",
@@ -194,13 +240,14 @@
       "registrationURL": "https://www.thevopros.com/events/manager-night-sumeet-iyengar-cope-management-2",
       "imageURL": null,
       "detail": null,
+      "provider": "thevopros",
+      "providerLabel": "The VO Pros",
       "links": [
         {
           "title": "Event Page",
           "url": "https://www.thevopros.com/events/manager-night-sumeet-iyengar-cope-management-2"
         }
-      ],
-      "provider": "The VO Pros"
+      ]
     },
     {
       "id": "van-commercial-carli-silver-2026-02-03",
@@ -222,24 +269,46 @@
       ]
     },
     {
-      "id": "realvoicela-819e8f459fb28614",
-      "title": "February Kids & Teens Workout Class Pack",
-      "host": "Real Voice LA",
+      "id": "voiceactorsnetwork-a68fa77a7f92e2a3",
+      "title": "AUDIT A CLINIC - FEBRUARY 2026",
+      "host": "Voice Actors Network",
       "city": null,
       "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-03T18:00:00-08:00",
-      "endAt": "2026-02-03T20:00:00-08:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/february-kids-teens-workout-class-pack",
+      "venue": "In Person",
+      "startAt": "2026-02-03T16:00:00-08:00",
+      "endAt": "2026-02-03T19:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-february-2026",
       "imageURL": null,
       "detail": null,
+      "provider": "voiceactorsnetwork",
+      "providerLabel": "Voice Actors Network",
       "links": [
         {
-          "title": "Listing",
-          "url": "https://www.realvoicela.com/service-page/february-kids-teens-workout-class-pack"
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-february-2026"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-0fd2f9a6ba1c1489",
+      "title": "Commercial Clinic - Carli Silver| Tuesday, February 3rd, 2026 | 4-7pm PT | Zoom",
+      "host": "Voice Actors Network",
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-02-03T16:00:00-08:00",
+      "endAt": "2026-02-03T19:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-cari-silver-tuesday-february-3rd-2026-4-7pm-pt-zoom",
+      "imageURL": null,
+      "detail": null,
+      "provider": "voiceactorsnetwork",
+      "providerLabel": "Voice Actors Network",
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-cari-silver-tuesday-february-3rd-2026-4-7pm-pt-zoom"
+        }
+      ]
     },
     {
       "id": "realvoicela-62f3751575a06451",
@@ -253,13 +322,14 @@
       "registrationURL": "https://www.realvoicela.com/service-page/february-in-person-intro-to-voiceover",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/february-in-person-intro-to-voiceover"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
     },
     {
       "id": "realvoicela-bacb71afd3e2baec",
@@ -273,13 +343,35 @@
       "registrationURL": "https://www.realvoicela.com/service-page/mastering-nerves-with-trine-c-jensen-1",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/mastering-nerves-with-trine-c-jensen-1"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
+    },
+    {
+      "id": "redscythe_tidycal_classes-c4de3c1e021714ce",
+      "title": "BRITTANY COX — strong reads that book the room",
+      "host": "BRITTANY COX",
+      "city": null,
+      "state": null,
+      "venue": null,
+      "startAt": "2026-02-07T10:00:00-08:00",
+      "endAt": "2026-02-07T13:00:00-08:00",
+      "registrationURL": "https://tidycal.com/redscythestudio",
+      "imageURL": null,
+      "detail": "Red Scythe Studio",
+      "provider": "redscythe_tidycal_classes",
+      "providerLabel": "Red Scythe Studio",
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://tidycal.com/redscythestudio"
+        }
+      ]
     },
     {
       "id": "realvoicela-4f99c256126f9d8b",
@@ -293,13 +385,14 @@
       "registrationURL": "https://www.realvoicela.com/service-page/february-games-auditioning-and-advice",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/february-games-auditioning-and-advice"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
     },
     {
       "id": "thevopros-35eddf7d7df54cc5",
@@ -313,13 +406,14 @@
       "registrationURL": "https://www.thevopros.com/events/agent-night-arielle-negrin-atlas-talent-3",
       "imageURL": null,
       "detail": null,
+      "provider": "thevopros",
+      "providerLabel": "The VO Pros",
       "links": [
         {
           "title": "Event Page",
           "url": "https://www.thevopros.com/events/agent-night-arielle-negrin-atlas-talent-3"
         }
-      ],
-      "provider": "The VO Pros"
+      ]
     },
     {
       "id": "van-narration-jon-armond-2026-02-11",
@@ -341,6 +435,27 @@
       ]
     },
     {
+      "id": "voiceactorsnetwork-8db34e8192be3ec9",
+      "title": "Narration Clinic - Jon Armond| Wednesday, February 11th, 2026 | 7-10pm PT | In Person",
+      "host": "Voice Actors Network",
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-02-11T19:00:00-08:00",
+      "endAt": "2026-02-11T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person",
+      "imageURL": null,
+      "detail": null,
+      "provider": "voiceactorsnetwork",
+      "providerLabel": "Voice Actors Network",
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person"
+        }
+      ]
+    },
+    {
       "id": "thevopros-a70f4b4a29d91d92",
       "title": "AGENT NIGHT – Liz Klausner, DPN Talent, NY",
       "host": "The VO Pros",
@@ -352,13 +467,56 @@
       "registrationURL": "https://www.thevopros.com/events/agent-night-liz-klausner-dpn-talent-ny",
       "imageURL": null,
       "detail": null,
+      "provider": "thevopros",
+      "providerLabel": "The VO Pros",
       "links": [
         {
           "title": "Event Page",
           "url": "https://www.thevopros.com/events/agent-night-liz-klausner-dpn-talent-ny"
         }
-      ],
-      "provider": "The VO Pros"
+      ]
+    },
+    {
+      "id": "halp_academy-9207ff2be63c1624",
+      "title": "Events",
+      "host": "Lexington Vanderberg",
+      "city": null,
+      "state": null,
+      "venue": null,
+      "startAt": "2026-02-18T12:27:01.876535-08:00",
+      "endAt": "2026-02-18T14:27:01.876535-08:00",
+      "registrationURL": "https://halpacademy.com/events",
+      "imageURL": null,
+      "detail": "Events - The Halp Academy Home About Events On demand Halppening Shop Home About Events On demand Halppening Shop SHOPPING CART $ 0.00 0 Cart Home About Events On demand Halppening Shop Home About Events On demand Halppening Shop $ 0.00 0 Cart Events Events Webinar, meetings and much more Master your craft. Expand your network. Shape the future. From hands on workshops and immersive courses to high energy workouts and inspiring events, both online and in person, we’re all about fueling industry talent. These offerings are crafted to empower professionals across our industry — actors, audio eng",
+      "provider": "halp_academy",
+      "providerLabel": "HALP Academy",
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://halpacademy.com/events"
+        }
+      ]
+    },
+    {
+      "id": "halp_academy-f058241ebf28da34",
+      "title": "Search",
+      "host": "Lexington Vanderberg",
+      "city": null,
+      "state": null,
+      "venue": null,
+      "startAt": "2026-02-18T12:27:03.182830-08:00",
+      "endAt": "2026-02-18T14:27:03.182830-08:00",
+      "registrationURL": "https://halpacademy.com/events/search",
+      "imageURL": null,
+      "detail": "Search - The Halp Academy Home About Events On demand Halppening Shop Home About Events On demand Halppening Shop SHOPPING CART $ 0.00 0 Cart Home About Events On demand Halppening Shop Home About Events On demand Halppening Shop $ 0.00 0 Cart Search Events Webinar, meetings and much more ← Back Find events Type All Types Free Event Meet Webinar Workshop Topic All Topics Acting Community Editorial In Person Meet Up Mock Session Online Panel Performance Capture Recording and Engineering THNEA XP Workouts workshop When Select Date Range Upcoming Week Next Two Weeks This Month Next Month Search U",
+      "provider": "halp_academy",
+      "providerLabel": "HALP Academy",
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://halpacademy.com/events/search"
+        }
+      ]
     },
     {
       "id": "thevopros-272d3226016eca57",
@@ -372,33 +530,14 @@
       "registrationURL": "https://www.thevopros.com/events/animation-sirena-irwin-director",
       "imageURL": null,
       "detail": null,
+      "provider": "thevopros",
+      "providerLabel": "The VO Pros",
       "links": [
         {
           "title": "Event Page",
           "url": "https://www.thevopros.com/events/animation-sirena-irwin-director"
         }
-      ],
-      "provider": "The VO Pros"
-    },
-    {
-      "id": "halp_academy-e44ebdff752d328c",
-      "title": "VO Workshop with Lexington Vanderberg!",
-      "host": "HALP Academy",
-      "city": null,
-      "state": null,
-      "venue": "Zoom",
-      "startAt": "2026-02-18T18:00:00-08:00",
-      "endAt": "2026-02-18T20:00:00-08:00",
-      "registrationURL": "https://halpacademy.com/product/vo-workshop-with-lexington-vanderberg",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Event Page",
-          "url": "https://halpacademy.com/product/vo-workshop-with-lexington-vanderberg"
-        }
-      ],
-      "provider": "HALP Academy"
+      ]
     },
     {
       "id": "realvoicela-3d693743363f0c95",
@@ -412,13 +551,14 @@
       "registrationURL": "https://www.realvoicela.com/service-page/in-person-level-two-video-game-intensive",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/in-person-level-two-video-game-intensive"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
     },
     {
       "id": "thevopros-cf9e409564a4cfee",
@@ -428,17 +568,18 @@
       "state": null,
       "venue": null,
       "startAt": "2026-02-19T16:00:00-08:00",
-      "endAt": "2026-02-19T18:00:00-08:00",
+      "endAt": "2026-02-19T18:30:00-08:00",
       "registrationURL": "https://www.thevopros.com/events/video-games-stephen-carr-director-casting-producer-super-secret-company",
       "imageURL": null,
       "detail": null,
+      "provider": "thevopros",
+      "providerLabel": "The VO Pros",
       "links": [
         {
           "title": "Event Page",
           "url": "https://www.thevopros.com/events/video-games-stephen-carr-director-casting-producer-super-secret-company"
         }
-      ],
-      "provider": "The VO Pros"
+      ]
     },
     {
       "id": "realvoicela-d2fe891185490c0b",
@@ -452,13 +593,14 @@
       "registrationURL": "https://www.realvoicela.com/service-page/february-level-up-anime-video-game",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/february-level-up-anime-video-game"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
     },
     {
       "id": "van-videogame-patrick-michalak-2026-02-19",
@@ -480,6 +622,27 @@
       ]
     },
     {
+      "id": "voiceactorsnetwork-5379d726b79a76d5",
+      "title": "Video Game Clinic - Patrick Michalak| Thursday, February 19th, 2026 | 7-10pm PT | In Person",
+      "host": "Voice Actors Network",
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-02-19T19:00:00-08:00",
+      "endAt": "2026-02-19T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-thursday-february-19th-2026-7-10pm-pt-in-person",
+      "imageURL": null,
+      "detail": null,
+      "provider": "voiceactorsnetwork",
+      "providerLabel": "Voice Actors Network",
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-thursday-february-19th-2026-7-10pm-pt-in-person"
+        }
+      ]
+    },
+    {
       "id": "realvoicela-b44e7f37f854bef1",
       "title": "February - ONLINE Intro to Voiceover",
       "host": "Real Voice LA",
@@ -491,33 +654,14 @@
       "registrationURL": "https://www.realvoicela.com/service-page/february-online-intro-to-voiceover",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/february-online-intro-to-voiceover"
         }
-      ],
-      "provider": "Real Voice LA"
-    },
-    {
-      "id": "halp_academy-5a883a3faacedfac",
-      "title": "VO Workshop with Tasia Valenza!",
-      "host": "HALP Academy",
-      "city": null,
-      "state": null,
-      "venue": "Zoom",
-      "startAt": "2026-02-21T10:00:00-08:00",
-      "endAt": "2026-02-21T12:00:00-08:00",
-      "registrationURL": "https://halpacademy.com/product/vo-workshop-with-tasia-valenza",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Event Page",
-          "url": "https://halpacademy.com/product/vo-workshop-with-tasia-valenza"
-        }
-      ],
-      "provider": "HALP Academy"
+      ]
     },
     {
       "id": "realvoicela-19d86e536c222950",
@@ -531,13 +675,14 @@
       "registrationURL": "https://www.realvoicela.com/service-page/online-conversational-voice-over",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/online-conversational-voice-over"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
     },
     {
       "id": "thevopros-dae38e18c76a95c1",
@@ -547,17 +692,18 @@
       "state": null,
       "venue": null,
       "startAt": "2026-02-23T16:00:00-08:00",
-      "endAt": "2026-02-23T18:00:00-08:00",
+      "endAt": "2026-02-23T18:30:00-08:00",
       "registrationURL": "https://www.thevopros.com/events/anime-dubbing-jason-lord-director-crunch-roll",
       "imageURL": null,
       "detail": null,
+      "provider": "thevopros",
+      "providerLabel": "The VO Pros",
       "links": [
         {
           "title": "Event Page",
           "url": "https://www.thevopros.com/events/anime-dubbing-jason-lord-director-crunch-roll"
         }
-      ],
-      "provider": "The VO Pros"
+      ]
     },
     {
       "id": "van-animation-bob-bergen-2026-02-25",
@@ -575,6 +721,27 @@
         {
           "title": "VAN Listing",
           "url": "https://voiceactorsnetwork.com/collections/february-clinics/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom"
+        }
+      ]
+    },
+    {
+      "id": "voiceactorsnetwork-6a14484f1d7ffb32",
+      "title": "Animation Clinic - Bob Bergen| Wednesday, February 25th, 2026 | 7-10pm PT | Zoom",
+      "host": "The Groundlings",
+      "city": null,
+      "state": null,
+      "venue": "In Person",
+      "startAt": "2026-02-25T19:00:00-08:00",
+      "endAt": "2026-02-25T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom",
+      "imageURL": null,
+      "detail": null,
+      "provider": "voiceactorsnetwork",
+      "providerLabel": "Voice Actors Network",
+      "links": [
+        {
+          "title": "VAN Listing",
+          "url": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom"
         }
       ]
     },
@@ -609,13 +776,14 @@
       "registrationURL": "https://www.realvoicela.com/service-page/march-online-commercial-bootcamp",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/march-online-commercial-bootcamp"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
     },
     {
       "id": "thevopros-b514fa681e6998b2",
@@ -629,13 +797,14 @@
       "registrationURL": "https://www.thevopros.com/events/animation-casting-director-kerri-anne-lavin",
       "imageURL": null,
       "detail": null,
+      "provider": "thevopros",
+      "providerLabel": "The VO Pros",
       "links": [
         {
           "title": "Event Page",
           "url": "https://www.thevopros.com/events/animation-casting-director-kerri-anne-lavin"
         }
-      ],
-      "provider": "The VO Pros"
+      ]
     },
     {
       "id": "realvoicela-2121f3998d2acf33",
@@ -649,13 +818,14 @@
       "registrationURL": "https://www.realvoicela.com/service-page/march-games-auditioning-and-advice",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/march-games-auditioning-and-advice"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
     },
     {
       "id": "thevopros-bcd7c8e0991428ce",
@@ -665,17 +835,18 @@
       "state": null,
       "venue": null,
       "startAt": "2026-03-09T16:00:00-07:00",
-      "endAt": "2026-03-09T18:00:00-07:00",
+      "endAt": "2026-03-09T18:30:00-07:00",
       "registrationURL": "https://www.thevopros.com/events/video-games-stephen-carr-video-game-prod-director-casting-secret-company",
       "imageURL": null,
       "detail": null,
+      "provider": "thevopros",
+      "providerLabel": "The VO Pros",
       "links": [
         {
           "title": "Event Page",
           "url": "https://www.thevopros.com/events/video-games-stephen-carr-video-game-prod-director-casting-secret-company"
         }
-      ],
-      "provider": "The VO Pros"
+      ]
     },
     {
       "id": "realvoicela-57384177dc978872",
@@ -689,13 +860,14 @@
       "registrationURL": "https://www.realvoicela.com/service-page/creating-characters-with-arianna-ratner-1",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/creating-characters-with-arianna-ratner-1"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
     },
     {
       "id": "realvoicela-a8de862a00508a85",
@@ -709,13 +881,14 @@
       "registrationURL": "https://www.realvoicela.com/service-page/march-level-up-anime-video-game",
       "imageURL": null,
       "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/march-level-up-anime-video-game"
         }
-      ],
-      "provider": "Real Voice LA"
+      ]
     },
     {
       "id": "thevopros-27cbd98362896060",
@@ -725,17 +898,18 @@
       "state": null,
       "venue": null,
       "startAt": "2026-03-16T19:00:00-07:00",
-      "endAt": "2026-03-16T21:00:00-07:00",
+      "endAt": "2026-03-16T21:30:00-07:00",
       "registrationURL": "https://www.thevopros.com/events/animation-games-dubbing-disney-audio-experiences-casting-director-director-renee-johnson",
       "imageURL": null,
       "detail": null,
+      "provider": "thevopros",
+      "providerLabel": "The VO Pros",
       "links": [
         {
           "title": "Event Page",
           "url": "https://www.thevopros.com/events/animation-games-dubbing-disney-audio-experiences-casting-director-director-renee-johnson"
         }
-      ],
-      "provider": "The VO Pros"
+      ]
     },
     {
       "id": "thevopros-3bddab2564f46756",
@@ -745,17 +919,18 @@
       "state": null,
       "venue": null,
       "startAt": "2026-03-19T16:30:00-07:00",
-      "endAt": "2026-03-19T18:30:00-07:00",
+      "endAt": "2026-03-19T19:00:00-07:00",
       "registrationURL": "https://www.thevopros.com/events/anime-casting-director-prod-mami-okada-bangzoom",
       "imageURL": null,
       "detail": null,
+      "provider": "thevopros",
+      "providerLabel": "The VO Pros",
       "links": [
         {
           "title": "Event Page",
           "url": "https://www.thevopros.com/events/anime-casting-director-prod-mami-okada-bangzoom"
         }
-      ],
-      "provider": "The VO Pros"
+      ]
     }
   ],
   "sections": [
