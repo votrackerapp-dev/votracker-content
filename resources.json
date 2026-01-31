@@ -183,46 +183,6 @@
       "provider": "Sound On Studio"
     },
     {
-      "id": "thevodojo-817483b06993dbe0",
-      "title": "When you refer a friend to the V.O. Dojo and they enroll in a program, you receive $100 in Dojo credit as a thank-you. It’s our way of honoring the tr",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-01T18:00:00-08:00",
-      "endAt": "2026-02-01T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
-      "id": "thevodojo-f30a86b590ced744",
-      "title": "Missed your chance to join in January?",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-02T18:00:00-08:00",
-      "endAt": "2026-02-02T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
       "id": "van-commercial-carli-silver-2026-02-03",
       "title": "Commercial Clinic",
       "host": "Carli Silver",
@@ -290,7 +250,7 @@
       "venue": "See listing",
       "startAt": "2026-02-04T18:00:00-08:00",
       "endAt": "2026-02-04T20:00:00-08:00",
-      "registrationURL": null,
+      "registrationURL": "https://www.thevodojo.com/upcoming-events-nav",
       "imageURL": null,
       "detail": null,
       "links": [
@@ -361,26 +321,6 @@
       ]
     },
     {
-      "id": "thevodojo-ec4012e49aa4fd5f",
-      "title": "Thursday, February 12, 2026 - 5:30 PM 8:30 PM PST",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-12T17:30:00-08:00",
-      "endAt": "2026-02-12T19:30:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
       "id": "thevodojo-8967f94762c55ae8",
       "title": "Thursday, February 12th • VO Pro Fight Club • ANIMATION with BRENNA LARSEN",
       "host": "The VO Dojo",
@@ -389,7 +329,7 @@
       "venue": "See listing",
       "startAt": "2026-02-12T18:00:00-08:00",
       "endAt": "2026-02-12T20:00:00-08:00",
-      "registrationURL": null,
+      "registrationURL": "https://www.thevodojo.com/upcoming-events-nav",
       "imageURL": null,
       "detail": null,
       "links": [
@@ -449,7 +389,7 @@
       "venue": "See listing",
       "startAt": "2026-02-18T18:00:00-08:00",
       "endAt": "2026-02-18T20:00:00-08:00",
-      "registrationURL": null,
+      "registrationURL": "https://www.thevodojo.com/upcoming-events-nav",
       "imageURL": null,
       "detail": null,
       "links": [
@@ -608,7 +548,7 @@
       "venue": "See listing",
       "startAt": "2026-02-22T18:00:00-08:00",
       "endAt": "2026-02-22T20:00:00-08:00",
-      "registrationURL": null,
+      "registrationURL": "https://www.thevodojo.com/upcoming-events-nav",
       "imageURL": null,
       "detail": null,
       "links": [
@@ -648,7 +588,7 @@
       "venue": "See listing",
       "startAt": "2026-02-24T18:00:00-08:00",
       "endAt": "2026-02-24T20:00:00-08:00",
-      "registrationURL": null,
+      "registrationURL": "https://www.thevodojo.com/upcoming-events-nav",
       "imageURL": null,
       "detail": null,
       "links": [
@@ -786,7 +726,7 @@
       "venue": "See listing",
       "startAt": "2026-03-27T18:00:00-07:00",
       "endAt": "2026-03-27T20:00:00-07:00",
-      "registrationURL": null,
+      "registrationURL": "https://www.thevodojo.com/upcoming-events-nav",
       "imageURL": null,
       "detail": null,
       "links": [
