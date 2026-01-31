@@ -9,22 +9,58 @@
     {
       "id": "thevopros",
       "name": "The VO Pros",
-      "url": "https://www.thevopros.com/shop/",
-      "extractor": "thevopros_events_from_shop",
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9"
-      },
-      "prefer_reader": false,
-      "max_event_pages": 25
+      "url": "https://www.thevopros.com/events/",
+      "extractor": "thevopros_events_index"
     },
+
+    {
+      "id": "redscythe_tidycal_classes",
+      "name": "Red Scythe Studio",
+      "url": "https://tidycal.com/redscythestudio/",
+      "extractor": "redscythe_tidycal",
+      "timezone": "America/Los_Angeles",
+      "headers": {
+        "User-Agent": "Mozilla/5.0"
+      },
+      "filters": {
+        "exclude_title_contains": [
+          "coaching",
+          "coach",
+          "consult",
+          "consultation",
+          "1:1",
+          "one-on-one",
+          "one on one",
+          "freelance",
+          "marketing",
+          "download",
+          "video"
+        ],
+        "exclude_title_regex": [
+          "(?i)consult",
+          "(?i)coach(ing)?",
+          "(?i)one\\s*-?on\\s*-?one",
+          "(?i)\\b1\\s*:\\s*1\\b"
+        ],
+        "require_title_contains_any": [
+          "class",
+          "workshop",
+          "voice",
+          "vo",
+          "adr",
+          "dubbing",
+          "commercial",
+          "animation",
+          "anime"
+        ]
+      }
+    },
+
     {
       "id": "redscythe",
       "name": "Red Scythe",
       "url": "https://redscythe.com/",
-      "extractor": "redscythe_tidycal",
-      "prefer_reader": false
+      "extractor": "jsonld_events"
     },
     {
       "id": "soundonstudio",
@@ -42,14 +78,13 @@
       "id": "voicetraxwest",
       "name": "Voice Trax West",
       "url": "https://www.voicetraxwest.com/guest-instructors",
-      "extractor": "voicetraxwest_guest_instructors",
-      "prefer_reader": false
+      "extractor": "jsonld_events"
     },
     {
       "id": "adventuresinvoiceacting",
       "name": "Adventures in Voice Acting",
       "url": "https://www.adventuresinvoiceacting.com/",
-      "extractor": "aiva_upcoming_schedule"
+      "extractor": "wix_service_list"
     },
     {
       "id": "realvoicela",
@@ -61,29 +96,7 @@
       "id": "thevodojo",
       "name": "The VO Dojo",
       "url": "https://www.thevodojo.com/upcoming-events-nav",
-      "extractor": "vodojo_upcoming",
-      "filters": {
-        "exclude_title_regex": [
-          "refer[- ]?a[- ]?friend",
-          "get to know vo",
-          "missed your chance",
-          "blog",
-          "podcast",
-          "announcement",
-          "advertis",
-          "promo",
-          "coupon",
-          "discount",
-          "giveaway",
-          "waitlist",
-          "gift\\s*card",
-          "contest",
-          "mailing\\\\s*list",
-          "email\\\\s*list",
-          "newsletter",
-          "subscribe"
-        ]
-      }
+      "extractor": "vodojo_upcoming"
     }
   ],
   "settings": {
