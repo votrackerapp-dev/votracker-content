@@ -17,15 +17,7 @@
         "Accept-Language": "en-US,en;q=0.9"
       },
       "prefer_reader": false,
-      "max_event_pages": 25,
-      "filters": {
-        "exclude_title_regex": [
-          "(?i)refer[- ]?a[- ]?friend",
-          "(?i)blog",
-          "(?i)podcast",
-          "(?i)announcement"
-        ]
-      }
+      "max_event_pages": 25
     },
     {
       "id": "redscythe_tidycal_classes",
@@ -43,20 +35,12 @@
           "consult",
           "consultation",
           "1:1",
-          "one-on-one",
-          "one on one",
           "freelance",
-          "marketing",
-          "download",
-          "video"
+          "marketing"
         ],
         "exclude_title_regex": [
-          "(?i)consult",
-          "(?i)coach(ing)?",
-          "(?i)one\\s*-?on\\s*-?one",
           "(?i)\\b1\\s*:\\s*1\\b",
-          "(?i)private\\s+session",
-          "(?i)individual\\s+session"
+          "(?i)private\\s+session"
         ],
         "require_title_contains_any": [
           "class",
@@ -69,7 +53,9 @@
           "animation",
           "anime",
           "acting",
-          "training"
+          "training",
+          "studio",
+          "record"
         ]
       }
     },
@@ -97,29 +83,13 @@
       "name": "Adventures in Voice Acting",
       "url": "https://www.adventuresinvoiceacting.com/",
       "extractor": "aiva_upcoming_schedule",
-      "allow_zero_events": true,
-      "filters": {
-        "exclude_title_regex": [
-          "(?i)ongoing",
-          "(?i)continuous",
-          "(?i)membership",
-          "(?i)subscription"
-        ]
-      }
+      "allow_zero_events": true
     },
     {
       "id": "realvoicela",
       "name": "Real Voice LA",
       "url": "https://www.realvoicela.com/classes",
-      "extractor": "wix_service_list",
-      "filters": {
-        "exclude_title_regex": [
-          "(?i)\\d+\\s*-?\\s*week",
-          "(?i)\\d+\\s*-?\\s*month",
-          "(?i)ongoing",
-          "(?i)monthly"
-        ]
-      }
+      "extractor": "wix_service_list"
     },
     {
       "id": "thevodojo",
@@ -129,23 +99,9 @@
       "filters": {
         "exclude_title_regex": [
           "(?i)refer[- ]?a[- ]?friend",
-          "(?i)get to know vo",
           "(?i)missed your chance",
-          "(?i)blog",
-          "(?i)podcast",
-          "(?i)announcement",
-          "(?i)advertis",
-          "(?i)promo",
-          "(?i)coupon",
-          "(?i)discount",
-          "(?i)giveaway",
           "(?i)waitlist",
-          "(?i)gift\\s*card",
-          "(?i)contest",
-          "(?i)mailing\\s*list",
-          "(?i)email\\s*list",
-          "(?i)newsletter",
-          "(?i)subscribe"
+          "(?i)contest"
         ]
       }
     }
