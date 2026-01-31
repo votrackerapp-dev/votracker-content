@@ -61,20 +61,88 @@ def normalize_url(url: Optional[str]) -> Optional[str]:
     except Exception:
         return u
 
-def fetch_html(url: str) -> str:
-    r = requests.get(url, timeout=30, headers={"User-Agent": "VOTrackerWorkshopBot/1.2"})
-    r.raise_for_status()
-    return r.text
+def fetch_html(url: str, headers: Optional[Dict[str, str]] = None) -> str:
+    """Fetch HTML with a stable UA, optional headers, and light retries."""
+    base_headers = {"User-Agent": "VOTrackerWorkshopBot/1.3 (+https://votracker.app)"}
+    if headers:
+        base_headers.update({k: str(v) for k, v in headers.items() if v is not None})
+    last_err: Optional[Exception] = None
+    for attempt in range(3):
+        try:
+            r = requests.get(url, timeout=30, headers=base_headers)
+            if r.status_code in (429, 500, 502, 503, 504):
+                raise requests.HTTPError(f"HTTP {r.status_code}")
+            r.raise_for_status()
+            return r.text
+        except Exception as e:
+            last_err = e
+            try:
+                import time
+                time.sleep(1.0 + attempt * 1.25)
+            except Exception:
+                pass
+    raise last_err or RuntimeError("fetch_html failed")
+
+
+def iter_paginated_pages(start_url: str, max_pages: int, headers: Optional[Dict[str, str]] = None) -> List[Tuple[str, str]]:
+    """Return a list of (url, html) for a paginated sequence starting at start_url."""
+    pages: List[Tuple[str, str]] = []
+    visited: set = set()
+    url = start_url
+    for _ in range(max(1, int(max_pages or 1))):
+        if not url or url in visited:
+            break
+        visited.add(url)
+        html = fetch_html(url, headers=headers)
+        pages.append((url, html))
+
+        soup = BeautifulSoup(html, "html.parser")
+
+        next_href = None
+        link_next = soup.find("link", rel=lambda v: v and "next" in v)
+        if link_next and link_next.get("href"):
+            next_href = link_next["href"]
+
+        if not next_href:
+            a_next = soup.find("a", rel=lambda v: v and "next" in v, href=True)
+            if a_next:
+                next_href = a_next["href"]
+
+        if not next_href:
+            a_next = soup.select_one("a.next, a.page-numbers.next, li.next a, a[aria-label='Next']")
+            if a_next and a_next.get("href"):
+                next_href = a_next["href"]
+
+        if not next_href:
+            break
+
+        url = urljoin(url, next_href)
+
+    return pages
 
 def parse_date_any(value: Any, default_tz: str) -> Optional[dt.datetime]:
     if not value:
         return None
     try:
-        d = dateparser.parse(str(value), fuzzy=True)
+        s = str(value).strip()
+        if not s:
+            return None
+        tzinfo = datetz.gettz(default_tz)
+        now = dt.datetime.now(tz=tzinfo)
+
+        d = dateparser.parse(s, fuzzy=True, default=now)
         if not d:
             return None
         if d.tzinfo is None:
-            d = d.replace(tzinfo=datetz.gettz(default_tz))
+            d = d.replace(tzinfo=tzinfo)
+
+        has_year = bool(re.search(r"\b\d{4}\b", s))
+        if not has_year:
+            if d < (now - dt.timedelta(days=60)):
+                try:
+                    d = d.replace(year=d.year + 1)
+                except Exception:
+                    pass
         return d
     except Exception:
         return None
@@ -90,6 +158,94 @@ def compute_event_id(source_id: str, title: str, start_at: str, reg_url: Optiona
     else:
         key = f"{source_id}|ts|{title.strip().lower()}|{start_at}"
     return f"{source_id}-{sha1(key)[:16]}"
+
+
+def clean_whitespace(s: Optional[str]) -> str:
+    return re.sub(r"\s+", " ", (s or "")).strip()
+
+def stable_event_id(source_id: str, url: str, title: str, start: dt.datetime) -> str:
+    reg = normalize_url(url) or ""
+    start_s = isoformat_with_tz(start, DEFAULT_TIMEZONE)
+    return compute_event_id(source_id or "src", title or "Workshop", start_s, reg)
+
+def parse_month_day_year(date_str: str, default_tz: str) -> Optional[dt.datetime]:
+    return parse_date_any(date_str, default_tz)
+
+def parse_fuzzy_date(date_str: str, default_tz: str) -> Optional[dt.datetime]:
+    return parse_date_any(date_str, default_tz)
+
+def ensure_workshop_schema(e: Dict[str, Any], source: Dict[str, Any], default_tz: str) -> Dict[str, Any]:
+    """Normalize an event dict from any extractor into the canonical resources.json schema."""
+    src_id = (source.get("id") or "unknown").strip()
+    src_name = (source.get("name") or src_id).strip()
+
+    title = safe_text(e.get("title") or e.get("name") or "Workshop", 200) or "Workshop"
+
+    reg_url = normalize_url(
+        e.get("registrationURL")
+        or e.get("url")
+        or e.get("link")
+        or e.get("registrationUrl")
+        or source.get("url")
+    )
+
+    raw_start = e.get("startAt") or e.get("start") or e.get("start_date") or e.get("startDate")
+    raw_end = e.get("endAt") or e.get("end") or e.get("end_date") or e.get("endDate")
+
+    start_dt = parse_date_any(raw_start, default_tz) if raw_start else None
+    end_dt = parse_date_any(raw_end, default_tz) if raw_end else None
+
+    if start_dt and not end_dt:
+        end_dt = start_dt + dt.timedelta(hours=DEFAULT_EVENT_DURATION_HOURS)
+    if start_dt and end_dt and end_dt <= start_dt:
+        end_dt = end_dt + dt.timedelta(days=1)
+
+    start_s = isoformat_with_tz(start_dt, default_tz) if start_dt else None
+    end_s = isoformat_with_tz(end_dt, default_tz) if end_dt else None
+
+    host = safe_text(e.get("host") or e.get("instructor"), 160) or src_name
+    detail = safe_text(e.get("detail") or e.get("details") or e.get("description"))
+
+    links = e.get("links")
+    if isinstance(links, list):
+        cleaned_links = []
+        for it in links:
+            if isinstance(it, dict) and it.get("url"):
+                cleaned_links.append({
+                    "title": safe_text(it.get("title") or "Link", 80) or "Link",
+                    "url": normalize_url(it.get("url")),
+                })
+        links = cleaned_links or None
+    else:
+        links = None
+
+    if not links and reg_url:
+        links = [{"title": "Event Page", "url": reg_url}]
+
+    provider = src_id
+    provider_label = src_name
+
+    out = {
+        "id": e.get("id"),
+        "title": title,
+        "host": host,
+        "city": safe_text(e.get("city"), 80),
+        "state": safe_text(e.get("state"), 40),
+        "venue": safe_text(e.get("venue"), 160),
+        "startAt": start_s or (raw_start if isinstance(raw_start, str) else None),
+        "endAt": end_s or (raw_end if isinstance(raw_end, str) else None),
+        "registrationURL": reg_url,
+        "imageURL": normalize_url(e.get("imageURL") or e.get("imageUrl") or e.get("image")),
+        "detail": detail,
+        "provider": provider,
+        "providerLabel": provider_label,
+        "links": links,
+    }
+
+    if not out["id"] and out.get("startAt"):
+        out["id"] = compute_event_id(src_id, title, out["startAt"], reg_url)
+
+    return out
 
 def rebuild_workshops(
     existing: List[Dict[str, Any]], 
@@ -778,24 +934,27 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
     Scrape The VO Pros events pages.
     COMPLETELY REWRITTEN: Now extracts from URL slug as last resort
     """
-    index_html = fetch_html(source["url"])
-    soup = BeautifulSoup(index_html, "html.parser")
+    base_url = source["url"]
+    max_pages = int(source.get("max_event_pages") or 2)
+    pages = iter_paginated_pages(base_url, max_pages, headers=source.get("headers"))
 
-    links = []
-    for a in soup.find_all("a", href=True):
-        href = a["href"]
-        if "/events/" in href and not href.endswith("/events/") and not href.endswith("/events"):
-            full = href if href.startswith("http") else urljoin(source["url"], href)
-            full = normalize_url(full)
-            if full and full not in links:
-                links.append(full)
+    links: List[str] = []
+    for page_url, index_html in pages:
+        soup = BeautifulSoup(index_html, "html.parser")
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            if "/events/" in href and not href.endswith("/events/") and not href.endswith("/events"):
+                full = href if href.startswith("http") else urljoin(page_url, href)
+                full = normalize_url(full)
+                if full and full not in links:
+                    links.append(full)
 
     log(f"  [VOPros] Found {len(links)} event links")
     
     events: List[Dict[str, Any]] = []
     for ev_url in links[:120]:
         try:
-            html = fetch_html(ev_url)
+            html = fetch_html(ev_url, headers=source.get("headers"))
             ps = BeautifulSoup(html, "html.parser")
             txt = ps.get_text("\n")
 
@@ -965,117 +1124,146 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
     log(f"  [VOPros] Deduplicated {len(events)} → {len(deduped_events)} events")
     return deduped_events
 
+
 def extract_halp_events_search(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
-    """Scrape HALP Academy events."""
-    html = fetch_html(source["url"])
-    soup = BeautifulSoup(html, "html.parser")
-    events: List[Dict[str, Any]] = []
-    
-    seen_urls = set()
-    for a in soup.find_all("a", href=True):
-        href = a["href"]
-        if "/product/" not in href:
-            continue
-        full_url = href if href.startswith("http") else urljoin(source["url"], href)
-        full_url = normalize_url(full_url)
-        if not full_url or full_url in seen_urls:
-            continue
-        seen_urls.add(full_url)
-            
-        try:
-            prod_html = fetch_html(full_url)
-            prod_soup = BeautifulSoup(prod_html, "html.parser")
-            prod_text = prod_soup.get_text("\n")
-            
-            h1 = prod_soup.find(["h1", "h2"])
-            title = safe_text(h1.get_text(" ", strip=True), 200) if h1 else "HALP Workshop"
-            
-            date_patterns = [
-                r"([A-Za-z]+\s+\d{1,2}(?:st|nd|rd|th)?,?\s+\d{4})",
-                r"(\d{1,2}/\d{1,2}/\d{2,4})",
-            ]
-            
-            base_date = None
-            for pattern in date_patterns:
-                m = re.search(pattern, prod_text)
-                if m:
-                    base_date = parse_date_any(m.group(1), default_tz)
-                    if base_date:
-                        break
-            
-            if not base_date:
+    """Scrape HALP Academy workshops/classes from listing pages + detail pages."""
+    base_url = source["url"]
+    max_pages = int(source.get("max_event_pages") or 2)
+    pages = iter_paginated_pages(base_url, max_pages, headers=source.get("headers"))
+
+    # Collect candidate workshop links.
+    candidate_urls: List[str] = []
+    for page_url, page_html in pages:
+        soup = BeautifulSoup(page_html, "html.parser")
+        for a in soup.find_all("a", href=True):
+            href = a["href"].strip()
+            if not href:
                 continue
-            
-            log(f"  [HALP] {title[:40]}...")
-            start, end = apply_time_to_date(base_date, prod_text, default_tz)
-            
-            start_s = isoformat_with_tz(start, default_tz)
-            end_s = isoformat_with_tz(end, default_tz)
-            
-            venue = "Zoom" if "zoom" in prod_text.lower() else "See listing"
-            
-            wid = compute_event_id(source["id"], title, start_s, full_url)
-            
-            events.append({
-                "id": wid,
-                "title": title,
-                "host": source.get("name"),
-                "city": None,
-                "state": None,
-                "venue": venue,
-                "startAt": start_s,
-                "endAt": end_s,
-                "registrationURL": full_url,
-                "imageURL": None,
-                "detail": None,
-                "links": [{"title": "Event Page", "url": full_url}]
-            })
-        except Exception as e:
-            log(f"  [HALP] Error: {e}")
+            full = href if href.startswith("http") else urljoin(page_url, href)
+            full = normalize_url(full)
+            if not full:
+                continue
+            # Heuristic: keep links that look like workshop detail pages.
+            if any(k in full.lower() for k in ("/workshop", "/workshops", "/class", "/classes", "/event")):
+                if full not in candidate_urls:
+                    candidate_urls.append(full)
+
+    events: List[Dict[str, Any]] = []
+    seen_ids: set = set()
+
+    # Parse each detail page.
+    for url in candidate_urls[: int(source.get("max_links") or 60)]:
+        try:
+            prod_html = fetch_html(url, headers=source.get("headers"))
+        except Exception:
             continue
-    
+
+        ps = BeautifulSoup(prod_html, "html.parser")
+        text = ps.get_text(" ", strip=True)
+
+        h1 = ps.find(["h1", "h2"])
+        title = safe_text(h1.get_text(" ", strip=True), 200) if h1 else ""
+        if not title:
+            title = safe_text(text, 200)
+
+        # Find a date + time range anywhere in the text.
+        date_m = re.search(r"\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:,\s*\d{4})?\b", text, re.I)
+        time_m = re.search(r"(\d{1,2}:\d{2}\s*(?:AM|PM))\s*(?:-|–|to)\s*(\d{1,2}:\d{2}\s*(?:AM|PM))", text, re.I)
+
+        if not date_m:
+            continue
+
+        date_str = date_m.group(0)
+        start_dt = None
+        end_dt = None
+        if time_m:
+            start_dt = parse_date_any(f"{date_str} {time_m.group(1)}", default_tz)
+            end_dt = parse_date_any(f"{date_str} {time_m.group(2)}", default_tz)
+        else:
+            # If no time range, still include as an all-day-ish placeholder.
+            start_dt = parse_date_any(date_str, default_tz)
+
+        if not start_dt:
+            continue
+        if not end_dt:
+            end_dt = start_dt + dt.timedelta(hours=DEFAULT_EVENT_DURATION_HOURS)
+
+        host = None
+        host_m = re.search(r"\bwith\s+([A-Z][A-Za-z\.'’\-]+(?:\s+[A-Z][A-Za-z\.'’\-]+){0,3})\b", text)
+        if host_m:
+            host = host_m.group(1).strip()
+
+        evt = {
+            "id": stable_event_id(source.get("id", "halp"), url, title, start_dt),
+            "title": title,
+            "host": host or source.get("name") or source.get("id"),
+            "startAt": isoformat_with_tz(start_dt, default_tz),
+            "endAt": isoformat_with_tz(end_dt, default_tz),
+            "registrationURL": url,
+            "detail": safe_text(text, 600),
+        }
+        if evt["id"] not in seen_ids:
+            seen_ids.add(evt["id"])
+            events.append(evt)
+
     return events
 
+
+
 def extract_van_shopify_products(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
-    """Voice Actors Network Shopify products."""
-    html = fetch_html(source["url"])
-    soup = BeautifulSoup(html, "html.parser")
+    """Voice Actors Network (Shopify collection) events."""
+    base_url = source["url"]
+    max_pages = int(source.get("max_event_pages") or 3)
+    pages = iter_paginated_pages(base_url, max_pages, headers=source.get("headers"))
 
-    products = soup.select("a[href*='/products/']")
-    seen_urls = set()
+    product_urls: List[str] = []
+    for page_url, page_html in pages:
+        soup = BeautifulSoup(page_html, "html.parser")
+        for a in soup.select("a[href*='/products/']"):
+            href = a.get("href", "").strip()
+            if not href:
+                continue
+            full = href if href.startswith("http") else urljoin(page_url, href)
+            full = normalize_url(full)
+            if full and full not in product_urls:
+                product_urls.append(full)
+
     events: List[Dict[str, Any]] = []
+    seen_urls: set = set()
 
-    for a in products:
-        href = a.get("href", "")
-        purl = urljoin(source["url"], href)
-        purl = normalize_url(purl)
+    for purl in product_urls[: int(source.get("max_links") or 80)]:
         if not purl or purl in seen_urls:
             continue
         seen_urls.add(purl)
 
-        txt = a.get_text(" ", strip=True)
-        if not txt:
+        try:
+            ph = fetch_html(purl, headers=source.get("headers"))
+        except Exception:
             continue
 
-        title = safe_text(txt, 200)
-        if not title:
-            continue
+        ps = BeautifulSoup(ph, "html.parser")
+        text = ps.get_text(" ", strip=True)
+        lower = text.lower()
 
-        lower = txt.lower()
-
+        # Skip non-events
         if any(x in lower for x in ["gift card", "donation", "membership", "merch"]):
             continue
 
-        date_patterns = [
-            r"(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),?\s+([A-Za-z]+\s+\d{1,2}(?:st|nd|rd|th)?,?\s+\d{4})",
-            r"([A-Za-z]+\s+\d{1,2}(?:st|nd|rd|th)?,?\s+\d{4})",
-        ]
-        
+        h1 = ps.find(["h1", "h2"])
+        title = safe_text(h1.get_text(" ", strip=True), 200) if h1 else safe_text(text, 200)
+        if not title:
+            continue
+
+        # Find a date
         base_date = None
-        for pattern in date_patterns:
-            m = re.search(pattern, txt, re.IGNORECASE)
+        date_patterns = [
+            r"(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),?\s+([A-Za-z]+\s+\d{1,2}(?:st|nd|rd|th)?,?\s*\d{4})",
+            r"\b([A-Za-z]+\s+\d{1,2}(?:st|nd|rd|th)?)\b",
+        ]
+        for pat in date_patterns:
+            m = re.search(pat, text, re.IGNORECASE)
             if m:
-                date_str = m.group(1) if m.lastindex >= 1 else m.group(0)
+                date_str = m.group(1) if m.lastindex else m.group(0)
                 base_date = parse_date_any(date_str, default_tz)
                 if base_date:
                     break
@@ -1083,14 +1271,13 @@ def extract_van_shopify_products(source: Dict[str, Any], default_tz: str) -> Lis
         if not base_date:
             continue
 
-        log(f"  [VAN] {title[:60]}...")
-        start, end = apply_time_to_date(base_date, txt, default_tz)
+        start_dt, end_dt = apply_time_to_date(base_date, text, default_tz)
 
-        start_s = isoformat_with_tz(start, default_tz)
-        end_s = isoformat_with_tz(end, default_tz)
+        start_s = isoformat_with_tz(start_dt, default_tz)
+        end_s = isoformat_with_tz(end_dt, default_tz)
 
         host = None
-        hm = re.search(r"\bwith\s+([A-Z][A-Za-z.\- ]{2,40})", txt)
+        hm = re.search(r"\bwith\s+([A-Z][A-Za-z\.'’\- ]{2,60})\b", text)
         if hm:
             host = safe_text(hm.group(1), 120)
 
@@ -1119,6 +1306,7 @@ def extract_van_shopify_products(source: Dict[str, Any], default_tz: str) -> Lis
         })
 
     return events
+
 
 def extract_wix_service_list(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
     """
@@ -1542,8 +1730,7 @@ def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: 
 
         mon = sm.group("mon")
         day = int(sm.group("day"))
-        year = infer_year_for_month_day(mon, day, default_tz)
-        d = parse_month_day_year(f"{mon} {day}, {year}", default_tz)
+        d = infer_year_for_month_day(f"{mon} {day}", default_tz)
         if not d:
             continue
 
@@ -1556,7 +1743,7 @@ def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: 
             hour = 0
 
         start_dt = d.replace(hour=hour, minute=minute, second=0, microsecond=0)
-        end_dt = start_dt + timedelta(hours=DEFAULT_EVENT_DURATION_HOURS)
+        end_dt = start_dt + dt.timedelta(hours=DEFAULT_EVENT_DURATION_HOURS)
 
         # Title heuristics: nearest strong/heading text in the block
         title = None
@@ -1627,15 +1814,13 @@ def extract_aiva_upcoming_schedule(source: Dict[str, Any], default_tz: str) -> L
 
         mon = dm.group(2)
         day = int(dm.group(3))
-        year = infer_year_for_month_day(mon, day, default_tz)
-
-        d = parse_month_day_year(f"{mon} {day}, {year}", default_tz)
+        d = infer_year_for_month_day(f"{mon} {day}", default_tz)
         if not d:
             continue
 
         # Default time (AIVA doesn't reliably expose it in static HTML)
         start_dt = d.replace(hour=10, minute=0, second=0, microsecond=0)
-        end_dt = start_dt + timedelta(hours=2)
+        end_dt = start_dt + dt.timedelta(hours=2)
 
         title = title_text.strip() or "AIVA Course"
         key = (title.lower(), start_dt.isoformat())
@@ -1685,6 +1870,39 @@ EXTRACTORS = {
 # Main
 # -----------------------------
 
+
+def normalize_existing_providers(existing: List[Dict[str, Any]], sources: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Map legacy provider values (providerLabel / source name) to stable source IDs to avoid duplicates."""
+    id_set = {str(src.get("id")) for src in sources if src.get("id")}
+    label_to_id: Dict[str, str] = {}
+    for src in sources:
+        sid = str(src.get("id") or "").strip()
+        name = str(src.get("name") or "").strip()
+        if sid and name:
+            label_to_id[name.lower()] = sid
+
+    out: List[Dict[str, Any]] = []
+    for w in existing:
+        if not isinstance(w, dict):
+            continue
+        provider = str(w.get("provider") or "").strip()
+        provider_label = str(w.get("providerLabel") or "").strip()
+
+        if provider and provider not in id_set:
+            mapped = label_to_id.get(provider.lower())
+            if mapped:
+                w["provider"] = mapped
+                if not provider_label:
+                    w["providerLabel"] = provider
+        elif (not provider) and provider_label:
+            mapped = label_to_id.get(provider_label.lower())
+            if mapped:
+                w["provider"] = mapped
+
+        out.append(w)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(description="Sync VO workshop data")
     ap.add_argument("--resources", required=True)
@@ -1710,6 +1928,7 @@ def main():
         resources = json.load(f)
 
     existing = resources.get("workshops", []) or []
+    existing = normalize_existing_providers(existing, sources)
     incoming_all: List[Dict[str, Any]] = []
     successfully_scraped_sources: set = set()  # Track which sources succeeded
 
@@ -1725,10 +1944,10 @@ def main():
         
         try:
             events = fn(s, args.default_tz)
-            for e in events:
-                if isinstance(e, dict):
-                    e.setdefault("provider", s.get("name"))
             events = apply_event_filters(events, s.get("filters"))
+
+            # Normalize all extractor outputs to the canonical schema.
+            events = [ensure_workshop_schema(e, s, args.default_tz) for e in events if isinstance(e, dict)]
 
             events = events[:max_events_per_source]
             print(f"[OK] {source_id}: {len(events)} events")
@@ -1736,11 +1955,11 @@ def main():
             # Mark this source as successfully scraped.
             # Important: if a source suddenly returns 0 events, we treat it as a scrape failure by default
             # (to avoid wiping previously-known workshops due to transient site changes / parsing breakage).
-            allow_zero = bool(source.get("allow_zero_events")) or bool(source.get("filters", {}).get("allow_zero_events"))
+            allow_zero = bool(s.get("allow_zero_events")) or bool(s.get("filters", {}).get("allow_zero_events"))
             if events or allow_zero:
                 successfully_scraped_sources.add(source_id)
             else:
-                log(f"  [WARN] {source_name}: 0 events; treating as failure to preserve prior entries")
+                log(f"  [WARN] {s.get('name', source_id)}: 0 events; treating as failure to preserve prior entries")
         except Exception as ex:
             # Source FAILED - we'll keep old data for this source
             print(f"[ERROR] {source_id}: {ex}")
