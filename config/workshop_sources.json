@@ -41,21 +41,6 @@
         "exclude_title_regex": [
           "(?i)\\b1\\s*:\\s*1\\b",
           "(?i)private\\s+session"
-        ],
-        "require_title_contains_any": [
-          "class",
-          "workshop",
-          "voice",
-          "vo",
-          "adr",
-          "dubbing",
-          "commercial",
-          "animation",
-          "anime",
-          "acting",
-          "training",
-          "studio",
-          "record"
         ]
       }
     },
@@ -95,15 +80,7 @@
       "id": "thevodojo",
       "name": "The VO Dojo",
       "url": "https://www.thevodojo.com/upcoming-events-nav",
-      "extractor": "vodojo_upcoming",
-      "filters": {
-        "exclude_title_regex": [
-          "(?i)refer[- ]?a[- ]?friend",
-          "(?i)missed your chance",
-          "(?i)waitlist",
-          "(?i)contest"
-        ]
-      }
+      "extractor": "vodojo_upcoming"
     }
   ],
   "settings": {
