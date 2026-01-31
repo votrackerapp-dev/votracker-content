@@ -134,6 +134,33 @@ def rebuild_workshops(
     result.sort(key=keyfn)
     return result
 
+def is_ongoing_class(title: str, detail: str = None) -> bool:
+    """
+    Detect multi-session courses vs single workshops.
+    Returns True if this appears to be an ongoing course rather than a single workshop.
+    """
+    combined = (title + " " + (detail or "")).lower()
+    
+    ongoing_patterns = [
+        r'\b\d+\s*-?\s*(week|session|class|month)\s+(course|pack|series|program)',
+        r'(pack|package|bundle|series)\b',
+        r'(monthly|weekly|ongoing|continuous)\s+(class|workshop)',
+        r'\bcurriculum\b',
+        r'\bsemester\b',
+        r'\bprogram\b.*\b\d+\s+weeks?',
+        r'\d+\s*-?\s*session',
+        r'class\s+pack',
+        r'multi-week',
+        r'series\s+of\s+\d+',
+    ]
+    
+    for pattern in ongoing_patterns:
+        if re.search(pattern, combined, re.IGNORECASE):
+            log(f"  [FILTER] Detected ongoing class: '{title[:50]}...' (pattern: {pattern})")
+            return True
+    
+    return False
+
 def prune_events(items: List[Dict[str, Any]], prune_days_past: int, keep_days_future: int, default_tz: str) -> List[Dict[str, Any]]:
     now = dt.datetime.now(tz=datetz.gettz(default_tz))
     past_cut = now - dt.timedelta(days=prune_days_past)
@@ -749,7 +776,7 @@ def extract_soundonstudio_classsignup(source: Dict[str, Any], default_tz: str) -
 def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
     """
     Scrape The VO Pros events pages.
-    IMPROVED: More flexible date/time patterns
+    IMPROVED: Better title extraction to avoid generic "THE VO PROS" titles
     """
     index_html = fetch_html(source["url"])
     soup = BeautifulSoup(index_html, "html.parser")
@@ -772,10 +799,50 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
             ps = BeautifulSoup(html, "html.parser")
             txt = ps.get_text("\n")
 
-            h1 = ps.find(["h1","h2"])
-            title = safe_text(h1.get_text(" ", strip=True), 200) if h1 else None
-            if not title:
-                title = safe_text(ps.title.get_text(" ", strip=True), 200) if ps.title else "Workshop"
+            # IMPROVED: Better title extraction with multiple fallbacks
+            title = None
+            
+            # Try 1: Look for h1 that's NOT the site name
+            h1_tags = ps.find_all("h1")
+            for h1 in h1_tags:
+                potential_title = safe_text(h1.get_text(" ", strip=True), 200)
+                if potential_title and potential_title.upper() not in ["THE VO PROS", "THEVOPROS", "VO PROS"]:
+                    title = potential_title
+                    break
+            
+            # Try 2: Look for h2 if h1 didn't work
+            if not title or title.upper() in ["THE VO PROS", "THEVOPROS"]:
+                h2_tags = ps.find_all("h2")
+                for h2 in h2_tags:
+                    potential_title = safe_text(h2.get_text(" ", strip=True), 200)
+                    if potential_title and len(potential_title) > 10 and potential_title.upper() not in ["THE VO PROS", "THEVOPROS", "VO PROS"]:
+                        title = potential_title
+                        break
+            
+            # Try 3: Extract from page title (remove "The VO Pros |" prefix)
+            if not title or title.upper() in ["THE VO PROS", "THEVOPROS"]:
+                if ps.title:
+                    page_title = ps.title.get_text(" ", strip=True)
+                    # Remove site name from title
+                    page_title = re.sub(r'^(The\s+)?VO\s*Pros\s*[|:-]\s*', '', page_title, flags=re.IGNORECASE)
+                    if page_title and len(page_title) > 10:
+                        title = safe_text(page_title, 200)
+            
+            # Try 4: Extract from meta description
+            if not title or title.upper() in ["THE VO PROS", "THEVOPROS"]:
+                meta_desc = ps.find("meta", attrs={"name": "description"}) or ps.find("meta", attrs={"property": "og:title"})
+                if meta_desc and meta_desc.get("content"):
+                    meta_content = meta_desc.get("content", "")
+                    meta_content = re.sub(r'^(The\s+)?VO\s*Pros\s*[|:-]\s*', '', meta_content, flags=re.IGNORECASE)
+                    if meta_content and len(meta_content) > 10:
+                        title = safe_text(meta_content, 200)
+            
+            # If still no good title, skip this event
+            if not title or title.upper() in ["THE VO PROS", "THEVOPROS", "VO PROS"] or len(title) < 5:
+                log(f"  [VOPros] SKIPPING - no valid title found for {ev_url}")
+                continue
+            
+            log(f"  [VOPros] Title: '{title[:50]}...'")
 
             # Try multiple date patterns
             date_patterns = [
@@ -796,23 +863,33 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
                 log(f"  [VOPros] No date found in {ev_url}")
                 continue
 
-            # Try multiple time patterns
-            time_patterns = [
-                r"Event Time:\s*([0-9:]+\s*(?:am|pm)?(?:\s*[-–to]+\s*[0-9:]+\s*(?:am|pm))?)",
-                r"Time:\s*([0-9:]+\s*(?:am|pm)?(?:\s*[-–to]+\s*[0-9:]+\s*(?:am|pm))?)",
-                r"(\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*[-–to]+\s*\d{1,2}(?::\d{2})?\s*(?:am|pm))",
-                r"(\d{1,2}(?::\d{2})?\s*(?:am|pm))",
-            ]
-            
-            time_str = ""
-            for pattern in time_patterns:
-                time_m = re.search(pattern, txt, re.IGNORECASE)
-                if time_m:
-                    time_str = time_m.group(1)
-                    break
-            
-            log(f"  [VOPros] {title[:40]}... time_str='{time_str}'")
-            start, end = apply_time_to_date(base_date, time_str if time_str else txt, default_tz)
+            # Try multiple time patterns - IMPROVED: Check title first
+            sh, sm, eh, em = extract_time_from_text(title)
+            if sh is None:
+                # Try page text
+                time_patterns = [
+                    r"Event Time:\s*([0-9:]+\s*(?:am|pm)?(?:\s*[-–to]+\s*[0-9:]+\s*(?:am|pm))?)",
+                    r"Time:\s*([0-9:]+\s*(?:am|pm)?(?:\s*[-–to]+\s*[0-9:]+\s*(?:am|pm))?)",
+                    r"(\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*[-–to]+\s*\d{1,2}(?::\d{2})?\s*(?:am|pm))",
+                    r"(\d{1,2}(?::\d{2})?\s*(?:am|pm))",
+                ]
+                
+                time_str = ""
+                for pattern in time_patterns:
+                    time_m = re.search(pattern, txt, re.IGNORECASE)
+                    if time_m:
+                        time_str = time_m.group(1)
+                        break
+                
+                log(f"  [VOPros] time_str='{time_str}'")
+                start, end = apply_time_to_date(base_date, time_str if time_str else txt, default_tz)
+            else:
+                # Use extracted time from title
+                start = base_date.replace(hour=sh, minute=sm, second=0, microsecond=0)
+                end = base_date.replace(hour=eh, minute=em, second=0, microsecond=0)
+                tzinfo = datetz.gettz(default_tz)
+                start = start.replace(tzinfo=tzinfo)
+                end = end.replace(tzinfo=tzinfo)
 
             start_s = isoformat_with_tz(start, default_tz)
             end_s = isoformat_with_tz(end, default_tz)
@@ -831,11 +908,11 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
                     break
 
             reg = normalize_url(ev_url)
-            wid = compute_event_id(source["id"], title or "Workshop", start_s, reg)
+            wid = compute_event_id(source["id"], title, start_s, reg)
 
             events.append({
                 "id": wid,
-                "title": title or "Workshop",
+                "title": title,
                 "host": source.get("name"),
                 "city": None,
                 "state": None,
@@ -1331,8 +1408,11 @@ def apply_event_filters(events: List[Dict[str, Any]], filters: Optional[Dict[str
       - require_any_substrings: [ ... ] (case-insensitive, applies to title)
 
     If a filter key is absent, it is ignored.
+    
+    IMPROVED: Now also filters out ongoing/multi-session courses automatically.
     """
     if not filters:
+        events = [e for e in events if not is_ongoing_class(e.get("title", ""), e.get("detail", ""))]
         return events
 
     excl_title_res = [re.compile(p, re.IGNORECASE) for p in filters.get("exclude_title_regex", []) if p]
@@ -1354,6 +1434,10 @@ def apply_event_filters(events: List[Dict[str, Any]], filters: Optional[Dict[str
         blob = f"{title}\n{detail}\n{venue}"
 
         if not title:
+            continue
+
+        # IMPROVED: Filter out ongoing courses
+        if is_ongoing_class(title, detail):
             continue
 
         t_low = title.lower()
