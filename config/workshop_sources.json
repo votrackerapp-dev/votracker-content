@@ -84,7 +84,8 @@
       "id": "adventuresinvoiceacting",
       "name": "Adventures in Voice Acting",
       "url": "https://www.adventuresinvoiceacting.com/",
-      "extractor": "aiva_upcoming_schedule"
+      "extractor": "aiva_upcoming_schedule",
+      "allow_zero_events": true
     },
     {
       "id": "realvoicela",
