@@ -61,10 +61,90 @@ def normalize_url(url: Optional[str]) -> Optional[str]:
     except Exception:
         return u
 
-def fetch_html(url: str) -> str:
-    r = requests.get(url, timeout=30, headers={"User-Agent": "VOTrackerWorkshopBot/1.2"})
-    r.raise_for_status()
-    return r.text
+def fetch_html(url: str, headers: Optional[Dict[str, str]] = None) -> str:
+    """Fetch HTML with a few header profiles.
+
+    Some sites (esp. marketing/WordPress) return 403 for obvious bot UAs.
+    You can override headers per-source via source["headers"].
+    """
+    profiles = [
+        {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache",
+            "Upgrade-Insecure-Requests": "1",
+        },
+        {
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+        },
+        {
+            "User-Agent": "VOTrackerWorkshopBot/1.4",
+            "Accept": "text/html,*/*;q=0.8",
+        },
+    ]
+    if headers:
+        # Put caller overrides first
+        profiles.insert(0, headers)
+
+    last_err: Optional[Exception] = None
+    for h in profiles:
+        try:
+            r = requests.get(url, timeout=30, headers=h)
+            # If a site blocks, try next profile
+            if r.status_code in (401, 403, 406, 429):
+                last_err = requests.HTTPError(f"{r.status_code} blocked")
+                continue
+            r.raise_for_status()
+            return r.text
+        except Exception as e:
+            last_err = e
+            continue
+    raise last_err if last_err else RuntimeError("fetch failed")
+
+def apply_source_filters(source: Dict[str, Any], events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Optional per-source filtering rules from workshop_sources.json.
+
+    Example:
+      "filters": {
+        "exclude_title_regex": ["refer-a-friend", "get to know vo"],
+        "exclude_title_contains": ["refer-a-friend"],
+        "require_title_contains_any": ["workshop", "fight club"]
+      }
+    """
+    f = source.get("filters") or {}
+    if not f:
+        return events
+
+    ex_re = [re.compile(pat, re.IGNORECASE) for pat in (f.get("exclude_title_regex") or []) if pat]
+    ex_contains = [s.lower() for s in (f.get("exclude_title_contains") or []) if isinstance(s, str) and s.strip()]
+    req_any = [s.lower() for s in (f.get("require_title_contains_any") or []) if isinstance(s, str) and s.strip()]
+
+    filtered: List[Dict[str, Any]] = []
+    for e in events:
+        title = (e.get("title") or "").strip()
+        t = title.lower()
+
+        if not title:
+            continue
+
+        if req_any and not any(k in t for k in req_any):
+            continue
+
+        if ex_contains and any(k in t for k in ex_contains):
+            continue
+
+        if ex_re and any(rx.search(title) for rx in ex_re):
+            continue
+
+        filtered.append(e)
+
+    if VERBOSE and len(filtered) != len(events):
+        log(f"  [Filter] {source.get('id')}: {len(events)} -> {len(filtered)} after filters")
+    return filtered
 
 def parse_date_any(value: Any, default_tz: str) -> Optional[dt.datetime]:
     if not value:
@@ -299,7 +379,7 @@ def extract_jsonld_events(source: Dict[str, Any], default_tz: str) -> List[Dict[
     Extract events from JSON-LD structured data - most reliable source!
     Falls back to HTML parsing if no JSON-LD found.
     """
-    html = fetch_html(source["url"])
+    html = fetch_html(source["url"], source.get("headers"))
     soup = BeautifulSoup(html, "html.parser")
     scripts = soup.find_all("script", attrs={"type": "application/ld+json"})
     out: List[Dict[str, Any]] = []
@@ -513,7 +593,7 @@ def extract_html_events_fallback(source: Dict[str, Any], soup: BeautifulSoup, de
 
 def extract_soundonstudio_classsignup(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
     """Sound On Studio class signup page."""
-    html = fetch_html(source["url"])
+    html = fetch_html(source["url"], source.get("headers"))
     soup = BeautifulSoup(html, "html.parser")
     full_text = soup.get_text("\n")
 
@@ -565,7 +645,7 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
     Scrape The VO Pros events pages.
     IMPROVED: More flexible date/time patterns
     """
-    index_html = fetch_html(source["url"])
+    index_html = fetch_html(source["url"], source.get("headers"))
     soup = BeautifulSoup(index_html, "html.parser")
 
     links = []
@@ -582,7 +662,7 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
     events: List[Dict[str, Any]] = []
     for ev_url in links[:120]:
         try:
-            html = fetch_html(ev_url)
+            html = fetch_html(ev_url, source.get("headers"))
             ps = BeautifulSoup(html, "html.parser")
             txt = ps.get_text("\n")
 
@@ -669,7 +749,7 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
 
 def extract_halp_events_search(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
     """Scrape HALP Academy events."""
-    html = fetch_html(source["url"])
+    html = fetch_html(source["url"], source.get("headers"))
     soup = BeautifulSoup(html, "html.parser")
     events: List[Dict[str, Any]] = []
     
@@ -685,7 +765,7 @@ def extract_halp_events_search(source: Dict[str, Any], default_tz: str) -> List[
         seen_urls.add(full_url)
             
         try:
-            prod_html = fetch_html(full_url)
+            prod_html = fetch_html(full_url, source.get("headers"))
             prod_soup = BeautifulSoup(prod_html, "html.parser")
             prod_text = prod_soup.get_text("\n")
             
@@ -740,7 +820,7 @@ def extract_halp_events_search(source: Dict[str, Any], default_tz: str) -> List[
 
 def extract_van_shopify_products(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
     """Voice Actors Network Shopify products."""
-    html = fetch_html(source["url"])
+    html = fetch_html(source["url"], source.get("headers"))
     soup = BeautifulSoup(html, "html.parser")
 
     products = soup.select("a[href*='/products/']")
@@ -827,7 +907,7 @@ def extract_wix_service_list(source: Dict[str, Any], default_tz: str) -> List[Di
     Wix service pages (Real Voice LA, Adventures in Voice Acting, etc.)
     IMPROVED: Better time extraction patterns for Wix sites
     """
-    html = fetch_html(source["url"])
+    html = fetch_html(source["url"], source.get("headers"))
     soup = BeautifulSoup(html, "html.parser")
 
     service_urls: List[str] = []
@@ -857,7 +937,7 @@ def extract_wix_service_list(source: Dict[str, Any], default_tz: str) -> List[Di
 
     for surl in service_urls[:120]:
         try:
-            sh = fetch_html(surl)
+            sh = fetch_html(surl, source.get("headers"))
             ss = BeautifulSoup(sh, "html.parser")
             txt = ss.get_text("\n")
 
@@ -941,7 +1021,7 @@ def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dic
     """
     VO Dojo - IMPROVED to filter junk and avoid duplicates
     """
-    html = fetch_html(source["url"])
+    html = fetch_html(source["url"], source.get("headers"))
     soup = BeautifulSoup(html, "html.parser")
     full_text = soup.get_text("\n")
     
@@ -1080,6 +1160,88 @@ def extract_html_fallback(source: Dict[str, Any], default_tz: str) -> List[Dict[
     """Generic HTML fallback - tries JSON-LD first, then HTML parsing"""
     return extract_jsonld_events(source, default_tz)
 
+def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
+    """VoiceTraxWest Guest Instructors page.
+
+    Squarespace page with date strings like:
+      'SATURDAY, Feb 7 - 10:00am PST'
+      'TUESDAY, Feb 10 - 6:30pm PST'
+
+    The page does not include a year, so we infer it.
+    """
+    html = fetch_html(source["url"], source.get("headers"))
+    soup = BeautifulSoup(html, "html.parser")
+    txt = soup.get_text("\n")
+
+    # Examples: "SATURDAY, Feb 7 - 10:00am PST"
+    dt_re = re.compile(
+        r"\b(?:MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY)\b\s*,?\s*"
+        r"([A-Za-z]{3,9}\s+\d{1,2})\s*[-–]\s*"
+        r"(\d{1,2}(?::\d{2})?\s*(?:am|pm))\s*(?:\b(?:PT|PST|PDT)\b)?",
+        re.IGNORECASE
+    )
+
+    blocks = [b.strip() for b in txt.split("* * *") if b.strip()]
+    events: List[Dict[str, Any]] = []
+
+    for b in blocks:
+        m = dt_re.search(b)
+        if not m:
+            continue
+
+        month_day = m.group(1).strip()
+        time_part = m.group(2).strip()
+        base_date = infer_year_for_month_day(month_day, default_tz)
+
+        # Pick a title: first "good" line in the block that isn't nav noise.
+        lines = [ln.strip() for ln in b.splitlines() if ln.strip()]
+        title = None
+        for ln in lines:
+            low = ln.lower()
+            if low in {"home", "menu", "instructors", "classes"}:
+                continue
+            if "voicetrax west" in low:
+                continue
+            if low.startswith("join "):
+                continue
+            if low.startswith("powered by"):
+                continue
+            if low in {"in person", "online"}:
+                continue
+            if re.match(r"^\d{1,2}:\d{2}$", low):
+                continue
+            # Most titles on this page are reasonably short.
+            if len(ln) >= 6 and len(ln) <= 140:
+                title = ln
+                break
+        if not title:
+            title = "Workshop"
+
+        start, end = apply_time_to_date(base_date, time_part, default_tz)
+        start_s = isoformat_with_tz(start, default_tz)
+        end_s = isoformat_with_tz(end, default_tz)
+
+        reg = normalize_url(source.get("url"))
+        wid = compute_event_id(source["id"], title, start_s, reg)
+
+        events.append({
+            "id": wid,
+            "title": title,
+            "host": source.get("name"),
+            "city": None,
+            "state": None,
+            "venue": "VoiceTraxWest",
+            "startAt": start_s,
+            "endAt": end_s,
+            "registrationURL": reg,
+            "imageURL": None,
+            "detail": None,
+            "links": [{"title": "Listing", "url": reg}] if reg else None
+        })
+
+    return events
+
+
 EXTRACTORS = {
     "jsonld_events": extract_jsonld_events,
     "soundonstudio_classsignup": extract_soundonstudio_classsignup,
@@ -1088,6 +1250,7 @@ EXTRACTORS = {
     "van_shopify_products": extract_van_shopify_products,
     "wix_service_list": extract_wix_service_list,
     "vodojo_upcoming": extract_vodojo_upcoming,
+    "voicetraxwest_guest_instructors": extract_voicetraxwest_guest_instructors,
     "html_fallback": extract_html_fallback
 }
 
@@ -1135,6 +1298,7 @@ def main():
         
         try:
             events = fn(s, args.default_tz)
+            events = apply_source_filters(s, events)
             for e in events:
                 if isinstance(e, dict):
                     e.setdefault("provider", s.get("name"))
