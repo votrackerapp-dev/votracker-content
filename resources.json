@@ -183,6 +183,26 @@
       "provider": "Sound On Studio"
     },
     {
+      "id": "thevopros-1cc9edb0d1e9185e",
+      "title": "THE VO PROS",
+      "host": "The VO Pros",
+      "city": null,
+      "state": null,
+      "venue": null,
+      "startAt": "2026-02-02T16:00:00-08:00",
+      "endAt": "2026-02-02T18:00:00-08:00",
+      "registrationURL": "https://www.thevopros.com/events/manager-night-sumeet-iyengar-cope-management-2",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://www.thevopros.com/events/manager-night-sumeet-iyengar-cope-management-2"
+        }
+      ],
+      "provider": "The VO Pros"
+    },
+    {
       "id": "van-commercial-carli-silver-2026-02-03",
       "title": "Commercial Clinic",
       "host": "Carli Silver",
@@ -242,26 +262,6 @@
       "provider": "Real Voice LA"
     },
     {
-      "id": "thevodojo-9bf28f3742e97631",
-      "title": "Ask the Sensei with Kelli Tager",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-04T18:00:00-08:00",
-      "endAt": "2026-02-04T20:00:00-08:00",
-      "registrationURL": "https://www.thevodojo.com/upcoming-events-nav",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
       "id": "realvoicela-bacb71afd3e2baec",
       "title": "Mastering Nerves: With Trine C. Jensen",
       "host": "Real Voice LA",
@@ -302,6 +302,26 @@
       "provider": "Real Voice LA"
     },
     {
+      "id": "thevopros-35eddf7d7df54cc5",
+      "title": "THE VO PROS",
+      "host": "The VO Pros",
+      "city": null,
+      "state": null,
+      "venue": null,
+      "startAt": "2026-02-09T16:00:00-08:00",
+      "endAt": "2026-02-09T18:00:00-08:00",
+      "registrationURL": "https://www.thevopros.com/events/agent-night-arielle-negrin-atlas-talent-3",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://www.thevopros.com/events/agent-night-arielle-negrin-atlas-talent-3"
+        }
+      ],
+      "provider": "The VO Pros"
+    },
+    {
       "id": "van-narration-jon-armond-2026-02-11",
       "title": "Narration Clinic",
       "host": "Jon Armond",
@@ -321,24 +341,24 @@
       ]
     },
     {
-      "id": "thevodojo-8967f94762c55ae8",
-      "title": "Thursday, February 12th • VO Pro Fight Club • ANIMATION with BRENNA LARSEN",
-      "host": "The VO Dojo",
+      "id": "thevopros-a70f4b4a29d91d92",
+      "title": "THE VO PROS",
+      "host": "The VO Pros",
       "city": null,
       "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-12T18:00:00-08:00",
-      "endAt": "2026-02-12T20:00:00-08:00",
-      "registrationURL": "https://www.thevodojo.com/upcoming-events-nav",
+      "venue": null,
+      "startAt": "2026-02-12T16:00:00-08:00",
+      "endAt": "2026-02-12T18:00:00-08:00",
+      "registrationURL": "https://www.thevopros.com/events/agent-night-liz-klausner-dpn-talent-ny",
       "imageURL": null,
       "detail": null,
       "links": [
         {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
+          "title": "Event Page",
+          "url": "https://www.thevopros.com/events/agent-night-liz-klausner-dpn-talent-ny"
         }
       ],
-      "provider": "The VO Dojo"
+      "provider": "The VO Pros"
     },
     {
       "id": "soundonstudio-2d5ed3b51725404e",
@@ -361,6 +381,26 @@
       "provider": "Sound On Studio"
     },
     {
+      "id": "thevopros-272d3226016eca57",
+      "title": "THE VO PROS",
+      "host": "The VO Pros",
+      "city": null,
+      "state": null,
+      "venue": null,
+      "startAt": "2026-02-18T16:00:00-08:00",
+      "endAt": "2026-02-18T18:00:00-08:00",
+      "registrationURL": "https://www.thevopros.com/events/animation-sirena-irwin-director",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://www.thevopros.com/events/animation-sirena-irwin-director"
+        }
+      ],
+      "provider": "The VO Pros"
+    },
+    {
       "id": "halp_academy-e44ebdff752d328c",
       "title": "VO Workshop with Lexington Vanderberg!",
       "host": "HALP Academy",
@@ -368,7 +408,7 @@
       "state": null,
       "venue": "Zoom",
       "startAt": "2026-02-18T18:00:00-08:00",
-      "endAt": "2026-02-18T21:00:00-08:00",
+      "endAt": "2026-02-18T20:00:00-08:00",
       "registrationURL": "https://halpacademy.com/product/vo-workshop-with-lexington-vanderberg",
       "imageURL": null,
       "detail": null,
@@ -379,26 +419,6 @@
         }
       ],
       "provider": "HALP Academy"
-    },
-    {
-      "id": "thevodojo-df8f09e3a67cda54",
-      "title": "Get to Know VO: The Playbook for Sports Voiceover with Steven Goard",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-18T18:00:00-08:00",
-      "endAt": "2026-02-18T20:00:00-08:00",
-      "registrationURL": "https://www.thevodojo.com/upcoming-events-nav",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
     },
     {
       "id": "realvoicela-3d693743363f0c95",
@@ -419,6 +439,26 @@
         }
       ],
       "provider": "Real Voice LA"
+    },
+    {
+      "id": "thevopros-cf9e409564a4cfee",
+      "title": "THE VO PROS",
+      "host": "The VO Pros",
+      "city": null,
+      "state": null,
+      "venue": null,
+      "startAt": "2026-02-19T16:00:00-08:00",
+      "endAt": "2026-02-19T18:00:00-08:00",
+      "registrationURL": "https://www.thevopros.com/events/video-games-stephen-carr-director-casting-producer-super-secret-company",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://www.thevopros.com/events/video-games-stephen-carr-director-casting-producer-super-secret-company"
+        }
+      ],
+      "provider": "The VO Pros"
     },
     {
       "id": "realvoicela-d2fe891185490c0b",
@@ -487,7 +527,7 @@
       "state": null,
       "venue": "Zoom",
       "startAt": "2026-02-21T10:00:00-08:00",
-      "endAt": "2026-02-21T13:00:00-08:00",
+      "endAt": "2026-02-21T12:00:00-08:00",
       "registrationURL": "https://halpacademy.com/product/vo-workshop-with-tasia-valenza",
       "imageURL": null,
       "detail": null,
@@ -540,24 +580,24 @@
       "provider": "Sound On Studio"
     },
     {
-      "id": "thevodojo-6f5e74fc7333f08a",
-      "title": "Sunday, February 22nd • VO Pro Fight Club • ANIME with LISA ORTIZ",
-      "host": "The VO Dojo",
+      "id": "thevopros-dae38e18c76a95c1",
+      "title": "THE VO PROS",
+      "host": "The VO Pros",
       "city": null,
       "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-22T18:00:00-08:00",
-      "endAt": "2026-02-22T20:00:00-08:00",
-      "registrationURL": "https://www.thevodojo.com/upcoming-events-nav",
+      "venue": null,
+      "startAt": "2026-02-23T16:00:00-08:00",
+      "endAt": "2026-02-23T18:00:00-08:00",
+      "registrationURL": "https://www.thevopros.com/events/anime-dubbing-jason-lord-director-crunch-roll",
       "imageURL": null,
       "detail": null,
       "links": [
         {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
+          "title": "Event Page",
+          "url": "https://www.thevopros.com/events/anime-dubbing-jason-lord-director-crunch-roll"
         }
       ],
-      "provider": "The VO Dojo"
+      "provider": "The VO Pros"
     },
     {
       "id": "soundonstudio-35229c58b154f154",
@@ -578,26 +618,6 @@
         }
       ],
       "provider": "Sound On Studio"
-    },
-    {
-      "id": "thevodojo-88366bfb2f6b6a29",
-      "title": "Tuesday, February 24th • VO Pro Fight Club • COMMERCIALS with LISA FISCHOFF",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-24T18:00:00-08:00",
-      "endAt": "2026-02-24T20:00:00-08:00",
-      "registrationURL": "https://www.thevodojo.com/upcoming-events-nav",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
     },
     {
       "id": "van-animation-bob-bergen-2026-02-25",
@@ -658,6 +678,26 @@
       "provider": "Real Voice LA"
     },
     {
+      "id": "thevopros-b514fa681e6998b2",
+      "title": "THE VO PROS",
+      "host": "The VO Pros",
+      "city": null,
+      "state": null,
+      "venue": null,
+      "startAt": "2026-03-05T16:00:00-08:00",
+      "endAt": "2026-03-05T18:00:00-08:00",
+      "registrationURL": "https://www.thevopros.com/events/animation-casting-director-kerri-anne-lavin",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://www.thevopros.com/events/animation-casting-director-kerri-anne-lavin"
+        }
+      ],
+      "provider": "The VO Pros"
+    },
+    {
       "id": "realvoicela-2121f3998d2acf33",
       "title": "March - Games, Auditioning, and Advice",
       "host": "Real Voice LA",
@@ -676,6 +716,26 @@
         }
       ],
       "provider": "Real Voice LA"
+    },
+    {
+      "id": "thevopros-bcd7c8e0991428ce",
+      "title": "THE VO PROS",
+      "host": "The VO Pros",
+      "city": null,
+      "state": null,
+      "venue": null,
+      "startAt": "2026-03-09T16:00:00-07:00",
+      "endAt": "2026-03-09T18:00:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/video-games-stephen-carr-video-game-prod-director-casting-secret-company",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://www.thevopros.com/events/video-games-stephen-carr-video-game-prod-director-casting-secret-company"
+        }
+      ],
+      "provider": "The VO Pros"
     },
     {
       "id": "realvoicela-57384177dc978872",
@@ -718,24 +778,44 @@
       "provider": "Real Voice LA"
     },
     {
-      "id": "thevodojo-0c217ab09131e310",
-      "title": "VOA Breakout: Dude, B*tches, & Mothaf***ers: Activating Your POV for Infinite, Effortless, Badass ABC Takes with Tish Hicks",
-      "host": "The VO Dojo",
+      "id": "thevopros-27cbd98362896060",
+      "title": "THE VO PROS",
+      "host": "The VO Pros",
       "city": null,
       "state": null,
-      "venue": "See listing",
-      "startAt": "2026-03-27T18:00:00-07:00",
-      "endAt": "2026-03-27T20:00:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/upcoming-events-nav",
+      "venue": null,
+      "startAt": "2026-03-16T19:00:00-07:00",
+      "endAt": "2026-03-16T21:00:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/animation-games-dubbing-disney-audio-experiences-casting-director-director-renee-johnson",
       "imageURL": null,
       "detail": null,
       "links": [
         {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
+          "title": "Event Page",
+          "url": "https://www.thevopros.com/events/animation-games-dubbing-disney-audio-experiences-casting-director-director-renee-johnson"
         }
       ],
-      "provider": "The VO Dojo"
+      "provider": "The VO Pros"
+    },
+    {
+      "id": "thevopros-3bddab2564f46756",
+      "title": "THE VO PROS",
+      "host": "The VO Pros",
+      "city": null,
+      "state": null,
+      "venue": null,
+      "startAt": "2026-03-19T16:30:00-07:00",
+      "endAt": "2026-03-19T18:30:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/anime-casting-director-prod-mami-okada-bangzoom",
+      "imageURL": null,
+      "detail": null,
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://www.thevopros.com/events/anime-casting-director-prod-mami-okada-bangzoom"
+        }
+      ],
+      "provider": "The VO Pros"
     }
   ],
   "sections": [
