@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-01-30",
+  "lastUpdated": "2026-01-31",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -181,46 +181,6 @@
         }
       ],
       "provider": "Sound On Studio"
-    },
-    {
-      "id": "thevodojo-817483b06993dbe0",
-      "title": "When you refer a friend to the V.O. Dojo and they enroll in a program, you receive $100 in Dojo credit as a thank-you. It’s our way of honoring the tr",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-01T18:00:00-08:00",
-      "endAt": "2026-02-01T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
-    },
-    {
-      "id": "thevodojo-f30a86b590ced744",
-      "title": "Missed your chance to join in January?",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-02T18:00:00-08:00",
-      "endAt": "2026-02-02T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
     },
     {
       "id": "van-commercial-carli-silver-2026-02-03",
@@ -439,26 +399,6 @@
         }
       ],
       "provider": "HALP Academy"
-    },
-    {
-      "id": "thevodojo-df8f09e3a67cda54",
-      "title": "Get to Know VO: The Playbook for Sports Voiceover with Steven Goard",
-      "host": "The VO Dojo",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-18T18:00:00-08:00",
-      "endAt": "2026-02-18T20:00:00-08:00",
-      "registrationURL": null,
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Upcoming Events",
-          "url": "https://www.thevodojo.com/upcoming-events-nav"
-        }
-      ],
-      "provider": "The VO Dojo"
     },
     {
       "id": "realvoicela-3d693743363f0c95",
