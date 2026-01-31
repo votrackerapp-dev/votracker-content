@@ -61,7 +61,7 @@ def normalize_url(url: Optional[str]) -> Optional[str]:
     except Exception:
         return u
 
-def fetch_html(url: str, headers: Optional[Dict[str, str]] = None) -> str:
+def fetch_html(url: str) -> str:
     r = requests.get(url, timeout=30, headers={"User-Agent": "VOTrackerWorkshopBot/1.2"})
     r.raise_for_status()
     return r.text
@@ -201,10 +201,6 @@ def extract_time_from_text(text: str) -> Tuple[Optional[int], Optional[int], Opt
     """
     if not text:
         return None, None, None, None
-    # Normalize annoying variants like "a.m." / "p.m." / "a. m." / "P.M."
-    text = re.sub(r"\b(a)\s*\.?\s*m\s*\.?\b", "am", text, flags=re.IGNORECASE)
-    text = re.sub(r"\b(p)\s*\.?\s*m\s*\.?\b", "pm", text, flags=re.IGNORECASE)
-
     
     # 1. Try contextual format first (in parens or after pipe) - most specific
     m = TIME_IN_CONTEXT_RE.search(text)
@@ -261,34 +257,25 @@ def extract_time_from_text(text: str) -> Tuple[Optional[int], Optional[int], Opt
     log(f"    [TIME] No time found in: {text[:80]}...")
     return None, None, None, None
 
-def apply_time_to_date(
-    base_date: dt.datetime,
-    text: str,
-    default_tz: str,
-    allow_default: bool = True
-) -> Tuple[dt.datetime, dt.datetime]:
-    """Apply extracted time to a base date.
+def apply_time_to_date(base_date: dt.datetime, text: str, default_tz: str) -> Tuple[dt.datetime, dt.datetime]:
+    """
+    Apply extracted time to a base date.
     Returns (start_datetime, end_datetime)
-
-    If allow_default is False and no time is found, raises ValueError.
     """
     tzinfo = datetz.gettz(default_tz)
     base_date = base_date.replace(tzinfo=tzinfo, hour=0, minute=0, second=0, microsecond=0)
-
+    
     sh, sm, eh, em = extract_time_from_text(text)
-
+    
     if sh is not None:
         start = base_date.replace(hour=sh, minute=sm)
         end = base_date.replace(hour=eh, minute=em)
         if end <= start:
             end = end + dt.timedelta(days=1)
         return start, end
-
-    if not allow_default:
-        raise ValueError(f"No time found in '{(text or '')[:120]}'")
-
-    # No time found - default to 6pm + DEFAULT_EVENT_DURATION_HOURS
-    log("    [TIME] Using default 6pm")
+    
+    # No time found - default to 6pm + 2 hours
+    log(f"    [TIME] Using default 6pm")
     start = base_date.replace(hour=18, minute=0)
     end = start + dt.timedelta(hours=DEFAULT_EVENT_DURATION_HOURS)
     return start, end
@@ -1137,297 +1124,441 @@ def extract_wix_service_list(source: Dict[str, Any], default_tz: str) -> List[Di
     return events
 
 def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
-    """VO Dojo upcoming events.
-
-    Rules:
-    - Only keep real classes (must contain: 'with First Last' or 'with Sensei First Last')
-    - Must contain a parseable date AND time in the same instructor section
-    - Never default to 6pm for VO Dojo. If time can't be extracted -> skip.
-    - Aggressively remove promo / marketing posts.
     """
-    html = fetch_html(source["url"], source.get("headers"))
+    The VO Dojo
+
+    The /upcoming-events-nav page is messy and has promo copy mixed in. The /new-events page tends to be
+    more structured and includes the actual time. We will prefer /new-events automatically (without requiring
+    a config change), and we will aggressively filter out promo/non-class items.
+
+    Rule: keep ONLY listings that look like a real class, i.e. contain "with <Name>" in the title.
+    """
+    base_url = source["url"].strip()
+    preferred_url = base_url
+    if "thevodojo.com" in base_url and "new-events" not in base_url:
+        preferred_url = "https://www.thevodojo.com/new-events"
+
+    def _parse_from_url(url: str) -> List[Dict[str, Any]]:
+        html = fetch_html(url)
+        if not html:
+            return []
+        soup = BeautifulSoup(html, "html.parser")
+
+        # Find containers that look like individual event cards/rows.
+        # We'll try a few strategies and merge unique results.
+        candidates: List[str] = []
+
+        # Strategy A: any element with a date like "Feb 4, 2026"
+        date_re = re.compile(r"\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\s+\d{1,2},\s*\d{4}\b", re.IGNORECASE)
+        for el in soup.find_all(string=date_re):
+            parent = el.parent
+            # climb a bit to capture the full card text
+            for _ in range(4):
+                if parent and parent.parent:
+                    parent = parent.parent
+            if parent:
+                txt = " ".join(parent.stripped_strings)
+                if txt and len(txt) > 30:
+                    candidates.append(txt)
+
+        # Strategy B: fall back to big body text chunks
+        if not candidates:
+            body_text = " ".join(soup.get_text("\n", strip=True).splitlines())
+            if body_text:
+                candidates.append(body_text)
+
+        events: List[Dict[str, Any]] = []
+        seen: set = set()
+
+        # Parse each candidate blob.
+        # We look for a date, a title (must include "with <Name>"), and time.
+        for blob in candidates:
+            # Split roughly on occurrences of month names to create chunks.
+            chunks = re.split(r"(?=(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\s+\d{1,2},\s*\d{4})", blob)
+            for chunk in chunks:
+                chunk = chunk.strip()
+                if len(chunk) < 40:
+                    continue
+
+                dm = date_re.search(chunk)
+                if not dm:
+                    continue
+                date_str = dm.group(0)
+
+                # Title heuristics: prefer "with <Name>" line, else take first reasonable title-like segment
+                # that still contains "with <Name>".
+                title = None
+                title_candidates = re.split(r"\s{2,}|\s*\|\s*|\s*•\s*", chunk)
+                for tc in title_candidates:
+                    tc = tc.strip()
+                    if not tc:
+                        continue
+                    if re.search(r"\b(?:with|featuring|feat\.?)\s+[A-Z][A-Za-z'\-]+", tc):
+                        title = tc
+                        break
+
+                if not title:
+                    continue  # promo or non-class
+
+                # Extra promo filters (paranoid)
+                if re.search(r"(missed your chance|refer a friend|enroll|discount|coupon|freebie|giveaway|sale)", title, re.IGNORECASE):
+                    continue
+
+                # Parse date
+                d = parse_month_day_year(date_str, default_tz)
+                if not d:
+                    continue
+
+                # Parse time from the same chunk (this is the critical part)
+                sh, sm, eh, em = extract_time_from_text(chunk)
+                if sh is None:
+                    # no time => skip (we don't want to default to 6pm and be wrong)
+                    continue
+
+                start_dt = d.replace(hour=sh, minute=sm, second=0, microsecond=0)
+                end_dt = d.replace(hour=eh or min(sh + DEFAULT_EVENT_DURATION_HOURS, 23),
+                                   minute=em if em is not None else sm,
+                                   second=0, microsecond=0)
+
+                # Unique key (title + start)
+                key = (title.lower().strip(), start_dt.isoformat())
+                if key in seen:
+                    continue
+                seen.add(key)
+
+                events.append({
+                    "title": title,
+                    "startAt": start_dt.isoformat(),
+                    "endAt": end_dt.isoformat(),
+                    "registrationURL": base_url,
+                    "venue": "See listing",
+                })
+
+        return events
+
+    # Prefer new-events
+    events = _parse_from_url(preferred_url)
+    if events:
+        log(f"  [VODojo] Parsed {len(events)} events from {preferred_url}")
+        return events
+
+    # Fall back to the legacy parser (keeps us resilient if /new-events changes).
+    # (Original behavior, but we'll be stricter about keeping only items with "with <Name>".)
+    html = fetch_html(base_url)
+    if not html:
+        return []
     soup = BeautifulSoup(html, "html.parser")
-    text = soup.get_text("\n")
+    text = soup.get_text("\n", strip=True)
+    lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
 
-    raw_lines = [ln.strip() for ln in text.split("\n")]
-    lines = [ln for ln in raw_lines if ln]
+    date_line_re = re.compile(r"\b(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)?\s*(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\s+\d{1,2}(?:st|nd|rd|th)?,?\s*\d{4}\b", re.IGNORECASE)
 
-    promo_kws = [
-        "refer a friend",
-        "missed your chance",
-        "join now",
-        "enroll",
-        "enrollment",
-        "limited time",
-        "discount",
-        "coupon",
-        "sale",
-        "newsletter",
-        "mailing list",
-        "subscribe",
-        "donate",
-        "promotion",
-        "promo",
-    ]
+    events_by_datetime: Dict[str, Dict[str, Any]] = {}
+    i = 0
+    while i < len(lines):
+        ln = lines[i]
+        if date_line_re.search(ln):
+            # Gather block until next date line
+            block = [ln]
+            j = i + 1
+            while j < len(lines) and not date_line_re.search(lines[j]):
+                block.append(lines[j])
+                j += 1
+            block_text = " ".join(block)
 
-    def contains_promo(t: str) -> bool:
-        lt = (t or "").lower()
-        return any(k in lt for k in promo_kws)
+            # Title must include "with <Name>"
+            title = None
+            for candidate in block:
+                if re.search(r"\b(?:with|featuring|feat\.?)\s+[A-Z][A-Za-z'\-]+", candidate):
+                    title = candidate
+                    break
+            if not title:
+                i = j
+                continue
 
-    # Instructor requirement
-    instructor_re = re.compile(r"\bwith\s+(?:sensei\s+)?([a-z]+(?:\s+[a-z]+)+)\b", re.IGNORECASE)
+            # Parse date
+            d = parse_fuzzy_date(ln, default_tz)
+            if not d:
+                i = j
+                continue
 
-    # Date+time patterns (VO Dojo is inconsistent)
-    months = r"(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)"
-    weekday = r"(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)"
-    ampm = r"(?:am|pm|a\.?m\.?|p\.?m\.?)"
+            sh, sm, eh, em = extract_time_from_text(block_text)
+            if sh is None:
+                # skip if no time (don't default)
+                i = j
+                continue
 
-    dt_re = re.compile(
-        rf"\b(?:{weekday}\s+)?({months})\s+(\d{{1,2}})(?:st|nd|rd|th)?"
-        rf"(?:\s*,?\s*(\d{{4}}))?\s*"
-        rf"(?:@|[-–—]\s*)\s*"
-        rf"("
-        rf"\d{{1,2}}(?::\d{{2}})?(?:\s*{ampm})?"
-        rf"(?:\s*[-–—to]+\s*\d{{1,2}}(?::\d{{2}})?\s*(?:{ampm}))?"
-        rf")\s*(?:pt|pst|pdt)?\b",
-        re.IGNORECASE,
-    )
+            start_dt = d.replace(hour=sh, minute=sm, second=0, microsecond=0)
+            end_dt = d.replace(hour=eh or min(sh + DEFAULT_EVENT_DURATION_HOURS, 23),
+                               minute=em if em is not None else sm,
+                               second=0, microsecond=0)
 
-    events_by_key: Dict[str, Dict[str, Any]] = {}
+            key = start_dt.isoformat()
+            if key not in events_by_datetime:
+                events_by_datetime[key] = {
+                    "title": title,
+                    "startAt": start_dt.isoformat(),
+                    "endAt": end_dt.isoformat(),
+                    "registrationURL": base_url,
+                    "venue": "See listing",
+                }
 
-    for i, line in enumerate(lines):
-        if not instructor_re.search(line):
-            continue
-        if contains_promo(line):
-            continue
-
-        # Scan deeper into the same "section" for the nearest date+time.
-        window = "\n".join(lines[i : i + 140])
-        if contains_promo(window):
-            continue
-
-        m = dt_re.search(window)
-        if not m:
-            # No date+time found near this instructor section -> skip (no default time)
+            i = j
             continue
 
-        month_txt = m.group(1)
-        day_txt = m.group(2)
-        year_txt = m.group(3)
-        time_blob = m.group(4)
+        i += 1
 
-        # Build base date
-        if year_txt:
-            base = parse_date_any(f"{month_txt} {day_txt} {year_txt}", default_tz)
-        else:
-            base = infer_year_for_month_day(f"{month_txt} {day_txt}", default_tz)
-
-        if not base:
-            continue
-
-        # Strict: do NOT allow default time for VO Dojo
-        try:
-            start_dt, end_dt = apply_time_to_date(base, time_blob, default_tz, allow_default=False)
-        except ValueError:
-            continue
-
-        start_s = isoformat_with_tz(start_dt, default_tz)
-        end_s = isoformat_with_tz(end_dt, default_tz)
-
-        title = safe_text(line, 150) or "The VO Dojo Workshop"
-
-        # Enforce instructor in title (hard rule)
-        if not instructor_re.search(title):
-            continue
-
-        key = start_s[:16] + "|" + title.lower()
-        if key in events_by_key:
-            continue
-
-        events_by_key[key] = {
-            "id": compute_event_id(source["id"], title, start_s, None),
-            "title": title,
-            "host": source.get("name") or source.get("id"),
-            "city": None,
-            "state": None,
-            "venue": "See listing",
-            "startAt": start_s,
-            "endAt": end_s,
-            "registrationURL": normalize_url(source["url"]),
-            "imageURL": None,
-            "detail": None,
-            "links": [{"title": "Upcoming Events", "url": normalize_url(source["url"]) }],
-            "provider": source.get("name") or "The VO Dojo",
-        }
-
-    events = list(events_by_key.values())
-    log(f"  [VODojo] Parsed {len(events)} events")
+    events = list(events_by_datetime.values())
+    log(f"  [VODojo] Fallback parsed {len(events)} events")
     return events
+
+
 
 def extract_html_fallback(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
     """Generic HTML fallback - tries JSON-LD first, then HTML parsing"""
     return extract_jsonld_events(source, default_tz)
 
-def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
-    """VoiceTrax West guest instructors page.
 
-    Parses date lines like:
-      'TUESDAY, Feb 10 - 6:30pm PST'
-    and uses the surrounding text as title/detail when possible.
+
+
+def apply_event_filters(events: List[Dict[str, Any]], filters: Optional[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
-    html = fetch_html(source["url"], source.get("headers"))
+    Optional per-source filters (configured in workshop_sources.json):
+
+      - exclude_title_regex: [ ... ]
+      - require_title_regex: "..."
+      - exclude_text_regex: [ ... ]  (applies to title + detail + venue)
+      - require_any_substrings: [ ... ] (case-insensitive, applies to title)
+
+    If a filter key is absent, it is ignored.
+    """
+    if not filters:
+        return events
+
+    excl_title_res = [re.compile(p, re.IGNORECASE) for p in filters.get("exclude_title_regex", []) if p]
+    req_title_re = filters.get("require_title_regex")
+    req_title_re_c = re.compile(req_title_re, re.IGNORECASE) if req_title_re else None
+
+    excl_text_res = [re.compile(p, re.IGNORECASE) for p in filters.get("exclude_text_regex", []) if p]
+    req_any = [s.lower() for s in filters.get("require_any_substrings", []) if isinstance(s, str) and s.strip()]
+
+    # Legacy/alternate config keys
+    excl_title_contains = [s.lower() for s in filters.get("exclude_title_contains", []) if isinstance(s, str) and s.strip()]
+    req_title_contains_any = [s.lower() for s in filters.get("require_title_contains_any", []) if isinstance(s, str) and s.strip()]
+
+    out: List[Dict[str, Any]] = []
+    for e in events:
+        title = (e.get("title") or "").strip()
+        detail = (e.get("detail") or "").strip()
+        venue = (e.get("venue") or "").strip()
+        blob = f"{title}\n{detail}\n{venue}"
+
+        if not title:
+            continue
+
+        t_low = title.lower()
+
+        if excl_title_contains and any(s in t_low for s in excl_title_contains):
+            continue
+        if any(rx.search(title) for rx in excl_title_res):
+            continue
+
+        if req_title_re_c and not req_title_re_c.search(title):
+            continue
+
+        if any(rx.search(blob) for rx in excl_text_res):
+            continue
+
+        if req_any and not any(s in t_low for s in req_any):
+            continue
+
+        if req_title_contains_any and not any(s in t_low for s in req_title_contains_any):
+            continue
+
+        out.append(e)
+
+    return out
+
+def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
+    """
+    VoiceTrax West - Guest Instructor Classes page.
+
+    The page contains fixed class dates/times like:
+      "TUESDAY, Feb 10 - 6:30pm PST"
+    plus a booking link (as.me) per class.
+
+    We parse each card-like block that contains both a date and a time.
+    """
+    html = fetch_html(source["url"])
+    if not html:
+        return []
     soup = BeautifulSoup(html, "html.parser")
-    text = soup.get_text("\n")
-    lines = [ln.strip() for ln in text.split("\n") if ln.strip()]
 
-    dt_line_re = re.compile(r"\b(?:mon|tue|wed|thu|fri|sat|sun)(?:day)?\b.*?\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\b\s+\d{1,2}.*?\b\d{1,2}:\d{2}\s*(?:am|pm)\b", re.IGNORECASE)
+    # Regex for "TUESDAY, Feb 10 - 6:30pm PST"
+    sched_re = re.compile(
+        r"\b(?:Mon|Tues|Tue|Wed|Thu|Thur|Fri|Sat|Sun|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\b[,\s]*"
+        r"(?P<mon>Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\s+"
+        r"(?P<day>\d{1,2})\s*[-–—]\s*"
+        r"(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ampm>am|pm)\s*(?:PST|PDT|PT)\b",
+        re.IGNORECASE
+    )
+
     events: List[Dict[str, Any]] = []
-    seen = set()
+    seen: set = set()
 
-    for i, ln in enumerate(lines):
-        if not dt_line_re.search(ln):
+    # Find booking links and parse their surrounding text
+    for a in soup.find_all("a", href=True):
+        href = a["href"].strip()
+        if "as.me" not in href:
+            continue
+        container = a
+        for _ in range(5):
+            if container.parent:
+                container = container.parent
+        block_text = " ".join(container.stripped_strings)
+
+        sm = sched_re.search(block_text)
+        if not sm:
             continue
 
-        # Try to find a nearby title above the datetime line
+        mon = sm.group("mon")
+        day = int(sm.group("day"))
+        year = infer_year_for_month_day(mon, day, default_tz)
+        d = parse_month_day_year(f"{mon} {day}, {year}", default_tz)
+        if not d:
+            continue
+
+        hour = int(sm.group("h"))
+        minute = int(sm.group("m") or 0)
+        ampm = sm.group("ampm").lower()
+        if ampm == "pm" and hour != 12:
+            hour += 12
+        if ampm == "am" and hour == 12:
+            hour = 0
+
+        start_dt = d.replace(hour=hour, minute=minute, second=0, microsecond=0)
+        end_dt = start_dt + timedelta(hours=DEFAULT_EVENT_DURATION_HOURS)
+
+        # Title heuristics: nearest strong/heading text in the block
         title = None
-        for j in range(1, 8):
-            if i-j >= 0 and len(lines[i-j]) > 4 and not dt_line_re.search(lines[i-j]):
-                title = lines[i-j]
+        for tag in ["h2", "h3", "h4", "strong"]:
+            t = container.find(tag)
+            if t and t.get_text(strip=True):
+                title = t.get_text(" ", strip=True)
                 break
-        title = safe_text(title, 160) if title else "VoiceTrax West Workshop"
+        if not title:
+            # fallback: link text
+            title = a.get_text(" ", strip=True) or "Guest Instructor Class"
 
-        # Parse date part by letting parser handle it
-        # ln may contain weekday + month day + time + PST/PDT
-        base = parse_date_any(ln, default_tz)
-        if not base:
-            continue
-
-        try:
-            start_dt, end_dt = apply_time_to_date(base, ln, default_tz, allow_default=False)
-        except ValueError:
-            continue
-
-        start_s = isoformat_with_tz(start_dt, default_tz)
-        end_s = isoformat_with_tz(end_dt, default_tz)
-
-        key = (title.lower(), start_s)
+        key = (title.lower().strip(), start_dt.isoformat())
         if key in seen:
             continue
         seen.add(key)
 
         events.append({
-            "id": compute_event_id(source["id"], title, start_s, None),
             "title": title,
-            "host": source.get("name"),
-            "city": None,
-            "state": None,
-            "venue": None,
-            "startAt": start_s,
-            "endAt": end_s,
-            "registrationURL": normalize_url(source["url"]),
-            "imageURL": None,
-            "detail": None,
-            "links": [{"title": "Guest Instructors", "url": normalize_url(source["url"])}],
-            "provider": source.get("name"),
+            "startAt": start_dt.isoformat(),
+            "endAt": end_dt.isoformat(),
+            "registrationURL": href,
+            "venue": "See listing",
         })
 
-    log(f"  [VoiceTraxWest] Parsed {len(events)} events")
     return events
 
 
 def extract_aiva_upcoming_schedule(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
-    """Adventures in Voice Acting.
-
-    The site is dynamic; scrape what is present in HTML that includes explicit 'Starts/Started <Month> <Day>'.
-    Defaults are not allowed: if time isn't present, we'll still include the date at 12:00pm PT (best-effort),
-    but you can tighten later if you want strict time here too.
     """
-    html = fetch_html(source["url"], source.get("headers"))
+    Adventures in Voice Acting (AIVA)
+
+    The homepage often lists courses with "Started/Starts <Mon> <day>" but not a precise time.
+    We include these as "start-date" calendar items with a conservative default time,
+    and we ALWAYS point the user to the registration page for details.
+    """
+    html = fetch_html(source["url"])
+    if not html:
+        return []
     soup = BeautifulSoup(html, "html.parser")
-    text = soup.get_text("\n")
-    lines = [ln.strip() for ln in text.split("\n") if ln.strip()]
+    text = soup.get_text("\n", strip=True)
 
-    start_re = re.compile(r"\bStarts\b\s+([A-Za-z]+)\s+(\d{1,2})\b", re.IGNORECASE)
-    # Try to capture time when present in nearby line
-    time_re = re.compile(r"\b\d{1,2}(?::\d{2})?\s*(?:am|pm|a\.?m\.?|p\.?m\.?)\b", re.IGNORECASE)
+    # Find course cards by anchors that look like course links.
+    # Many AIVA links include /courses/ or /products/.
+    course_links = []
+    for a in soup.find_all("a", href=True):
+        href = a["href"].strip()
+        if "/courses/" in href or "/products/" in href:
+            course_links.append((a.get_text(" ", strip=True), urljoin(source["url"], href), a))
 
-    events=[]
-    seen=set()
+    # Date token like "Started Jan 14" or "Starts Feb 3"
+    date_re = re.compile(r"\b(Start(?:ed|s))\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\s+(\d{1,2})\b", re.IGNORECASE)
 
-    for i, ln in enumerate(lines):
-        m = start_re.search(ln)
-        if not m:
-            continue
-        month, day = m.group(1), m.group(2)
+    events: List[Dict[str, Any]] = []
+    seen: set = set()
 
-        # Find a title nearby (often above)
-        title=None
-        for j in range(1, 8):
-            if i-j>=0 and len(lines[i-j])>6 and "Starts" not in lines[i-j]:
-                title=lines[i-j]
-                break
-        title=safe_text(title,160) if title else "Adventures in Voice Acting"
+    for title_text, href, a in course_links:
+        # Search nearby text (parent container)
+        container = a
+        for _ in range(5):
+            if container.parent:
+                container = container.parent
+        block_text = " ".join(container.stripped_strings)
 
-        base = infer_year_for_month_day(f"{month} {day}", default_tz)
-        if not base:
-            continue
-
-        # Find time in window; if none, allow default (we'll default 12:00pm rather than 6pm by temporarily injecting)
-        window=" ".join(lines[i:i+20])
-        # normalize a.m/p.m
-        window = re.sub(r"\b(a)\s*\.?\s*m\s*\.?\b", "am", window, flags=re.IGNORECASE)
-        window = re.sub(r"\b(p)\s*\.?\s*m\s*\.?\b", "pm", window, flags=re.IGNORECASE)
-
-        if time_re.search(window):
-            # use strict
-            try:
-                start_dt, end_dt = apply_time_to_date(base, window, default_tz, allow_default=False)
-            except ValueError:
-                continue
-        else:
-            # No time present -> skip (time is critical)
+        dm = date_re.search(block_text)
+        if not dm:
             continue
 
-        start_s = isoformat_with_tz(start_dt, default_tz)
-        end_s = isoformat_with_tz(end_dt, default_tz)
+        mon = dm.group(2)
+        day = int(dm.group(3))
+        year = infer_year_for_month_day(mon, day, default_tz)
 
-        key=(title.lower(), start_s)
-        if key in seen: 
+        d = parse_month_day_year(f"{mon} {day}, {year}", default_tz)
+        if not d:
+            continue
+
+        # Default time (AIVA doesn't reliably expose it in static HTML)
+        start_dt = d.replace(hour=10, minute=0, second=0, microsecond=0)
+        end_dt = start_dt + timedelta(hours=2)
+
+        title = title_text.strip() or "AIVA Course"
+        key = (title.lower(), start_dt.isoformat())
+        if key in seen:
             continue
         seen.add(key)
 
         events.append({
-            "id": compute_event_id(source["id"], title, start_s, None),
             "title": title,
-            "host": source.get("name"),
-            "city": None,
-            "state": None,
-            "venue": None,
-            "startAt": start_s,
-            "endAt": end_s,
-            "registrationURL": normalize_url(source["url"]),
-            "imageURL": None,
-            "detail": None,
-            "links": [{"title": "AIVA", "url": normalize_url(source["url"])}],
-            "provider": source.get("name"),
+            "startAt": start_dt.isoformat(),
+            "endAt": end_dt.isoformat(),
+            "registrationURL": href,
+            "venue": "See listing",
+            "detail": "Time may not be listed on the homepage. Tap to view the registration page for full details.",
         })
 
-    log(f"  [AIVA] Parsed {len(events)} events")
     return events
 
 EXTRACTORS = {
-    "thevopros_events_from_shop": extract_thevopros_events_index,
-    "voicetraxwest_guest_instructors": extract_voicetraxwest_guest_instructors,
-    "aiva_upcoming_schedule": extract_aiva_upcoming_schedule,
-
     "jsonld_events": extract_jsonld_events,
     "tidycal_index": extract_tidycal_index,
     "soundonstudio_classsignup": extract_soundonstudio_classsignup,
+
+    # The VO Pros
     "thevopros_events_index": extract_thevopros_events_index,
+    "thevopros_events_from_shop": extract_thevopros_events_index,  # alias used in config
+
+    # HALP / VAN / Wix
     "halp_events_search": extract_halp_events_search,
     "van_shopify_products": extract_van_shopify_products,
     "wix_service_list": extract_wix_service_list,
+
+    # The VO Dojo
     "vodojo_upcoming": extract_vodojo_upcoming,
+
+    # VoiceTrax West
+    "voicetraxwest_guest_instructors": extract_voicetraxwest_guest_instructors,
+
+    # Adventures in Voice Acting (AIVA)
+    "aiva_upcoming_schedule": extract_aiva_upcoming_schedule,
+    "adventuresinvoiceacting_upcoming_schedule": extract_aiva_upcoming_schedule,  # alias
+
     "html_fallback": extract_html_fallback
 }
 
@@ -1478,14 +1609,19 @@ def main():
             for e in events:
                 if isinstance(e, dict):
                     e.setdefault("provider", s.get("name"))
+            events = apply_event_filters(events, s.get("filters"))
+
             events = events[:max_events_per_source]
             print(f"[OK] {source_id}: {len(events)} events")
             incoming_all.extend(events)
-            
-            # Mark this source as successfully scraped
-            # (even if 0 events - that means the site has no current events)
-            successfully_scraped_sources.add(source_id)
-            
+            # Mark this source as successfully scraped.
+            # Important: if a source suddenly returns 0 events, we treat it as a scrape failure by default
+            # (to avoid wiping previously-known workshops due to transient site changes / parsing breakage).
+            allow_zero = bool(source.get("allow_zero_events")) or bool(source.get("filters", {}).get("allow_zero_events"))
+            if events or allow_zero:
+                successfully_scraped_sources.add(source_id)
+            else:
+                log(f"  [WARN] {source_name}: 0 events; treating as failure to preserve prior entries")
         except Exception as ex:
             # Source FAILED - we'll keep old data for this source
             print(f"[ERROR] {source_id}: {ex}")
