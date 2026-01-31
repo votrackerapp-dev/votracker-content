@@ -3,7 +3,7 @@ name: Sync Workshops
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: "15 */3 * * *"
+    - cron: "15 */6 * * *"
 
 permissions:
   contents: write
