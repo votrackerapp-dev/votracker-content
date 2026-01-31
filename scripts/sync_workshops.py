@@ -938,7 +938,32 @@ def extract_thevopros_events_index(source: Dict[str, Any], default_tz: str) -> L
             log(f"  [VOPros] Error on {ev_url}: {e}")
             continue
 
-    return events
+    # Deduplicate by URL (same event may be linked multiple times from shop page)
+    seen_urls = {}
+    deduped_events = []
+    for event in events:
+        url = event.get('registrationURL')
+        if not url:
+            deduped_events.append(event)
+            continue
+            
+        if url in seen_urls:
+            # Keep the event with the better title (not "THE VO PROS")
+            existing_title = seen_urls[url].get('title', '').upper()
+            current_title = event.get('title', '').upper()
+            
+            if current_title not in ["THE VO PROS", "THEVOPROS", "VO PROS"] and existing_title in ["THE VO PROS", "THEVOPROS", "VO PROS"]:
+                # Replace generic title with real one
+                idx = deduped_events.index(seen_urls[url])
+                deduped_events[idx] = event
+                seen_urls[url] = event
+                log(f"  [VOPros] Replaced generic title with: '{event.get('title', '')[:40]}'")
+        else:
+            seen_urls[url] = event
+            deduped_events.append(event)
+    
+    log(f"  [VOPros] Deduplicated {len(events)} → {len(deduped_events)} events")
+    return deduped_events
 
 def extract_halp_events_search(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
     """Scrape HALP Academy events."""
@@ -1728,10 +1753,35 @@ def main():
     # Prune old/future events
     rebuilt = prune_events(rebuilt, prune_days_past, keep_days_future, args.default_tz)
 
-    # Final deduplication (same title + date)
+    # Final deduplication - Two passes:
+    # Pass 1: Dedupe by URL (same event, same URL = duplicate)
+    seen_urls = {}
+    url_deduped = []
+    for w in rebuilt:
+        url = w.get('registrationURL')
+        if not url:
+            url_deduped.append(w)
+            continue
+            
+        if url in seen_urls:
+            # Keep the one with better title
+            existing_title = seen_urls[url].get('title', '').upper()
+            current_title = w.get('title', '').upper()
+            generic_titles = ["THE VO PROS", "THEVOPROS", "VO PROS", "WORKSHOP", "CLASS", "EVENT"]
+            
+            if current_title not in generic_titles and existing_title in generic_titles:
+                # Replace generic with real
+                idx = url_deduped.index(seen_urls[url])
+                url_deduped[idx] = w
+                seen_urls[url] = w
+        else:
+            seen_urls[url] = w
+            url_deduped.append(w)
+    
+    # Pass 2: Dedupe by title+date (fallback for events without URLs)
     seen_keys = set()
     deduped = []
-    for w in rebuilt:
+    for w in url_deduped:
         title_norm = re.sub(r'[^a-z0-9]', '', (w.get('title') or '').lower())[:30]
         date_part = (w.get('startAt') or '')[:10]
         key = f"{title_norm}|{date_part}"
