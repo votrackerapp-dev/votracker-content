@@ -205,7 +205,11 @@ def extract_time_from_text(text: str) -> Tuple[Optional[int], Optional[int], Opt
     """
     if not text:
         return None, None, None, None
-    
+
+    # Normalize annoying variants like "a.m." / "p.m." / "a. m." / "P.M."
+    text = re.sub(r"\b(a)\s*\.?\s*m\s*\.?\b", "am", text, flags=re.IGNORECASE)
+    text = re.sub(r"\b(p)\s*\.?\s*m\s*\.?\b", "pm", text, flags=re.IGNORECASE)
+
     # 1. Try contextual format first (in parens or after pipe) - most specific
     m = TIME_IN_CONTEXT_RE.search(text)
     if m:
@@ -261,29 +265,39 @@ def extract_time_from_text(text: str) -> Tuple[Optional[int], Optional[int], Opt
     log(f"    [TIME] No time found in: {text[:80]}...")
     return None, None, None, None
 
-def apply_time_to_date(base_date: dt.datetime, text: str, default_tz: str) -> Tuple[dt.datetime, dt.datetime]:
+def apply_time_to_date(
+    base_date: dt.datetime,
+    text: str,
+    default_tz: str,
+    allow_default: bool = True
+) -> Tuple[dt.datetime, dt.datetime]:
     """
     Apply extracted time to a base date.
     Returns (start_datetime, end_datetime)
+
+    If allow_default is False and no time is found, this raises ValueError
+    instead of defaulting to 6pm.
     """
     tzinfo = datetz.gettz(default_tz)
     base_date = base_date.replace(tzinfo=tzinfo, hour=0, minute=0, second=0, microsecond=0)
-    
+
     sh, sm, eh, em = extract_time_from_text(text)
-    
+
     if sh is not None:
         start = base_date.replace(hour=sh, minute=sm)
         end = base_date.replace(hour=eh, minute=em)
         if end <= start:
             end = end + dt.timedelta(days=1)
         return start, end
-    
+
+    if not allow_default:
+        raise ValueError(f"No time found in '{(text or '')[:120]}'")
+
     # No time found - default to 6pm + 2 hours
     log(f"    [TIME] Using default 6pm")
     start = base_date.replace(hour=18, minute=0)
     end = start + dt.timedelta(hours=DEFAULT_EVENT_DURATION_HOURS)
     return start, end
-
 def infer_year_for_month_day(month_day_str: str, default_tz: str) -> dt.datetime:
     now = dt.datetime.now(tz=datetz.gettz(default_tz))
     d = dateparser.parse(f"{month_day_str} {now.year}", fuzzy=True)
@@ -1180,13 +1194,15 @@ def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dic
 
     # Captures:
     #   month, day, optional year, time_blob
+    ampm = r"(?:am|pm|a\.?m\.?|p\.?m\.?)"
+
     dt_re = re.compile(
         rf"\b(?:{weekday}\s+)?({months})\s+(\d{{1,2}})(?:st|nd|rd|th)?"
         rf"(?:\s*,?\s*(\d{{4}}))?\s*"
         rf"(?:@|[-–—]\s*)\s*"
         rf"("
-        rf"\d{{1,2}}(?::\d{{2}})?(?:\s*(?:am|pm))?"
-        rf"(?:\s*[-–—to]+\s*\d{{1,2}}(?::\d{{2}})?\s*(?:am|pm))?"
+        rf"\d{{1,2}}(?::\d{{2}})?(?:\s*{ampm})?"
+        rf"(?:\s*[-–—to]+\s*\d{{1,2}}(?::\d{{2}})?\s*(?:{ampm}))?"
         rf")\s*(?:pt|pst|pdt)?\b",
         re.IGNORECASE,
     )
@@ -1239,7 +1255,12 @@ def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dic
             continue
 
         # Apply the extracted time blob (this is the important part)
-        start_dt, end_dt = apply_time_to_date(base, time_blob, default_tz)
+        # VO Dojo: never default a time; if we can't parse a real time, skip the entry.
+        try:
+            start_dt, end_dt = apply_time_to_date(base, time_blob, default_tz, allow_default=False)
+        except ValueError:
+            log(f"  [VODojo] Skipping (time parse failed): {time_blob}")
+            continue
         start_s = isoformat_with_tz(start_dt, default_tz)
         end_s = isoformat_with_tz(end_dt, default_tz)
 
