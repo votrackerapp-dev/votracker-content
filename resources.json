@@ -184,26 +184,6 @@
     },
     {
       "id": "thevopros-1cc9edb0d1e9185e",
-      "title": "THE VO PROS",
-      "host": "The VO Pros",
-      "city": null,
-      "state": null,
-      "venue": null,
-      "startAt": "2026-02-02T16:00:00-08:00",
-      "endAt": "2026-02-02T18:00:00-08:00",
-      "registrationURL": "https://www.thevopros.com/events/manager-night-sumeet-iyengar-cope-management-2",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Event Page",
-          "url": "https://www.thevopros.com/events/manager-night-sumeet-iyengar-cope-management-2"
-        }
-      ],
-      "provider": "The VO Pros"
-    },
-    {
-      "id": "thevopros-1cc9edb0d1e9185e",
       "title": "MANAGER NIGHT – Sumeet Iyengar, Cope Management",
       "host": "The VO Pros",
       "city": null,
@@ -323,26 +303,6 @@
     },
     {
       "id": "thevopros-35eddf7d7df54cc5",
-      "title": "THE VO PROS",
-      "host": "The VO Pros",
-      "city": null,
-      "state": null,
-      "venue": null,
-      "startAt": "2026-02-09T16:00:00-08:00",
-      "endAt": "2026-02-09T18:00:00-08:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-arielle-negrin-atlas-talent-3",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Event Page",
-          "url": "https://www.thevopros.com/events/agent-night-arielle-negrin-atlas-talent-3"
-        }
-      ],
-      "provider": "The VO Pros"
-    },
-    {
-      "id": "thevopros-35eddf7d7df54cc5",
       "title": "AGENT NIGHT – Arielle Negrin, Atlas Talent",
       "host": "The VO Pros",
       "city": null,
@@ -382,26 +342,6 @@
     },
     {
       "id": "thevopros-a70f4b4a29d91d92",
-      "title": "THE VO PROS",
-      "host": "The VO Pros",
-      "city": null,
-      "state": null,
-      "venue": null,
-      "startAt": "2026-02-12T16:00:00-08:00",
-      "endAt": "2026-02-12T18:00:00-08:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-liz-klausner-dpn-talent-ny",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Event Page",
-          "url": "https://www.thevopros.com/events/agent-night-liz-klausner-dpn-talent-ny"
-        }
-      ],
-      "provider": "The VO Pros"
-    },
-    {
-      "id": "thevopros-a70f4b4a29d91d92",
       "title": "AGENT NIGHT – Liz Klausner, DPN Talent, NY",
       "host": "The VO Pros",
       "city": null,
@@ -416,46 +356,6 @@
         {
           "title": "Event Page",
           "url": "https://www.thevopros.com/events/agent-night-liz-klausner-dpn-talent-ny"
-        }
-      ],
-      "provider": "The VO Pros"
-    },
-    {
-      "id": "soundonstudio-2d5ed3b51725404e",
-      "title": "Booking Video Games with Katelyn Gault",
-      "host": "Sound On Studio",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-15T18:00:00-08:00",
-      "endAt": "2026-02-15T20:00:00-08:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Class Signup",
-          "url": "https://www.soundonstudio.com/classsignup"
-        }
-      ],
-      "provider": "Sound On Studio"
-    },
-    {
-      "id": "thevopros-272d3226016eca57",
-      "title": "THE VO PROS",
-      "host": "The VO Pros",
-      "city": null,
-      "state": null,
-      "venue": null,
-      "startAt": "2026-02-18T16:00:00-08:00",
-      "endAt": "2026-02-18T18:00:00-08:00",
-      "registrationURL": "https://www.thevopros.com/events/animation-sirena-irwin-director",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Event Page",
-          "url": "https://www.thevopros.com/events/animation-sirena-irwin-director"
         }
       ],
       "provider": "The VO Pros"
@@ -519,26 +419,6 @@
         }
       ],
       "provider": "Real Voice LA"
-    },
-    {
-      "id": "thevopros-cf9e409564a4cfee",
-      "title": "THE VO PROS",
-      "host": "The VO Pros",
-      "city": null,
-      "state": null,
-      "venue": null,
-      "startAt": "2026-02-19T16:00:00-08:00",
-      "endAt": "2026-02-19T18:00:00-08:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-stephen-carr-director-casting-producer-super-secret-company",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Event Page",
-          "url": "https://www.thevopros.com/events/video-games-stephen-carr-director-casting-producer-super-secret-company"
-        }
-      ],
-      "provider": "The VO Pros"
     },
     {
       "id": "thevopros-cf9e409564a4cfee",
@@ -660,46 +540,6 @@
       "provider": "Real Voice LA"
     },
     {
-      "id": "soundonstudio-2a5daf33f6e7dbbe",
-      "title": "VO Pajama Party with Kirsten Day!",
-      "host": "Sound On Studio",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-21T18:00:00-08:00",
-      "endAt": "2026-02-21T20:00:00-08:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Class Signup",
-          "url": "https://www.soundonstudio.com/classsignup"
-        }
-      ],
-      "provider": "Sound On Studio"
-    },
-    {
-      "id": "thevopros-dae38e18c76a95c1",
-      "title": "THE VO PROS",
-      "host": "The VO Pros",
-      "city": null,
-      "state": null,
-      "venue": null,
-      "startAt": "2026-02-23T16:00:00-08:00",
-      "endAt": "2026-02-23T18:00:00-08:00",
-      "registrationURL": "https://www.thevopros.com/events/anime-dubbing-jason-lord-director-crunch-roll",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Event Page",
-          "url": "https://www.thevopros.com/events/anime-dubbing-jason-lord-director-crunch-roll"
-        }
-      ],
-      "provider": "The VO Pros"
-    },
-    {
       "id": "thevopros-dae38e18c76a95c1",
       "title": "ANIME – DUBBING – Jason Lord, Director, Crunchy Roll",
       "host": "The VO Pros",
@@ -718,26 +558,6 @@
         }
       ],
       "provider": "The VO Pros"
-    },
-    {
-      "id": "soundonstudio-35229c58b154f154",
-      "title": "Making Promos Pop! with Darius Marquis Johnson",
-      "host": "Sound On Studio",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-02-23T18:00:00-08:00",
-      "endAt": "2026-02-23T20:00:00-08:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Class Signup",
-          "url": "https://www.soundonstudio.com/classsignup"
-        }
-      ],
-      "provider": "Sound On Studio"
     },
     {
       "id": "van-animation-bob-bergen-2026-02-25",
@@ -799,26 +619,6 @@
     },
     {
       "id": "thevopros-b514fa681e6998b2",
-      "title": "THE VO PROS",
-      "host": "The VO Pros",
-      "city": null,
-      "state": null,
-      "venue": null,
-      "startAt": "2026-03-05T16:00:00-08:00",
-      "endAt": "2026-03-05T18:00:00-08:00",
-      "registrationURL": "https://www.thevopros.com/events/animation-casting-director-kerri-anne-lavin",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Event Page",
-          "url": "https://www.thevopros.com/events/animation-casting-director-kerri-anne-lavin"
-        }
-      ],
-      "provider": "The VO Pros"
-    },
-    {
-      "id": "thevopros-b514fa681e6998b2",
       "title": "ANIMATION – Casting/Director – Kerri-Anne Lavin",
       "host": "The VO Pros",
       "city": null,
@@ -856,26 +656,6 @@
         }
       ],
       "provider": "Real Voice LA"
-    },
-    {
-      "id": "thevopros-bcd7c8e0991428ce",
-      "title": "THE VO PROS",
-      "host": "The VO Pros",
-      "city": null,
-      "state": null,
-      "venue": null,
-      "startAt": "2026-03-09T16:00:00-07:00",
-      "endAt": "2026-03-09T18:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-stephen-carr-video-game-prod-director-casting-secret-company",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Event Page",
-          "url": "https://www.thevopros.com/events/video-games-stephen-carr-video-game-prod-director-casting-secret-company"
-        }
-      ],
-      "provider": "The VO Pros"
     },
     {
       "id": "thevopros-bcd7c8e0991428ce",
@@ -939,26 +719,6 @@
     },
     {
       "id": "thevopros-27cbd98362896060",
-      "title": "THE VO PROS",
-      "host": "The VO Pros",
-      "city": null,
-      "state": null,
-      "venue": null,
-      "startAt": "2026-03-16T19:00:00-07:00",
-      "endAt": "2026-03-16T21:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/animation-games-dubbing-disney-audio-experiences-casting-director-director-renee-johnson",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Event Page",
-          "url": "https://www.thevopros.com/events/animation-games-dubbing-disney-audio-experiences-casting-director-director-renee-johnson"
-        }
-      ],
-      "provider": "The VO Pros"
-    },
-    {
-      "id": "thevopros-27cbd98362896060",
       "title": "ANIMATION/GAMES/DUBBING – DISNEY Audio Experiences, Casting Director/Director, Renee Johnson",
       "host": "The VO Pros",
       "city": null,
@@ -973,26 +733,6 @@
         {
           "title": "Event Page",
           "url": "https://www.thevopros.com/events/animation-games-dubbing-disney-audio-experiences-casting-director-director-renee-johnson"
-        }
-      ],
-      "provider": "The VO Pros"
-    },
-    {
-      "id": "thevopros-3bddab2564f46756",
-      "title": "THE VO PROS",
-      "host": "The VO Pros",
-      "city": null,
-      "state": null,
-      "venue": null,
-      "startAt": "2026-03-19T16:30:00-07:00",
-      "endAt": "2026-03-19T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/anime-casting-director-prod-mami-okada-bangzoom",
-      "imageURL": null,
-      "detail": null,
-      "links": [
-        {
-          "title": "Event Page",
-          "url": "https://www.thevopros.com/events/anime-casting-director-prod-mami-okada-bangzoom"
         }
       ],
       "provider": "The VO Pros"
