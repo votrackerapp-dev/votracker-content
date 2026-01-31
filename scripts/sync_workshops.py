@@ -39,6 +39,14 @@ def safe_text(s: Optional[str], max_len: int = 6000) -> Optional[str]:
         return None
     return t[:max_len]
 
+def clean_whitespace(s: Optional[str]) -> str:
+    return re.sub(r"\s+", " ", (s or "")).strip()
+
+def stable_event_id(source_id: str, url: str, title: str, start: dt.datetime) -> str:
+    """Generate stable IDs like 'sourceid-<16hex>' so updates don't churn."""
+    base = f"{source_id}|{canonicalize_url(url)}|{title.strip().lower()}|{start.isoformat()}"
+    return f"{source_id}-{sha1(base)[:16]}"
+
 def sha1(s: str) -> str:
     return hashlib.sha1(s.encode("utf-8")).hexdigest()
 
@@ -61,8 +69,40 @@ def normalize_url(url: Optional[str]) -> Optional[str]:
     except Exception:
         return u
 
-def fetch_html(url: str) -> str:
-    r = requests.get(url, timeout=30, headers={"User-Agent": "VOTrackerWorkshopBot/1.2"})
+def fetch_html(url: str, headers: Optional[Dict[str, str]] = None) -> str:
+    """Fetch HTML with sane defaults and optional per-source headers.
+
+    Many of these sites will 403 if you use a bot-like UA. We default to a
+    realistic desktop UA and allow sources to override.
+    """
+    default_headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                      "AppleWebKit/537.36 (KHTML, like Gecko) "
+                      "Chrome/122.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
+    }
+    if headers:
+        # Source headers win.
+        default_headers.update({k: v for k, v in headers.items() if v})
+
+    # Some hosts are picky about the Referer.
+    try:
+        p = urlparse(url)
+        default_headers.setdefault("Referer", f"{p.scheme}://{p.netloc}/")
+    except Exception:
+        pass
+
+    # Single request + one fallback retry if blocked.
+    r = requests.get(url, timeout=30, headers=default_headers, allow_redirects=True)
+    if r.status_code in (403, 429):
+        log(f"[WARN] {r.status_code} for {url} — retrying with alternate UA")
+        alt = dict(default_headers)
+        alt["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "                             "AppleWebKit/537.36 (KHTML, like Gecko) "                             "Chrome/122.0.0.0 Safari/537.36"
+        r = requests.get(url, timeout=30, headers=alt, allow_redirects=True)
+
     r.raise_for_status()
     return r.text
 
@@ -415,74 +455,66 @@ def extract_jsonld_events(source: Dict[str, Any], default_tz: str) -> List[Dict[
 def extract_tidycal_index(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
     """Extract public class listings from a TidyCal organizer page.
 
-    Designed for pages like https://tidycal.com/redscythestudio/ where
-    each class card contains a title like:
+    Example: https://tidycal.com/redscythestudio/
+    Page shows multiple items with titles like:
         "1.31 | JOE HERNANDEZ | video game characters"
 
-    What we keep:
-    - Entries that look like a dated class with an instructor.
-    What we skip:
-    - Coaching / consultations / marketing / generic downloads.
+    We treat the MM.DD as the event date in the next-occurring year.
+    TidyCal's index often doesn't expose the exact start time without JS,
+    so we default to 10:00am local time.
     """
-
     url = source["url"]
     html = fetch_html(url, source.get("headers"))
     soup = BeautifulSoup(html, "html.parser")
 
-    # Find all "View details" links; each points to a TidyCal booking page.
-    detail_links: List[str] = []
-    for a in soup.select('a[href^="https://tidycal.com/"]'):
-        href = a.get("href") or ""
-        if not href:
-            continue
-        if "tidycal.com/" not in href:
-            continue
-        # Prefer the explicit buttons.
-        a_text = (a.get_text(" ", strip=True) or "").lower()
-        if "view details" in a_text:
-            detail_links.append(href)
+    # Pull all H2 headings; TidyCal uses them for listing titles.
+    headings = [h.get_text(" ", strip=True) for h in soup.find_all(["h2", "h3"])]
 
-    # De-dup while preserving order.
-    seen = set()
-    detail_links = [u for u in detail_links if not (u in seen or seen.add(u))]
-
-    # The card title is usually present as a heading element.
-    # We’ll also fall back to scraping the whole page text and matching patterns.
     page_text = soup.get_text("\n", strip=True)
-
     # Match: MM.DD | INSTRUCTOR | TOPIC
     title_re = re.compile(r"\b(\d{1,2}\.\d{1,2})\s*\|\s*([^|]{2,80}?)\s*\|\s*([^\n|]{2,200})", re.IGNORECASE)
 
-    # Keywords to drop (you can also reinforce these with source["filters"]).
-    drop_kw = {
-        "coaching", "coach", "consult", "consultation", "1:1", "one-on-one",
-        "marketing", "freelance", "download", "video", "demo review", "demo", "reel",
-    }
+    # Build a simple list of 'detail' links if present (nice-to-have)
+    detail_links: List[str] = []
+    for a in soup.find_all("a", href=True):
+        t = (a.get_text(" ", strip=True) or "").lower()
+        href = a["href"]
+        if "tidycal.com/" in href and "view details" in t:
+            detail_links.append(href)
+    seen = set()
+    detail_links = [u for u in detail_links if not (u in seen or seen.add(u))]
+
+    filters = source.get("filters", {}) or {}
+    drop_contains = [x.lower() for x in filters.get("exclude_title_contains", [])]
+    require_any = [x.lower() for x in filters.get("require_title_contains_any", [])]
+
+    def keep_title(t: str) -> bool:
+        lt = t.lower()
+        if drop_contains and any(x in lt for x in drop_contains):
+            return False
+        if require_any and not any(x in lt for x in require_any):
+            return False
+        return True
+
+    # Find matching titles from headings first (cleaner), else from full page text.
+    matches: List[Tuple[str, str, str]] = []
+    for h in headings:
+        m = title_re.search(h)
+        if m:
+            matches.append((m.group(1), clean_whitespace(m.group(2)), clean_whitespace(m.group(3))))
+    if not matches:
+        for m in title_re.finditer(page_text):
+            matches.append((m.group(1), clean_whitespace(m.group(2)), clean_whitespace(m.group(3))))
+
+    # Attempt to map each match to a details link (best-effort, same ordering).
+    while len(detail_links) < len(matches):
+        detail_links.append(url)
 
     events: List[Dict[str, Any]] = []
-
-    # Primary pass: walk card containers that have a "View details" button.
-    for href in detail_links:
-        a = soup.select_one(f'a[href="{href}"]')
-        card = a.find_parent(["article", "section", "li", "div"]) if a else None
-        card_text = ""
-        if card:
-            card_text = card.get_text(" ", strip=True)
-        else:
-            card_text = page_text
-
-        m = title_re.search(card_text)
-        if not m:
+    for (mm_dd, instructor, topic), href in zip(matches, detail_links):
+        raw_title = f"{instructor} — {topic}"
+        if not keep_title(raw_title):
             continue
-
-        mm_dd = m.group(1).strip()
-        instructor = clean_whitespace(m.group(2))
-        topic = clean_whitespace(m.group(3))
-
-        combined = f"{mm_dd} {instructor} {topic}".lower()
-        if any(k in combined for k in drop_kw):
-            continue
-        # Basic sanity: instructor should look like a name (at least 2 words).
         if len(instructor.split()) < 2:
             continue
 
@@ -490,83 +522,48 @@ def extract_tidycal_index(source: Dict[str, Any], default_tz: str) -> List[Dict[
         if not base_dt:
             continue
 
-        # TidyCal index usually doesn't show a start time; default 10:00am.
         start = base_dt.replace(hour=10, minute=0, second=0, microsecond=0)
-
-        # Duration is often shown as "4 hours".
+        # Duration and price are visible on the index page as plain text.
+        # We'll search around the title in page_text as a rough heuristic.
         duration_hours = None
-        dur_m = re.search(r"(\d+)\s*hours?", card_text, flags=re.IGNORECASE)
+        price = None
+        # Look for lines near the heading in the full page text.
+        window = page_text
+        dur_m = re.search(r"\b(\d+)\s*hours?\b", window, flags=re.IGNORECASE)
         if dur_m:
             try:
                 duration_hours = int(dur_m.group(1))
             except Exception:
                 duration_hours = None
-        end = start + dt.timedelta(hours=duration_hours or 3)
-
-        price = None
-        price_m = re.search(r"\$(\d+(?:\.\d{1,2})?)", card_text)
+        price_m = re.search(r"\$(\d+(?:\.\d{1,2})?)", window)
         if price_m:
             price = f"${price_m.group(1)}"
 
-        title = f"{instructor} — {topic}"
-        detail_parts = [source.get("name", "TidyCal")]  # context
+        end = start + dt.timedelta(hours=duration_hours or DEFAULT_EVENT_DURATION_HOURS)
+
+        detail_lines = []
         if duration_hours:
-            detail_parts.append(f"Duration: {duration_hours} hours")
+            detail_lines.append(f"Duration: {duration_hours} hours")
         if price:
-            detail_parts.append(f"Price: {price}")
-        detail_parts.append(f"Registration: {href}")
+            detail_lines.append(f"Price: {price}")
+        detail_lines.append(f"Listing: {href}")
 
-        events.append(
-            {
-                "id": stable_event_id(source.get("id", url), href, title, start),
-                "sourceId": source.get("id"),
-                "sourceName": source.get("name"),
-                "title": title,
-                "start": start.isoformat(),
-                "end": end.isoformat(),
-                "timezone": default_tz,
-                "url": href,
-                "details": "\n".join(detail_parts),
-                "instructor": instructor,
-                "category": "Workshop",
-            }
-        )
+        events.append({
+            "id": stable_event_id(source.get("id", "tidycal"), href, raw_title, start),
+            "title": raw_title,
+            "host": source.get("name") or "TidyCal",
+            "city": None,
+            "state": None,
+            "venue": "Online / See listing",
+            "startAt": start.isoformat(),
+            "endAt": end.isoformat(),
+            "registrationURL": href,
+            "imageURL": None,
+            "detail": "\n".join(detail_lines) if detail_lines else None,
+            "links": [{"title": "Listing", "url": href}],
+            "provider": source.get("name"),
+        })
 
-    # Secondary pass: if nothing found, try matching the whole page text.
-    if not events:
-        for m in title_re.finditer(page_text):
-            mm_dd = m.group(1).strip()
-            instructor = clean_whitespace(m.group(2))
-            topic = clean_whitespace(m.group(3))
-            combined = f"{mm_dd} {instructor} {topic}".lower()
-            if any(k in combined for k in drop_kw):
-                continue
-            if len(instructor.split()) < 2:
-                continue
-            base_dt = infer_year_for_mm_dd(mm_dd, default_tz)
-            if not base_dt:
-                continue
-            start = base_dt.replace(hour=10, minute=0, second=0, microsecond=0)
-            end = start + dt.timedelta(hours=3)
-            href = source["url"]
-            title = f"{instructor} — {topic}"
-            events.append(
-                {
-                    "id": stable_event_id(source.get("id", url), href, title, start),
-                    "sourceId": source.get("id"),
-                    "sourceName": source.get("name"),
-                    "title": title,
-                    "start": start.isoformat(),
-                    "end": end.isoformat(),
-                    "timezone": default_tz,
-                    "url": href,
-                    "details": source.get("name", "TidyCal"),
-                    "instructor": instructor,
-                    "category": "Workshop",
-                }
-            )
-
-    log(f"  [TidyCal] Parsed {len(events)} class entries from {url}")
     return events
 
 
@@ -1266,14 +1263,379 @@ def extract_html_fallback(source: Dict[str, Any], default_tz: str) -> List[Dict[
     """Generic HTML fallback - tries JSON-LD first, then HTML parsing"""
     return extract_jsonld_events(source, default_tz)
 
+
+def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
+    """Scrape https://www.voicetraxwest.com/guest-instructors
+
+    The page is plain HTML with repeating blocks:
+        Title line
+        Description
+        'DAY, Mon DD - HH:MMpm PST'
+        Links: in person / online (Acuity 'as.me')
+    """
+    url = source["url"]
+    html = fetch_html(url, source.get("headers"))
+    soup = BeautifulSoup(html, "html.parser")
+
+    text_lines = [ln.strip() for ln in soup.get_text("\n").splitlines()]
+    text_lines = [ln for ln in text_lines if ln]
+
+    # Example: "TUESDAY, Feb 10 - 6:30pm PST"
+    date_line_re = re.compile(
+        r"^(?:MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY),?\s+"
+        r"([A-Za-z]{3,})\s+(\d{1,2})\s*-\s*(\d{1,2}:\d{2})\s*(am|pm)\s*(?:PST|PT)?$",
+        re.IGNORECASE,
+    )
+
+    # Collect all relevant registration links (prefer Acuity scheduling).
+    anchors = []
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
+        label = (a.get_text(" ", strip=True) or "").lower()
+        anchors.append((label, href))
+    def pick_reg_link(near_title: str) -> Optional[str]:
+        # If the page is small, just prefer an 'online' as.me link overall.
+        for label, href in anchors:
+            if "as.me" in href and "online" in label:
+                return href
+        for label, href in anchors:
+            if "as.me" in href and ("in person" in label or "in-person" in label):
+                return href
+        return url
+
+    events: List[Dict[str, Any]] = []
+    for i, line in enumerate(text_lines):
+        m = date_line_re.match(line)
+        if not m:
+            continue
+        mon, day, hm, ampm = m.group(1), m.group(2), m.group(3), m.group(4)
+        # Title is the previous non-empty line that isn't an image placeholder
+        title = None
+        j = i - 1
+        while j >= 0:
+            cand = text_lines[j].strip()
+            if cand and not cand.lower().startswith("image"):
+                title = cand
+                break
+            j -= 1
+        if not title:
+            continue
+
+        # Best-effort: description is the line(s) between title and date line.
+        desc_parts = []
+        k = j + 1
+        while k < i:
+            desc_parts.append(text_lines[k])
+            k += 1
+        desc = safe_text(" ".join(desc_parts), 1200)
+
+        # Infer year: pick the next occurrence of that month/day in local tz.
+        # Use dateutil on a string without year, then adjust.
+        base = infer_year_for_month_day(mon, int(day), default_tz)
+        if not base:
+            continue
+        try:
+            t = dateparser.parse(f"{hm} {ampm}")
+            hour = t.hour
+            minute = t.minute
+        except Exception:
+            hour, minute = 18, 30
+
+        start = base.replace(hour=hour, minute=minute, second=0, microsecond=0)
+        end = start + dt.timedelta(hours=DEFAULT_EVENT_DURATION_HOURS)
+
+        reg = pick_reg_link(title)
+        events.append({
+            "id": stable_event_id(source.get("id", "voicetraxwest"), reg or url, title, start),
+            "title": title,
+            "host": source.get("name") or "Voice Trax West",
+            "city": "Studio City",
+            "state": "CA",
+            "venue": "Voice Trax West (or Online)",
+            "startAt": start.isoformat(),
+            "endAt": end.isoformat(),
+            "registrationURL": reg,
+            "imageURL": None,
+            "detail": desc,
+            "links": [{"title": "Listing", "url": url}] + ([{"title": "Register", "url": reg}] if reg else []),
+            "provider": source.get("name"),
+        })
+
+    return events
+
+
+def extract_aiva_upcoming_schedule(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
+    """Scrape AIVA instructor pages for courses with explicit 'Starts <Mon> <DD>' lines.
+
+    NOTE: The deeper booking widget is JS-driven and often renders as
+    'Loading availability...' in raw HTML, so we only capture entries that
+    expose a start date in the static text.
+    """
+    base_url = source["url"]
+    html = fetch_html(base_url, source.get("headers"))
+    soup = BeautifulSoup(html, "html.parser")
+
+    # Find 'Book <Instructor>' links in nav.
+    instructor_urls: List[str] = []
+    for a in soup.find_all("a", href=True):
+        txt = (a.get_text(" ", strip=True) or "").lower()
+        href = a["href"]
+        if "book" in txt and "http" not in href:
+            full = urljoin(base_url, href)
+            instructor_urls.append(full)
+        elif "book" in txt and href.startswith("http") and "adventuresinvoiceacting.com" in href:
+            instructor_urls.append(href)
+
+    # De-dup
+    seen = set()
+    instructor_urls = [u for u in instructor_urls if not (u in seen or seen.add(u))]
+
+    # If the nav didn't include them, fall back to the two known instructor pages.
+    if not instructor_urls:
+        instructor_urls = [
+            urljoin(base_url, "/dorahfine"),
+            urljoin(base_url, "/tony-oliver"),
+        ]
+
+    # 'Starts Nov 15' / 'Started Jan 14'
+    starts_re = re.compile(r"\b(Start(?:s|ed))\s+([A-Za-z]{3,})\s+(\d{1,2})\b")
+
+    events: List[Dict[str, Any]] = []
+    for inst_url in instructor_urls[:8]:
+        try:
+            inst_html = fetch_html(inst_url, source.get("headers"))
+        except Exception as ex:
+            log(f"[WARN] AIVA instructor page failed: {inst_url} ({ex})")
+            continue
+
+        inst_soup = BeautifulSoup(inst_html, "html.parser")
+        lines = [ln.strip() for ln in inst_soup.get_text("\n").splitlines()]
+        lines = [ln for ln in lines if ln]
+
+        # Titles show up as clickable links in the page text; we take the line above 'Starts ...'
+        for idx, ln in enumerate(lines):
+            m = starts_re.search(ln)
+            if not m:
+                continue
+            mon = m.group(2)
+            day = int(m.group(3))
+
+            # Find title as the closest previous non-empty line that isn't generic.
+            title = None
+            j = idx - 1
+            while j >= 0:
+                cand = lines[j]
+                if cand and not cand.lower().startswith("image") and "service information" not in cand.lower():
+                    title = cand
+                    break
+                j -= 1
+            if not title:
+                continue
+
+            # Skip obvious non-live entries.
+            if re.search(r"(?i)video\s+download|download\b", title):
+                continue
+
+            base = infer_year_for_month_day(mon, day, default_tz)
+            if not base:
+                continue
+            # AIVA often doesn't expose start time; default 12:00pm PT.
+            start = base.replace(hour=12, minute=0, second=0, microsecond=0)
+            end = start + dt.timedelta(hours=DEFAULT_EVENT_DURATION_HOURS)
+
+            events.append({
+                "id": stable_event_id(source.get("id", "aiva"), inst_url, title, start),
+                "title": title,
+                "host": source.get("name") or "Adventures in Voice Acting",
+                "city": "Burbank" if "in-studio" in " ".join(lines).lower() else None,
+                "state": "CA" if "in-studio" in " ".join(lines).lower() else None,
+                "venue": "See listing",
+                "startAt": start.isoformat(),
+                "endAt": end.isoformat(),
+                "registrationURL": inst_url,
+                "imageURL": None,
+                "detail": safe_text(" ".join(lines[max(0, j+1):min(len(lines), idx+4)]), 1200),
+                "links": [{"title": "Listing", "url": inst_url}],
+                "provider": source.get("name"),
+            })
+
+    # De-dupe (same title+date)
+    seen2 = set()
+    out = []
+    for e in events:
+        key = (e.get("title"), (e.get("startAt") or "")[:10])
+        if key in seen2:
+            continue
+        seen2.add(key)
+        out.append(e)
+
+    return out
+
+
+def extract_thevopros_events_from_shop(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
+    """Scrape The VO Pros events from /shop/ (Squarespace).
+
+    The site is often protected; this relies on realistic headers from
+    workshop_sources.json and the improved fetch_html().
+
+    Strategy:
+    1) Load /shop/ and collect links that look like /events/...
+    2) Visit each event page and parse:
+        - Event Date: <Month DD, YYYY>
+        - Event Time: <h:mm am/pm> OR a range "4:00 pm - 6:00 pm"
+    """
+    base_url = source["url"]
+    headers = source.get("headers")
+    html = fetch_html(base_url, headers)
+    soup = BeautifulSoup(html, "html.parser")
+
+    # Collect candidate event links from the shop page.
+    links: List[str] = []
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
+        if "/events/" in href:
+            links.append(urljoin(base_url, href))
+        elif href.startswith("https://www.thevopros.com/events/"):
+            links.append(href)
+
+    # De-dup + cap
+    seen = set()
+    links = [u for u in links if not (u in seen or seen.add(u))]
+    links = links[: int(source.get("max_event_pages", 25))]
+
+    # Regexes based on what VO Pros exposes in their HTML.
+    date_re = re.compile(r"\bEvent Date\s*:\s*([A-Za-z]+\s+\d{1,2},\s+\d{4})\b")
+    time_re = re.compile(r"\bEvent Time\s*:\s*([0-9]{1,2}:[0-9]{2}\s*(?:am|pm))\b", re.IGNORECASE)
+    range_re = re.compile(r"\b([0-9]{1,2}:[0-9]{2}\s*(?:am|pm))\s*-\s*([0-9]{1,2}:[0-9]{2}\s*(?:am|pm))\b", re.IGNORECASE)
+
+    events: List[Dict[str, Any]] = []
+    for event_url in links:
+        try:
+            ev_html = fetch_html(event_url, headers)
+        except Exception as ex:
+            log(f"[WARN] VO Pros event fetch failed: {event_url} ({ex})")
+            continue
+
+        ev_soup = BeautifulSoup(ev_html, "html.parser")
+        page_text = ev_soup.get_text("\n", strip=True)
+
+        title = None
+        h1 = ev_soup.find(["h1"])
+        if h1:
+            title = clean_whitespace(h1.get_text(" ", strip=True))
+        if not title:
+            title = clean_whitespace(ev_soup.title.get_text(" ", strip=True) if ev_soup.title else "")
+            title = re.sub(r"\s*\|\s*The VO PROS.*$", "", title).strip() or None
+        if not title:
+            continue
+
+        dm = date_re.search(page_text)
+        if not dm:
+            # Fallback: look for 'January 21, 2026' anywhere
+            dm = re.search(r"\b([A-Za-z]+\s+\d{1,2},\s+\d{4})\b", page_text)
+        if not dm:
+            continue
+
+        date_str = dm.group(1)
+        base_dt = parse_date_any(date_str, default_tz)
+        if not base_dt:
+            continue
+
+        # Parse time (prefer explicit 'Event Time', else a range).
+        start_time = None
+        tm = time_re.search(page_text)
+        if tm:
+            start_time = tm.group(1)
+        rm = range_re.search(page_text)
+        end_time = rm.group(2) if rm else None
+        if rm and not start_time:
+            start_time = rm.group(1)
+
+        if start_time:
+            t = dateparser.parse(start_time)
+            start = base_dt.replace(hour=t.hour, minute=t.minute, second=0, microsecond=0)
+        else:
+            start = base_dt.replace(hour=10, minute=0, second=0, microsecond=0)
+
+        if end_time:
+            t2 = dateparser.parse(end_time)
+            end = base_dt.replace(hour=t2.hour, minute=t2.minute, second=0, microsecond=0)
+            if end <= start:
+                end = start + dt.timedelta(hours=DEFAULT_EVENT_DURATION_HOURS)
+        else:
+            end = start + dt.timedelta(hours=DEFAULT_EVENT_DURATION_HOURS)
+
+        events.append({
+            "id": stable_event_id(source.get("id", "thevopros"), event_url, title, start),
+            "title": title,
+            "host": source.get("name") or "The VO Pros",
+            "city": "Los Angeles",
+            "state": "CA",
+            "venue": "See event page",
+            "startAt": start.isoformat(),
+            "endAt": end.isoformat(),
+            "registrationURL": event_url,
+            "imageURL": None,
+            "detail": None,
+            "links": [{"title": "Event Page", "url": event_url}],
+            "provider": source.get("name"),
+        })
+
+    # If the shop page doesn't surface /events/ links, last-resort parse the shop text directly.
+    if not events:
+        page_text = soup.get_text("\n", strip=True)
+        # "Title · February 12, 2026 4:00 pm - 6:00 pm"
+        pat = re.compile(r"\n([^\n]{10,140}?)\s*·\s*([A-Za-z]+\s+\d{1,2},\s+\d{4})\s+([0-9]{1,2}:[0-9]{2}\s*(?:am|pm))\s*-\s*([0-9]{1,2}:[0-9]{2}\s*(?:am|pm))", re.IGNORECASE)
+        for m in pat.finditer("\n" + page_text + "\n"):
+            title = clean_whitespace(m.group(1))
+            base_dt = parse_date_any(m.group(2), default_tz)
+            if not base_dt:
+                continue
+            s_t = dateparser.parse(m.group(3))
+            e_t = dateparser.parse(m.group(4))
+            start = base_dt.replace(hour=s_t.hour, minute=s_t.minute, second=0, microsecond=0)
+            end = base_dt.replace(hour=e_t.hour, minute=e_t.minute, second=0, microsecond=0)
+            if end <= start:
+                end = start + dt.timedelta(hours=DEFAULT_EVENT_DURATION_HOURS)
+            events.append({
+                "id": stable_event_id(source.get("id", "thevopros"), base_url, title, start),
+                "title": title,
+                "host": source.get("name") or "The VO Pros",
+                "city": "Los Angeles",
+                "state": "CA",
+                "venue": "See listing",
+                "startAt": start.isoformat(),
+                "endAt": end.isoformat(),
+                "registrationURL": base_url,
+                "imageURL": None,
+                "detail": None,
+                "links": [{"title": "Shop", "url": base_url}],
+                "provider": source.get("name"),
+            })
+
+    # Dedup by (title,date)
+    seen3 = set()
+    out = []
+    for e in events:
+        key = (e.get("title"), (e.get("startAt") or "")[:10])
+        if key in seen3:
+            continue
+        seen3.add(key)
+        out.append(e)
+    return out
+
+
 EXTRACTORS = {
     "jsonld_events": extract_jsonld_events,
     "tidycal_index": extract_tidycal_index,
     "soundonstudio_classsignup": extract_soundonstudio_classsignup,
     "thevopros_events_index": extract_thevopros_events_index,
+    "thevopros_events_from_shop": extract_thevopros_events_from_shop,
     "halp_events_search": extract_halp_events_search,
     "van_shopify_products": extract_van_shopify_products,
     "wix_service_list": extract_wix_service_list,
+    "aiva_upcoming_schedule": extract_aiva_upcoming_schedule,
+    "voicetraxwest_guest_instructors": extract_voicetraxwest_guest_instructors,
     "vodojo_upcoming": extract_vodojo_upcoming,
     "html_fallback": extract_html_fallback
 }
