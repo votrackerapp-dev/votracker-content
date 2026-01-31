@@ -1122,16 +1122,46 @@ def extract_wix_service_list(source: Dict[str, Any], default_tz: str) -> List[Di
 
 def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
     """
-    VO Dojo - IMPROVED to filter junk and avoid duplicates
+    VO Dojo - STRICT: keep only real workshops/classes.
+
+    Requirements:
+    - Must include an instructor-style token like "with First Last" (case-insensitive).
+    - Must NOT be promo/marketing/junk (refer-a-friend, missed your chance, etc.)
+    - De-dupe by datetime.
     """
-    html = fetch_html(source["url"])
+    html = fetch_html(source["url"], source.get("headers"))
     soup = BeautifulSoup(html, "html.parser")
     full_text = soup.get_text("\n")
-    
+
+    # Promo / non-class junk to skip (title or nearby text)
+    PROMO_PHRASES = [
+        "refer a friend",
+        "referral",
+        "missed your chance",
+        "join the dojo",
+        "enroll",
+        "thank-you",
+        "thank you",
+        "dojocredit",
+        "dojo credit",
+        "coupon",
+        "discount",
+        "giveaway",
+        "waitlist",
+        "newsletter",
+        "subscribe",
+        "mailing list",
+        "podcast",
+        "blog",
+        "announcement",
+        "freebie",
+        "gift card",
+    ]
+
     # Junk titles to skip
     JUNK_PATTERNS = [
         r"^vo\s*dojo\s*event$",
-        r"^join",
+        r"^join\b",
         r"mailing\s*list",
         r"newsletter",
         r"subscribe",
@@ -1147,39 +1177,48 @@ def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dic
         r"^\d+$",  # Just numbers
         r"^[A-Za-z]{1,3}$",  # Very short strings
     ]
-    
+
+    # Instructor requirement: "with First Last" (allow middle/compound names)
+    INSTRUCTOR_RE = re.compile(r"\bwith\s+[A-Z][A-Za-z\-']+(?:\s+[A-Z][A-Za-z\-']+){1,3}\b", re.IGNORECASE)
+
     def is_junk_title(title: str) -> bool:
         lower = title.lower().strip()
         if len(lower) < 5:
             return True
-        for pattern in JUNK_PATTERNS:
-            if re.search(pattern, lower, re.IGNORECASE):
+        if any(p in lower for p in PROMO_PHRASES):
+            return True
+        for pat in JUNK_PATTERNS:
+            if re.search(pat, lower, re.IGNORECASE):
                 return True
         return False
-    
-    events: List[Dict[str, Any]] = []
+
+    def looks_like_real_class(title: str) -> bool:
+        if not INSTRUCTOR_RE.search(title):
+            return False
+        if any(p in title.lower() for p in PROMO_PHRASES):
+            return False
+        return True
+
     date_re = re.compile(r"([A-Za-z]{3,9}\s+\d{1,2},?\s+\d{4})")
-    
-    # Track events by date+time to avoid duplicates
+
     events_by_datetime: Dict[str, Dict[str, Any]] = {}
-    
-    lines = full_text.split('\n')
-    
+
+    lines = full_text.split("\n")
     i = 0
     while i < len(lines):
         line = lines[i].strip()
         date_match = date_re.search(line)
-        
+
         if date_match:
             date_str = date_match.group(1)
             base = parse_date_any(date_str, default_tz)
-            
+
             if base:
                 event_lines = [line]
                 j = i + 1
                 lines_collected = 0
-                
-                while j < len(lines) and lines_collected < 10:
+
+                while j < len(lines) and lines_collected < 12:
                     next_line = lines[j].strip()
                     if not next_line:
                         j += 1
@@ -1189,52 +1228,44 @@ def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dic
                     event_lines.append(next_line)
                     lines_collected += 1
                     j += 1
-                
-                event_text = '\n'.join(event_lines)
-                
-                # Extract time
+
+                event_text = "\n".join(event_lines)
+
                 start, end = apply_time_to_date(base, event_text, default_tz)
                 start_s = isoformat_with_tz(start, default_tz)
                 end_s = isoformat_with_tz(end, default_tz)
-                
-                # Find best title from event lines
+
                 title = None
                 for el in event_lines:
                     el_clean = el.strip()
-                    # Skip date-only lines
                     if date_re.fullmatch(el_clean):
                         continue
-                    # Skip very short or junk
                     if is_junk_title(el_clean):
                         continue
-                    # Skip lines that look like times only
                     if re.fullmatch(r"[\d:]+\s*(am|pm)?(\s*[-–]\s*[\d:]+\s*(am|pm)?)?", el_clean, re.IGNORECASE):
                         continue
-                    # Found a good title
-                    title = safe_text(el_clean, 150)
+                    title = safe_text(el_clean, 160)
                     break
-                
-                # Skip if no good title found
+
                 if not title:
-                    log(f"  [VODojo] Skipping event at {date_str} - no good title found")
+                    log(f"  [VODojo] Skipping {date_str} - no usable title")
                     i = j
                     continue
-                
-                # Use date+time as key for deduplication
-                datetime_key = start_s[:16]  # "2026-01-30T19:00"
-                
-                # If we already have an event at this datetime, prefer the better title
+
+                if not looks_like_real_class(title):
+                    log(f"  [VODojo] Skipping non-class: '{title[:80]}'")
+                    i = j
+                    continue
+
+                datetime_key = start_s[:16]
+
                 if datetime_key in events_by_datetime:
                     existing = events_by_datetime[datetime_key]
                     existing_title = existing.get("title", "")
-                    # Keep the more descriptive title (longer, not generic)
-                    if len(title) > len(existing_title) or "event" in existing_title.lower():
-                        log(f"  [VODojo] Replacing '{existing_title[:30]}' with '{title[:30]}' at {datetime_key}")
+                    if len(title) > len(existing_title):
                         existing["title"] = title
                         existing["id"] = compute_event_id(source["id"], title, start_s, None)
                 else:
-                    # New event
-                    log(f"  [VODojo] Found: {title[:50]}... @ {start_s}")
                     events_by_datetime[datetime_key] = {
                         "id": compute_event_id(source["id"], title, start_s, None),
                         "title": title,
@@ -1244,19 +1275,19 @@ def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dic
                         "venue": "See listing",
                         "startAt": start_s,
                         "endAt": end_s,
-                        "registrationURL": None,
+                        "registrationURL": normalize_url(source["url"]),
                         "imageURL": None,
                         "detail": None,
                         "links": [{"title": "Upcoming Events", "url": normalize_url(source["url"])}]
                     }
-                
+
                 i = j
                 continue
-        
+
         i += 1
-    
+
     events = list(events_by_datetime.values())
-    log(f"  [VODojo] Found {len(events)} unique events")
+    log(f"  [VODojo] Found {len(events)} real classes")
     return events
 
 def extract_html_fallback(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
@@ -1331,7 +1362,7 @@ def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: 
 
         # Infer year: pick the next occurrence of that month/day in local tz.
         # Use dateutil on a string without year, then adjust.
-        base = infer_year_for_month_day(mon, int(day), default_tz)
+        base = infer_year_for_month_day(f"{mon} {day}", default_tz)
         if not base:
             continue
         try:
@@ -1436,7 +1467,7 @@ def extract_aiva_upcoming_schedule(source: Dict[str, Any], default_tz: str) -> L
             if re.search(r"(?i)video\s+download|download\b", title):
                 continue
 
-            base = infer_year_for_month_day(mon, day, default_tz)
+            base = infer_year_for_month_day(f"{mon} {day}", default_tz)
             if not base:
                 continue
             # AIVA often doesn't expose start time; default 12:00pm PT.
