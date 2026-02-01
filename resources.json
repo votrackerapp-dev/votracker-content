@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-01-31",
+  "lastUpdated": "2026-02-01",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -102,48 +102,6 @@
     }
   ],
   "workshops": [
-    {
-      "id": "realvoicela-fd95f3047470fc13",
-      "title": "Online Video Game Intensive",
-      "host": "Real Voice LA",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-01-26T14:00:00-08:00",
-      "endAt": "2026-01-26T17:00:00-08:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/online-video-game-intensive-1",
-      "imageURL": null,
-      "detail": null,
-      "provider": "realvoicela",
-      "providerLabel": "Real Voice LA",
-      "links": [
-        {
-          "title": "Listing",
-          "url": "https://www.realvoicela.com/service-page/online-video-game-intensive-1"
-        }
-      ]
-    },
-    {
-      "id": "realvoicela-f7a119768dc53efb",
-      "title": "January Accents for Video Games",
-      "host": "Real Voice LA",
-      "city": null,
-      "state": null,
-      "venue": "See listing",
-      "startAt": "2026-01-28T18:30:00-08:00",
-      "endAt": "2026-01-28T21:30:00-08:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/january-accents-for-video-games",
-      "imageURL": null,
-      "detail": null,
-      "provider": "realvoicela",
-      "providerLabel": "Real Voice LA",
-      "links": [
-        {
-          "title": "Listing",
-          "url": "https://www.realvoicela.com/service-page/january-accents-for-video-games"
-        }
-      ]
-    },
     {
       "id": "voiceactorsnetwork-30644d18d3b8b4d9",
       "title": "Crafting Characters for your Auditions - Carrie Keranen | Wednesday, January 28th, 2026 | 7-10pm PT | In Person",
@@ -477,44 +435,23 @@
       ]
     },
     {
-      "id": "halp_academy-9207ff2be63c1624",
-      "title": "Events",
-      "host": "Lexington Vanderberg",
+      "id": "realvoicela-3c4730fbdefb19cd",
+      "title": "Voice Acting for Gacha Games",
+      "host": "Real Voice LA",
       "city": null,
       "state": null,
-      "venue": null,
-      "startAt": "2026-02-18T14:27:34.679723-08:00",
-      "endAt": "2026-02-18T16:27:34.679723-08:00",
-      "registrationURL": "https://halpacademy.com/events",
+      "venue": "See listing",
+      "startAt": "2026-02-17T18:00:00-08:00",
+      "endAt": "2026-02-17T21:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/voice-acting-for-gacha-games",
       "imageURL": null,
-      "detail": "Events - The Halp Academy Home About Events On demand Halppening Shop Home About Events On demand Halppening Shop SHOPPING CART $ 0.00 0 Cart Home About Events On demand Halppening Shop Home About Events On demand Halppening Shop $ 0.00 0 Cart Events Events Webinar, meetings and much more Master your craft. Expand your network. Shape the future. From hands on workshops and immersive courses to high energy workouts and inspiring events, both online and in person, we’re all about fueling industry talent. These offerings are crafted to empower professionals across our industry — actors, audio eng",
-      "provider": "halp_academy",
-      "providerLabel": "HALP Academy",
+      "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
       "links": [
         {
-          "title": "Event Page",
-          "url": "https://halpacademy.com/events"
-        }
-      ]
-    },
-    {
-      "id": "halp_academy-f058241ebf28da34",
-      "title": "Search",
-      "host": "Lexington Vanderberg",
-      "city": null,
-      "state": null,
-      "venue": null,
-      "startAt": "2026-02-18T14:27:35.660404-08:00",
-      "endAt": "2026-02-18T16:27:35.660404-08:00",
-      "registrationURL": "https://halpacademy.com/events/search",
-      "imageURL": null,
-      "detail": "Search - The Halp Academy Home About Events On demand Halppening Shop Home About Events On demand Halppening Shop SHOPPING CART $ 0.00 0 Cart Home About Events On demand Halppening Shop Home About Events On demand Halppening Shop $ 0.00 0 Cart Search Events Webinar, meetings and much more ← Back Find events Type All Types Free Event Meet Webinar Workshop Topic All Topics Acting Community Editorial In Person Meet Up Mock Session Online Panel Performance Capture Recording and Engineering THNEA XP Workouts workshop When Select Date Range Upcoming Week Next Two Weeks This Month Next Month Search U",
-      "provider": "halp_academy",
-      "providerLabel": "HALP Academy",
-      "links": [
-        {
-          "title": "Event Page",
-          "url": "https://halpacademy.com/events/search"
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/voice-acting-for-gacha-games"
         }
       ]
     },
@@ -557,6 +494,48 @@
         {
           "title": "Listing",
           "url": "https://www.realvoicela.com/service-page/in-person-level-two-video-game-intensive"
+        }
+      ]
+    },
+    {
+      "id": "halp_academy-9207ff2be63c1624",
+      "title": "Events",
+      "host": "Lexington Vanderberg",
+      "city": null,
+      "state": null,
+      "venue": null,
+      "startAt": "2026-02-18T21:21:54.273593-08:00",
+      "endAt": "2026-02-18T23:21:54.273593-08:00",
+      "registrationURL": "https://halpacademy.com/events",
+      "imageURL": null,
+      "detail": "Events - The Halp Academy Home About Events On demand Halppening Shop Home About Events On demand Halppening Shop SHOPPING CART $ 0.00 0 Cart Home About Events On demand Halppening Shop Home About Events On demand Halppening Shop $ 0.00 0 Cart Events Events Webinar, meetings and much more Master your craft. Expand your network. Shape the future. From hands on workshops and immersive courses to high energy workouts and inspiring events, both online and in person, we’re all about fueling industry talent. These offerings are crafted to empower professionals across our industry — actors, audio eng",
+      "provider": "halp_academy",
+      "providerLabel": "HALP Academy",
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://halpacademy.com/events"
+        }
+      ]
+    },
+    {
+      "id": "halp_academy-f058241ebf28da34",
+      "title": "Search",
+      "host": "Lexington Vanderberg",
+      "city": null,
+      "state": null,
+      "venue": null,
+      "startAt": "2026-02-18T21:21:55.557852-08:00",
+      "endAt": "2026-02-18T23:21:55.557852-08:00",
+      "registrationURL": "https://halpacademy.com/events/search",
+      "imageURL": null,
+      "detail": "Search - The Halp Academy Home About Events On demand Halppening Shop Home About Events On demand Halppening Shop SHOPPING CART $ 0.00 0 Cart Home About Events On demand Halppening Shop Home About Events On demand Halppening Shop $ 0.00 0 Cart Search Events Webinar, meetings and much more ← Back Find events Type All Types Free Event Meet Webinar Workshop Topic All Topics Acting Community Editorial In Person Meet Up Mock Session Online Panel Performance Capture Recording and Engineering THNEA XP Workouts workshop When Select Date Range Upcoming Week Next Two Weeks This Month Next Month Search U",
+      "provider": "halp_academy",
+      "providerLabel": "HALP Academy",
+      "links": [
+        {
+          "title": "Event Page",
+          "url": "https://halpacademy.com/events/search"
         }
       ]
     },
@@ -702,6 +681,27 @@
         {
           "title": "Event Page",
           "url": "https://www.thevopros.com/events/anime-dubbing-jason-lord-director-crunch-roll"
+        }
+      ]
+    },
+    {
+      "id": "realvoicela-4a5684385ab7c125",
+      "title": "Auditioning for Anime Shawn Gann",
+      "host": "Real Voice LA",
+      "city": null,
+      "state": null,
+      "venue": "See listing",
+      "startAt": "2026-02-24T18:00:00-08:00",
+      "endAt": "2026-02-24T21:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/auditioning-for-anime-shawn-gann",
+      "imageURL": null,
+      "detail": null,
+      "provider": "realvoicela",
+      "providerLabel": "Real Voice LA",
+      "links": [
+        {
+          "title": "Listing",
+          "url": "https://www.realvoicela.com/service-page/auditioning-for-anime-shawn-gann"
         }
       ]
     },
