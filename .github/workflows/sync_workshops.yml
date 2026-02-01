@@ -37,23 +37,16 @@ jobs:
             --sources "$SOURCES_JSON_PATH" \
             --default-tz "$DEFAULT_TZ"
 
-      # ========================================
-      # NEW: Quality Check with Diagnostics
-      # ========================================
       - name: Quality Check - Run Diagnostics
         run: |
           echo "========================================"
           echo "🔍 RUNNING WORKSHOP QUALITY DIAGNOSTICS"
           echo "========================================"
-          python diagnose_workshops.py resources.json || true
+          python scripts/diagnose_workshops.py resources.json || true
           echo ""
           echo "========================================"
         continue-on-error: true
-        # continue-on-error means if diagnostic fails, workflow continues
 
-      # ========================================
-      # NEW: Quick Summary Stats
-      # ========================================
       - name: Quick Stats
         run: |
           echo "📊 Quick Workshop Stats:"
