@@ -103,6 +103,15 @@
   ],
   "workshops": [
     {
+      "id": "voicetraxwest-ebcc03923aff28b3",
+      "title": "Instructors",
+      "startAt": "2026-02-10T10:00:00-08:00",
+      "endAt": "2026-02-10T18:30:00-08:00",
+      "registrationURL": "https://www.voicetraxwest.com/guest-instructor-abbie-waters",
+      "host": "Voice Trax West",
+      "provider": "voicetraxwest"
+    },
+    {
       "id": "thevodojo-b7cfd3f155d6f2ff",
       "title": "CLAIM MY SPOT NOW!",
       "startAt": "2026-02-04T12:00:00-08:00",
