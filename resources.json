@@ -103,6 +103,84 @@
   ],
   "workshops": [
     {
+      "id": "voicetraxwest-ebcc03923aff28b3",
+      "title": "Instructors",
+      "startAt": "2026-02-10T10:00:00-08:00",
+      "endAt": "2026-02-10T18:30:00-08:00",
+      "registrationURL": "https://www.voicetraxwest.com/guest-instructor-abbie-waters",
+      "host": "Voice Trax West",
+      "provider": "voicetraxwest"
+    },
+    {
+      "id": "thevodojo-b7cfd3f155d6f2ff",
+      "title": "CLAIM MY SPOT NOW!",
+      "startAt": "2026-02-04T12:00:00-08:00",
+      "endAt": "2026-02-04T14:00:00-08:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-voiceover-february",
+      "host": "The VO Dojo",
+      "provider": "thevodojo",
+      "timeTBD": true
+    },
+    {
+      "id": "thevodojo-432fe71fb0ea3082",
+      "title": "Read more about Kelli here.",
+      "startAt": "2026-02-04T10:00:00-08:00",
+      "endAt": "2026-02-04T11:15:00-08:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/ask-the-sensei-with-kelli-tager",
+      "host": "The VO Dojo",
+      "provider": "thevodojo"
+    },
+    {
+      "id": "thevodojo-e468453e35606b2a",
+      "title": "Thursday, February 12th • VO Pro Fight Club • ANIMATION with BRENNA LARSEN",
+      "startAt": "2026-02-12T12:00:00-08:00",
+      "endAt": "2026-02-12T14:00:00-08:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/thursday-february-12th-vo-pro-fight-club-animation-with-brenna-larsen",
+      "host": "The VO Dojo",
+      "provider": "thevodojo",
+      "timeTBD": true
+    },
+    {
+      "id": "thevodojo-d0e6c131dbe148a5",
+      "title": "Feb 18",
+      "startAt": "2026-02-18T12:00:00-08:00",
+      "endAt": "2026-02-18T14:00:00-08:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/get-to-know-vo-the-playbook-for-sports-voiceover-with-steven-goard",
+      "host": "The VO Dojo",
+      "provider": "thevodojo",
+      "timeTBD": true
+    },
+    {
+      "id": "thevodojo-b40957e3780945ae",
+      "title": "Sunday, February 22nd • VO Pro Fight Club • ANIME with LISA ORTIZ",
+      "startAt": "2026-02-22T12:00:00-08:00",
+      "endAt": "2026-02-22T14:00:00-08:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/sunday-february-22nd-vo-pro-fight-club-anime-with-lisa-ortiz",
+      "host": "The VO Dojo",
+      "provider": "thevodojo",
+      "timeTBD": true
+    },
+    {
+      "id": "thevodojo-d921eb3f0b33ec63",
+      "title": "Tuesday, February 24th • VO Pro Fight Club • COMMERCIALS with LISA FISCHOFF",
+      "startAt": "2026-02-24T12:00:00-08:00",
+      "endAt": "2026-02-24T14:00:00-08:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/tuesday-february-24th-vo-pro-fight-club-commercials-with-lisa-fischoff",
+      "host": "The VO Dojo",
+      "provider": "thevodojo",
+      "timeTBD": true
+    },
+    {
+      "id": "thevodojo-c0396402d554bc0a",
+      "title": "Mar 27",
+      "startAt": "2026-03-27T12:00:00-07:00",
+      "endAt": "2026-03-27T14:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/voa-breakout-dude-btches-amp-mothafers-activating-your-pov-for-infinite-effortless-badass-abc-takes",
+      "host": "The VO Dojo",
+      "provider": "thevodojo",
+      "timeTBD": true
+    },
+    {
       "id": "voiceactorsnetwork-30644d18d3b8b4d9",
       "title": "Crafting Characters for your Auditions - Carrie Keranen | Wednesday, January 28th, 2026 | 7-10pm PT | In Person",
       "host": "Voice Actors Network",
