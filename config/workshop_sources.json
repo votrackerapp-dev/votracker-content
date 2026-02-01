@@ -4,29 +4,20 @@
       "id": "voiceactorsnetwork",
       "name": "Voice Actors Network",
       "url": "https://voiceactorsnetwork.com/collections/all",
-      "extractor": "van_shopify_products",
-      "calendarSupport": {
-        "type": "unknown",
-        "notes": "No public .ics/iCal feed found from the source listing page; may exist behind booking/checkout or JS."
-      }
+      "extractor": "van_shopify_products"
     },
     {
       "id": "thevopros",
       "name": "The VO Pros",
-      "url": "https://www.thevopros.com/events/",
-      "extractor": "thevopros_events_index",
+      "url": "https://www.thevopros.com/shop/",
+      "extractor": "thevopros_events_from_shop",
       "headers": {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9"
       },
       "prefer_reader": false,
-      "max_event_pages": 25,
-      "calendarSupport": {
-        "type": "per-event",
-        "likely": true,
-        "notes": "VO Pros event pages show an 'Add Calendar' section (Google/Yahoo/Outlook/Apple). Use index-based scraping so you don\u2019t miss events not listed in /shop."
-      }
+      "max_event_pages": 25
     },
     {
       "id": "redscythe_tidycal_classes",
@@ -34,50 +25,26 @@
       "url": "https://tidycal.com/redscythestudio/",
       "extractor": "tidycal_index",
       "timezone": "America/Los_Angeles",
+      "allow_zero_events": true,
       "headers": {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9"
+        "User-Agent": "Mozilla/5.0"
       },
       "filters": {
-        "exclude_title_contains": [
-          "coaching",
-          "coach",
-          "consult",
-          "consultation",
-          "1:1",
-          "freelance",
-          "marketing"
-        ],
-        "exclude_title_regex": [
-          "(?i)\\b1\\s*:\\s*1\\b",
-          "(?i)private\\s+session"
-        ]
-      },
-      "calendarSupport": {
-        "type": "unknown",
-        "notes": "No public .ics/iCal feed found from the source listing page; may exist behind booking/checkout or JS."
+        "exclude_title_contains": ["coaching", "coach", "consult", "1:1"],
+        "exclude_title_regex": ["(?i)\\b1\\s*:\\s*1\\b"]
       }
     },
     {
       "id": "soundonstudio",
       "name": "Sound On Studio",
       "url": "https://www.soundonstudio.com/classsignup",
-      "extractor": "soundonstudio_classsignup",
-      "calendarSupport": {
-        "type": "unknown",
-        "notes": "No public .ics/iCal feed found from the source listing page; may exist behind booking/checkout or JS."
-      }
+      "extractor": "soundonstudio_classsignup"
     },
     {
       "id": "halp_academy",
       "name": "HALP Academy",
       "url": "https://halpacademy.com/events/search/",
-      "extractor": "halp_events_search",
-      "calendarSupport": {
-        "type": "unknown",
-        "notes": "No public .ics/iCal feed found from the source listing page; may exist behind booking/checkout or JS."
-      }
+      "extractor": "halp_events_search"
     },
     {
       "id": "voicetraxwest",
@@ -85,52 +52,26 @@
       "url": "https://www.voicetraxwest.com/guest-instructors",
       "extractor": "voicetraxwest_guest_instructors",
       "prefer_reader": false,
-      "calendarSupport": {
-        "type": "unknown",
-        "notes": "No public .ics/iCal feed found from the source listing page; may exist behind booking/checkout or JS."
-      },
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9"
-      }
+      "allow_zero_events": true
     },
     {
       "id": "adventuresinvoiceacting",
       "name": "Adventures in Voice Acting",
       "url": "https://www.adventuresinvoiceacting.com/",
       "extractor": "aiva_upcoming_schedule",
-      "allow_zero_events": true,
-      "calendarSupport": {
-        "type": "unknown",
-        "notes": "No public .ics/iCal feed found from the source listing page; may exist behind booking/checkout or JS."
-      }
+      "allow_zero_events": true
     },
     {
       "id": "realvoicela",
       "name": "Real Voice LA",
       "url": "https://www.realvoicela.com/classes",
-      "extractor": "wix_service_list",
-      "calendarSupport": {
-        "type": "unknown",
-        "notes": "No public .ics/iCal feed found from the source listing page; may exist behind booking/checkout or JS."
-      }
+      "extractor": "wix_service_list"
     },
     {
       "id": "thevodojo",
       "name": "The VO Dojo",
       "url": "https://www.thevodojo.com/upcoming-events-nav",
-      "extractor": "vodojo_upcoming",
-      "calendarSupport": {
-        "type": "per-event",
-        "confirmed": true,
-        "notes": "The /new-events listing includes direct ICS links for each event."
-      },
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9"
-      }
+      "extractor": "vodojo_upcoming"
     }
   ],
   "settings": {
