@@ -321,9 +321,22 @@ def extract_tidycal_index(source: Dict[str, Any], default_tz: str) -> List[Dict[
     events: List[Dict[str, Any]] = []
     seen_keys = set()
 
-    detail_links = soup.find_all("a", string=re.compile(r"View\s+details", re.I))
+    # Find ALL links that might be detail links (more flexible approach)
+    all_links = soup.find_all("a", href=True)
+    detail_links = []
     
-    log(f"  [TidyCal] Found {len(detail_links)} 'View details' links")
+    for link in all_links:
+        href = link.get("href", "").strip()
+        link_text = link.get_text(" ", strip=True).lower()
+        
+        # Accept "View details" or links that go to specific class pages
+        if "view" in link_text and "detail" in link_text:
+            detail_links.append(link)
+        elif href and ("redscythestudio" in href or "tidycal.com" in href) and "/" in href.rstrip("/").split("/")[-1]:
+            # Link goes to a specific page (not just the root)
+            detail_links.append(link)
+    
+    log(f"  [TidyCal] Found {len(detail_links)} potential detail links")
 
     for link in detail_links:
         try:
@@ -482,14 +495,15 @@ def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dic
 
             container = link.find_parent(["article", "div", "section", "li"]) or link.parent
 
-            # Get title
-            title_text = link.get_text(" ", strip=True)
+            # Get title - ALWAYS look for heading first, not link text
+            title_text = None
+            h = container.find(re.compile("^h[1-6]$"))
+            if h:
+                title_text = h.get_text(" ", strip=True)
             
-            # If link text is generic, find heading
-            if len(title_text) < 10 or title_text.lower() in ["learn more", "read more", "view details"]:
-                h = container.find(re.compile("^h[1-6]$"))
-                if h:
-                    title_text = h.get_text(" ", strip=True)
+            # Fallback to link text only if no heading found
+            if not title_text:
+                title_text = link.get_text(" ", strip=True)
 
             title = clean_title(title_text)
             
@@ -584,66 +598,63 @@ def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: 
     events: List[Dict[str, Any]] = []
     seen_keys = set()
 
-    # Split by <hr> separators
-    separators = soup.find_all("hr")
+    # SIMPLER APPROACH: Find all text that matches the schedule pattern,
+    # then find the nearest heading above it
+    all_text = soup.get_text("\n")
     
-    sections = []
-    for i, sep in enumerate(separators):
-        section_content = []
-        current = sep.next_sibling
-        next_sep = separators[i + 1] if i + 1 < len(separators) else None
-        
-        while current and current != next_sep:
-            section_content.append(current)
-            current = current.next_sibling
-        
-        sections.append(section_content)
-
-    log(f"  [VoiceTrax] Found {len(sections)} class sections")
-
-    for section_nodes in sections:
+    for match in sched_re.finditer(all_text):
         try:
-            section_html = "".join(str(node) for node in section_nodes)
-            section_soup = BeautifulSoup(section_html, "html.parser")
-            
-            section_text = section_soup.get_text("\n", strip=True)
-            
-            # Look for schedule
-            sched_match = sched_re.search(section_text)
-            if not sched_match:
-                continue
-
-            month = sched_match.group("mon")
-            day = sched_match.group("day")
+            month = match.group("mon")
+            day = match.group("day")
             base_dt = infer_year_for_month_day(f"{month} {day}", default_tz)
             if not base_dt:
                 continue
-
-            # Extract title
-            title = ""
-            for tag_name in ["h1", "h2", "h3", "h4", "h5", "h6"]:
-                h = section_soup.find(tag_name)
+            
+            # Find the element containing this match
+            schedule_text = match.group(0)
+            # Search for elements containing this exact schedule text
+            candidates = soup.find_all(string=re.compile(re.escape(schedule_text)))
+            
+            if not candidates:
+                continue
+            
+            # Get the first candidate's parent container
+            elem = candidates[0]
+            container = elem.parent
+            
+            # Walk up to find a reasonable container (has heading + links)
+            for _ in range(10):
+                if not container:
+                    break
+                # Check if this container has both a heading and links
+                has_heading = container.find(re.compile("^h[1-6]$")) is not None
+                has_link = container.find("a", href=True) is not None
+                container_text = safe_text(container.get_text(" ", strip=True))
+                
+                if has_heading and has_link and len(container_text) > 50:
+                    break
+                    
+                container = container.parent
+            
+            if not container:
+                continue
+            
+            # Extract title from heading
+            title = None
+            for tag in ["h1", "h2", "h3", "h4", "h5", "h6"]:
+                h = container.find(tag)
                 if h:
                     title = safe_text(h.get_text(" ", strip=True))
-                    break
+                    if title and len(title) > 5 and not sched_re.search(title):
+                        break
             
-            if not title:
-                p = section_soup.find("p")
-                if p:
-                    title = safe_text(p.get_text(" ", strip=True))
+            if not title or len(title) < 6:
+                continue
             
-            if not title:
-                strong = section_soup.find("strong")
-                if strong:
-                    title = safe_text(strong.get_text(" ", strip=True))
-
             title = clean_title(title)
             
-            if not title or len(title) < 6 or sched_re.search(title):
-                log(f"  [VoiceTrax] Skipping - invalid title")
-                continue
-
             # Extract time
+            section_text = container.get_text("\n", strip=True)
             time_tbd = False
             tr = extract_time_from_text(section_text)
             if tr:
@@ -656,24 +667,23 @@ def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: 
                 time_tbd = True
                 start_dt = base_dt.replace(hour=12, minute=0, second=0, microsecond=0)
                 end_dt = start_dt + dt.timedelta(hours=2)
-
+            
             # Find registration link
             reg_url = None
-            for link in section_soup.find_all("a", href=True):
+            for link in container.find_all("a", href=True):
                 href = link.get("href", "").strip()
-                
                 if any(domain in href for domain in ["as.me", "acuityscheduling", "calendly", "eventbrite", "voicetraxwest.com"]):
                     reg_url = normalize_url(href)
                     break
-
+            
             if not reg_url:
                 reg_url = base_url
-
+            
             key = (title.lower(), start_dt.date().isoformat())
             if key in seen_keys:
                 continue
             seen_keys.add(key)
-
+            
             events.append({
                 "title": title,
                 "startAt": isoformat_with_tz(start_dt, default_tz),
@@ -685,7 +695,7 @@ def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: 
             })
             
             log(f"  [VoiceTrax] ✅ {title} on {start_dt.date()}")
-
+        
         except Exception as e:
             log(f"  [VoiceTrax] Error: {e}")
             continue
