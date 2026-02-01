@@ -646,6 +646,8 @@ def extract_tidycal_index(source: Dict[str, Any], default_tz: str) -> List[Dict[
     ]
 
     title_patterns = [
+        # e.g. "2.7 | BRITTANY COX | strong reads that book the room"
+        re.compile(r'(?P<mmdd>\d{1,2}[./]\d{1,2})\s*(?:\||•|–|-|:)\s*(?P<who>[^|•\n]{2,80})\s*(?:\||•|–|-|:)\s*(?P<what>[^\n]{2,200})', re.I),
         # e.g. "2.24 | Lisa Fischoff | Commercials"
         re.compile(r'(?P<mmdd>\d{1,2}[./]\d{1,2})\s*(?:\||•|–|-)\s*(?P<who>[^|•\n]{2,80})\s*(?:\||•|–|-)\s*(?P<what>[^\n]{2,200})', re.I),
         # e.g. "2/24 • Commercials with Lisa Fischoff"
@@ -691,12 +693,12 @@ def extract_tidycal_index(source: Dict[str, Any], default_tz: str) -> List[Dict[
             continue
 
         # Time: optional. If missing, mark TBD and keep date only.
-        tr = extract_time_from_text(card_text)
+        sh, sm, eh, em = extract_time_from_text(card_text)
         time_tbd = False
-        if tr:
-            start_dt = base_dt.replace(hour=tr.start_hour, minute=tr.start_minute, second=0, microsecond=0)
-            if tr.end_hour is not None and tr.end_minute is not None:
-                end_dt = base_dt.replace(hour=tr.end_hour, minute=tr.end_minute, second=0, microsecond=0)
+        if sh is not None:
+            start_dt = base_dt.replace(hour=sh, minute=sm, second=0, microsecond=0)
+            if eh is not None and em is not None:
+                end_dt = base_dt.replace(hour=eh, minute=em, second=0, microsecond=0)
             else:
                 end_dt = start_dt + dt.timedelta(hours=2)
         else:
@@ -1657,8 +1659,19 @@ def extract_vodojo_upcoming(source: Dict[str, Any], default_tz: str) -> List[Dic
             if _looks_like_junk(title):
                 continue
             # Must include at least one VO-ish keyword to avoid junk calendar entries
+            # AND must exclude obvious promo events
             low = title.lower()
-            if not any(k in low for k in ["with", "fight club", "ask the sensei", "agent night", "workout", "workshop", "q&a", "q&a", "q and a"]):
+            
+            # Skip junk calendar entries
+            junk_patterns = [
+                "refer", "spread the", "join", "mailing list", "subscribe",
+                "contest", "email list", "newsletter"
+            ]
+            if any(junk in low for junk in junk_patterns):
+                continue
+            
+            # Require VO-related keywords
+            if not any(k in low for k in ["with", "fight club", "ask the sensei", "agent night", "workout", "workshop", "q&a", "q&a", "q and a", "breakout", "intensive", "playbook"]):
                 continue
 
             base_date = parse_fuzzy_date(block_text)
@@ -1794,28 +1807,40 @@ def apply_event_filters(events: List[Dict[str, Any]], filters: Optional[Dict[str
 
 def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: str) -> List[Dict[str, Any]]:
     """
-    VoiceTrax West guest instructor page formatting varies. We look for schedule lines like:
-      "TUESDAY, Feb 10 - 6:30pm PST"
-    and then grab the nearest title in the same visual block.
-
+    VoiceTrax West guest instructor page.
+    Format: Each section has a title (e.g., "Agent Night with Abbie Waters"),
+    followed by a description, then a line like "TUESDAY, Feb 10 - 6:30pm PST" in bold/strong tags.
+    
     If time can't be parsed, we still keep the date and mark timeTBD=True ("View Details" in app).
     """
     base_url = source["url"]
     html = fetch_html(base_url, headers=source.get("headers"))
     soup = BeautifulSoup(html, "html.parser")
 
-    sched_re = re.compile(r'\b(?:mon|tue|wed|thu|fri|sat|sun)\w*\s*,?\s*(?P<mon>[A-Za-z]{3,9})\s*(?P<day>\d{1,2})\s*(?:-|–)\s*(?P<time>\d{1,2}:\d{2}\s*(?:am|pm))?', re.I)
+    # Updated regex to match their format: "TUESDAY, Feb 10 - 6:30pm PST"
+    sched_re = re.compile(
+        r'\b(?:mon|tue|wed|thu|fri|sat|sun)\w*\s*,?\s*'
+        r'(?P<mon>[A-Za-z]{3,9})\s+(?P<day>\d{1,2})\s*'
+        r'(?:-|–)\s*'
+        r'(?P<time>\d{1,2}:\d{2}\s*(?:am|pm))?',
+        re.I
+    )
     time_single_re = re.compile(r'(\d{1,2}:\d{2}\s*(?:am|pm))', re.I)
 
     events: List[Dict[str, Any]] = []
     seen = set()
 
-    # Iterate through text nodes looking for schedule patterns.
-    for node in soup.find_all(string=True):
-        s = safe_text(str(node)).strip()
-        if not s:
+    # VTW structure: Look for sections/divs that contain instructor blocks
+    # Each block typically has: img, title (h2/h3), description (p), date/time (strong/b), links (a)
+    blocks = soup.find_all(['section', 'div', 'article'])
+    
+    for block in blocks:
+        block_text = safe_text(block.get_text("\n", strip=True))
+        if not block_text:
             continue
-        m = sched_re.search(s)
+            
+        # Look for schedule pattern
+        m = sched_re.search(block_text)
         if not m:
             continue
 
@@ -1825,36 +1850,27 @@ def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: 
         if not base_dt:
             continue
 
-        # Find a container block around this schedule line.
-        container = node.parent
-        for _ in range(8):
-            if container is None:
-                break
-            # stop when we find a reasonably sized container that likely represents the card
-            txt = safe_text(container.get_text("\n", strip=True))
-            if 40 < len(txt) < 1200 and container.find(["h1", "h2", "h3", "h4", "strong"]):
-                break
-            container = container.parent
-
-        container = container or node.parent
-        block_text = safe_text(container.get_text("\n", strip=True)) if container else s
-
-        # Title: prefer headings
+        # Title: prefer headings (h2, h3, h4)
         title = ""
-        h = container.find(["h1", "h2", "h3", "h4"]) if container else None
-        if h:
-            title = safe_text(h.get_text(" ", strip=True))
-        else:
-            # first strong or first non-schedule line
-            st = container.find("strong") if container else None
-            if st:
-                title = safe_text(st.get_text(" ", strip=True))
-            if not title:
-                lines = [ln.strip() for ln in block_text.split("\n") if ln.strip()]
-                # choose the first line that isn't the schedule line itself
-                for ln in lines:
-                    if sched_re.search(ln):
-                        continue
+        for h in block.find_all(["h2", "h3", "h4", "h1"]):
+            h_text = safe_text(h.get_text(" ", strip=True))
+            if h_text and len(h_text) > 5 and not sched_re.search(h_text):
+                title = h_text
+                break
+        
+        # Fallback: look for strong text that isn't the date
+        if not title:
+            for strong in block.find_all(["strong", "b"]):
+                st_text = safe_text(strong.get_text(" ", strip=True))
+                if st_text and len(st_text) > 5 and not sched_re.search(st_text):
+                    title = st_text
+                    break
+        
+        # Last fallback: first meaningful line
+        if not title:
+            lines = [ln.strip() for ln in block_text.split("\n") if ln.strip()]
+            for ln in lines:
+                if len(ln) > 5 and not sched_re.search(ln):
                     title = ln
                     break
 
@@ -1862,45 +1878,49 @@ def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: 
         if not title or len(title) < 6:
             continue
 
-        # Time
+        # Time parsing
         time_tbd = False
         tm = time_single_re.search(block_text)
         if tm:
             t = tm.group(1).lower().replace(" ", "")
-            hour_min = t.split(":")
-            hour = int(hour_min[0])
-            minute = int(re.sub(r'[^0-9]', '', hour_min[1])[:2])
-            is_pm = "pm" in t
-            is_am = "am" in t
-            if is_pm and hour != 12:
-                hour += 12
-            if is_am and hour == 12:
-                hour = 0
-            start_dt = base_dt.replace(hour=hour, minute=minute, second=0, microsecond=0)
-            end_dt = start_dt + dt.timedelta(hours=2)
+            try:
+                hour_min = t.split(":")
+                hour = int(hour_min[0])
+                minute = int(re.sub(r'[^0-9]', '', hour_min[1])[:2])
+                is_pm = "pm" in t
+                is_am = "am" in t
+                if is_pm and hour != 12:
+                    hour += 12
+                if is_am and hour == 12:
+                    hour = 0
+                start_dt = base_dt.replace(hour=hour, minute=minute, second=0, microsecond=0)
+                end_dt = start_dt + dt.timedelta(hours=2)
+            except:
+                time_tbd = True
+                start_dt = base_dt.replace(hour=12, minute=0, second=0, microsecond=0)
+                end_dt = start_dt + dt.timedelta(hours=2)
         else:
             time_tbd = True
             start_dt = base_dt.replace(hour=12, minute=0, second=0, microsecond=0)
             end_dt = start_dt + dt.timedelta(hours=2)
 
-        # Best registration/detail link in the same block
+        # Registration link
         reg = None
-        if container:
-            preferred_domains = ["as.me", "acuityscheduling", "calendly", "eventbrite", "voicetraxwest.com"]
-            for a in container.find_all("a", href=True):
+        preferred_domains = ["as.me", "acuityscheduling", "calendly", "eventbrite", "voicetraxwest.com"]
+        for a in block.find_all("a", href=True):
+            href = a["href"].strip()
+            if not href or href.startswith("#") or href.startswith("mailto:"):
+                continue
+            if any(d in href for d in preferred_domains):
+                reg = normalize_url(href)
+                break
+        if not reg:
+            for a in block.find_all("a", href=True):
                 href = a["href"].strip()
                 if not href or href.startswith("#") or href.startswith("mailto:"):
                     continue
-                if any(d in href for d in preferred_domains):
-                    reg = normalize_url(href)
-                    break
-            if not reg:
-                for a in container.find_all("a", href=True):
-                    href = a["href"].strip()
-                    if not href or href.startswith("#") or href.startswith("mailto:"):
-                        continue
-                    reg = normalize_url(href)
-                    break
+                reg = normalize_url(href)
+                break
         reg = reg or normalize_url(base_url)
 
         key = (title.lower(), start_dt.date().isoformat(), reg)
@@ -1910,10 +1930,9 @@ def extract_voicetraxwest_guest_instructors(source: Dict[str, Any], default_tz: 
 
         # Image
         img_url = None
-        if container:
-            img = container.find("img")
-            if img and img.get("src"):
-                img_url = img["src"].strip()
+        img = block.find("img")
+        if img and img.get("src"):
+            img_url = img["src"].strip()
 
         events.append({
             "title": title,
