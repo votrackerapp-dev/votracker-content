@@ -922,9 +922,31 @@ def main():
     rebuilt = rebuild_workshops(existing, incoming_all, successfully_scraped_sources)
     rebuilt = prune_events(rebuilt, prune_days_past, keep_days_future, args.default_tz)
 
-    # Deduplication
+    # Deduplication - URL-based (prefer better titles)
     seen_urls = {}
     url_deduped = []
+    
+    # Generic/bad title patterns to detect
+    bad_title_patterns = [
+        "THE VO PROS", "WORKSHOP", "CLASS", "EVENT",
+        "CLAIM MY SPOT", "READ MORE", "LEARN MORE", "VIEW DETAILS",
+        "INSTRUCTORS", "FEB ", "JAN ", "MAR ", "APR ", "MAY ", "JUN ",
+        "JUL ", "AUG ", "SEP ", "OCT ", "NOV ", "DEC "
+    ]
+    
+    def is_bad_title(title: str) -> bool:
+        """Check if title looks generic/broken."""
+        if not title or len(title) < 10:
+            return True
+        upper = title.upper()
+        # Check if title is JUST a pattern (not just contains)
+        if any(pattern == upper.strip() for pattern in bad_title_patterns):
+            return True
+        # Check if title is mostly a date
+        if re.match(r'^[A-Z]{3}\s+\d{1,2}$', upper.strip()):
+            return True
+        return False
+    
     for w in rebuilt:
         url = w.get('registrationURL')
         if not url:
@@ -932,14 +954,20 @@ def main():
             continue
             
         if url in seen_urls:
-            existing_title = seen_urls[url].get('title', '').upper()
-            current_title = w.get('title', '').upper()
-            generic_titles = ["THE VO PROS", "WORKSHOP", "CLASS", "EVENT"]
+            existing_event = seen_urls[url]
+            existing_title = existing_event.get('title', '')
+            current_title = w.get('title', '')
             
-            if current_title not in generic_titles and existing_title in generic_titles:
-                idx = url_deduped.index(seen_urls[url])
+            # Replace if current title is better
+            if is_bad_title(existing_title) and not is_bad_title(current_title):
+                # Current title is better - replace
+                idx = url_deduped.index(existing_event)
                 url_deduped[idx] = w
                 seen_urls[url] = w
+            elif not is_bad_title(existing_title) and is_bad_title(current_title):
+                # Existing title is better - keep it (do nothing)
+                pass
+            # else: both good or both bad - keep first one
         else:
             seen_urls[url] = w
             url_deduped.append(w)
