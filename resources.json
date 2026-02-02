@@ -120,7 +120,7 @@
           "url": "https://www.realvoicela.com/service-page/in-person-games-auditioning-and-advice-3"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "soundonstudio-0c0d62f335140168",
@@ -140,7 +140,7 @@
           "url": "https://www.soundonstudio.com/classsignup"
         }
       ],
-      "provider": "Sound On Studio"
+      "provider": "soundonstudio"
     },
     {
       "id": "realvoicela-b02ba3cf54f0787e",
@@ -160,7 +160,7 @@
           "url": "https://www.realvoicela.com/service-page/kids-teens-workout-drop-in-tuesdays"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "realvoicela-9e8fb2f87a62c4a4",
@@ -180,7 +180,7 @@
           "url": "https://www.realvoicela.com/service-page/thursday-voiceover-workout"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "realvoicela-17c15dc564695394",
@@ -200,7 +200,7 @@
           "url": "https://www.realvoicela.com/service-page/wednesday-character-workout"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "thevopros-1cc9edb0d1e9185e",
@@ -220,7 +220,7 @@
           "url": "https://www.thevopros.com/events/manager-night-sumeet-iyengar-cope-management-2"
         }
       ],
-      "provider": "The VO Pros"
+      "provider": "thevopros"
     },
     {
       "id": "realvoicela-a0dce3a2813906d6",
@@ -240,7 +240,7 @@
           "url": "https://www.realvoicela.com/service-page/tuesday-character-workout"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "realvoicela-dca919ef28dace64",
@@ -260,7 +260,7 @@
           "url": "https://www.realvoicela.com/service-page/in-person-gaming-animation-workshop"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "realvoicela-62f3751575a06451",
@@ -280,7 +280,7 @@
           "url": "https://www.realvoicela.com/service-page/february-in-person-intro-to-voiceover"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "realvoicela-bacb71afd3e2baec",
@@ -300,7 +300,22 @@
           "url": "https://www.realvoicela.com/service-page/mastering-nerves-with-trine-c-jensen-1"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
+    },
+    {
+      "id": "redscythe_tidycal_classes-f507056a32fbd92a",
+      "sourceId": "redscythe_tidycal_classes",
+      "sourceName": "Red Scythe Studio",
+      "title": "BRITTANY COX — strong reads that book the room",
+      "timezone": "America/Los_Angeles",
+      "instructor": "BRITTANY COX",
+      "category": "Workshop",
+      "startAt": "2026-02-07T10:00:00-08:00",
+      "endAt": "2026-02-07T13:00:00-08:00",
+      "registrationURL": "https://tidycal.com/redscythestudio/",
+      "detail": "Red Scythe Studio",
+      "host": "Red Scythe Studio",
+      "provider": "redscythe_tidycal_classes"
     },
     {
       "id": "realvoicela-4f99c256126f9d8b",
@@ -320,7 +335,7 @@
           "url": "https://www.realvoicela.com/service-page/february-games-auditioning-and-advice"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "thevopros-35eddf7d7df54cc5",
@@ -340,7 +355,7 @@
           "url": "https://www.thevopros.com/events/agent-night-arielle-negrin-atlas-talent-3"
         }
       ],
-      "provider": "The VO Pros"
+      "provider": "thevopros"
     },
     {
       "id": "thevopros-a70f4b4a29d91d92",
@@ -360,7 +375,7 @@
           "url": "https://www.thevopros.com/events/agent-night-liz-klausner-dpn-talent-ny"
         }
       ],
-      "provider": "The VO Pros"
+      "provider": "thevopros"
     },
     {
       "id": "realvoicela-3c4730fbdefb19cd",
@@ -380,7 +395,7 @@
           "url": "https://www.realvoicela.com/service-page/voice-acting-for-gacha-games"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "thevopros-272d3226016eca57",
@@ -400,7 +415,7 @@
           "url": "https://www.thevopros.com/events/animation-sirena-irwin-director"
         }
       ],
-      "provider": "The VO Pros"
+      "provider": "thevopros"
     },
     {
       "id": "halp_academy-e44ebdff752d328c",
@@ -420,7 +435,7 @@
           "url": "https://halpacademy.com/product/vo-workshop-with-lexington-vanderberg"
         }
       ],
-      "provider": "HALP Academy"
+      "provider": "halp_academy"
     },
     {
       "id": "realvoicela-64bfef80d07f6446",
@@ -440,7 +455,7 @@
           "url": "https://www.realvoicela.com/service-page/techniques-of-stella-adler-with-craig"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "realvoicela-3d693743363f0c95",
@@ -460,7 +475,7 @@
           "url": "https://www.realvoicela.com/service-page/in-person-level-two-video-game-intensive"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "thevopros-cf9e409564a4cfee",
@@ -480,7 +495,7 @@
           "url": "https://www.thevopros.com/events/video-games-stephen-carr-director-casting-producer-super-secret-company"
         }
       ],
-      "provider": "The VO Pros"
+      "provider": "thevopros"
     },
     {
       "id": "realvoicela-d2fe891185490c0b",
@@ -500,7 +515,7 @@
           "url": "https://www.realvoicela.com/service-page/february-level-up-anime-video-game"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "realvoicela-b44e7f37f854bef1",
@@ -520,7 +535,7 @@
           "url": "https://www.realvoicela.com/service-page/february-online-intro-to-voiceover"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "halp_academy-5a883a3faacedfac",
@@ -540,7 +555,7 @@
           "url": "https://halpacademy.com/product/vo-workshop-with-tasia-valenza"
         }
       ],
-      "provider": "HALP Academy"
+      "provider": "halp_academy"
     },
     {
       "id": "realvoicela-19d86e536c222950",
@@ -560,7 +575,7 @@
           "url": "https://www.realvoicela.com/service-page/online-conversational-voice-over"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "thevopros-dae38e18c76a95c1",
@@ -580,7 +595,7 @@
           "url": "https://www.thevopros.com/events/anime-dubbing-jason-lord-director-crunch-roll"
         }
       ],
-      "provider": "The VO Pros"
+      "provider": "thevopros"
     },
     {
       "id": "realvoicela-4a5684385ab7c125",
@@ -600,7 +615,7 @@
           "url": "https://www.realvoicela.com/service-page/auditioning-for-anime-shawn-gann"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "realvoicela-b44ddcffd693a98a",
@@ -620,7 +635,7 @@
           "url": "https://www.realvoicela.com/service-page/march-online-commercial-bootcamp"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "thevopros-b514fa681e6998b2",
@@ -640,7 +655,7 @@
           "url": "https://www.thevopros.com/events/animation-casting-director-kerri-anne-lavin"
         }
       ],
-      "provider": "The VO Pros"
+      "provider": "thevopros"
     },
     {
       "id": "realvoicela-2121f3998d2acf33",
@@ -660,7 +675,7 @@
           "url": "https://www.realvoicela.com/service-page/march-games-auditioning-and-advice"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "thevopros-bcd7c8e0991428ce",
@@ -680,7 +695,7 @@
           "url": "https://www.thevopros.com/events/video-games-stephen-carr-video-game-prod-director-casting-secret-company"
         }
       ],
-      "provider": "The VO Pros"
+      "provider": "thevopros"
     },
     {
       "id": "realvoicela-57384177dc978872",
@@ -700,7 +715,7 @@
           "url": "https://www.realvoicela.com/service-page/creating-characters-with-arianna-ratner-1"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "realvoicela-a8de862a00508a85",
@@ -720,7 +735,7 @@
           "url": "https://www.realvoicela.com/service-page/march-level-up-anime-video-game"
         }
       ],
-      "provider": "Real Voice LA"
+      "provider": "realvoicela"
     },
     {
       "id": "thevopros-27cbd98362896060",
@@ -740,7 +755,7 @@
           "url": "https://www.thevopros.com/events/animation-games-dubbing-disney-audio-experiences-casting-director-director-renee-johnson"
         }
       ],
-      "provider": "The VO Pros"
+      "provider": "thevopros"
     },
     {
       "id": "thevopros-3bddab2564f46756",
@@ -760,7 +775,7 @@
           "url": "https://www.thevopros.com/events/anime-casting-director-prod-mami-okada-bangzoom"
         }
       ],
-      "provider": "The VO Pros"
+      "provider": "thevopros"
     }
   ],
   "sections": [
