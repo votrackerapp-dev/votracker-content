@@ -1761,14 +1761,14 @@ def main():
             # Mark this source as successfully scraped.
             # Important: if a source suddenly returns 0 events, we treat it as a scrape failure by default
             # (to avoid wiping previously-known workshops due to transient site changes / parsing breakage).
-            allow_zero = bool(source.get("allow_zero_events")) or bool(source.get("filters", {}).get("allow_zero_events"))
+            allow_zero = bool(s.get("allow_zero_events")) or bool(s.get("filters", {}).get("allow_zero_events"))
             if events or allow_zero:
                 successfully_scraped_sources.add(source_id)
             else:
-                log(f"  [WARN] {source_name}: 0 events; treating as failure to preserve prior entries")
+                log(f"  [WARN] {source_id}: 0 events; treating as failure to preserve prior entries")
         except Exception as ex:
             # Source FAILED - we'll keep old data for this source
-            print(f"[ERROR] {source_id}: {ex}")
+            print(f"Error:  {source_id}: {ex}")
             print(f"  -> Will keep existing events for this source")
 
     # Rebuild using new data, keeping old only for failed sources
