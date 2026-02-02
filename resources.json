@@ -103,67 +103,7 @@
   ],
   "workshops": [
     {
-      "id": "van-41c6af3295c0",
-      "title": "AUDIT A CLINIC - FEBRUARY 2026",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-03T16:00:00-08:00",
-      "endAt": "2026-02-03T19:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-february-2026",
-      "venue": "Zoom"
-    },
-    {
-      "id": "van-c93382c70dc9",
-      "title": "Narration Clinic - Jon Armond| Wednesday, February 11th, 2026 | 7-10pm PT | In Person",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-11T19:00:00-08:00",
-      "endAt": "2026-02-11T22:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person",
-      "venue": "Zoom"
-    },
-    {
-      "id": "van-c2cc86986007",
-      "title": "Animation Clinic - Bob Bergen| Wednesday, February 25th, 2026 | 7-10pm PT | Zoom",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-25T19:00:00-08:00",
-      "endAt": "2026-02-25T22:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom",
-      "venue": "Zoom"
-    },
-    {
-      "id": "van-5ad87f2287ff",
-      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-26T17:00:00-08:00",
-      "endAt": "2026-02-26T20:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
-      "venue": "Zoom"
-    },
-    {
-      "id": "van-b4a3e039e614",
-      "title": "Commercial Clinic - Carli Silver| Tuesday, February 3rd, 2026 | 4-7pm PT | Zoom",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-03T16:00:00-08:00",
-      "endAt": "2026-02-03T19:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-cari-silver-tuesday-february-3rd-2026-4-7pm-pt-zoom",
-      "venue": "Zoom"
-    },
-    {
-      "id": "van-e0e33f04a787",
-      "title": "Crafting Characters for your Auditions - Carrie Keranen | Wednesday, January 28th, 2026 | 7-10pm PT | In Person",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-01-28T19:00:00-08:00",
-      "endAt": "2026-01-28T22:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/crafting-characters-for-your-auditions-carrie-keranen-wednesday-january-28th-2026-7-10pm-pt-in-person",
-      "venue": "Zoom"
-    },
-    {
-      "id": "van-7794d981aace",
+      "id": "van-7f0c67dc05e1",
       "title": "Animation Clinic - Katie McWane| Thursday, January 29th, 2026 | 5-8pm PT | Zoom",
       "provider": "van",
       "host": "Voice Actors Network",
@@ -173,7 +113,17 @@
       "venue": "Zoom"
     },
     {
-      "id": "van-901279287520",
+      "id": "van-db3b1410a9f6",
+      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-02-26T17:00:00-08:00",
+      "endAt": "2026-02-26T20:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
+      "venue": "Zoom"
+    },
+    {
+      "id": "van-d0df517fc1fc",
       "title": "Video Game Clinic - Patrick Michalak| Thursday, February 19th, 2026 | 7-10pm PT | In Person",
       "provider": "van",
       "host": "Voice Actors Network",
@@ -183,7 +133,57 @@
       "venue": "Zoom"
     },
     {
-      "id": "halp-c6d8c12923d2",
+      "id": "van-bedb46f458d0",
+      "title": "Narration Clinic - Jon Armond| Wednesday, February 11th, 2026 | 7-10pm PT | In Person",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-02-11T19:00:00-08:00",
+      "endAt": "2026-02-11T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person",
+      "venue": "Zoom"
+    },
+    {
+      "id": "van-0594c72950fd",
+      "title": "Animation Clinic - Bob Bergen| Wednesday, February 25th, 2026 | 7-10pm PT | Zoom",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-02-25T19:00:00-08:00",
+      "endAt": "2026-02-25T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom",
+      "venue": "Zoom"
+    },
+    {
+      "id": "van-4d96a8d121d1",
+      "title": "Commercial Clinic - Carli Silver| Tuesday, February 3rd, 2026 | 4-7pm PT | Zoom",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-02-03T16:00:00-08:00",
+      "endAt": "2026-02-03T19:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-cari-silver-tuesday-february-3rd-2026-4-7pm-pt-zoom",
+      "venue": "Zoom"
+    },
+    {
+      "id": "van-c16645290aa1",
+      "title": "Crafting Characters for your Auditions - Carrie Keranen | Wednesday, January 28th, 2026 | 7-10pm PT | In Person",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-01-28T19:00:00-08:00",
+      "endAt": "2026-01-28T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/crafting-characters-for-your-auditions-carrie-keranen-wednesday-january-28th-2026-7-10pm-pt-in-person",
+      "venue": "Zoom"
+    },
+    {
+      "id": "van-0af3054221c8",
+      "title": "AUDIT A CLINIC - FEBRUARY 2026",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-02-03T16:00:00-08:00",
+      "endAt": "2026-02-03T19:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-february-2026",
+      "venue": "Zoom"
+    },
+    {
+      "id": "halp-14293ec00dbc",
       "title": "Events",
       "provider": "halp_academy",
       "host": "HALP Academy",
@@ -192,7 +192,7 @@
       "registrationURL": "https://halpacademy.com/events/"
     },
     {
-      "id": "vopros-92594c14a19c",
+      "id": "vopros-d22f46725672",
       "title": "MANAGER NIGHT – Sumeet Iyengar, Cope Management",
       "provider": "thevopros",
       "host": "The VO Pros",
@@ -201,7 +201,7 @@
       "registrationURL": "https://www.thevopros.com/events/manager-night-sumeet-iyengar-cope-management-2/"
     },
     {
-      "id": "vopros-72c57ead35fc",
+      "id": "vopros-b75da9719e07",
       "title": "AGENT NIGHT – Arielle Negrin, Atlas Talent",
       "provider": "thevopros",
       "host": "The VO Pros",
@@ -210,7 +210,7 @@
       "registrationURL": "https://www.thevopros.com/events/agent-night-arielle-negrin-atlas-talent-3/"
     },
     {
-      "id": "vopros-f461ffed8b2b",
+      "id": "vopros-11359a768a2d",
       "title": "AGENT NIGHT – Liz Klausner, DPN Talent, NY",
       "provider": "thevopros",
       "host": "The VO Pros",
@@ -219,7 +219,7 @@
       "registrationURL": "https://www.thevopros.com/events/agent-night-liz-klausner-dpn-talent-ny/"
     },
     {
-      "id": "vopros-eeb4db6e293f",
+      "id": "vopros-e3ec71cda88b",
       "title": "ANIMATION – Sirena Irwin, Director",
       "provider": "thevopros",
       "host": "The VO Pros",
@@ -228,7 +228,7 @@
       "registrationURL": "https://www.thevopros.com/events/animation-sirena-irwin-director/"
     },
     {
-      "id": "vopros-165172960062",
+      "id": "vopros-d5435482a2fa",
       "title": "VIDEO GAMES – Stephen Carr – Director/Casting/Producer (Super secret company!!)",
       "provider": "thevopros",
       "host": "The VO Pros",
@@ -237,7 +237,7 @@
       "registrationURL": "https://www.thevopros.com/events/video-games-stephen-carr-director-casting-producer-super-secret-company/"
     },
     {
-      "id": "vopros-f03eab41a052",
+      "id": "vopros-b979de760438",
       "title": "ANIME – DUBBING – Jason Lord, Director, Crunchy Roll",
       "provider": "thevopros",
       "host": "The VO Pros",
@@ -246,7 +246,7 @@
       "registrationURL": "https://www.thevopros.com/events/anime-dubbing-jason-lord-director-crunch-roll/"
     },
     {
-      "id": "vopros-dbd35fee6ec8",
+      "id": "vopros-6640a4c9fadc",
       "title": "ANIMATION – Casting/Director – Kerri-Anne Lavin",
       "provider": "thevopros",
       "host": "The VO Pros",
@@ -255,7 +255,7 @@
       "registrationURL": "https://www.thevopros.com/events/animation-casting-director-kerri-anne-lavin/"
     },
     {
-      "id": "vopros-1418a6099170",
+      "id": "vopros-875a2942baf0",
       "title": "VIDEO GAMES – Stephen Carr – Video Game Prod/Director/ Casting (Secret Company!)",
       "provider": "thevopros",
       "host": "The VO Pros",
@@ -264,7 +264,7 @@
       "registrationURL": "https://www.thevopros.com/events/video-games-stephen-carr-video-game-prod-director-casting-secret-company/"
     },
     {
-      "id": "vopros-c6be48f5fd07",
+      "id": "vopros-729e54f42eba",
       "title": "ANIMATION/GAMES/DUBBING – DISNEY Audio Experiences, Casting Director/Director, Renee Johnson",
       "provider": "thevopros",
       "host": "The VO Pros",
@@ -273,7 +273,7 @@
       "registrationURL": "https://www.thevopros.com/events/animation-games-dubbing-disney-audio-experiences-casting-director-director-renee-johnson/"
     },
     {
-      "id": "vopros-71e9ddfacb1f",
+      "id": "vopros-d39e9efee083",
       "title": "ANIME – Casting Director/Prod. – Mami Okada, BANGZoom!",
       "provider": "thevopros",
       "host": "The VO Pros",
@@ -282,7 +282,7 @@
       "registrationURL": "https://www.thevopros.com/events/anime-casting-director-prod-mami-okada-bangzoom/"
     },
     {
-      "id": "realvoice-07b81ea1e035",
+      "id": "realvoice-de33dd6134a9",
       "title": "Voice Acting for Gacha Games",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -291,7 +291,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/voice-acting-for-gacha-games"
     },
     {
-      "id": "realvoice-323674a3a53c",
+      "id": "realvoice-2f49744070b8",
       "title": "February - Level Up: Anime & Video Game",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -300,7 +300,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/february-level-up-anime-video-game"
     },
     {
-      "id": "realvoice-9c5b770cc926",
+      "id": "realvoice-b643c65f4e57",
       "title": "February - ONLINE Intro to Voiceover",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -309,7 +309,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/february-online-intro-to-voiceover"
     },
     {
-      "id": "realvoice-f74794a8ccc7",
+      "id": "realvoice-b394c12d5883",
       "title": "ONLINE Conversational Voice Over",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -318,7 +318,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/online-conversational-voice-over"
     },
     {
-      "id": "realvoice-757bd03732da",
+      "id": "realvoice-b683b6240703",
       "title": "Auditioning for Anime Shawn Gann",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -327,7 +327,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/auditioning-for-anime-shawn-gann"
     },
     {
-      "id": "realvoice-774ad5abf864",
+      "id": "realvoice-d185a14f7891",
       "title": "March - ONLINE Commercial Bootcamp",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -336,7 +336,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/march-online-commercial-bootcamp"
     },
     {
-      "id": "realvoice-297c7ef45fe0",
+      "id": "realvoice-aea5316c460f",
       "title": "Creating Characters with Arianna Ratner",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -345,7 +345,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/creating-characters-with-arianna-ratner-1"
     },
     {
-      "id": "realvoice-7973490891b7",
+      "id": "realvoice-131aea22ea1d",
       "title": "March - Level Up: Anime & Video Game",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -354,7 +354,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/march-level-up-anime-video-game"
     },
     {
-      "id": "realvoice-a2550e9a6440",
+      "id": "realvoice-294682c3d4da",
       "title": "IN-PERSON Games, Auditioning, and Advice",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -363,7 +363,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/in-person-games-auditioning-and-advice-3"
     },
     {
-      "id": "realvoice-27661a2633d3",
+      "id": "realvoice-9f936b868338",
       "title": "Mastering Nerves: With Trine C. Jensen",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -372,7 +372,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/mastering-nerves-with-trine-c-jensen-1"
     },
     {
-      "id": "realvoice-f05e38a86a64",
+      "id": "realvoice-dd653ced2aeb",
       "title": "February-Games, Auditioning, and Advice",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -381,7 +381,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/february-games-auditioning-and-advice"
     },
     {
-      "id": "realvoice-e306be5cbf59",
+      "id": "realvoice-c7151ceeab94",
       "title": "February IN-PERSON Intro to Voiceover",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -390,7 +390,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/february-in-person-intro-to-voiceover"
     },
     {
-      "id": "realvoice-f9ef2452c619",
+      "id": "realvoice-33a7585d22ab",
       "title": "In-Person Level Two Video Game Intensive",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -399,7 +399,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/in-person-level-two-video-game-intensive"
     },
     {
-      "id": "realvoice-885f19805fbc",
+      "id": "realvoice-fe35394f14cb",
       "title": "March - Games, Auditioning, and Advice",
       "provider": "realvoicela",
       "host": "Real Voice LA",
@@ -408,7 +408,7 @@
       "registrationURL": "https://www.realvoicela.com/service-page/march-games-auditioning-and-advice"
     },
     {
-      "id": "redscythe-b0712c521801",
+      "id": "redscythe-e8b974e5d84c",
       "title": "BRITTANY COX — strong reads that book the room",
       "provider": "redscythe_tidycal_classes",
       "host": "Red Scythe Studio",
@@ -417,7 +417,34 @@
       "registrationURL": "https://tidycal.com/redscythestudio/"
     },
     {
-      "id": "vodojo-758666ae8c6e",
+      "id": "redscythe-071ef9f63003",
+      "title": "CHRIS HACKNEY — potluck clinic workshop",
+      "provider": "redscythe_tidycal_classes",
+      "host": "Red Scythe Studio",
+      "startAt": "2026-02-14T10:00:00-08:00",
+      "endAt": "2026-02-14T13:00:00-08:00",
+      "registrationURL": "https://tidycal.com/redscythestudio/"
+    },
+    {
+      "id": "redscythe-17fbd9ac655a",
+      "title": "EDDIE CORREA JR — engineer's pov on your mp3",
+      "provider": "redscythe_tidycal_classes",
+      "host": "Red Scythe Studio",
+      "startAt": "2026-02-21T10:00:00-08:00",
+      "endAt": "2026-02-21T13:00:00-08:00",
+      "registrationURL": "https://tidycal.com/redscythestudio/"
+    },
+    {
+      "id": "redscythe-b0158d81b6db",
+      "title": "JUNE YOON — acting workout: dad characters",
+      "provider": "redscythe_tidycal_classes",
+      "host": "Red Scythe Studio",
+      "startAt": "2026-02-28T10:00:00-08:00",
+      "endAt": "2026-02-28T13:00:00-08:00",
+      "registrationURL": "https://tidycal.com/redscythestudio/"
+    },
+    {
+      "id": "vodojo-3af0d2a22463",
       "title": "You Should Do Voiceover February",
       "provider": "thevodojo",
       "host": "The VO Dojo",
@@ -426,7 +453,7 @@
       "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-voiceover-february"
     },
     {
-      "id": "vodojo-c58fd50493b6",
+      "id": "vodojo-93b174b38dd2",
       "title": "Ask The Sensei With Kelli Tager",
       "provider": "thevodojo",
       "host": "The VO Dojo",
@@ -435,7 +462,7 @@
       "registrationURL": "https://www.thevodojo.com/new-events/ask-the-sensei-with-kelli-tager"
     },
     {
-      "id": "vodojo-5be0df7df0dc",
+      "id": "vodojo-695b40bb0231",
       "title": "Thursday February 12Th Vo Pro Fight Club Animation With Brenna Larsen",
       "provider": "thevodojo",
       "host": "The VO Dojo",
@@ -444,7 +471,7 @@
       "registrationURL": "https://www.thevodojo.com/new-events/thursday-february-12th-vo-pro-fight-club-animation-with-brenna-larsen"
     },
     {
-      "id": "vodojo-5889ae2d09e7",
+      "id": "vodojo-0e110e1b9f2b",
       "title": "Get To Know Vo The Playbook For Sports Voiceover With Steven Goard",
       "provider": "thevodojo",
       "host": "The VO Dojo",
@@ -453,7 +480,7 @@
       "registrationURL": "https://www.thevodojo.com/new-events/get-to-know-vo-the-playbook-for-sports-voiceover-with-steven-goard"
     },
     {
-      "id": "vodojo-2ee9a1153150",
+      "id": "vodojo-90ae42c945b8",
       "title": "Sunday February 22Nd Vo Pro Fight Club Anime With Lisa Ortiz",
       "provider": "thevodojo",
       "host": "The VO Dojo",
@@ -462,7 +489,7 @@
       "registrationURL": "https://www.thevodojo.com/new-events/sunday-february-22nd-vo-pro-fight-club-anime-with-lisa-ortiz"
     },
     {
-      "id": "vodojo-5d48758d898b",
+      "id": "vodojo-7d07196b728f",
       "title": "Tuesday February 24Th Vo Pro Fight Club Commercials With Lisa Fischoff",
       "provider": "thevodojo",
       "host": "The VO Dojo",
@@ -471,7 +498,7 @@
       "registrationURL": "https://www.thevodojo.com/new-events/tuesday-february-24th-vo-pro-fight-club-commercials-with-lisa-fischoff"
     },
     {
-      "id": "vodojo-d6857b101e12",
+      "id": "vodojo-d86260eb211f",
       "title": "Voa Breakout Dude Btches Amp Mothafers Activating Your Pov For Infinite Effortless Badass Abc Takes",
       "provider": "thevodojo",
       "host": "The VO Dojo",
