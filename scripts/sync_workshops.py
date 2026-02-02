@@ -1750,9 +1750,25 @@ def main():
         
         try:
             events = fn(s, args.default_tz)
+            
+            # Normalize event field names (different extractors use different fields)
             for e in events:
                 if isinstance(e, dict):
-                    e.setdefault("provider", s.get("name"))
+                    # Normalize field names
+                    if "start" in e and "startAt" not in e:
+                        e["startAt"] = e.pop("start")
+                    if "end" in e and "endAt" not in e:
+                        e["endAt"] = e.pop("end")
+                    if "url" in e and "registrationURL" not in e:
+                        e["registrationURL"] = e.pop("url")
+                    if "details" in e and "detail" not in e:
+                        e["detail"] = e.pop("details")
+                    if "sourceName" in e and "host" not in e:
+                        e["host"] = e.get("sourceName")
+                    
+                    # Set provider
+                    e.setdefault("provider", s.get("id"))
+                    
             events = apply_event_filters(events, s.get("filters"))
 
             events = events[:max_events_per_source]
