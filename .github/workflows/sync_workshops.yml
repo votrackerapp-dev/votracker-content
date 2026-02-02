@@ -3,14 +3,19 @@ name: Sync Workshops
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: "15 */6 * * *"
+    - cron: "15 * * * *"   # hourly at :15 (UTC)
 
 permissions:
   contents: write
 
+concurrency:
+  group: workshop-sync
+  cancel-in-progress: true
+
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     env:
       RESOURCES_JSON_PATH: "resources.json"
       SOURCES_JSON_PATH: "config/workshop_sources.json"
