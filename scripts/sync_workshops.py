@@ -732,13 +732,14 @@ def scrape_realvoice():
     return events
 
 # ============================================================================
-# RED SCYTHE (KEEP - IT WORKS)
+# RED SCYTHE - IMPROVED WITH DETAIL PAGE TIME EXTRACTION
 # ============================================================================
 def scrape_redscythe():
-    """Red Scythe Studio - TidyCal classes"""
+    """Red Scythe Studio - TidyCal with detail page time extraction"""
     print("[RED SCYTHE] Scraping...")
     events = []
     
+    # Step 1: Fetch main calendar page
     html = fetch("https://tidycal.com/redscythestudio/")
     if not html:
         return events
@@ -746,19 +747,49 @@ def scrape_redscythe():
     soup = BeautifulSoup(html, "html.parser")
     text = soup.get_text()
     
+    # Step 2: Extract all event slugs/URLs from page source
+    # TidyCal embeds event URLs in the HTML
+    event_slugs = {}  # Maps slug to full URL
+    
+    # Look for patterns like: /redscythestudio/event-slug
+    for match in re.finditer(r'/redscythestudio/([a-z0-9\-]+)', html):
+        slug = match.group(1)
+        # Skip generic pages
+        if slug in ['booking', 'calendar', 'settings', 'about']:
+            continue
+        event_slugs[slug] = f"https://tidycal.com/redscythestudio/{slug}"
+    
+    log(f"Found {len(event_slugs)} potential event detail pages")
+    
+    # Step 3: Parse calendar text for event info
     # TidyCal format: "1.31 | INSTRUCTOR NAME | Topic"
     pattern = r'(\d{1,2}\.\d{1,2})\s*\|\s*([^|]{5,60}?)\s*\|\s*([^\n|]{5,100})'
     
+    calendar_events = []
     for match in re.finditer(pattern, text):
+        date_str = match.group(1)  # "2.7"
+        instructor = match.group(2).strip()  # "BRITTANY COX"
+        topic = match.group(3).strip()  # "strong reads that book the room"
+        
+        # Skip coaching/consultations
+        combined = f"{instructor} {topic}".lower()
+        if any(x in combined for x in ["coaching", "coach", "consult", "1:1", "one on one"]):
+            continue
+        
+        calendar_events.append({
+            'date_str': date_str,
+            'instructor': instructor,
+            'topic': topic
+        })
+    
+    log(f"Found {len(calendar_events)} workshops on calendar")
+    
+    # Step 4: Process each event
+    for idx, event_info in enumerate(calendar_events, 1):
         try:
-            date_str = match.group(1)  # "1.31"
-            instructor = match.group(2).strip()
-            topic = match.group(3).strip()
-            
-            # Skip coaching/consultations
-            combined = f"{instructor} {topic}".lower()
-            if any(x in combined for x in ["coaching", "coach", "consult", "1:1"]):
-                continue
+            instructor = event_info['instructor']
+            topic = event_info['topic']
+            date_str = event_info['date_str']
             
             # Parse date (M.D format)
             month, day = map(int, date_str.split('.'))
@@ -770,29 +801,138 @@ def scrape_redscythe():
             if date < now - timedelta(days=30):
                 date = datetime(year + 1, month, day, tzinfo=datetz.gettz(DEFAULT_TZ))
             
-            # Default time 10am, 3hr duration
-            start = date.replace(hour=10, minute=0, second=0)
-            end = start + timedelta(hours=3)
+            # Step 5: Try to find matching detail URL
+            detail_url = None
+            instructor_first = instructor.split()[0].lower()
+            
+            for slug, url in event_slugs.items():
+                # Match if instructor's first name appears in slug
+                if instructor_first in slug.lower():
+                    detail_url = url
+                    break
+            
+            # Step 6: Attempt to fetch time from detail page
+            actual_time = None
+            if detail_url:
+                log(f"[{idx}/{len(calendar_events)}] Fetching {detail_url.split('/')[-1][:30]}...")
+                
+                import time as time_module
+                time_module.sleep(0.5)  # Be polite
+                
+                detail_html = fetch(detail_url)
+                if detail_html:
+                    actual_time = extract_time_from_detail_page(detail_html)
+            
+            # Step 7: Set time (actual or smart default)
+            if actual_time:
+                sh, sm, eh, em = actual_time
+                start = date.replace(hour=sh, minute=sm, second=0, microsecond=0)
+                end = date.replace(hour=eh, minute=em, second=0, microsecond=0)
+                log(f"  ✓ {instructor[:30]} - Got time: {sh:02d}:{sm:02d}-{eh:02d}:{em:02d}")
+            else:
+                # Smart default: 9am-1pm (4 hours) for most Red Scythe workshops
+                start = date.replace(hour=9, minute=0, second=0, microsecond=0)
+                end = start + timedelta(hours=4)
+                log(f"  ⚠️  {instructor[:30]} - Using default 9am-1pm")
             
             title = f"{instructor} — {topic}"
             
             events.append({
-                "id": make_id("redscythe", title, f"tidycal-{date_str}"),
+                "id": make_id("redscythe", title, detail_url or f"tidycal-{date_str}"),
                 "title": title,
                 "provider": "redscythe_tidycal_classes",
                 "host": "Red Scythe Studio",
                 "startAt": start.isoformat(),
                 "endAt": end.isoformat(),
-                "registrationURL": "https://tidycal.com/redscythestudio/"
+                "registrationURL": detail_url or "https://tidycal.com/redscythestudio/",
+                "venue": "Online"
             })
-            log(f"✓ {title[:50]}")
             
         except Exception as e:
-            log(f"⚠️  Error parsing: {e}")
+            log(f"⚠️  Error parsing event {idx}: {e}")
             continue
     
     print(f"[RED SCYTHE] Found {len(events)} events")
     return events
+
+
+def extract_time_from_detail_page(html):
+    """
+    Extract actual time from TidyCal event detail page.
+    
+    Looks for patterns like:
+    - "9:00 am - 1:00 pm" (time range)
+    - "9:00 am" with "4 hours" (single time + duration)
+    """
+    if not html:
+        return None
+    
+    soup = BeautifulSoup(html, "html.parser")
+    text = soup.get_text()
+    
+    # Pattern 1: Time range (9:00 am - 1:00 pm)
+    time_range = re.search(
+        r'(\d{1,2}):(\d{2})\s*(am|pm)\s*[-–]\s*(\d{1,2}):(\d{2})\s*(am|pm)',
+        text,
+        re.IGNORECASE
+    )
+    
+    if time_range:
+        sh = int(time_range.group(1))
+        sm = int(time_range.group(2))
+        s_period = time_range.group(3).lower()
+        
+        eh = int(time_range.group(4))
+        em = int(time_range.group(5))
+        e_period = time_range.group(6).lower()
+        
+        # Convert to 24h
+        if s_period == 'pm' and sh < 12:
+            sh += 12
+        elif s_period == 'am' and sh == 12:
+            sh = 0
+            
+        if e_period == 'pm' and eh < 12:
+            eh += 12
+        elif e_period == 'am' and eh == 12:
+            eh = 0
+        
+        return sh, sm, eh, em
+    
+    # Pattern 2: Single time with duration
+    single_time = re.search(
+        r'(\d{1,2}):(\d{2})\s*(am|pm)',
+        text,
+        re.IGNORECASE
+    )
+    
+    if single_time:
+        sh = int(single_time.group(1))
+        sm = int(single_time.group(2))
+        period = single_time.group(3).lower()
+        
+        # Convert to 24h
+        if period == 'pm' and sh < 12:
+            sh += 12
+        elif period == 'am' and sh == 12:
+            sh = 0
+        
+        # Look for duration
+        duration_match = re.search(r'(\d+)\s*(?:hour|hr)', text, re.IGNORECASE)
+        if duration_match:
+            duration_hours = int(duration_match.group(1))
+        else:
+            duration_hours = 4  # Default
+        
+        # Calculate end time
+        end_dt = datetime(2000, 1, 1, sh, sm) + timedelta(hours=duration_hours)
+        eh = end_dt.hour
+        em = end_dt.minute
+        
+        return sh, sm, eh, em
+    
+    return None
+
 
 # ============================================================================
 # VO DOJO (KEEP - IT WORKS)
