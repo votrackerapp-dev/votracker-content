@@ -39,6 +39,10 @@ def safe_text(s: Optional[str], max_len: int = 6000) -> Optional[str]:
         return None
     return t[:max_len]
 
+def clean_whitespace(s: str) -> str:
+    """Clean up whitespace in strings."""
+    return re.sub(r'\s+', ' ', s).strip()
+
 def sha1(s: str) -> str:
     return hashlib.sha1(s.encode("utf-8")).hexdigest()
 
@@ -89,6 +93,15 @@ def compute_event_id(source_id: str, title: str, start_at: str, reg_url: Optiona
         key = f"{source_id}|url|{reg_url}"
     else:
         key = f"{source_id}|ts|{title.strip().lower()}|{start_at}"
+    return f"{source_id}-{sha1(key)[:16]}"
+
+def stable_event_id(source_id: str, url: str, title: str, start: dt.datetime) -> str:
+    """Generate stable event ID from URL or title+date."""
+    if url:
+        key = f"{source_id}|url|{url}"
+    else:
+        start_str = start.isoformat() if start else ""
+        key = f"{source_id}|ts|{title.strip().lower()}|{start_str}"
     return f"{source_id}-{sha1(key)[:16]}"
 
 def rebuild_workshops(
@@ -317,6 +330,18 @@ def infer_year_for_month_day(month_day_str: str, default_tz: str) -> dt.datetime
         d = d.replace(year=now.year + 1)
     return d
 
+def parse_month_day_year(date_str: str, default_tz: str) -> Optional[dt.datetime]:
+    """Parse dates like 'January 15, 2026' or 'Jan 15 2026'."""
+    try:
+        d = dateparser.parse(date_str, fuzzy=True)
+        if not d:
+            return None
+        if d.tzinfo is None:
+            d = d.replace(tzinfo=datetz.gettz(default_tz))
+        return d
+    except Exception:
+        return None
+
 
 def infer_year_for_mm_dd(mm_dd_str: str, default_tz: str) -> Optional[dt.datetime]:
     """Infer a datetime for dates shown as M.D / MM.DD without a year.
@@ -453,7 +478,7 @@ def extract_tidycal_index(source: Dict[str, Any], default_tz: str) -> List[Dict[
     """
 
     url = source["url"]
-    html = fetch_html(url, source.get("headers"))
+    html = fetch_html(url)
     soup = BeautifulSoup(html, "html.parser")
 
     # Find all "View details" links; each points to a TidyCal booking page.
