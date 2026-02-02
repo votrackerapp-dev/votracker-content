@@ -44,8 +44,10 @@ def parse_date(text, tz=DEFAULT_TZ):
         return None
 
 def make_id(source, title, url):
-    """Generate stable ID"""
-    key = f"{source}|{url or title}"
+    """Generate stable ID - includes title for uniqueness when URLs are shared"""
+    # CRITICAL FIX: Include title to prevent collisions when multiple events
+    # share the same registration URL (e.g., Red Scythe, HALP, etc.)
+    key = f"{source}|{title}|{url}"
     hash_val = hashlib.sha1(key.encode()).hexdigest()[:12]
     return f"{source}-{hash_val}"
 
@@ -899,15 +901,14 @@ def main():
     all_events.extend(scrape_redscythe())
     all_events.extend(scrape_vodojo())
     
-    # Dedup and filter
-    seen_urls = {}
+    # Dedup by event ID (not URL - some sources share URLs)
+    seen_ids = set()
     deduped = []
     for event in all_events:
-        url = event.get("registrationURL")
-        if url and url in seen_urls:
+        event_id = event.get("id")
+        if event_id in seen_ids:
             continue
-        if url:
-            seen_urls[url] = event
+        seen_ids.add(event_id)
         deduped.append(event)
     
     now = datetime.now(datetz.gettz(DEFAULT_TZ))
