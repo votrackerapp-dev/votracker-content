@@ -103,46 +103,6 @@
   ],
   "workshops": [
     {
-      "id": "van-db3b1410a9f6",
-      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-26T17:00:00-08:00",
-      "endAt": "2026-02-26T20:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
-      "venue": "Zoom"
-    },
-    {
-      "id": "van-4d96a8d121d1",
-      "title": "Commercial Clinic - Carli Silver| Tuesday, February 3rd, 2026 | 4-7pm PT | Zoom",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-03T16:00:00-08:00",
-      "endAt": "2026-02-03T19:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-cari-silver-tuesday-february-3rd-2026-4-7pm-pt-zoom",
-      "venue": "Zoom"
-    },
-    {
-      "id": "van-d0df517fc1fc",
-      "title": "Video Game Clinic - Patrick Michalak| Thursday, February 19th, 2026 | 7-10pm PT | In Person",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-19T19:00:00-08:00",
-      "endAt": "2026-02-19T22:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-thursday-february-19th-2026-7-10pm-pt-in-person",
-      "venue": "Zoom"
-    },
-    {
-      "id": "van-0af3054221c8",
-      "title": "AUDIT A CLINIC - FEBRUARY 2026",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-03T16:00:00-08:00",
-      "endAt": "2026-02-03T19:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-february-2026",
-      "venue": "Zoom"
-    },
-    {
       "id": "van-0594c72950fd",
       "title": "Animation Clinic - Bob Bergen| Wednesday, February 25th, 2026 | 7-10pm PT | Zoom",
       "provider": "van",
@@ -163,13 +123,23 @@
       "venue": "Zoom"
     },
     {
-      "id": "van-7f0c67dc05e1",
-      "title": "Animation Clinic - Katie McWane| Thursday, January 29th, 2026 | 5-8pm PT | Zoom",
+      "id": "van-0af3054221c8",
+      "title": "AUDIT A CLINIC - FEBRUARY 2026",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-01-29T17:00:00-08:00",
-      "endAt": "2026-01-29T20:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-january-29th-2026-5-8pm-pt-zoom",
+      "startAt": "2026-02-03T16:00:00-08:00",
+      "endAt": "2026-02-03T19:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-february-2026",
+      "venue": "Zoom"
+    },
+    {
+      "id": "van-d0df517fc1fc",
+      "title": "Video Game Clinic - Patrick Michalak| Thursday, February 19th, 2026 | 7-10pm PT | In Person",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-02-19T19:00:00-08:00",
+      "endAt": "2026-02-19T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-thursday-february-19th-2026-7-10pm-pt-in-person",
       "venue": "Zoom"
     },
     {
@@ -180,6 +150,36 @@
       "startAt": "2026-01-28T19:00:00-08:00",
       "endAt": "2026-01-28T22:00:00-08:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/crafting-characters-for-your-auditions-carrie-keranen-wednesday-january-28th-2026-7-10pm-pt-in-person",
+      "venue": "Zoom"
+    },
+    {
+      "id": "van-4d96a8d121d1",
+      "title": "Commercial Clinic - Carli Silver| Tuesday, February 3rd, 2026 | 4-7pm PT | Zoom",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-02-03T16:00:00-08:00",
+      "endAt": "2026-02-03T19:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-cari-silver-tuesday-february-3rd-2026-4-7pm-pt-zoom",
+      "venue": "Zoom"
+    },
+    {
+      "id": "van-db3b1410a9f6",
+      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-02-26T17:00:00-08:00",
+      "endAt": "2026-02-26T20:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
+      "venue": "Zoom"
+    },
+    {
+      "id": "van-7f0c67dc05e1",
+      "title": "Animation Clinic - Katie McWane| Thursday, January 29th, 2026 | 5-8pm PT | Zoom",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-01-29T17:00:00-08:00",
+      "endAt": "2026-01-29T20:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-january-29th-2026-5-8pm-pt-zoom",
       "venue": "Zoom"
     },
     {
@@ -437,6 +437,15 @@
       "endAt": "2026-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
+    },
+    {
+      "id": "vodojo-3af0d2a22463",
+      "title": "You Should Do Voiceover February",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-02-02T15:00:00-08:00",
+      "endAt": "2026-02-02T17:00:00-08:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-voiceover-february"
     },
     {
       "id": "vodojo-93b174b38dd2",
