@@ -6,7 +6,7 @@
       "id": "welcome-featured",
       "title": "Welcome to VO Tracker",
       "message": "",
-      "detail": "Welcome to VOTracker! This is an app made by Voice Actors FOR Voice Actors.\n\n• Tip: You can now Track your auditions too! (enable in settings)\n• Thank you for being here\n• Tell your friends!!",
+      "detail": "Welcome to VOTracker! This is an app made by Voice Actors FOR Voice Actors.\n\n• Tip: You can now Track your auditions and Training too! (enable in settings)\n• Thank you for being here\n• Tell your friends!!",
       "imageURL": "https://raw.githubusercontent.com/votrackerapp-dev/votracker-content/main/Welcome.png",
       "links": [
         {
