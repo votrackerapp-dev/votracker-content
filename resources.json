@@ -35,6 +35,15 @@
   ],
   "sponsors": [
     {
+      "id": "become-featured-partner",
+      "name": "Become a Featured Partner",
+      "tagline": "Want your studio, coaching, or service featured in VOTracker? Email us for partnership info.",
+      "logoURL": null,
+      "icon": "star.circle.fill",
+      "linkURL": "mailto:votrackerapp@gmail.com",
+      "tier": "featured"
+    },
+    {
       "id": "golden-mic-studios",
       "name": "Golden Mic Studios",
       "tagline": "Remote-ready VO sessions with broadcast-grade gear — first session discount for VO Tracker users.",
@@ -78,15 +87,6 @@
       "icon": "waveform.circle.fill",
       "linkURL": "https://examplestudio.com",
       "tier": "featured"
-    },
-    {
-      "id": "vo-coaching",
-      "name": "Jane Doe VO Coaching",
-      "tagline": "One-on-one coaching for animation and commercial VO",
-      "logoURL": null,
-      "icon": "person.wave.2.fill",
-      "linkURL": "https://janedoevocoaching.com",
-      "tier": "partner"
     }
   ],
   "workshops": [
@@ -467,19 +467,7 @@
           "isPremium": false
         }
       ]
-    },
-    {
-      "title": "Learning & Community",
-      "items": [
-        {
-          "title": "VO Meter Podcast",
-          "subtitle": "Weekly discussions on the voice acting industry.",
-          "icon": "waveform.badge.mic",
-          "url": "https://example.com/vo-meter",
-          "isPremium": false
-        }
-      ]
     }
   ],
-  "footerMessage": "Resources updated monthly. Have a suggestion? Let us know!"
+  "footerMessage": "Resources updated daily. Have a suggestion? Let us know!"
 }
