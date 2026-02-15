@@ -46,13 +46,13 @@
   ],
   "workshops": [
     {
-      "id": "van-bedb46f458d0",
-      "title": "Narration Clinic - Jon Armond| Wednesday, February 11th, 2026 | 7-10pm PT | In Person",
+      "id": "van-db3b1410a9f6",
+      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-02-11T19:00:00-08:00",
-      "endAt": "2026-02-11T22:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person",
+      "startAt": "2026-02-26T17:00:00-08:00",
+      "endAt": "2026-02-26T20:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
       "venue": "Zoom"
     },
     {
@@ -66,16 +66,6 @@
       "venue": "Zoom"
     },
     {
-      "id": "van-db3b1410a9f6",
-      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-26T17:00:00-08:00",
-      "endAt": "2026-02-26T20:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
-      "venue": "Zoom"
-    },
-    {
       "id": "van-0594c72950fd",
       "title": "Animation Clinic - Bob Bergen| Wednesday, February 25th, 2026 | 7-10pm PT | Zoom",
       "provider": "van",
@@ -83,6 +73,16 @@
       "startAt": "2026-02-25T19:00:00-08:00",
       "endAt": "2026-02-25T22:00:00-08:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom",
+      "venue": "Zoom"
+    },
+    {
+      "id": "van-bedb46f458d0",
+      "title": "Narration Clinic - Jon Armond| Wednesday, February 11th, 2026 | 7-10pm PT | In Person",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-02-11T19:00:00-08:00",
+      "endAt": "2026-02-11T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person",
       "venue": "Zoom"
     },
     {
