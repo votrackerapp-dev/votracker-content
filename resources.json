@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-02-14",
+  "lastUpdated": "2026-02-15",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -56,6 +56,16 @@
       "venue": "Zoom"
     },
     {
+      "id": "van-bedb46f458d0",
+      "title": "Narration Clinic - Jon Armond| Wednesday, February 11th, 2026 | 7-10pm PT | In Person",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-02-11T19:00:00-08:00",
+      "endAt": "2026-02-11T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person",
+      "venue": "Zoom"
+    },
+    {
       "id": "van-0594c72950fd",
       "title": "Animation Clinic - Bob Bergen| Wednesday, February 25th, 2026 | 7-10pm PT | Zoom",
       "provider": "van",
@@ -73,16 +83,6 @@
       "startAt": "2026-02-19T19:00:00-08:00",
       "endAt": "2026-02-19T22:00:00-08:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-thursday-february-19th-2026-7-10pm-pt-in-person",
-      "venue": "Zoom"
-    },
-    {
-      "id": "van-bedb46f458d0",
-      "title": "Narration Clinic - Jon Armond| Wednesday, February 11th, 2026 | 7-10pm PT | In Person",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-11T19:00:00-08:00",
-      "endAt": "2026-02-11T22:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person",
       "venue": "Zoom"
     },
     {
@@ -294,15 +294,6 @@
       "endAt": "2026-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
-    },
-    {
-      "id": "vodojo-695b40bb0231",
-      "title": "Thursday February 12Th Vo Pro Fight Club Animation With Brenna Larsen",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-02-12T17:30:00-08:00",
-      "endAt": "2026-02-12T19:30:00-08:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/thursday-february-12th-vo-pro-fight-club-animation-with-brenna-larsen"
     },
     {
       "id": "vodojo-0e110e1b9f2b",
