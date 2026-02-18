@@ -46,13 +46,13 @@
   ],
   "workshops": [
     {
-      "id": "van-bedb46f458d0",
-      "title": "Narration Clinic - Jon Armond| Wednesday, February 11th, 2026 | 7-10pm PT | In Person",
+      "id": "van-db3b1410a9f6",
+      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-02-11T19:00:00-08:00",
-      "endAt": "2026-02-11T22:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person",
+      "startAt": "2026-02-26T17:00:00-08:00",
+      "endAt": "2026-02-26T20:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
       "venue": "Zoom"
     },
     {
@@ -76,13 +76,13 @@
       "venue": "Zoom"
     },
     {
-      "id": "van-db3b1410a9f6",
-      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
+      "id": "van-bedb46f458d0",
+      "title": "Narration Clinic - Jon Armond| Wednesday, February 11th, 2026 | 7-10pm PT | In Person",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-02-26T17:00:00-08:00",
-      "endAt": "2026-02-26T20:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
+      "startAt": "2026-02-11T19:00:00-08:00",
+      "endAt": "2026-02-11T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/narration-clinic-jon-armrond-wednesday-february-11th-2026-7-10pm-pt-in-person",
       "venue": "Zoom"
     },
     {
@@ -93,6 +93,105 @@
       "startAt": "2026-02-18T14:00:00-08:00",
       "endAt": "2026-02-18T16:00:00-08:00",
       "registrationURL": "https://halpacademy.com/events/"
+    },
+    {
+      "id": "vopros-d5435482a2fa",
+      "title": "VIDEO GAMES – Stephen Carr – Director/Casting/Producer (Super secret company!!)",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-02-19T16:00:00-08:00",
+      "endAt": "2026-02-19T18:30:00-08:00",
+      "registrationURL": "https://www.thevopros.com/events/video-games-stephen-carr-director-casting-producer-super-secret-company/"
+    },
+    {
+      "id": "vopros-b979de760438",
+      "title": "ANIME – DUBBING – Jason Lord, Director, Crunchy Roll",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-02-23T16:00:00-08:00",
+      "endAt": "2026-02-23T18:30:00-08:00",
+      "registrationURL": "https://www.thevopros.com/events/anime-dubbing-jason-lord-director-crunch-roll/"
+    },
+    {
+      "id": "vopros-6640a4c9fadc",
+      "title": "ANIMATION – Casting/Director – Kerri-Anne Lavin",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-03-05T16:00:00-08:00",
+      "endAt": "2026-03-05T18:30:00-08:00",
+      "registrationURL": "https://www.thevopros.com/events/animation-casting-director-kerri-anne-lavin/"
+    },
+    {
+      "id": "vopros-875a2942baf0",
+      "title": "VIDEO GAMES – Stephen Carr – Video Game Prod/Director/ Casting (Secret Company!)",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-03-09T16:00:00-07:00",
+      "endAt": "2026-03-09T18:30:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/video-games-stephen-carr-video-game-prod-director-casting-secret-company/"
+    },
+    {
+      "id": "vopros-729e54f42eba",
+      "title": "ANIMATION/GAMES/DUBBING – DISNEY Audio Experiences, Casting Director/Director, Renee Johnson",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-03-16T19:00:00-07:00",
+      "endAt": "2026-03-16T21:30:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/animation-games-dubbing-disney-audio-experiences-casting-director-director-renee-johnson/"
+    },
+    {
+      "id": "vopros-d39e9efee083",
+      "title": "ANIME – Casting Director/Prod. – Mami Okada, BANGZoom!",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-03-19T16:30:00-07:00",
+      "endAt": "2026-03-19T19:00:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/anime-casting-director-prod-mami-okada-bangzoom/"
+    },
+    {
+      "id": "vopros-b9c046e24506",
+      "title": "AUTOMOTIVE – Kevin Kilpatrick, Producer",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-04-08T16:00:00-07:00",
+      "endAt": "2026-04-08T18:30:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/automotive-kevin-kilpatrick-producer/"
+    },
+    {
+      "id": "vopros-7854d5d8dcf8",
+      "title": "PROMO – Jason Giles, Producer/FOX",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-04-13T16:00:00-07:00",
+      "endAt": "2026-04-13T18:30:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/promo-jason-giles-producer-fox/"
+    },
+    {
+      "id": "vopros-9e7d540b615a",
+      "title": "AGENT NIGHT – Sam Roberts, In Both Ears",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-04-20T16:00:00-07:00",
+      "endAt": "2026-04-20T18:00:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/agent-night-sam-roberts-in-both-ears-2/"
+    },
+    {
+      "id": "vopros-d8a2277fe380",
+      "title": "AGENT NIGHT – Mike Shallbetter, Promo Agent, DPN Talent",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-04-22T16:00:00-07:00",
+      "endAt": "2026-04-22T18:00:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/agent-night-mike-shallbetter-promo-agent-dpn-talent/"
+    },
+    {
+      "id": "vopros-3a9446b104f3",
+      "title": "PROMO – Denise Patierno, Promo Prod. CNN",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-04-27T16:00:00-07:00",
+      "endAt": "2026-04-27T18:30:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/promos-denise-patierno-promo-prod-cnn/"
     },
     {
       "id": "realvoice-de33dd6134a9",
