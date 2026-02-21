@@ -66,6 +66,16 @@
       "venue": "Zoom"
     },
     {
+      "id": "van-db3b1410a9f6",
+      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-02-26T17:00:00-08:00",
+      "endAt": "2026-02-26T20:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
+      "venue": "Zoom"
+    },
+    {
       "id": "halp-14293ec00dbc",
       "title": "Events",
       "provider": "halp_academy",
@@ -165,24 +175,6 @@
       "registrationURL": "https://www.thevopros.com/events/promos-denise-patierno-promo-prod-cnn/"
     },
     {
-      "id": "realvoice-de33dd6134a9",
-      "title": "Voice Acting for Gacha Games",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-02-17T18:00:00-08:00",
-      "endAt": "2026-02-17T21:00:00-08:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/voice-acting-for-gacha-games"
-    },
-    {
-      "id": "realvoice-2f49744070b8",
-      "title": "February - Level Up: Anime & Video Game",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-02-19T18:30:00-08:00",
-      "endAt": "2026-02-19T21:30:00-08:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/february-level-up-anime-video-game"
-    },
-    {
       "id": "realvoice-b643c65f4e57",
       "title": "February - ONLINE Intro to Voiceover",
       "provider": "realvoicela",
@@ -271,6 +263,15 @@
       "startAt": "2026-03-31T21:00:00-07:00",
       "endAt": "2026-03-31T23:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/agent-night-with-micaela-hicks"
+    },
+    {
+      "id": "realvoice-79c3d1e0bd5a",
+      "title": "An Evening with Bob Bergen",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-07T21:00:00-07:00",
+      "endAt": "2026-04-07T23:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/an-evening-with-bob-bergen"
     },
     {
       "id": "realvoice-33a7585d22ab",
