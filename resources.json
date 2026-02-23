@@ -46,13 +46,13 @@
   ],
   "workshops": [
     {
-      "id": "van-d0df517fc1fc",
-      "title": "Video Game Clinic - Patrick Michalak| Thursday, February 19th, 2026 | 7-10pm PT | In Person",
+      "id": "van-0594c72950fd",
+      "title": "Animation Clinic - Bob Bergen| Wednesday, February 25th, 2026 | 7-10pm PT | Zoom",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-02-19T19:00:00-08:00",
-      "endAt": "2026-02-19T22:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-thursday-february-19th-2026-7-10pm-pt-in-person",
+      "startAt": "2026-02-25T19:00:00-08:00",
+      "endAt": "2026-02-25T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom",
       "venue": "Zoom"
     },
     {
@@ -66,13 +66,13 @@
       "venue": "Zoom"
     },
     {
-      "id": "van-0594c72950fd",
-      "title": "Animation Clinic - Bob Bergen| Wednesday, February 25th, 2026 | 7-10pm PT | Zoom",
+      "id": "van-d0df517fc1fc",
+      "title": "Video Game Clinic - Patrick Michalak| Thursday, February 19th, 2026 | 7-10pm PT | In Person",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-02-25T19:00:00-08:00",
-      "endAt": "2026-02-25T22:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom",
+      "startAt": "2026-02-19T19:00:00-08:00",
+      "endAt": "2026-02-19T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-thursday-february-19th-2026-7-10pm-pt-in-person",
       "venue": "Zoom"
     },
     {
@@ -83,15 +83,6 @@
       "startAt": "2026-03-14T14:00:00-07:00",
       "endAt": "2026-03-14T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
-    },
-    {
-      "id": "vopros-b979de760438",
-      "title": "ANIME – DUBBING – Jason Lord, Director, Crunchy Roll",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-02-23T16:00:00-08:00",
-      "endAt": "2026-02-23T18:30:00-08:00",
-      "registrationURL": "https://www.thevopros.com/events/anime-dubbing-jason-lord-director-crunch-roll/"
     },
     {
       "id": "vopros-6640a4c9fadc",
