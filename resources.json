@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-02-22",
+  "lastUpdated": "2026-02-23",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -46,6 +46,16 @@
   ],
   "workshops": [
     {
+      "id": "van-0594c72950fd",
+      "title": "Animation Clinic - Bob Bergen| Wednesday, February 25th, 2026 | 7-10pm PT | Zoom",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-02-25T19:00:00-08:00",
+      "endAt": "2026-02-25T22:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom",
+      "venue": "Zoom"
+    },
+    {
       "id": "van-db3b1410a9f6",
       "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
       "provider": "van",
@@ -63,16 +73,6 @@
       "startAt": "2026-02-19T19:00:00-08:00",
       "endAt": "2026-02-19T22:00:00-08:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-thursday-february-19th-2026-7-10pm-pt-in-person",
-      "venue": "Zoom"
-    },
-    {
-      "id": "van-0594c72950fd",
-      "title": "Animation Clinic - Bob Bergen| Wednesday, February 25th, 2026 | 7-10pm PT | Zoom",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-25T19:00:00-08:00",
-      "endAt": "2026-02-25T22:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom",
       "venue": "Zoom"
     },
     {
