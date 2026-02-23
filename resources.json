@@ -46,16 +46,6 @@
   ],
   "workshops": [
     {
-      "id": "van-db3b1410a9f6",
-      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-26T17:00:00-08:00",
-      "endAt": "2026-02-26T20:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
-      "venue": "Zoom"
-    },
-    {
       "id": "van-0594c72950fd",
       "title": "Animation Clinic - Bob Bergen| Wednesday, February 25th, 2026 | 7-10pm PT | Zoom",
       "provider": "van",
@@ -63,6 +53,16 @@
       "startAt": "2026-02-25T19:00:00-08:00",
       "endAt": "2026-02-25T22:00:00-08:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom",
+      "venue": "Zoom"
+    },
+    {
+      "id": "van-db3b1410a9f6",
+      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-02-26T17:00:00-08:00",
+      "endAt": "2026-02-26T20:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
       "venue": "Zoom"
     },
     {
@@ -310,15 +310,6 @@
       "endAt": "2026-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
-    },
-    {
-      "id": "vodojo-90ae42c945b8",
-      "title": "Sunday February 22Nd Vo Pro Fight Club Anime With Lisa Ortiz",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-02-22T14:00:00-08:00",
-      "endAt": "2026-02-22T16:00:00-08:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/sunday-february-22nd-vo-pro-fight-club-anime-with-lisa-ortiz"
     },
     {
       "id": "vodojo-7d07196b728f",
