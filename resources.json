@@ -46,16 +46,6 @@
   ],
   "workshops": [
     {
-      "id": "van-0594c72950fd",
-      "title": "Animation Clinic - Bob Bergen| Wednesday, February 25th, 2026 | 7-10pm PT | Zoom",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-25T19:00:00-08:00",
-      "endAt": "2026-02-25T22:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-bob-bergen-wednesday-february-25th-2026-7-10pm-pt-zoom",
-      "venue": "Zoom"
-    },
-    {
       "id": "van-db3b1410a9f6",
       "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
       "provider": "van",
@@ -154,15 +144,6 @@
       "startAt": "2026-04-27T16:00:00-07:00",
       "endAt": "2026-04-27T18:30:00-07:00",
       "registrationURL": "https://www.thevopros.com/events/promos-denise-patierno-promo-prod-cnn/"
-    },
-    {
-      "id": "realvoice-b643c65f4e57",
-      "title": "February - ONLINE Intro to Voiceover",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-02-20T14:00:00-08:00",
-      "endAt": "2026-02-20T17:00:00-08:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/february-online-intro-to-voiceover"
     },
     {
       "id": "realvoice-b394c12d5883",
