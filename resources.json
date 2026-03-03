@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-03-02",
+  "lastUpdated": "2026-03-03",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -56,22 +56,12 @@
       "venue": "Zoom"
     },
     {
-      "id": "van-db3b1410a9f6",
-      "title": "Wait Lister Exclusive! Animation Clinic - Katie McWane| Thursday, February 26th, 2026 | 5-8pm PT | Zoom",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-02-26T17:00:00-08:00",
-      "endAt": "2026-02-26T20:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-katie-mcwane-thursday-february-26th-2026-5-8pm-pt-zoom",
-      "venue": "Zoom"
-    },
-    {
       "id": "halp-14293ec00dbc",
       "title": "Events",
       "provider": "halp_academy",
       "host": "HALP Academy",
-      "startAt": "2026-03-14T14:00:00-07:00",
-      "endAt": "2026-03-14T16:00:00-07:00",
+      "startAt": "2026-03-12T14:00:00-07:00",
+      "endAt": "2026-03-12T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
     },
     {
@@ -319,13 +309,13 @@
       "registrationURL": "https://www.thevodojo.com/new-events/get-to-know-vo-taxes-taxes-taxes-with-katie-mercer"
     },
     {
-      "id": "vodojo-05b4a80e0599",
-      "title": "March 23Rd Vo Pro Fight Club Anime With Shawn Gann",
+      "id": "vodojo-3aa23192dd57",
+      "title": "Monday March 23Rd Vo Pro Fight Club Anime With Shawn Gann",
       "provider": "thevodojo",
       "host": "The VO Dojo",
       "startAt": "2026-03-23T17:30:00-07:00",
       "endAt": "2026-03-23T19:30:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/march-23rd-vo-pro-fight-club-anime-with-shawn-gann"
+      "registrationURL": "https://www.thevodojo.com/new-events/monday-march-23rd-vo-pro-fight-club-anime-with-shawn-gann"
     },
     {
       "id": "vodojo-d86260eb211f",
