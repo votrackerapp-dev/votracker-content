@@ -46,6 +46,26 @@
   ],
   "workshops": [
     {
+      "id": "van-9aff3c365850",
+      "title": "Video Game Clinic - Krizia Bajos| Thursday, March 26th, 2026 | 7-10pm PT | In Studio",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-03-26T19:00:00-07:00",
+      "endAt": "2026-03-26T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio-1",
+      "venue": "See listing"
+    },
+    {
+      "id": "van-cd2f45f8ff20",
+      "title": "Agent Clinic - Cynthia McLean & Jessica Bulavsky | Wednesday, March 11th, 2026 | 7-10pm PT | In Studio",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-03-11T19:00:00-07:00",
+      "endAt": "2026-03-11T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio",
+      "venue": "See listing"
+    },
+    {
       "id": "van-f2c6b8375860",
       "title": "Animation Clinic - Ania O'Hare| Wednesday, March 25th, 2026 | 7-10pm PT | In Studio",
       "provider": "van",
@@ -53,6 +73,16 @@
       "startAt": "2026-03-25T19:00:00-07:00",
       "endAt": "2026-03-25T22:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-march-25th-2026-7-10pm-pt-in-studio",
+      "venue": "See listing"
+    },
+    {
+      "id": "van-24ddfa5973df",
+      "title": "AUDIT A CLINIC - MARCH 2026",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-03-11T19:00:00-07:00",
+      "endAt": "2026-03-11T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-march-2026",
       "venue": "See listing"
     },
     {
@@ -73,16 +103,6 @@
       "startAt": "2026-03-12T19:00:00-07:00",
       "endAt": "2026-03-12T22:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-brook-chalmers-thursday-march-12th-2026-7-10pm-pt-in-studio",
-      "venue": "See listing"
-    },
-    {
-      "id": "van-24ddfa5973df",
-      "title": "AUDIT A CLINIC - MARCH 2026",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-03-11T19:00:00-07:00",
-      "endAt": "2026-03-11T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-march-2026",
       "venue": "See listing"
     },
     {
@@ -174,15 +194,6 @@
       "startAt": "2026-04-30T16:00:00-07:00",
       "endAt": "2026-04-30T18:30:00-07:00",
       "registrationURL": "https://www.thevopros.com/events/animation-tyler-chapman-casting-director-director/"
-    },
-    {
-      "id": "realvoice-d185a14f7891",
-      "title": "March - ONLINE Commercial Bootcamp",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-03-02T14:00:00-08:00",
-      "endAt": "2026-03-02T17:00:00-08:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/march-online-commercial-bootcamp"
     },
     {
       "id": "realvoice-aea5316c460f",
