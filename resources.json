@@ -46,23 +46,23 @@
   ],
   "workshops": [
     {
-      "id": "van-9aff3c365850",
-      "title": "Video Game Clinic - Krizia Bajos| Thursday, March 26th, 2026 | 7-10pm PT | In Studio",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-03-26T19:00:00-07:00",
-      "endAt": "2026-03-26T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio-1",
-      "venue": "See listing"
-    },
-    {
-      "id": "van-24ddfa5973df",
-      "title": "AUDIT A CLINIC - MARCH 2026",
+      "id": "van-cd2f45f8ff20",
+      "title": "Agent Clinic - Cynthia McLean & Jessica Bulavsky | Wednesday, March 11th, 2026 | 7-10pm PT | In Studio",
       "provider": "van",
       "host": "Voice Actors Network",
       "startAt": "2026-03-11T19:00:00-07:00",
       "endAt": "2026-03-11T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-march-2026",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio",
+      "venue": "See listing"
+    },
+    {
+      "id": "van-73facf12f07b",
+      "title": "Commercial Clinic - Carroll Kimble| Thursday, March 19th, 2026 | 7-10pm PT | In Studio",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-03-19T19:00:00-07:00",
+      "endAt": "2026-03-19T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-caroll-kimble-thursday-march-19th-2026-7-10pm-pt-in-studio",
       "venue": "See listing"
     },
     {
@@ -76,13 +76,13 @@
       "venue": "See listing"
     },
     {
-      "id": "van-73facf12f07b",
-      "title": "Commercial Clinic - Carroll Kimble| Thursday, March 19th, 2026 | 7-10pm PT | In Studio",
+      "id": "van-24ddfa5973df",
+      "title": "AUDIT A CLINIC - MARCH 2026",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-03-19T19:00:00-07:00",
-      "endAt": "2026-03-19T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-caroll-kimble-thursday-march-19th-2026-7-10pm-pt-in-studio",
+      "startAt": "2026-03-11T19:00:00-07:00",
+      "endAt": "2026-03-11T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-march-2026",
       "venue": "See listing"
     },
     {
@@ -239,15 +239,6 @@
       "registrationURL": "https://www.realvoicela.com/service-page/an-evening-with-bob-bergen"
     },
     {
-      "id": "realvoice-4fc3aaf44b72",
-      "title": "Mastering Efforts for Video Games",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-04-14T21:00:00-07:00",
-      "endAt": "2026-04-14T23:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/mastering-efforts-for-video-games"
-    },
-    {
       "id": "realvoice-881417f0adc8",
       "title": "Authentic Kid Voices for Adult Performer",
       "provider": "realvoicela",
@@ -255,15 +246,6 @@
       "startAt": "2026-04-16T21:00:00-07:00",
       "endAt": "2026-04-16T23:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/authentic-kid-voices-for-adult-performer"
-    },
-    {
-      "id": "realvoice-ba1281233502",
-      "title": "April - ONLINE Intro to Voiceover",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-04-14T14:00:00-07:00",
-      "endAt": "2026-04-14T17:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/april-online-intro-to-voiceover"
     },
     {
       "id": "realvoice-9f4ad6f9d1da",
