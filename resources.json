@@ -56,16 +56,6 @@
       "venue": "See listing"
     },
     {
-      "id": "van-24ddfa5973df",
-      "title": "AUDIT A CLINIC - MARCH 2026",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-03-11T19:00:00-07:00",
-      "endAt": "2026-03-11T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-march-2026",
-      "venue": "See listing"
-    },
-    {
       "id": "van-73facf12f07b",
       "title": "Commercial Clinic - Carroll Kimble| Thursday, March 19th, 2026 | 7-10pm PT | In Studio",
       "provider": "van",
@@ -76,23 +66,13 @@
       "venue": "See listing"
     },
     {
-      "id": "van-f2c6b8375860",
-      "title": "Animation Clinic - Ania O'Hare| Wednesday, March 25th, 2026 | 7-10pm PT | In Studio",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-03-25T19:00:00-07:00",
-      "endAt": "2026-03-25T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-march-25th-2026-7-10pm-pt-in-studio",
-      "venue": "See listing"
-    },
-    {
-      "id": "van-cd2f45f8ff20",
-      "title": "Agent Clinic - Cynthia McLean & Jessica Bulavsky | Wednesday, March 11th, 2026 | 7-10pm PT | In Studio",
+      "id": "van-24ddfa5973df",
+      "title": "AUDIT A CLINIC - MARCH 2026",
       "provider": "van",
       "host": "Voice Actors Network",
       "startAt": "2026-03-11T19:00:00-07:00",
       "endAt": "2026-03-11T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-march-2026",
       "venue": "See listing"
     },
     {
@@ -195,15 +175,6 @@
       "registrationURL": "https://www.realvoicela.com/service-page/creating-characters-with-arianna-ratner-1"
     },
     {
-      "id": "realvoice-f45eddd2d9c8",
-      "title": "Guest Director Sarah Natochenny",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-03-17T18:00:00-07:00",
-      "endAt": "2026-03-17T21:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-sarah-natochenny"
-    },
-    {
       "id": "realvoice-131aea22ea1d",
       "title": "March - Level Up: Anime & Video Game",
       "provider": "realvoicela",
@@ -283,6 +254,15 @@
       "startAt": "2026-04-04T15:00:00-07:00",
       "endAt": "2026-04-04T18:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/april-in-person-intro-to-voiceover"
+    },
+    {
+      "id": "realvoice-e76d096f9ee6",
+      "title": "April - Games, Auditioning, and Advice",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-04T11:00:00-07:00",
+      "endAt": "2026-04-04T14:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/april-games-auditioning-and-advice"
     },
     {
       "id": "vodojo-8573e6573f99",
