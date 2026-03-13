@@ -56,56 +56,6 @@
       "venue": "See listing"
     },
     {
-      "id": "van-526cb227105a",
-      "title": "Video Game Clinic - Brook Chalmers| Thursday, March 12th, 2026 | 7-10pm PT | In Studio",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-03-12T19:00:00-07:00",
-      "endAt": "2026-03-12T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-brook-chalmers-thursday-march-12th-2026-7-10pm-pt-in-studio",
-      "venue": "See listing"
-    },
-    {
-      "id": "van-73facf12f07b",
-      "title": "Commercial Clinic - Carroll Kimble| Thursday, March 19th, 2026 | 7-10pm PT | In Studio",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-03-19T19:00:00-07:00",
-      "endAt": "2026-03-19T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-caroll-kimble-thursday-march-19th-2026-7-10pm-pt-in-studio",
-      "venue": "See listing"
-    },
-    {
-      "id": "van-f2c6b8375860",
-      "title": "Animation Clinic - Ania O'Hare| Wednesday, March 25th, 2026 | 7-10pm PT | In Studio",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-03-25T19:00:00-07:00",
-      "endAt": "2026-03-25T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-march-25th-2026-7-10pm-pt-in-studio",
-      "venue": "See listing"
-    },
-    {
-      "id": "van-cd2f45f8ff20",
-      "title": "Agent Clinic - Cynthia McLean & Jessica Bulavsky | Wednesday, March 11th, 2026 | 7-10pm PT | In Studio",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-03-11T19:00:00-07:00",
-      "endAt": "2026-03-11T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio",
-      "venue": "See listing"
-    },
-    {
-      "id": "van-24ddfa5973df",
-      "title": "AUDIT A CLINIC - MARCH 2026",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-03-11T19:00:00-07:00",
-      "endAt": "2026-03-11T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-march-2026",
-      "venue": "See listing"
-    },
-    {
       "id": "halp-14293ec00dbc",
       "title": "Events",
       "provider": "halp_academy",
@@ -293,60 +243,6 @@
       "startAt": "2026-04-04T11:00:00-07:00",
       "endAt": "2026-04-04T14:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/april-games-auditioning-and-advice"
-    },
-    {
-      "id": "vodojo-2edc3934ec13",
-      "title": "Sunday March 15Th Vo Pro Fight Club Interactive Toys With Chuck Wedge",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-03-15T14:00:00-07:00",
-      "endAt": "2026-03-15T16:00:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/sunday-march-15th-vo-pro-fight-club-interactive-toys-with-chuck-wedge"
-    },
-    {
-      "id": "vodojo-f47bf4ac1c40",
-      "title": "Get To Know Vo Taxes Taxes Taxes With Katie Mercer",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-03-18T11:30:00-07:00",
-      "endAt": "2026-03-18T13:30:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/get-to-know-vo-taxes-taxes-taxes-with-katie-mercer"
-    },
-    {
-      "id": "vodojo-3aa23192dd57",
-      "title": "Monday March 23Rd Vo Pro Fight Club Anime With Shawn Gann",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-03-23T17:30:00-07:00",
-      "endAt": "2026-03-23T19:30:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/monday-march-23rd-vo-pro-fight-club-anime-with-shawn-gann"
-    },
-    {
-      "id": "vodojo-d86260eb211f",
-      "title": "Voa Breakout Dude Btches Amp Mothafers Activating Your Pov For Infinite Effortless Badass Abc Takes",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-03-27T18:00:00-07:00",
-      "endAt": "2026-03-27T20:00:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/voa-breakout-dude-btches-amp-mothafers-activating-your-pov-for-infinite-effortless-badass-abc-takes"
-    },
-    {
-      "id": "vodojo-a673f6d2e641",
-      "title": "Mental Health Panel",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-03-28T10:00:00-07:00",
-      "endAt": "2026-03-28T10:50:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/mental-health-panel"
-    },
-    {
-      "id": "vodojo-1223f85267b8",
-      "title": "You Should Do Voiceover April Begins",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-04-13T15:00:00-07:00",
-      "endAt": "2026-04-13T17:00:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-voiceover-april-begins"
     }
   ],
   "sections": [
