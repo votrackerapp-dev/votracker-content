@@ -46,6 +46,16 @@
   ],
   "workshops": [
     {
+      "id": "van-cd2f45f8ff20",
+      "title": "Agent Clinic - Cynthia McLean & Jessica Bulavsky | Wednesday, March 11th, 2026 | 7-10pm PT | In Studio",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-03-11T19:00:00-07:00",
+      "endAt": "2026-03-11T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio",
+      "venue": "See listing"
+    },
+    {
       "id": "van-9aff3c365850",
       "title": "Video Game Clinic - Krizia Bajos| Thursday, March 26th, 2026 | 7-10pm PT | In Studio",
       "provider": "van",
@@ -263,6 +273,16 @@
       "startAt": "2026-04-04T11:00:00-07:00",
       "endAt": "2026-04-04T14:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/april-games-auditioning-and-advice"
+    },
+    {
+      "id": "redscythe-89bc2fc384e7",
+      "title": "CHRIS HACKNEY — potluck clinic workshop",
+      "provider": "redscythe_tidycal_classes",
+      "host": "Red Scythe Studio",
+      "startAt": "2027-02-14T09:00:00-08:00",
+      "endAt": "2027-02-14T13:00:00-08:00",
+      "registrationURL": "https://tidycal.com/redscythestudio/214chris",
+      "venue": "Online"
     },
     {
       "id": "vodojo-2edc3934ec13",
