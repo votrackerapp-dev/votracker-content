@@ -46,16 +46,6 @@
   ],
   "workshops": [
     {
-      "id": "van-cd2f45f8ff20",
-      "title": "Agent Clinic - Cynthia McLean & Jessica Bulavsky | Wednesday, March 11th, 2026 | 7-10pm PT | In Studio",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-03-11T19:00:00-07:00",
-      "endAt": "2026-03-11T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio",
-      "venue": "See listing"
-    },
-    {
       "id": "van-f2c6b8375860",
       "title": "Animation Clinic - Ania O'Hare| Wednesday, March 25th, 2026 | 7-10pm PT | In Studio",
       "provider": "van",
@@ -66,13 +56,13 @@
       "venue": "See listing"
     },
     {
-      "id": "van-24ddfa5973df",
-      "title": "AUDIT A CLINIC - MARCH 2026",
+      "id": "van-73facf12f07b",
+      "title": "Commercial Clinic - Carroll Kimble| Thursday, March 19th, 2026 | 7-10pm PT | In Studio",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-03-11T19:00:00-07:00",
-      "endAt": "2026-03-11T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-march-2026",
+      "startAt": "2026-03-19T19:00:00-07:00",
+      "endAt": "2026-03-19T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-caroll-kimble-thursday-march-19th-2026-7-10pm-pt-in-studio",
       "venue": "See listing"
     },
     {
@@ -86,13 +76,13 @@
       "venue": "See listing"
     },
     {
-      "id": "van-526cb227105a",
-      "title": "Video Game Clinic - Brook Chalmers| Thursday, March 12th, 2026 | 7-10pm PT | In Studio",
+      "id": "van-cd2f45f8ff20",
+      "title": "Agent Clinic - Cynthia McLean & Jessica Bulavsky | Wednesday, March 11th, 2026 | 7-10pm PT | In Studio",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-03-12T19:00:00-07:00",
-      "endAt": "2026-03-12T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-brook-chalmers-thursday-march-12th-2026-7-10pm-pt-in-studio",
+      "startAt": "2026-03-11T19:00:00-07:00",
+      "endAt": "2026-03-11T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio",
       "venue": "See listing"
     },
     {
@@ -177,15 +167,6 @@
       "registrationURL": "https://www.thevopros.com/events/animation-tyler-chapman-casting-director-director/"
     },
     {
-      "id": "realvoice-131aea22ea1d",
-      "title": "March - Level Up: Anime & Video Game",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-03-12T18:30:00-07:00",
-      "endAt": "2026-03-12T21:30:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/march-level-up-anime-video-game"
-    },
-    {
       "id": "realvoice-0edc804641fc",
       "title": "Guest Director Shelby Young",
       "provider": "realvoicela",
@@ -213,6 +194,15 @@
       "registrationURL": "https://www.realvoicela.com/service-page/an-evening-with-bob-bergen"
     },
     {
+      "id": "realvoice-e78f7a2e2c72",
+      "title": "ONLINE Anime Intensive with Matthew Rudd",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-06T21:00:00-07:00",
+      "endAt": "2026-04-06T23:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/online-anime-intensive-with-matthew-rudd"
+    },
+    {
       "id": "realvoice-4fc3aaf44b72",
       "title": "Mastering Efforts for Video Games",
       "provider": "realvoicela",
@@ -231,6 +221,15 @@
       "registrationURL": "https://www.realvoicela.com/service-page/authentic-kid-voices-for-adult-performer"
     },
     {
+      "id": "realvoice-f45eddd2d9c8",
+      "title": "Guest Director Sarah Natochenny",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-21T18:00:00-07:00",
+      "endAt": "2026-04-21T21:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-sarah-natochenny"
+    },
+    {
       "id": "realvoice-ba1281233502",
       "title": "April - ONLINE Intro to Voiceover",
       "provider": "realvoicela",
@@ -240,12 +239,30 @@
       "registrationURL": "https://www.realvoicela.com/service-page/april-online-intro-to-voiceover"
     },
     {
+      "id": "realvoice-cbc0ad5b2418",
+      "title": "April - Level Up: Anime & Video Game",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-15T18:30:00-07:00",
+      "endAt": "2026-04-15T21:30:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/april-level-up-anime-video-game"
+    },
+    {
+      "id": "realvoice-19dfc20f93e2",
+      "title": "ONLINE - Video Game Character Intensive",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-14T15:00:00-07:00",
+      "endAt": "2026-04-14T17:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/online-video-game-character-intensive"
+    },
+    {
       "id": "realvoice-9f4ad6f9d1da",
       "title": "In-Person Level 1 Video Games Intensive",
       "provider": "realvoicela",
       "host": "Real Voice LA",
-      "startAt": "2026-03-25T18:30:00-07:00",
-      "endAt": "2026-03-25T21:30:00-07:00",
+      "startAt": "2026-04-01T18:30:00-07:00",
+      "endAt": "2026-04-01T21:30:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/in-person-level-1-video-games-intensive"
     },
     {
@@ -265,6 +282,15 @@
       "startAt": "2026-04-04T11:00:00-07:00",
       "endAt": "2026-04-04T14:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/april-games-auditioning-and-advice"
+    },
+    {
+      "id": "realvoice-3f7696b645de",
+      "title": "April In-Person Conversational VO",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-11T11:00:00-07:00",
+      "endAt": "2026-04-11T14:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/april-in-person-conversational-vo"
     },
     {
       "id": "redscythe-89bc2fc384e7",
