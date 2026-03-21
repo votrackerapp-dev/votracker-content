@@ -56,6 +56,26 @@
       "venue": "See listing"
     },
     {
+      "id": "van-9aff3c365850",
+      "title": "Video Game Clinic - Krizia Bajos| Thursday, March 26th, 2026 | 7-10pm PT | In Studio",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-03-26T19:00:00-07:00",
+      "endAt": "2026-03-26T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio-1",
+      "venue": "See listing"
+    },
+    {
+      "id": "van-73facf12f07b",
+      "title": "Commercial Clinic - Carroll Kimble| Thursday, March 19th, 2026 | 7-10pm PT | In Studio",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-03-19T19:00:00-07:00",
+      "endAt": "2026-03-19T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-caroll-kimble-thursday-march-19th-2026-7-10pm-pt-in-studio",
+      "venue": "See listing"
+    },
+    {
       "id": "halp-14293ec00dbc",
       "title": "Events",
       "provider": "halp_academy",
