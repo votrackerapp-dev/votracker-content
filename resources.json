@@ -46,13 +46,23 @@
   ],
   "workshops": [
     {
-      "id": "van-9aff3c365850",
-      "title": "Video Game Clinic - Krizia Bajos| Thursday, March 26th, 2026 | 7-10pm PT | In Studio",
+      "id": "van-73facf12f07b",
+      "title": "Commercial Clinic - Carroll Kimble| Thursday, March 19th, 2026 | 7-10pm PT | In Studio",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-03-26T19:00:00-07:00",
-      "endAt": "2026-03-26T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio-1",
+      "startAt": "2026-03-19T19:00:00-07:00",
+      "endAt": "2026-03-19T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-caroll-kimble-thursday-march-19th-2026-7-10pm-pt-in-studio",
+      "venue": "See listing"
+    },
+    {
+      "id": "van-f2c6b8375860",
+      "title": "Animation Clinic - Ania O'Hare| Wednesday, March 25th, 2026 | 7-10pm PT | In Studio",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-03-25T19:00:00-07:00",
+      "endAt": "2026-03-25T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-march-25th-2026-7-10pm-pt-in-studio",
       "venue": "See listing"
     },
     {
@@ -63,69 +73,6 @@
       "startAt": "2026-03-26T14:00:00-07:00",
       "endAt": "2026-03-26T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
-    },
-    {
-      "id": "vopros-b9c046e24506",
-      "title": "AUTOMOTIVE – Kevin Kilpatrick, Producer",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-08T16:00:00-07:00",
-      "endAt": "2026-04-08T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/automotive-kevin-kilpatrick-producer/"
-    },
-    {
-      "id": "vopros-7854d5d8dcf8",
-      "title": "PROMO – Jason Giles, Producer/FOX",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-13T16:00:00-07:00",
-      "endAt": "2026-04-13T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/promo-jason-giles-producer-fox/"
-    },
-    {
-      "id": "vopros-f47ba3bf720a",
-      "title": "VIDEO GAMES – Jessica Kent, Casting Director/Prod",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-16T16:00:00-07:00",
-      "endAt": "2026-04-16T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-jessica-kent-casting-director-prod/"
-    },
-    {
-      "id": "vopros-9e7d540b615a",
-      "title": "AGENT NIGHT – Sam Roberts, In Both Ears",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-20T16:00:00-07:00",
-      "endAt": "2026-04-20T18:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-sam-roberts-in-both-ears-2/"
-    },
-    {
-      "id": "vopros-d8a2277fe380",
-      "title": "AGENT NIGHT – Mike Shallbetter, Promo Agent, DPN Talent",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-22T16:00:00-07:00",
-      "endAt": "2026-04-22T18:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-mike-shallbetter-promo-agent-dpn-talent/"
-    },
-    {
-      "id": "vopros-3a9446b104f3",
-      "title": "PROMO – Denise Patierno, Promo Prod. CNN",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-27T16:00:00-07:00",
-      "endAt": "2026-04-27T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/promos-denise-patierno-promo-prod-cnn/"
-    },
-    {
-      "id": "vopros-f6641677768b",
-      "title": "ANIMATION – Tyler Chapman, Casting Director/Director",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-30T16:00:00-07:00",
-      "endAt": "2026-04-30T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/animation-tyler-chapman-casting-director-director/"
     },
     {
       "id": "realvoice-0edc804641fc",
