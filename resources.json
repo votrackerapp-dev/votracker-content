@@ -56,6 +56,16 @@
       "venue": "See listing"
     },
     {
+      "id": "van-9aff3c365850",
+      "title": "Video Game Clinic - Krizia Bajos| Thursday, March 26th, 2026 | 7-10pm PT | In Studio",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-03-26T19:00:00-07:00",
+      "endAt": "2026-03-26T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio-1",
+      "venue": "See listing"
+    },
+    {
       "id": "van-73facf12f07b",
       "title": "Commercial Clinic - Carroll Kimble| Thursday, March 19th, 2026 | 7-10pm PT | In Studio",
       "provider": "van",
@@ -327,6 +337,15 @@
       "startAt": "2026-04-13T15:00:00-07:00",
       "endAt": "2026-04-13T17:00:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-voiceover-april-begins"
+    },
+    {
+      "id": "vodojo-29f3f6e4e491",
+      "title": "Demo Listen Derby With Tish Hicks And Next Level Demos Brittany Cox Amp Ryan Ricks",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-04-15T10:00:00-07:00",
+      "endAt": "2026-04-15T12:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/demo-listen-derby-with-tish-hicks-and-next-level-demos-brittany-cox-amp-ryan-ricks"
     },
     {
       "id": "vodojo-cacc9d88fdb6",
