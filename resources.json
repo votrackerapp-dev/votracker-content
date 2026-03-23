@@ -46,16 +46,6 @@
   ],
   "workshops": [
     {
-      "id": "van-f2c6b8375860",
-      "title": "Animation Clinic - Ania O'Hare| Wednesday, March 25th, 2026 | 7-10pm PT | In Studio",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-03-25T19:00:00-07:00",
-      "endAt": "2026-03-25T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-march-25th-2026-7-10pm-pt-in-studio",
-      "venue": "See listing"
-    },
-    {
       "id": "van-9aff3c365850",
       "title": "Video Game Clinic - Krizia Bajos| Thursday, March 26th, 2026 | 7-10pm PT | In Studio",
       "provider": "van",
@@ -63,6 +53,16 @@
       "startAt": "2026-03-26T19:00:00-07:00",
       "endAt": "2026-03-26T22:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio-1",
+      "venue": "See listing"
+    },
+    {
+      "id": "van-f2c6b8375860",
+      "title": "Animation Clinic - Ania O'Hare| Wednesday, March 25th, 2026 | 7-10pm PT | In Studio",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-03-25T19:00:00-07:00",
+      "endAt": "2026-03-25T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-march-25th-2026-7-10pm-pt-in-studio",
       "venue": "See listing"
     },
     {
@@ -146,6 +146,51 @@
       "startAt": "2026-04-30T16:00:00-07:00",
       "endAt": "2026-04-30T18:30:00-07:00",
       "registrationURL": "https://www.thevopros.com/events/animation-tyler-chapman-casting-director-director/"
+    },
+    {
+      "id": "vopros-7cca38aeadb1",
+      "title": "VIDEO GAMES/ANIMATION – Khris Brown, Casting Dir/Director/Rep, Lucasfilm…",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-05-06T16:00:00-07:00",
+      "endAt": "2026-05-06T18:30:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/video-games-animation-khris-brown-casting-dir-director-rep-lucasfilm/"
+    },
+    {
+      "id": "vopros-13b292a36c71",
+      "title": "VIDEO GAMES/ANIMATION – Dave Fennoy, Actor, Coach",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-05-07T16:00:00-07:00",
+      "endAt": "2026-05-07T18:30:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/video-games-animation-dave-fennoy-actor-coach/"
+    },
+    {
+      "id": "vopros-00d6c509b110",
+      "title": "VIDEO GAMES – Gillian Brashear, Casting Director, Director – Hamster Ball Studios",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-05-11T16:30:00-07:00",
+      "endAt": "2026-05-11T19:00:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/video-games-gillian-brahear-casting-director-director-hamster-ball-studios/"
+    },
+    {
+      "id": "vopros-9db3b0e4c432",
+      "title": "AGENT NIGHT – Abbie Waters, VOX USA, Head of Animation/Interactive Dept.",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-05-14T17:00:00-07:00",
+      "endAt": "2026-05-14T19:00:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/agent-night-abbie-waters-vox-usa-head-of-animation-interactive-dept/"
+    },
+    {
+      "id": "vopros-5ac5ca9e6e6e",
+      "title": "ANIME – DUBBING – Brandon English, Casting Director/Prod. Roundabout Entertainment",
+      "provider": "thevopros",
+      "host": "The VO Pros",
+      "startAt": "2026-05-20T16:00:00-07:00",
+      "endAt": "2026-05-20T18:30:00-07:00",
+      "registrationURL": "https://www.thevopros.com/events/anime-dubbing-brandon-english-casting-director-prod-roundabout-entertainment/"
     },
     {
       "id": "realvoice-0edc804641fc",
