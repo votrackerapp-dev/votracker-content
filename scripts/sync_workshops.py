@@ -119,6 +119,31 @@ def extract_time(text):
     
     return None
 
+
+def detect_sold_out(*texts):
+    """Return True when a source page explicitly marks a class as sold out."""
+    pattern = re.compile(r"\bsold[\s-]*out\b", re.IGNORECASE)
+    for text in texts:
+        if text and pattern.search(text):
+            return True
+    return False
+
+
+def apply_status_badge(event, sold_out=False):
+    """Attach sold-out metadata and a visible title suffix."""
+    if not sold_out:
+        return event
+
+    updated = dict(event)
+    title = updated.get("title", "")
+    if title and not re.search(r"\[\s*sold out\s*\]$", title, re.IGNORECASE):
+        updated["title"] = f"{title} [SOLD OUT]"
+
+    updated["soldOut"] = True
+    updated["badgeText"] = "Sold Out"
+    updated["badgeColor"] = "#D32F2F"
+    return updated
+
 # ============================================================================
 # VOICE ACTORS NETWORK - FIXED TIME PARSING
 # ============================================================================
@@ -186,7 +211,7 @@ def scrape_van():
                 start = date.replace(hour=18, minute=0, second=0, microsecond=0)
                 end = start + timedelta(hours=2)
             
-            events.append({
+            event = {
                 "id": make_id("van", title, url),
                 "title": title,
                 "provider": "van",
@@ -195,8 +220,10 @@ def scrape_van():
                 "endAt": end.isoformat(),
                 "registrationURL": url,
                 "venue": "Zoom" if "zoom" in text.lower() else "See listing"
-            })
-            log(f"✓ {title[:50]}")
+            }
+            event = apply_status_badge(event, detect_sold_out(html, text))
+            events.append(event)
+            log(f"✓ {event['title'][:50]}")
             
         except Exception as e:
             log(f"⚠️  Error on {url.split('/')[-1]}: {e}")
@@ -261,7 +288,7 @@ def scrape_voicetrax():
                 start = date.replace(hour=10, minute=0, second=0, microsecond=0)
                 end = start + timedelta(hours=8)
             
-            events.append({
+            event = {
                 "id": make_id("vtw", title, str(date)),
                 "title": f"Guest Instructor: {title}",
                 "provider": "voicetraxwest",
@@ -269,8 +296,10 @@ def scrape_voicetrax():
                 "startAt": start.isoformat(),
                 "endAt": end.isoformat(),
                 "registrationURL": "https://www.voicetraxwest.com/guest-instructors"
-            })
-            log(f"✓ Guest Instructor: {title[:40]}")
+            }
+            event = apply_status_badge(event, detect_sold_out(nearby, text))
+            events.append(event)
+            log(f"✓ {event['title'][:50]}")
             
         except Exception as e:
             log(f"⚠️  Error: {e}")
@@ -282,81 +311,124 @@ def scrape_voicetrax():
 # ============================================================================
 # SOUND ON STUDIO - IMPROVED
 # ============================================================================
+def clean_text(text):
+    """Collapse whitespace so scraped titles/descriptions are stable."""
+    return re.sub(r"\s+", " ", text or "").strip()
+
+
+def parse_soundon_title_date(title, tz=DEFAULT_TZ):
+    """Sound On titles start with M.D.YY - use that as the canonical date."""
+    match = re.match(r"\s*(\d{1,2})\.(\d{1,2})\.(\d{2,4})\s*[-–]", clean_text(title))
+    if not match:
+        return None
+
+    month = int(match.group(1))
+    day = int(match.group(2))
+    year = int(match.group(3))
+    if year < 100:
+        year += 2000
+
+    try:
+        return datetime(year, month, day, tzinfo=datetz.gettz(tz))
+    except ValueError:
+        return None
+
+
+def extract_soundon_detail_info(html):
+    """Use the Squarespace product detail page to recover time and venue."""
+    soup = BeautifulSoup(html, "html.parser")
+    candidate_texts = []
+
+    for attrs in (
+        {"property": "og:description"},
+        {"itemprop": "description"},
+        {"name": "description"},
+    ):
+        tag = soup.find("meta", attrs=attrs)
+        content = clean_text(tag.get("content")) if tag else ""
+        if content and content not in candidate_texts:
+            candidate_texts.append(content)
+
+    content_nodes = soup.select(".product-title, .product-meta, .sqs-html-content")
+    content_text = clean_text(" ".join(node.get_text(" ", strip=True) for node in content_nodes))
+    if content_text and content_text not in candidate_texts:
+        candidate_texts.append(content_text)
+
+    venue = "Zoom" if any("zoom" in text.lower() for text in candidate_texts) else "See listing"
+
+    for text in candidate_texts:
+        time_info = extract_time(text)
+        if time_info:
+            return time_info, venue
+
+    return None, venue
+
+
 def scrape_soundon():
-    """Sound On Studio - try harder to find classes"""
+    """Sound On Studio - parse Squarespace product cards and detail pages"""
     print("[SOUND ON STUDIO] Scraping...")
     events = []
     
-    html = fetch("https://www.soundonstudio.com/classsignup")
+    base_url = "https://www.soundonstudio.com/classsignup"
+    html = fetch(base_url)
     if not html:
         return events
     
     soup = BeautifulSoup(html, "html.parser")
-    text = soup.get_text()
-    
-    log("Looking for class dates...")
-    
-    # Look for any dates on the page
-    date_matches = list(re.finditer(r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:st|nd|rd|th)?,?\s+\d{4}', text))
-    
-    if date_matches:
-        log(f"Found {len(date_matches)} potential dates")
-    
-    for match in date_matches:
+    cards = soup.select("div.product-list-item")
+    log(f"Found {len(cards)} product cards")
+
+    for card in cards:
         try:
-            date = parse_date(match.group(0))
+            link = card.select_one("a.product-list-item-link[href]")
+            title_tag = card.select_one(".product-list-item-title")
+            if not link or not title_tag:
+                continue
+
+            title = clean_text(title_tag.get_text(" ", strip=True))
+            date = parse_soundon_title_date(title)
             if not date:
+                log(f"Skipping product with unparseable date: {title[:50]}")
                 continue
-            
-            # Get context
-            pos = match.start()
-            nearby = text[max(0, pos-200):min(len(text), pos+200)]
-            
-            # Look for class title
-            title_match = re.search(r'([A-Z][^.!?\n]{15,80})', nearby)
-            title = title_match.group(1).strip() if title_match else "Workshop"
-            
-            # Skip navigation text
-            if any(x in title.lower() for x in ["copyright", "reserved", "privacy", "home", "about"]):
-                continue
-            
-            # Extract time
-            time_info = extract_time(nearby)
+
+            detail_url = urljoin(base_url, link["href"])
+            sold_out = "sold-out" in (card.get("class") or [])
+
+            time_info = None
+            venue = "See listing"
+            detail_html = fetch(detail_url)
+            if detail_html:
+                time_info, venue = extract_soundon_detail_info(detail_html)
+
             if time_info:
                 sh, sm, eh, em = time_info
                 start = date.replace(hour=sh, minute=sm, second=0, microsecond=0)
                 end = date.replace(hour=eh, minute=em, second=0, microsecond=0)
             else:
-                start = date.replace(hour=18, minute=0, second=0, microsecond=0)
-                end = start + timedelta(hours=2)
-            
-            events.append({
-                "id": make_id("soundon", title, str(date)),
+                # Most Sound On classes are 3-hour Zoom workshops.
+                start = date.replace(hour=10, minute=0, second=0, microsecond=0)
+                end = start + timedelta(hours=3)
+
+            event = {
+                "id": make_id("soundon", title, detail_url),
                 "title": title,
                 "provider": "soundonstudio",
                 "host": "Sound On Studio",
                 "startAt": start.isoformat(),
                 "endAt": end.isoformat(),
-                "registrationURL": "https://www.soundonstudio.com/classsignup"
-            })
-            log(f"✓ {title[:50]}")
-            
+                "registrationURL": detail_url,
+                "venue": venue
+            }
+            sold_out = sold_out or detect_sold_out(detail_html, card.get_text(" ", strip=True))
+            event = apply_status_badge(event, sold_out)
+            events.append(event)
+
+            availability = "sold out" if sold_out else "available"
+            log(f"✓ {event['title'][:50]} ({availability})")
+
         except Exception as e:
             log(f"⚠️  Error: {e}")
             continue
-    
-    # Also try to find embedded calendar/booking widget
-    log("Checking for booking widgets...")
-    scripts = soup.find_all("script")
-    for script in scripts:
-        if script.string and ("event" in script.string.lower() or "class" in script.string.lower()):
-            # Look for JSON data
-            try:
-                json_match = re.search(r'\{[^{}]*"date"[^{}]*\}', script.string)
-                if json_match:
-                    log(f"Found potential event data in script")
-            except:
-                pass
     
     print(f"[SOUND ON STUDIO] Found {len(events)} events")
     return events
@@ -414,7 +486,7 @@ def scrape_halp():
                     start = date.replace(hour=14, minute=0, second=0, microsecond=0)
                     end = start + timedelta(hours=2)
                 
-                events.append({
+                event = {
                     "id": make_id("halp", title, str(date)),
                     "title": title,
                     "provider": "halp_academy",
@@ -422,8 +494,10 @@ def scrape_halp():
                     "startAt": start.isoformat(),
                     "endAt": end.isoformat(),
                     "registrationURL": "https://halpacademy.com/events/search/"
-                })
-                log(f"✓ {title[:50]}")
+                }
+                event = apply_status_badge(event, detect_sold_out(nearby, text))
+                events.append(event)
+                log(f"✓ {event['title'][:50]}")
             except Exception as e:
                 continue
     
@@ -457,7 +531,7 @@ def scrape_halp():
                 start = date.replace(hour=14, minute=0, second=0, microsecond=0)
                 end = start + timedelta(hours=2)
             
-            events.append({
+            event = {
                 "id": make_id("halp", title, url),
                 "title": title,
                 "provider": "halp_academy",
@@ -465,8 +539,10 @@ def scrape_halp():
                 "startAt": start.isoformat(),
                 "endAt": end.isoformat(),
                 "registrationURL": url
-            })
-            log(f"✓ {title[:50]}")
+            }
+            event = apply_status_badge(event, detect_sold_out(html, text))
+            events.append(event)
+            log(f"✓ {event['title'][:50]}")
             
         except Exception as e:
             log(f"⚠️  Error on {url}: {e}")
@@ -542,7 +618,7 @@ def scrape_aiva():
                 start = date.replace(hour=19, minute=0, second=0, microsecond=0)
                 end = start + timedelta(hours=2)
             
-            events.append({
+            event = {
                 "id": make_id("aiva", title, str(date)),
                 "title": title,
                 "provider": "adventuresinvoiceacting",
@@ -550,8 +626,10 @@ def scrape_aiva():
                 "startAt": start.isoformat(),
                 "endAt": end.isoformat(),
                 "registrationURL": "https://www.adventuresinvoiceacting.com/"
-            })
-            log(f"✓ {title[:50]}")
+            }
+            event = apply_status_badge(event, detect_sold_out(nearby, text))
+            events.append(event)
+            log(f"✓ {event['title'][:50]}")
             
         except Exception as e:
             log(f"⚠️  Error: {e}")
@@ -623,7 +701,7 @@ def scrape_vopros():
                 start = date.replace(hour=18, minute=0, second=0, microsecond=0)
                 end = start + timedelta(hours=2)
             
-            events.append({
+            event = {
                 "id": make_id("vopros", title, url),
                 "title": title,
                 "provider": "thevopros",
@@ -631,8 +709,10 @@ def scrape_vopros():
                 "startAt": start.isoformat(),
                 "endAt": end.isoformat(),
                 "registrationURL": url
-            })
-            log(f"✓ {title[:50]}")
+            }
+            event = apply_status_badge(event, detect_sold_out(html, text))
+            events.append(event)
+            log(f"✓ {event['title'][:50]}")
             
         except Exception as e:
             log(f"⚠️  Error on {url}: {e}")
@@ -713,7 +793,7 @@ def scrape_realvoice():
                 start = date.replace(hour=11, minute=0, second=0, microsecond=0)
                 end = start + timedelta(hours=3)
             
-            events.append({
+            event = {
                 "id": make_id("realvoice", title, url),
                 "title": title,
                 "provider": "realvoicela",
@@ -721,8 +801,10 @@ def scrape_realvoice():
                 "startAt": start.isoformat(),
                 "endAt": end.isoformat(),
                 "registrationURL": url
-            })
-            log(f"✓ {title[:50]}")
+            }
+            event = apply_status_badge(event, detect_sold_out(html, text))
+            events.append(event)
+            log(f"✓ {event['title'][:50]}")
             
         except Exception as e:
             log(f"⚠️  Error on {url}: {e}")
@@ -837,7 +919,7 @@ def scrape_redscythe():
             
             title = f"{instructor} — {topic}"
             
-            events.append({
+            event = {
                 "id": make_id("redscythe", title, detail_url or f"tidycal-{date_str}"),
                 "title": title,
                 "provider": "redscythe_tidycal_classes",
@@ -846,7 +928,9 @@ def scrape_redscythe():
                 "endAt": end.isoformat(),
                 "registrationURL": detail_url or "https://tidycal.com/redscythestudio/",
                 "venue": "Online"
-            })
+            }
+            event = apply_status_badge(event, detect_sold_out(detail_html if detail_url else "", topic))
+            events.append(event)
             
         except Exception as e:
             log(f"⚠️  Error parsing event {idx}: {e}")
@@ -997,7 +1081,7 @@ def scrape_vodojo():
                 start = date.replace(hour=12, minute=0, second=0, microsecond=0)
                 end = start + timedelta(hours=2)
             
-            events.append({
+            event = {
                 "id": make_id("vodojo", title, url),
                 "title": title,
                 "provider": "thevodojo",
@@ -1005,8 +1089,10 @@ def scrape_vodojo():
                 "startAt": start.isoformat(),
                 "endAt": end.isoformat(),
                 "registrationURL": url
-            })
-            log(f"✓ {title[:50]}")
+            }
+            event = apply_status_badge(event, detect_sold_out(html, text))
+            events.append(event)
+            log(f"✓ {event['title'][:50]}")
             
         except Exception as e:
             log(f"⚠️  Error on {url}: {e}")
