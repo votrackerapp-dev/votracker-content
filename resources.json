@@ -46,19 +46,6 @@
   ],
   "workshops": [
     {
-      "id": "van-9aff3c365850",
-      "title": "Video Game Clinic - Krizia Bajos| Thursday, March 26th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-03-26T19:00:00-07:00",
-      "endAt": "2026-03-26T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio-1",
-      "venue": "See listing",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "van-73facf12f07b",
       "title": "Commercial Clinic - Carroll Kimble| Thursday, March 19th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
       "provider": "van",
@@ -72,13 +59,13 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-f2c6b8375860",
-      "title": "Animation Clinic - Ania O'Hare| Wednesday, March 25th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "id": "van-9aff3c365850",
+      "title": "Video Game Clinic - Krizia Bajos| Thursday, March 26th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-03-25T19:00:00-07:00",
-      "endAt": "2026-03-25T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-march-25th-2026-7-10pm-pt-in-studio",
+      "startAt": "2026-03-26T19:00:00-07:00",
+      "endAt": "2026-03-26T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio-1",
       "venue": "See listing",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -435,6 +422,15 @@
       "venue": "Online"
     },
     {
+      "id": "vodojo-d86260eb211f",
+      "title": "Voa Breakout Dude Btches Amp Mothafers Activating Your Pov For Infinite Effortless Badass Abc Takes",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-03-27T18:00:00-07:00",
+      "endAt": "2026-03-27T20:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/voa-breakout-dude-btches-amp-mothafers-activating-your-pov-for-infinite-effortless-badass-abc-takes"
+    },
+    {
       "id": "vodojo-a673f6d2e641",
       "title": "Mental Health Panel",
       "provider": "thevodojo",
@@ -442,6 +438,15 @@
       "startAt": "2026-03-28T10:00:00-07:00",
       "endAt": "2026-03-28T10:50:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/mental-health-panel"
+    },
+    {
+      "id": "vodojo-2061861c85c6",
+      "title": "Ask The Sensei With Paula Tiso",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-04-01T10:00:00-07:00",
+      "endAt": "2026-04-01T12:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/ask-the-sensei-with-paula-tiso"
     },
     {
       "id": "vodojo-1223f85267b8",
@@ -456,6 +461,15 @@
       "badgeColor": "#D32F2F"
     },
     {
+      "id": "vodojo-29f3f6e4e491",
+      "title": "Demo Listen Derby With Tish Hicks And Next Level Demos Brittany Cox Amp Ryan Ricks",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-04-15T10:00:00-07:00",
+      "endAt": "2026-04-15T12:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/demo-listen-derby-with-tish-hicks-and-next-level-demos-brittany-cox-amp-ryan-ricks"
+    },
+    {
       "id": "vodojo-cacc9d88fdb6",
       "title": "Thursday April 16Th Vo Pro Fight Club Live Action With Jessica Blue",
       "provider": "thevodojo",
@@ -463,6 +477,15 @@
       "startAt": "2026-04-16T17:30:00-07:00",
       "endAt": "2026-04-16T19:30:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/thursday-april-16th-vo-pro-fight-club-live-action-with-jessica-blue"
+    },
+    {
+      "id": "vodojo-8dcc2650f695",
+      "title": "Sunday April 19Th Vo Pro Fight Club Voice Matching With Renee Johnson",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-04-19T14:00:00-07:00",
+      "endAt": "2026-04-19T16:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/sunday-april-19th-vo-pro-fight-club-voice-matching-with-renee-johnson"
     },
     {
       "id": "vodojo-a81c33de5cb2",
