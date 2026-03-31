@@ -46,6 +46,45 @@
   ],
   "workshops": [
     {
+      "id": "van-79450529d08b",
+      "title": "Video Game Clinic - Maddie Stratton | Wednesday, April 29th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-04-29T19:00:00-07:00",
+      "endAt": "2026-04-29T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-maddie-stratton-wednesday-april-29th-2026-7-10pm-pt-in-studio",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-9aff3c365850",
+      "title": "Video Game Clinic - Krizia Bajos| Thursday, March 26th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-03-26T19:00:00-07:00",
+      "endAt": "2026-03-26T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-krizia-bajos-thursday-march-26th-2026-7-10pm-pt-in-studio-1",
+      "venue": "See listing",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-f2c6b8375860",
+      "title": "Animation Clinic - Ania O'Hare| Wednesday, March 25th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-03-25T19:00:00-07:00",
+      "endAt": "2026-03-25T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-march-25th-2026-7-10pm-pt-in-studio",
+      "venue": "See listing",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "van-c0f647cfa262",
       "title": "Animation Clinic - Aaron Drown | Thursday, April 23rd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
       "provider": "van",
@@ -53,19 +92,6 @@
       "startAt": "2026-04-23T19:00:00-07:00",
       "endAt": "2026-04-23T22:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-aaron-drown-thursday-april-23rd-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-1ad8df5b9722",
-      "title": "AUDIT A CLINIC - APRIL 2026 [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-04-02T19:00:00-07:00",
-      "endAt": "2026-04-02T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-april-2026",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -85,27 +111,14 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-4d3a7150f2dd",
-      "title": "Dubbing Clinic TO PICTURE - Mami Okada | Thursday, April 2nd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "id": "van-1ad8df5b9722",
+      "title": "AUDIT A CLINIC - APRIL 2026 [SOLD OUT]",
       "provider": "van",
       "host": "Voice Actors Network",
       "startAt": "2026-04-02T19:00:00-07:00",
       "endAt": "2026-04-02T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/dubbing-clinic-to-picture-mami-okada-thursday-april-2nd-2026-7-10pm-pt-in-studio",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-april-2026",
       "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-f2c6b8375860",
-      "title": "Animation Clinic - Ania O'Hare| Wednesday, March 25th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-03-25T19:00:00-07:00",
-      "endAt": "2026-03-25T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-march-25th-2026-7-10pm-pt-in-studio",
-      "venue": "See listing",
       "soldOut": true,
       "badgeText": "Sold Out",
       "badgeColor": "#D32F2F"
@@ -118,7 +131,7 @@
       "startAt": "2026-04-18T10:00:00-07:00",
       "endAt": "2026-04-18T13:00:00-07:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup/p/51424-auditioning-outside-the-box-with-heather-gonzalez",
-      "venue": "See listing",
+      "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
       "badgeColor": "#D32F2F"
@@ -128,23 +141,26 @@
       "title": "3.31.26 - Climbing the Emotional Ladder with Brenna Larsen! [SOLD OUT]",
       "provider": "soundonstudio",
       "host": "Sound On Studio",
-      "startAt": "2026-03-31T10:00:00-07:00",
-      "endAt": "2026-03-31T13:00:00-07:00",
+      "startAt": "2026-03-31T18:00:00-07:00",
+      "endAt": "2026-03-31T21:00:00-07:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup/p/32724-climbing-the-emotional-ladder-with-brenna-larsen",
-      "venue": "See listing",
+      "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
       "badgeColor": "#D32F2F"
     },
     {
       "id": "soundon-2f864cdf314f",
-      "title": "4.25.26 - Anime and Video Games with Chris Hackney!",
+      "title": "4.25.26 - Anime and Video Games with Chris Hackney! [SOLD OUT]",
       "provider": "soundonstudio",
       "host": "Sound On Studio",
-      "startAt": "2026-04-25T10:00:00-07:00",
-      "endAt": "2026-04-25T13:00:00-07:00",
+      "startAt": "2026-04-25T11:00:00-07:00",
+      "endAt": "2026-04-25T14:00:00-07:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup/p/characters-for-anime-and-interactive-with-chris-hackney-103021-ls3kn",
-      "venue": "See listing"
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
     },
     {
       "id": "soundon-c86d54b963bf",
@@ -154,7 +170,7 @@
       "startAt": "2026-04-19T10:00:00-07:00",
       "endAt": "2026-04-19T13:00:00-07:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup/p/video-game-anime-in-seitz-with-patrick-seitz-111322",
-      "venue": "See listing",
+      "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
       "badgeColor": "#D32F2F"
@@ -431,6 +447,63 @@
       "endAt": "2027-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
+    },
+    {
+      "id": "vodojo-2061861c85c6",
+      "title": "Ask The Sensei With Paula Tiso",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-04-01T10:00:00-07:00",
+      "endAt": "2026-04-01T12:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/ask-the-sensei-with-paula-tiso"
+    },
+    {
+      "id": "vodojo-1223f85267b8",
+      "title": "You Should Do Voiceover April Begins [SOLD OUT]",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-04-13T15:00:00-07:00",
+      "endAt": "2026-04-13T17:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-voiceover-april-begins",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "vodojo-29f3f6e4e491",
+      "title": "Demo Listen Derby With Tish Hicks And Next Level Demos Brittany Cox Amp Ryan Ricks",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-04-15T10:00:00-07:00",
+      "endAt": "2026-04-15T12:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/demo-listen-derby-with-tish-hicks-and-next-level-demos-brittany-cox-amp-ryan-ricks"
+    },
+    {
+      "id": "vodojo-cacc9d88fdb6",
+      "title": "Thursday April 16Th Vo Pro Fight Club Live Action With Jessica Blue",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-04-16T17:30:00-07:00",
+      "endAt": "2026-04-16T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/thursday-april-16th-vo-pro-fight-club-live-action-with-jessica-blue"
+    },
+    {
+      "id": "vodojo-8dcc2650f695",
+      "title": "Sunday April 19Th Vo Pro Fight Club Voice Matching With Renee Johnson",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-04-19T14:00:00-07:00",
+      "endAt": "2026-04-19T16:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/sunday-april-19th-vo-pro-fight-club-voice-matching-with-renee-johnson"
+    },
+    {
+      "id": "vodojo-a81c33de5cb2",
+      "title": "Tuesday April 28Th Vo Pro Fight Club Animation With Rick Zieff",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-04-28T17:30:00-07:00",
+      "endAt": "2026-04-28T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/tuesday-april-28th-vo-pro-fight-club-animation-with-rick-zieff"
     }
   ],
   "sections": [
