@@ -46,13 +46,13 @@
   ],
   "workshops": [
     {
-      "id": "van-1ad8df5b9722",
-      "title": "AUDIT A CLINIC - APRIL 2026 [SOLD OUT]",
+      "id": "van-4d3a7150f2dd",
+      "title": "Dubbing Clinic TO PICTURE - Mami Okada | Thursday, April 2nd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
       "provider": "van",
       "host": "Voice Actors Network",
       "startAt": "2026-04-02T19:00:00-07:00",
       "endAt": "2026-04-02T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-april-2026",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/dubbing-clinic-to-picture-mami-okada-thursday-april-2nd-2026-7-10pm-pt-in-studio",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -66,6 +66,19 @@
       "startAt": "2026-04-29T19:00:00-07:00",
       "endAt": "2026-04-29T22:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-maddie-stratton-wednesday-april-29th-2026-7-10pm-pt-in-studio",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-1ad8df5b9722",
+      "title": "AUDIT A CLINIC - APRIL 2026 [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-04-02T19:00:00-07:00",
+      "endAt": "2026-04-02T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-april-2026",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -118,114 +131,6 @@
       "startAt": "2026-04-08T14:00:00-07:00",
       "endAt": "2026-04-08T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
-    },
-    {
-      "id": "vopros-b9c046e24506",
-      "title": "AUTOMOTIVE – Kevin Kilpatrick, Producer",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-08T16:00:00-07:00",
-      "endAt": "2026-04-08T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/automotive-kevin-kilpatrick-producer/"
-    },
-    {
-      "id": "vopros-7854d5d8dcf8",
-      "title": "PROMO – Jason Giles, Producer/FOX",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-13T16:00:00-07:00",
-      "endAt": "2026-04-13T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/promo-jason-giles-producer-fox/"
-    },
-    {
-      "id": "vopros-f47ba3bf720a",
-      "title": "VIDEO GAMES – Jessica Kent, Casting Director/Prod",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-16T16:00:00-07:00",
-      "endAt": "2026-04-16T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-jessica-kent-casting-director-prod/"
-    },
-    {
-      "id": "vopros-9e7d540b615a",
-      "title": "AGENT NIGHT – Sam Roberts, In Both Ears",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-20T16:00:00-07:00",
-      "endAt": "2026-04-20T18:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-sam-roberts-in-both-ears-2/"
-    },
-    {
-      "id": "vopros-d8a2277fe380",
-      "title": "AGENT NIGHT – Mike Shallbetter, Promo Agent, DPN Talent",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-22T16:00:00-07:00",
-      "endAt": "2026-04-22T18:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-mike-shallbetter-promo-agent-dpn-talent/"
-    },
-    {
-      "id": "vopros-3a9446b104f3",
-      "title": "PROMO – Denise Patierno, Promo Prod. CNN",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-27T16:00:00-07:00",
-      "endAt": "2026-04-27T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/promos-denise-patierno-promo-prod-cnn/"
-    },
-    {
-      "id": "vopros-f6641677768b",
-      "title": "ANIMATION – Tyler Chapman, Casting Director/Director",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-30T16:00:00-07:00",
-      "endAt": "2026-04-30T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/animation-tyler-chapman-casting-director-director/"
-    },
-    {
-      "id": "vopros-7cca38aeadb1",
-      "title": "VIDEO GAMES/ANIMATION – Khris Brown, Casting Dir/Director/Rep, Lucasfilm…",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-05-06T16:00:00-07:00",
-      "endAt": "2026-05-06T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-animation-khris-brown-casting-dir-director-rep-lucasfilm/"
-    },
-    {
-      "id": "vopros-13b292a36c71",
-      "title": "VIDEO GAMES/ANIMATION – Dave Fennoy, Actor, Coach",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-05-07T16:00:00-07:00",
-      "endAt": "2026-05-07T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-animation-dave-fennoy-actor-coach/"
-    },
-    {
-      "id": "vopros-00d6c509b110",
-      "title": "VIDEO GAMES – Gillian Brashear, Casting Director, Director – Hamster Ball Studios",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-05-11T16:30:00-07:00",
-      "endAt": "2026-05-11T19:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-gillian-brahear-casting-director-director-hamster-ball-studios/"
-    },
-    {
-      "id": "vopros-9db3b0e4c432",
-      "title": "AGENT NIGHT – Abbie Waters, VOX USA, Head of Animation/Interactive Dept.",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-05-14T17:00:00-07:00",
-      "endAt": "2026-05-14T19:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-abbie-waters-vox-usa-head-of-animation-interactive-dept/"
-    },
-    {
-      "id": "vopros-5ac5ca9e6e6e",
-      "title": "ANIME – DUBBING – Brandon English, Casting Director/Prod. Roundabout Entertainment",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-05-20T16:00:00-07:00",
-      "endAt": "2026-05-20T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/anime-dubbing-brandon-english-casting-director-prod-roundabout-entertainment/"
     },
     {
       "id": "realvoice-47a3da6513f0",
