@@ -46,26 +46,13 @@
   ],
   "workshops": [
     {
-      "id": "van-d6790ad2809e",
-      "title": "Animation Clinic - Ashley DeWitt | Thursday, April 30th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "id": "van-c0f647cfa262",
+      "title": "Animation Clinic - Aaron Drown | Thursday, April 23rd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-04-30T19:00:00-07:00",
-      "endAt": "2026-04-30T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ashley-dewitt-thursday-april-30th-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-79450529d08b",
-      "title": "Video Game Clinic - Maddie Stratton | Wednesday, April 29th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-04-29T19:00:00-07:00",
-      "endAt": "2026-04-29T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-maddie-stratton-wednesday-april-29th-2026-7-10pm-pt-in-studio",
+      "startAt": "2026-04-23T19:00:00-07:00",
+      "endAt": "2026-04-23T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-aaron-drown-thursday-april-23rd-2026-7-10pm-pt-in-studio",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -118,105 +105,6 @@
       "startAt": "2026-04-16T14:00:00-07:00",
       "endAt": "2026-04-16T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
-    },
-    {
-      "id": "vopros-d530302060ec",
-      "title": "Promo Jason Giles Producer Fox",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-13T16:00:00-07:00",
-      "endAt": "2026-04-13T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/promo-jason-giles-producer-fox/"
-    },
-    {
-      "id": "vopros-3c79fc6533fa",
-      "title": "Video Games Jessica Kent Casting Director Prod",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-16T16:00:00-07:00",
-      "endAt": "2026-04-16T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-jessica-kent-casting-director-prod/"
-    },
-    {
-      "id": "vopros-7164924c696f",
-      "title": "Agent Night Sam Roberts In Both Ears 2",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-20T16:00:00-07:00",
-      "endAt": "2026-04-20T18:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-sam-roberts-in-both-ears-2/"
-    },
-    {
-      "id": "vopros-228043a718b4",
-      "title": "Agent Night Mike Shallbetter Promo Agent Dpn Talent",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-22T16:00:00-07:00",
-      "endAt": "2026-04-22T18:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-mike-shallbetter-promo-agent-dpn-talent/"
-    },
-    {
-      "id": "vopros-1cf48437722c",
-      "title": "Promos Denise Patierno Promo Prod Cnn",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-27T16:00:00-07:00",
-      "endAt": "2026-04-27T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/promos-denise-patierno-promo-prod-cnn/"
-    },
-    {
-      "id": "vopros-592d610f05ba",
-      "title": "Animation Tyler Chapman Casting Director Director",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-30T16:00:00-07:00",
-      "endAt": "2026-04-30T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/animation-tyler-chapman-casting-director-director/"
-    },
-    {
-      "id": "vopros-dd80537397b1",
-      "title": "Video Games Animation Khris Brown Casting Dir Director Rep Lucasfilm",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-05-06T16:00:00-07:00",
-      "endAt": "2026-05-06T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-animation-khris-brown-casting-dir-director-rep-lucasfilm/"
-    },
-    {
-      "id": "vopros-18022ebd5fe0",
-      "title": "Video Games Animation Dave Fennoy Actor Coach",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-05-07T16:00:00-07:00",
-      "endAt": "2026-05-07T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-animation-dave-fennoy-actor-coach/"
-    },
-    {
-      "id": "vopros-8e635d637d94",
-      "title": "Video Games Gillian Brahear Casting Director Director Hamster Ball Studios",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-05-11T16:30:00-07:00",
-      "endAt": "2026-05-11T19:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-gillian-brahear-casting-director-director-hamster-ball-studios/"
-    },
-    {
-      "id": "vopros-5f34e3b74d5a",
-      "title": "Agent Night Abbie Waters Vox Usa Head Of Animation Interactive Dept",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-05-14T17:00:00-07:00",
-      "endAt": "2026-05-14T19:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-abbie-waters-vox-usa-head-of-animation-interactive-dept/"
-    },
-    {
-      "id": "vopros-08517f8b6cc8",
-      "title": "Anime Dubbing Brandon English Casting Director Prod Roundabout Entertainment",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-05-20T16:00:00-07:00",
-      "endAt": "2026-05-20T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/anime-dubbing-brandon-english-casting-director-prod-roundabout-entertainment/"
     },
     {
       "id": "realvoice-47a3da6513f0",
