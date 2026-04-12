@@ -59,6 +59,32 @@
       "badgeColor": "#D32F2F"
     },
     {
+      "id": "van-c0f647cfa262",
+      "title": "Animation Clinic - Aaron Drown | Thursday, April 23rd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-04-23T19:00:00-07:00",
+      "endAt": "2026-04-23T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-aaron-drown-thursday-april-23rd-2026-7-10pm-pt-in-studio",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-fa70058c4be7",
+      "title": "Animation Clinic - René Veilleux | Wednesday, April 8th, 2026 | 4-7pm PT | Zoom [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-04-08T16:00:00-07:00",
+      "endAt": "2026-04-08T19:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-rene-veilleux-wednesday-april-8th-2026-4-7pm-pt-zoom",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "soundon-e7d504051483",
       "title": "4.18.26 - Auditioning Outside the Box with Heather Gonzalez! [SOLD OUT]",
       "provider": "soundonstudio",
