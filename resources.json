@@ -46,19 +46,6 @@
   ],
   "workshops": [
     {
-      "id": "van-79450529d08b",
-      "title": "Video Game Clinic - Maddie Stratton | Wednesday, April 29th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-04-29T19:00:00-07:00",
-      "endAt": "2026-04-29T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-maddie-stratton-wednesday-april-29th-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "van-d6790ad2809e",
       "title": "Animation Clinic - Ashley DeWitt | Thursday, April 30th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
       "provider": "van",
@@ -79,19 +66,6 @@
       "startAt": "2026-04-08T16:00:00-07:00",
       "endAt": "2026-04-08T19:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-rene-veilleux-wednesday-april-8th-2026-4-7pm-pt-zoom",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-c0f647cfa262",
-      "title": "Animation Clinic - Aaron Drown | Thursday, April 23rd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-04-23T19:00:00-07:00",
-      "endAt": "2026-04-23T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-aaron-drown-thursday-april-23rd-2026-7-10pm-pt-in-studio",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
