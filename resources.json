@@ -46,6 +46,71 @@
   ],
   "workshops": [
     {
+      "id": "van-c0f647cfa262",
+      "title": "Animation Clinic - Aaron Drown | Thursday, April 23rd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-04-23T19:00:00-07:00",
+      "endAt": "2026-04-23T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-aaron-drown-thursday-april-23rd-2026-7-10pm-pt-in-studio",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "soundon-5bcd55aa9023",
+      "title": "5.13.26 - Video Games with Stephanie Southerland! \"Getting out of your head, and exploring your range!\" [SOLD OUT]",
+      "provider": "soundonstudio",
+      "host": "Sound On Studio",
+      "startAt": "2026-05-13T18:00:00-07:00",
+      "endAt": "2026-05-13T21:00:00-07:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup/p/51326-video-games-with-stephanie-southerland",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "soundon-46c3c29651d5",
+      "title": "5.24.26 - 2 Languages, Una Voz with Raul Ceballos! [SOLD OUT]",
+      "provider": "soundonstudio",
+      "host": "Sound On Studio",
+      "startAt": "2026-05-24T10:00:00-07:00",
+      "endAt": "2026-05-24T13:00:00-07:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup/p/52426-2-languages-una-voz-with-raul-ceballos",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "soundon-043f3dd01e96",
+      "title": "5.23.26 - VO Pajama Party with Kirsten Day! [SOLD OUT]",
+      "provider": "soundonstudio",
+      "host": "Sound On Studio",
+      "startAt": "2026-05-23T10:00:00-07:00",
+      "endAt": "2026-05-23T12:00:00-07:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup/p/vo-pajama-party-with-kirsten-day-51221-4wj88",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "soundon-54bbde13d853",
+      "title": "5.30.26 - Voiceover for Beginners with Abby Espiritu! An intro to Anime, Animation, and Video Games! [SOLD OUT]",
+      "provider": "soundonstudio",
+      "host": "Sound On Studio",
+      "startAt": "2026-05-30T11:00:00-07:00",
+      "endAt": "2026-05-30T14:00:00-07:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup/p/11825-voiceover-for-beginners-with-abby-espiritu-an-intro-to-anime-animation-and-video-games",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "soundon-2f864cdf314f",
       "title": "4.25.26 - Anime and Video Games with Chris Hackney! [SOLD OUT]",
       "provider": "soundonstudio",
@@ -53,19 +118,6 @@
       "startAt": "2026-04-25T11:00:00-07:00",
       "endAt": "2026-04-25T14:00:00-07:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup/p/characters-for-anime-and-interactive-with-chris-hackney-103021-ls3kn",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "soundon-c86d54b963bf",
-      "title": "4.19.26 - Video Game & Anime In-Seitz! With Patrick Seitz [SOLD OUT]",
-      "provider": "soundonstudio",
-      "host": "Sound On Studio",
-      "startAt": "2026-04-19T10:00:00-07:00",
-      "endAt": "2026-04-19T13:00:00-07:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup/p/video-game-anime-in-seitz-with-patrick-seitz-111322",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -207,75 +259,6 @@
       "registrationURL": "https://www.thevopros.com/events/agent-night-roger-becker-access-talent-ny/"
     },
     {
-      "id": "realvoice-4fc3aaf44b72",
-      "title": "Mastering Efforts for Video Games",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-04-14T21:00:00-07:00",
-      "endAt": "2026-04-14T23:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/mastering-efforts-for-video-games"
-    },
-    {
-      "id": "realvoice-881417f0adc8",
-      "title": "Authentic Kid Voices for Adult Performer [SOLD OUT]",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-04-16T21:00:00-07:00",
-      "endAt": "2026-04-16T23:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/authentic-kid-voices-for-adult-performer",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "realvoice-f45eddd2d9c8",
-      "title": "Guest Director Sarah Natochenny [SOLD OUT]",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-04-21T18:00:00-07:00",
-      "endAt": "2026-04-21T21:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-sarah-natochenny",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "realvoice-3bd3c437f0a3",
-      "title": "April/May - ONLINE Intro to Voiceover",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-04-28T14:00:00-07:00",
-      "endAt": "2026-04-28T17:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/april-may-online-intro-to-voiceover"
-    },
-    {
-      "id": "realvoice-cbc0ad5b2418",
-      "title": "April - Level Up: Anime & Video Game",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-04-15T18:30:00-07:00",
-      "endAt": "2026-04-15T21:30:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/april-level-up-anime-video-game"
-    },
-    {
-      "id": "realvoice-19dfc20f93e2",
-      "title": "ONLINE - Video Game Character Intensive",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-04-14T15:00:00-07:00",
-      "endAt": "2026-04-14T17:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/online-video-game-character-intensive"
-    },
-    {
-      "id": "realvoice-eed7ebb8f5be",
-      "title": "Auditioning for Anime with Karen",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-04-27T18:30:00-07:00",
-      "endAt": "2026-04-27T21:30:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/auditioning-for-anime-with-karen"
-    },
-    {
       "id": "redscythe-89bc2fc384e7",
       "title": "CHRIS HACKNEY — potluck clinic workshop",
       "provider": "redscythe_tidycal_classes",
@@ -304,6 +287,15 @@
       "endAt": "2027-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
+    },
+    {
+      "id": "vodojo-cacc9d88fdb6",
+      "title": "Thursday April 16Th Vo Pro Fight Club Live Action With Jessica Blue",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-04-16T17:30:00-07:00",
+      "endAt": "2026-04-16T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/thursday-april-16th-vo-pro-fight-club-live-action-with-jessica-blue"
     },
     {
       "id": "vodojo-8dcc2650f695",
