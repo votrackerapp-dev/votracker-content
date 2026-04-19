@@ -46,6 +46,19 @@
   ],
   "workshops": [
     {
+      "id": "van-79450529d08b",
+      "title": "Video Game Clinic - Maddie Stratton | Wednesday, April 29th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-04-29T19:00:00-07:00",
+      "endAt": "2026-04-29T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-maddie-stratton-wednesday-april-29th-2026-7-10pm-pt-in-studio",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "van-c0f647cfa262",
       "title": "Animation Clinic - Aaron Drown | Thursday, April 23rd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
       "provider": "van",
@@ -259,6 +272,75 @@
       "registrationURL": "https://www.thevopros.com/events/agent-night-roger-becker-access-talent-ny/"
     },
     {
+      "id": "realvoice-4fc3aaf44b72",
+      "title": "Mastering Efforts for Video Games",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-14T21:00:00-07:00",
+      "endAt": "2026-04-14T23:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/mastering-efforts-for-video-games"
+    },
+    {
+      "id": "realvoice-881417f0adc8",
+      "title": "Authentic Kid Voices for Adult Performer [SOLD OUT]",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-16T21:00:00-07:00",
+      "endAt": "2026-04-16T23:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/authentic-kid-voices-for-adult-performer",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "realvoice-f45eddd2d9c8",
+      "title": "Guest Director Sarah Natochenny [SOLD OUT]",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-21T18:00:00-07:00",
+      "endAt": "2026-04-21T21:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-sarah-natochenny",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "realvoice-3bd3c437f0a3",
+      "title": "April/May - ONLINE Intro to Voiceover",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-28T14:00:00-07:00",
+      "endAt": "2026-04-28T17:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/april-may-online-intro-to-voiceover"
+    },
+    {
+      "id": "realvoice-cbc0ad5b2418",
+      "title": "April - Level Up: Anime & Video Game",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-15T18:30:00-07:00",
+      "endAt": "2026-04-15T21:30:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/april-level-up-anime-video-game"
+    },
+    {
+      "id": "realvoice-19dfc20f93e2",
+      "title": "ONLINE - Video Game Character Intensive",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-14T15:00:00-07:00",
+      "endAt": "2026-04-14T17:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/online-video-game-character-intensive"
+    },
+    {
+      "id": "realvoice-eed7ebb8f5be",
+      "title": "Auditioning for Anime with Karen",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-27T18:30:00-07:00",
+      "endAt": "2026-04-27T21:30:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/auditioning-for-anime-with-karen"
+    },
+    {
       "id": "redscythe-89bc2fc384e7",
       "title": "CHRIS HACKNEY — potluck clinic workshop",
       "provider": "redscythe_tidycal_classes",
@@ -287,15 +369,6 @@
       "endAt": "2027-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
-    },
-    {
-      "id": "vodojo-cacc9d88fdb6",
-      "title": "Thursday April 16Th Vo Pro Fight Club Live Action With Jessica Blue",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-04-16T17:30:00-07:00",
-      "endAt": "2026-04-16T19:30:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/thursday-april-16th-vo-pro-fight-club-live-action-with-jessica-blue"
     },
     {
       "id": "vodojo-8dcc2650f695",
