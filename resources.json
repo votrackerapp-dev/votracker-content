@@ -59,19 +59,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-c0f647cfa262",
-      "title": "Animation Clinic - Aaron Drown | Thursday, April 23rd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-04-23T19:00:00-07:00",
-      "endAt": "2026-04-23T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-aaron-drown-thursday-april-23rd-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "van-d6790ad2809e",
       "title": "Animation Clinic - Ashley DeWitt | Thursday, April 30th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
       "provider": "van",
@@ -356,6 +343,15 @@
       "endAt": "2027-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
+    },
+    {
+      "id": "vodojo-cacc9d88fdb6",
+      "title": "Thursday April 16Th Vo Pro Fight Club Live Action With Jessica Blue",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-04-16T17:30:00-07:00",
+      "endAt": "2026-04-16T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/thursday-april-16th-vo-pro-fight-club-live-action-with-jessica-blue"
     },
     {
       "id": "vodojo-8dcc2650f695",
