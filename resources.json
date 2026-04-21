@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-04-20",
+  "lastUpdated": "2026-04-21",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -45,19 +45,6 @@
     }
   ],
   "workshops": [
-    {
-      "id": "van-79450529d08b",
-      "title": "Video Game Clinic - Maddie Stratton | Wednesday, April 29th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-04-29T19:00:00-07:00",
-      "endAt": "2026-04-29T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-maddie-stratton-wednesday-april-29th-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
     {
       "id": "van-c0f647cfa262",
       "title": "Animation Clinic - Aaron Drown | Thursday, April 23rd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
@@ -263,6 +250,27 @@
       "registrationURL": "https://www.thevopros.com/events/agent-night-roger-becker-access-talent-ny/"
     },
     {
+      "id": "realvoice-4fc3aaf44b72",
+      "title": "Mastering Efforts for Video Games",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-14T21:00:00-07:00",
+      "endAt": "2026-04-14T23:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/mastering-efforts-for-video-games"
+    },
+    {
+      "id": "realvoice-881417f0adc8",
+      "title": "Authentic Kid Voices for Adult Performer [SOLD OUT]",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-16T21:00:00-07:00",
+      "endAt": "2026-04-16T23:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/authentic-kid-voices-for-adult-performer",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "realvoice-f45eddd2d9c8",
       "title": "Guest Director Sarah Natochenny [SOLD OUT]",
       "provider": "realvoicela",
@@ -284,6 +292,24 @@
       "registrationURL": "https://www.realvoicela.com/service-page/april-may-online-intro-to-voiceover"
     },
     {
+      "id": "realvoice-cbc0ad5b2418",
+      "title": "April - Level Up: Anime & Video Game",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-15T18:30:00-07:00",
+      "endAt": "2026-04-15T21:30:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/april-level-up-anime-video-game"
+    },
+    {
+      "id": "realvoice-19dfc20f93e2",
+      "title": "ONLINE - Video Game Character Intensive",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-14T15:00:00-07:00",
+      "endAt": "2026-04-14T17:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/online-video-game-character-intensive"
+    },
+    {
       "id": "realvoice-eed7ebb8f5be",
       "title": "Auditioning for Anime with Karen",
       "provider": "realvoicela",
@@ -291,24 +317,6 @@
       "startAt": "2026-04-27T18:30:00-07:00",
       "endAt": "2026-04-27T21:30:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/auditioning-for-anime-with-karen"
-    },
-    {
-      "id": "realvoice-a16674877fde",
-      "title": "MAY - Anime Intensive with Matthew Rudd",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-05-04T18:00:00-07:00",
-      "endAt": "2026-05-04T21:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/may-anime-intensive-with-matthew-rudd"
-    },
-    {
-      "id": "realvoice-cca5a490a58b",
-      "title": "MAY - Games, Auditioning, and Advice",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-05-30T11:00:00-07:00",
-      "endAt": "2026-05-30T14:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/may-games-auditioning-and-advice"
     },
     {
       "id": "redscythe-89bc2fc384e7",
