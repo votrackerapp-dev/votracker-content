@@ -46,19 +46,6 @@
   ],
   "workshops": [
     {
-      "id": "van-c0f647cfa262",
-      "title": "Animation Clinic - Aaron Drown | Thursday, April 23rd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-04-23T19:00:00-07:00",
-      "endAt": "2026-04-23T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-aaron-drown-thursday-april-23rd-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "van-d6790ad2809e",
       "title": "Animation Clinic - Ashley DeWitt | Thursday, April 30th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
       "provider": "van",
@@ -66,6 +53,19 @@
       "startAt": "2026-04-30T19:00:00-07:00",
       "endAt": "2026-04-30T22:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ashley-dewitt-thursday-april-30th-2026-7-10pm-pt-in-studio",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-c0f647cfa262",
+      "title": "Animation Clinic - Aaron Drown | Thursday, April 23rd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-04-23T19:00:00-07:00",
+      "endAt": "2026-04-23T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-aaron-drown-thursday-april-23rd-2026-7-10pm-pt-in-studio",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -254,6 +254,18 @@
       "registrationURL": "https://www.thevopros.com/events/agent-night-roger-becker-access-talent-ny/"
     },
     {
+      "id": "realvoice-f45eddd2d9c8",
+      "title": "Guest Director Sarah Natochenny [SOLD OUT]",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-04-21T18:00:00-07:00",
+      "endAt": "2026-04-21T21:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-sarah-natochenny",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "realvoice-3bd3c437f0a3",
       "title": "April/May - ONLINE Intro to Voiceover",
       "provider": "realvoicela",
@@ -272,15 +284,6 @@
       "registrationURL": "https://www.realvoicela.com/service-page/auditioning-for-anime-with-karen"
     },
     {
-      "id": "realvoice-861a6340396f",
-      "title": "Online Acting for Fantasy Video Games",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-05-04T18:30:00-07:00",
-      "endAt": "2026-05-04T21:30:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/online-acting-for-fantasy-video-games"
-    },
-    {
       "id": "realvoice-a16674877fde",
       "title": "MAY - Anime Intensive with Matthew Rudd",
       "provider": "realvoicela",
@@ -288,15 +291,6 @@
       "startAt": "2026-05-04T18:00:00-07:00",
       "endAt": "2026-05-04T21:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/may-anime-intensive-with-matthew-rudd"
-    },
-    {
-      "id": "realvoice-0b8744379a07",
-      "title": "In-Person Level Two Video Game Intensive",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-05-13T18:30:00-07:00",
-      "endAt": "2026-05-13T21:30:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/in-person-level-two-video-game-intensive-1"
     },
     {
       "id": "realvoice-cca5a490a58b",
