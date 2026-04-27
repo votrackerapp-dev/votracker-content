@@ -46,19 +46,6 @@
   ],
   "workshops": [
     {
-      "id": "van-c0f647cfa262",
-      "title": "Animation Clinic - Aaron Drown | Thursday, April 23rd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-04-23T19:00:00-07:00",
-      "endAt": "2026-04-23T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-aaron-drown-thursday-april-23rd-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "van-79450529d08b",
       "title": "Video Game Clinic - Maddie Stratton | Wednesday, April 29th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
       "provider": "van",
@@ -131,15 +118,6 @@
       "startAt": "2026-05-01T14:00:00-07:00",
       "endAt": "2026-05-01T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
-    },
-    {
-      "id": "vopros-3a9446b104f3",
-      "title": "PROMO – Denise Patierno, Promo Prod. CNN",
-      "provider": "thevopros",
-      "host": "The VO Pros",
-      "startAt": "2026-04-27T16:00:00-07:00",
-      "endAt": "2026-04-27T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/promos-denise-patierno-promo-prod-cnn/"
     },
     {
       "id": "vopros-f6641677768b",
