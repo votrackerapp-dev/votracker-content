@@ -46,6 +46,19 @@
   ],
   "workshops": [
     {
+      "id": "van-b27b17cc90b1",
+      "title": "Video Game Clinic- Walt Gray | Wednesday, May 13th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-05-13T10:00:00-07:00",
+      "endAt": "2026-05-13T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-walt-gray-wednesday-may-13th-2026-7-10pm-pt-in-studio",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "van-bca67e6d18f8",
       "title": "Animation Clinic - Eden Riegel | Thursday May 28th 2026 7-10pm PT | ZOOM [SOLD OUT]",
       "provider": "van",
@@ -59,13 +72,26 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-29fc717f1ebe",
-      "title": "Video Game Clinic - Andrea Toyias | Saturday May 16th, 2026 | 10am - 2pm PT | In Studio [SOLD OUT]",
+      "id": "van-79450529d08b",
+      "title": "Video Game Clinic - Maddie Stratton | Wednesday, April 29th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-05-16T10:00:00-07:00",
-      "endAt": "2026-05-16T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-andrea-toyias-saturday-may-16th-2026-10am-2pm-pt-in-studio",
+      "startAt": "2026-04-29T19:00:00-07:00",
+      "endAt": "2026-04-29T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-maddie-stratton-wednesday-april-29th-2026-7-10pm-pt-in-studio",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-d583c43ac0ca",
+      "title": "Animation Clinic - Ania O'Hare | Added Clinic for Waitlisters | Wednesday, May 27th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-05-27T10:00:00-07:00",
+      "endAt": "2026-05-27T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-may-27th-2026-7-10pm-pt-in-studio",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -85,13 +111,13 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-b27b17cc90b1",
-      "title": "Video Game Clinic- Walt Gray | Wednesday, May 13th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "id": "van-29fc717f1ebe",
+      "title": "Video Game Clinic - Andrea Toyias | Saturday May 16th, 2026 | 10am - 2pm PT | In Studio [SOLD OUT]",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-05-13T10:00:00-07:00",
-      "endAt": "2026-05-13T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-walt-gray-wednesday-may-13th-2026-7-10pm-pt-in-studio",
+      "startAt": "2026-05-16T10:00:00-07:00",
+      "endAt": "2026-05-16T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-andrea-toyias-saturday-may-16th-2026-10am-2pm-pt-in-studio",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -159,124 +185,94 @@
       "registrationURL": "https://halpacademy.com/events/"
     },
     {
-      "id": "vopros-7cca38aeadb1",
-      "title": "VIDEO GAMES/ANIMATION – Khris Brown, Casting Dir/Director/Rep, Lucasfilm… [SOLD OUT]",
+      "id": "vopros-dd80537397b1",
+      "title": "Video Games Animation Khris Brown Casting Dir Director Rep Lucasfilm",
       "provider": "thevopros",
       "host": "The VO Pros",
       "startAt": "2026-05-06T16:00:00-07:00",
       "endAt": "2026-05-06T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-animation-khris-brown-casting-dir-director-rep-lucasfilm/",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "registrationURL": "https://www.thevopros.com/events/video-games-animation-khris-brown-casting-dir-director-rep-lucasfilm/"
     },
     {
-      "id": "vopros-13b292a36c71",
-      "title": "VIDEO GAMES/ANIMATION – Dave Fennoy, Actor, Coach [SOLD OUT]",
+      "id": "vopros-18022ebd5fe0",
+      "title": "Video Games Animation Dave Fennoy Actor Coach",
       "provider": "thevopros",
       "host": "The VO Pros",
       "startAt": "2026-05-07T16:00:00-07:00",
       "endAt": "2026-05-07T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-animation-dave-fennoy-actor-coach/",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "registrationURL": "https://www.thevopros.com/events/video-games-animation-dave-fennoy-actor-coach/"
     },
     {
-      "id": "vopros-00d6c509b110",
-      "title": "VIDEO GAMES – Gillian Brashear, Casting Director, Director – Hamster Ball Studios [SOLD OUT]",
+      "id": "vopros-8e635d637d94",
+      "title": "Video Games Gillian Brahear Casting Director Director Hamster Ball Studios",
       "provider": "thevopros",
       "host": "The VO Pros",
       "startAt": "2026-05-11T16:30:00-07:00",
       "endAt": "2026-05-11T19:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/video-games-gillian-brahear-casting-director-director-hamster-ball-studios/",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "registrationURL": "https://www.thevopros.com/events/video-games-gillian-brahear-casting-director-director-hamster-ball-studios/"
     },
     {
-      "id": "vopros-9db3b0e4c432",
-      "title": "AGENT NIGHT – Abbie Waters, VOX USA, Head of Animation/Interactive Dept. [SOLD OUT]",
+      "id": "vopros-5f34e3b74d5a",
+      "title": "Agent Night Abbie Waters Vox Usa Head Of Animation Interactive Dept",
       "provider": "thevopros",
       "host": "The VO Pros",
       "startAt": "2026-05-14T17:00:00-07:00",
       "endAt": "2026-05-14T19:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-abbie-waters-vox-usa-head-of-animation-interactive-dept/",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "registrationURL": "https://www.thevopros.com/events/agent-night-abbie-waters-vox-usa-head-of-animation-interactive-dept/"
     },
     {
-      "id": "vopros-5ac5ca9e6e6e",
-      "title": "ANIME – DUBBING – Brandon English, Casting Director/Prod. Roundabout Entertainment [SOLD OUT]",
+      "id": "vopros-08517f8b6cc8",
+      "title": "Anime Dubbing Brandon English Casting Director Prod Roundabout Entertainment",
       "provider": "thevopros",
       "host": "The VO Pros",
       "startAt": "2026-05-20T16:00:00-07:00",
       "endAt": "2026-05-20T18:30:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/anime-dubbing-brandon-english-casting-director-prod-roundabout-entertainment/",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "registrationURL": "https://www.thevopros.com/events/anime-dubbing-brandon-english-casting-director-prod-roundabout-entertainment/"
     },
     {
-      "id": "vopros-aadfdb2be444",
-      "title": "AGENT NIGHT – Beau Oliver, CESD, LA [SOLD OUT]",
+      "id": "vopros-233562e7bcc7",
+      "title": "Agent Night Beau Oliver Cesd La",
       "provider": "thevopros",
       "host": "The VO Pros",
       "startAt": "2026-06-10T16:00:00-07:00",
       "endAt": "2026-06-10T18:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-beau-oliver-cesd-la/",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "registrationURL": "https://www.thevopros.com/events/agent-night-beau-oliver-cesd-la/"
     },
     {
-      "id": "vopros-1c880b57e97c",
-      "title": "AGENT NIGHT – Katherine Ryan, Buchwald NYC [SOLD OUT]",
+      "id": "vopros-e6385b28240e",
+      "title": "Agent Night Katherine Ryan Buchwald Nyc",
       "provider": "thevopros",
       "host": "The VO Pros",
       "startAt": "2026-06-11T16:00:00-07:00",
       "endAt": "2026-06-11T18:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-katherine-ryan-buchwald-nyc/",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "registrationURL": "https://www.thevopros.com/events/agent-night-katherine-ryan-buchwald-nyc/"
     },
     {
-      "id": "vopros-b460825c357c",
-      "title": "MANAGER NIGHT – Andrew Atkin, Promos, ACM Talent Management [SOLD OUT]",
+      "id": "vopros-dc2a8309177b",
+      "title": "Manager Night Andrew Atkin Promos Acm Talent Management",
       "provider": "thevopros",
       "host": "The VO Pros",
       "startAt": "2026-06-15T16:00:00-07:00",
       "endAt": "2026-06-15T18:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/manager-night-andrew-atkin-promos-acm-talent-management/",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "registrationURL": "https://www.thevopros.com/events/manager-night-andrew-atkin-promos-acm-talent-management/"
     },
     {
-      "id": "vopros-ea823d8c3a08",
-      "title": "AGENT NIGHT – Marissa Robinson, DDO, NY [SOLD OUT]",
+      "id": "vopros-5e53a27d9ae1",
+      "title": "Agent Night Marissa Robinson Ddo Ny",
       "provider": "thevopros",
       "host": "The VO Pros",
       "startAt": "2026-06-17T16:00:00-07:00",
       "endAt": "2026-06-17T18:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-marissa-robinson-ddo-ny/",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "registrationURL": "https://www.thevopros.com/events/agent-night-marissa-robinson-ddo-ny/"
     },
     {
-      "id": "vopros-1d379ae8b913",
-      "title": "AGENT NIGHT – Roger Becker, Access Talent, NY [SOLD OUT]",
+      "id": "vopros-77f472e9acd6",
+      "title": "Agent Night Roger Becker Access Talent Ny",
       "provider": "thevopros",
       "host": "The VO Pros",
       "startAt": "2026-06-24T16:00:00-07:00",
       "endAt": "2026-06-24T18:00:00-07:00",
-      "registrationURL": "https://www.thevopros.com/events/agent-night-roger-becker-access-talent-ny/",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "registrationURL": "https://www.thevopros.com/events/agent-night-roger-becker-access-talent-ny/"
     },
     {
       "id": "realvoice-3bd3c437f0a3",
