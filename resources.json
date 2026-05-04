@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-05-03",
+  "lastUpdated": "2026-05-04",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -72,13 +72,26 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-ad75a70f538c",
-      "title": "Video Game Clinic - Patrick Michalak | Added Clinic for Waitlisters | Thursday, May 21st, 2026 | 7-10pm PT | In Person [SOLD OUT]",
+      "id": "van-54ddab3e55b5",
+      "title": "AUDIT A CLINIC - MAY 2026 [SOLD OUT]",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-05-21T10:00:00-07:00",
-      "endAt": "2026-05-21T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-added-clinic-for-waitlisters-thursday-may-21st-2026-7-10pm-pt-in-person",
+      "startAt": "2026-05-13T10:00:00-07:00",
+      "endAt": "2026-05-13T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-may-2027",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-bca67e6d18f8",
+      "title": "Animation Clinic - Eden Riegel | Thursday May 28th 2026 7-10pm PT | ZOOM [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-05-28T10:00:00-07:00",
+      "endAt": "2026-05-28T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-eden-riegel-thursday-may-28th-2025-7-10pm-pt-zoom",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
