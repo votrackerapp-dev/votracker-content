@@ -46,39 +46,13 @@
   ],
   "workshops": [
     {
-      "id": "van-b27b17cc90b1",
-      "title": "Video Game Clinic- Walt Gray | Wednesday, May 13th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "id": "van-ad75a70f538c",
+      "title": "Video Game Clinic - Patrick Michalak | Added Clinic for Waitlisters | Thursday, May 21st, 2026 | 7-10pm PT | In Person [SOLD OUT]",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-05-13T10:00:00-07:00",
-      "endAt": "2026-05-13T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-walt-gray-wednesday-may-13th-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-d583c43ac0ca",
-      "title": "Animation Clinic - Ania O'Hare | Added Clinic for Waitlisters | Wednesday, May 27th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-27T10:00:00-07:00",
-      "endAt": "2026-05-27T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-may-27th-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-29fc717f1ebe",
-      "title": "Video Game Clinic - Andrea Toyias | Saturday May 16th, 2026 | 10am - 2pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-16T10:00:00-07:00",
-      "endAt": "2026-05-16T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-andrea-toyias-saturday-may-16th-2026-10am-2pm-pt-in-studio",
+      "startAt": "2026-05-21T10:00:00-07:00",
+      "endAt": "2026-05-21T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-added-clinic-for-waitlisters-thursday-may-21st-2026-7-10pm-pt-in-person",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -98,13 +72,26 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-bca67e6d18f8",
-      "title": "Animation Clinic - Eden Riegel | Thursday May 28th 2026 7-10pm PT | ZOOM [SOLD OUT]",
+      "id": "van-d583c43ac0ca",
+      "title": "Animation Clinic - Ania O'Hare | Added Clinic for Waitlisters | Wednesday, May 27th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-05-28T10:00:00-07:00",
-      "endAt": "2026-05-28T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-eden-riegel-thursday-may-28th-2025-7-10pm-pt-zoom",
+      "startAt": "2026-05-27T10:00:00-07:00",
+      "endAt": "2026-05-27T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-may-27th-2026-7-10pm-pt-in-studio",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-b27b17cc90b1",
+      "title": "Video Game Clinic- Walt Gray | Wednesday, May 13th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-05-13T10:00:00-07:00",
+      "endAt": "2026-05-13T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-walt-gray-wednesday-may-13th-2026-7-10pm-pt-in-studio",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -266,8 +253,8 @@
       "title": "In-Person Level Two Video Game Intensive",
       "provider": "realvoicela",
       "host": "Real Voice LA",
-      "startAt": "2026-05-20T18:30:00-07:00",
-      "endAt": "2026-05-20T21:30:00-07:00",
+      "startAt": "2026-05-13T18:30:00-07:00",
+      "endAt": "2026-05-13T21:30:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/in-person-level-two-video-game-intensive-1"
     },
     {
@@ -310,15 +297,6 @@
       "venue": "Online"
     },
     {
-      "id": "vodojo-916b1a8f1bb6",
-      "title": "Thursday May 14Th Vo Pro Fight Club Live Action With Carrie Keranen",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-05-14T17:30:00-07:00",
-      "endAt": "2026-05-14T19:30:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/thursday-may-14th-vo-pro-fight-club-live-action-with-carrie-keranen"
-    },
-    {
       "id": "vodojo-1ae0d17df9d6",
       "title": "Sunday May 17Th Vo Pro Fight Club Movie Trailers With Richard Redfield",
       "provider": "thevodojo",
@@ -335,6 +313,15 @@
       "startAt": "2026-05-20T10:00:00-07:00",
       "endAt": "2026-05-20T12:00:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/get-to-know-vo-make-your-baggage-your-bitch-with-jenn-henry"
+    },
+    {
+      "id": "vodojo-916b1a8f1bb6",
+      "title": "Thursday May 14Th Vo Pro Fight Club Live Action With Carrie Keranen",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-05-21T17:30:00-07:00",
+      "endAt": "2026-05-21T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/thursday-may-14th-vo-pro-fight-club-live-action-with-carrie-keranen"
     },
     {
       "id": "vodojo-b35f0efcee3e",
