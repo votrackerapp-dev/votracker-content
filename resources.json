@@ -46,13 +46,39 @@
   ],
   "workshops": [
     {
-      "id": "van-29fc717f1ebe",
-      "title": "Video Game Clinic - Andrea Toyias | Saturday May 16th, 2026 | 10am - 2pm PT | In Studio [SOLD OUT]",
+      "id": "van-bca67e6d18f8",
+      "title": "Animation Clinic - Eden Riegel | Thursday May 28th 2026 7-10pm PT | ZOOM [SOLD OUT]",
       "provider": "van",
       "host": "Voice Actors Network",
-      "startAt": "2026-05-16T10:00:00-07:00",
-      "endAt": "2026-05-16T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-andrea-toyias-saturday-may-16th-2026-10am-2pm-pt-in-studio",
+      "startAt": "2026-05-28T10:00:00-07:00",
+      "endAt": "2026-05-28T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-eden-riegel-thursday-may-28th-2025-7-10pm-pt-zoom",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-b27b17cc90b1",
+      "title": "Video Game Clinic- Walt Gray | Wednesday, May 13th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-05-13T10:00:00-07:00",
+      "endAt": "2026-05-13T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-walt-gray-wednesday-may-13th-2026-7-10pm-pt-in-studio",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-d583c43ac0ca",
+      "title": "Animation Clinic - Ania O'Hare | Added Clinic for Waitlisters | Wednesday, May 27th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-05-27T10:00:00-07:00",
+      "endAt": "2026-05-27T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-may-27th-2026-7-10pm-pt-in-studio",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -85,27 +111,14 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-bca67e6d18f8",
-      "title": "Animation Clinic - Eden Riegel | Thursday May 28th 2026 7-10pm PT | ZOOM [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-28T10:00:00-07:00",
-      "endAt": "2026-05-28T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-eden-riegel-thursday-may-28th-2025-7-10pm-pt-zoom",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "soundon-5bcd55aa9023",
       "title": "5.13.26 - Video Games with Stephanie Southerland! \"Getting out of your head, and exploring your range!\" [SOLD OUT]",
       "provider": "soundonstudio",
       "host": "Sound On Studio",
-      "startAt": "2026-05-13T18:00:00-07:00",
-      "endAt": "2026-05-13T21:00:00-07:00",
+      "startAt": "2026-05-13T10:00:00-07:00",
+      "endAt": "2026-05-13T13:00:00-07:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup/p/51326-video-games-with-stephanie-southerland",
-      "venue": "Zoom",
+      "venue": "See listing",
       "soldOut": true,
       "badgeText": "Sold Out",
       "badgeColor": "#D32F2F"
@@ -297,15 +310,6 @@
       "venue": "Online"
     },
     {
-      "id": "vodojo-1ae0d17df9d6",
-      "title": "Sunday May 17Th Vo Pro Fight Club Movie Trailers With Richard Redfield",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-05-17T14:00:00-07:00",
-      "endAt": "2026-05-17T16:00:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/sunday-may-17th-vo-pro-fight-club-movie-trailers-with-richard-redfield"
-    },
-    {
       "id": "vodojo-82b9ed2b3fdb",
       "title": "Get To Know Vo Make Your Baggage Your Bitch With Jenn Henry",
       "provider": "thevodojo",
@@ -315,13 +319,13 @@
       "registrationURL": "https://www.thevodojo.com/new-events/get-to-know-vo-make-your-baggage-your-bitch-with-jenn-henry"
     },
     {
-      "id": "vodojo-916b1a8f1bb6",
-      "title": "Thursday May 14Th Vo Pro Fight Club Live Action With Carrie Keranen",
+      "id": "vodojo-7be2ea87e34e",
+      "title": "Thursday May 21St Vo Pro Fight Club Adr With Carrie Keranen",
       "provider": "thevodojo",
       "host": "The VO Dojo",
       "startAt": "2026-05-21T17:30:00-07:00",
       "endAt": "2026-05-21T19:30:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/thursday-may-14th-vo-pro-fight-club-live-action-with-carrie-keranen"
+      "registrationURL": "https://www.thevodojo.com/new-events/thursday-may-21st-vo-pro-fight-club-adr-with-carrie-keranen"
     },
     {
       "id": "vodojo-b35f0efcee3e",
