@@ -46,6 +46,19 @@
   ],
   "workshops": [
     {
+      "id": "van-54ddab3e55b5",
+      "title": "AUDIT A CLINIC - MAY 2026 [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-05-13T10:00:00-07:00",
+      "endAt": "2026-05-13T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/audit-a-clinic-may-2027",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "van-ad75a70f538c",
       "title": "Video Game Clinic - Patrick Michalak | Added Clinic for Waitlisters | Thursday, May 21st, 2026 | 7-10pm PT | In Person [SOLD OUT]",
       "provider": "van",
@@ -66,32 +79,6 @@
       "startAt": "2026-05-28T10:00:00-07:00",
       "endAt": "2026-05-28T14:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-eden-riegel-thursday-may-28th-2025-7-10pm-pt-zoom",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-b27b17cc90b1",
-      "title": "Video Game Clinic- Walt Gray | Wednesday, May 13th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-13T10:00:00-07:00",
-      "endAt": "2026-05-13T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-walt-gray-wednesday-may-13th-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-d583c43ac0ca",
-      "title": "Animation Clinic - Ania O'Hare | Added Clinic for Waitlisters | Wednesday, May 27th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-27T10:00:00-07:00",
-      "endAt": "2026-05-27T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-may-27th-2026-7-10pm-pt-in-studio",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -268,6 +255,24 @@
       "startAt": "2026-05-26T17:30:00-07:00",
       "endAt": "2026-05-26T19:30:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/tuesday-may-26th-vo-pro-fight-club-promo-with-harry-dunn"
+    },
+    {
+      "id": "vodojo-04826d0bf97e",
+      "title": "You Should Do Voiceover June 2026",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-06-01T15:00:00-07:00",
+      "endAt": "2026-06-01T17:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-voiceover-june-2026"
+    },
+    {
+      "id": "vodojo-ab8add755018",
+      "title": "You Should Do Voiceover Launchpad Workouts July 2026",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-07-11T09:00:00-07:00",
+      "endAt": "2026-07-11T11:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-voiceover-launchpad-workouts-july-2026"
     }
   ],
   "sections": [
