@@ -46,6 +46,19 @@
   ],
   "workshops": [
     {
+      "id": "van-d583c43ac0ca",
+      "title": "Animation Clinic - Ania O'Hare | Added Clinic for Waitlisters | Wednesday, May 27th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-05-27T10:00:00-07:00",
+      "endAt": "2026-05-27T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-may-27th-2026-7-10pm-pt-in-studio",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "van-29fc717f1ebe",
       "title": "Video Game Clinic - Andrea Toyias | Saturday May 16th, 2026 | 10am - 2pm PT | In Studio [SOLD OUT]",
       "provider": "van",
@@ -246,15 +259,6 @@
       "startAt": "2026-06-02T17:00:00-07:00",
       "endAt": "2026-06-02T19:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/june-in-person-intro-to-voiceover"
-    },
-    {
-      "id": "realvoice-4ff211e12b88",
-      "title": "Kids & Teens Workout Drop-In Tuesdays",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-05-26T17:00:00-07:00",
-      "endAt": "2026-05-26T18:30:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/kids-teens-workout-drop-in-tuesdays"
     },
     {
       "id": "redscythe-89bc2fc384e7",
