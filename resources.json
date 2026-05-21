@@ -46,6 +46,32 @@
   ],
   "workshops": [
     {
+      "id": "van-29fc717f1ebe",
+      "title": "Video Game Clinic - Andrea Toyias | Saturday May 16th, 2026 | 10am - 2pm PT | In Studio [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-05-16T10:00:00-07:00",
+      "endAt": "2026-05-16T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-andrea-toyias-saturday-may-16th-2026-10am-2pm-pt-in-studio",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-bca67e6d18f8",
+      "title": "Animation Clinic - Eden Riegel | Thursday May 28th 2026 7-10pm PT | ZOOM [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-05-28T10:00:00-07:00",
+      "endAt": "2026-05-28T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-eden-riegel-thursday-may-28th-2025-7-10pm-pt-zoom",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "van-ad75a70f538c",
       "title": "Video Game Clinic - Patrick Michalak | Added Clinic for Waitlisters | Thursday, May 21st, 2026 | 7-10pm PT | In Person [SOLD OUT]",
       "provider": "van",
@@ -53,32 +79,6 @@
       "startAt": "2026-05-21T10:00:00-07:00",
       "endAt": "2026-05-21T14:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-added-clinic-for-waitlisters-thursday-may-21st-2026-7-10pm-pt-in-person",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-d583c43ac0ca",
-      "title": "Animation Clinic - Ania O'Hare | Added Clinic for Waitlisters | Wednesday, May 27th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-27T10:00:00-07:00",
-      "endAt": "2026-05-27T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-may-27th-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "soundon-5bcd55aa9023",
-      "title": "5.13.26 - Video Games with Stephanie Southerland! \"Getting out of your head, and exploring your range!\" [SOLD OUT]",
-      "provider": "soundonstudio",
-      "host": "Sound On Studio",
-      "startAt": "2026-05-13T18:00:00-07:00",
-      "endAt": "2026-05-13T21:00:00-07:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup/p/51326-video-games-with-stephanie-southerland",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -142,6 +142,15 @@
       "registrationURL": "https://www.realvoicela.com/service-page/guest-director-mela-lee"
     },
     {
+      "id": "realvoice-816e61274169",
+      "title": "Guest Director Chris Faiella",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-06-09T18:00:00-07:00",
+      "endAt": "2026-06-09T21:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-chris-faiella"
+    },
+    {
       "id": "realvoice-939f14d776e0",
       "title": "British Accents ONLINE with Karen",
       "provider": "realvoicela",
@@ -149,6 +158,15 @@
       "startAt": "2026-06-08T18:30:00-07:00",
       "endAt": "2026-06-08T21:30:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/british-accents-online-with-karen"
+    },
+    {
+      "id": "realvoice-89c1aabf58eb",
+      "title": "Acting for Animation with Brenna Larsen",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-06-18T18:00:00-07:00",
+      "endAt": "2026-06-18T21:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/acting-for-animation-with-brenna-larsen"
     },
     {
       "id": "realvoice-0b8744379a07",
@@ -185,6 +203,36 @@
       "startAt": "2026-05-26T17:00:00-07:00",
       "endAt": "2026-05-26T18:30:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/kids-teens-workout-drop-in-tuesdays"
+    },
+    {
+      "id": "redscythe-89bc2fc384e7",
+      "title": "CHRIS HACKNEY — potluck clinic workshop",
+      "provider": "redscythe_tidycal_classes",
+      "host": "Red Scythe Studio",
+      "startAt": "2027-02-14T09:00:00-08:00",
+      "endAt": "2027-02-14T13:00:00-08:00",
+      "registrationURL": "https://tidycal.com/redscythestudio/214chris",
+      "venue": "Online"
+    },
+    {
+      "id": "redscythe-1e77f936927d",
+      "title": "EDDIE CORREA JR — engineer's pov on your mp3",
+      "provider": "redscythe_tidycal_classes",
+      "host": "Red Scythe Studio",
+      "startAt": "2027-02-21T09:00:00-08:00",
+      "endAt": "2027-02-21T13:00:00-08:00",
+      "registrationURL": "https://tidycal.com/redscythestudio/221eddie",
+      "venue": "Online"
+    },
+    {
+      "id": "redscythe-a8d67308fe08",
+      "title": "JUNE YOON — acting workout: dad characters",
+      "provider": "redscythe_tidycal_classes",
+      "host": "Red Scythe Studio",
+      "startAt": "2027-02-28T09:00:00-08:00",
+      "endAt": "2027-02-28T13:00:00-08:00",
+      "registrationURL": "https://tidycal.com/redscythestudio/228june",
+      "venue": "Online"
     },
     {
       "id": "vodojo-82b9ed2b3fdb",
