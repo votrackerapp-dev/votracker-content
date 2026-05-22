@@ -169,12 +169,15 @@
     },
     {
       "id": "realvoice-816e61274169",
-      "title": "Guest Director Chris Faiella",
+      "title": "Guest Director Chris Faiella [SOLD OUT]",
       "provider": "realvoicela",
       "host": "Real Voice LA",
       "startAt": "2026-06-09T18:00:00-07:00",
       "endAt": "2026-06-09T21:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-chris-faiella"
+      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-chris-faiella",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
     },
     {
       "id": "realvoice-939f14d776e0",
