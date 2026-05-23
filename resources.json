@@ -59,32 +59,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-29fc717f1ebe",
-      "title": "Video Game Clinic - Andrea Toyias | Saturday May 16th, 2026 | 10am - 2pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-16T10:00:00-07:00",
-      "endAt": "2026-05-16T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-andrea-toyias-saturday-may-16th-2026-10am-2pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-bca67e6d18f8",
-      "title": "Animation Clinic - Eden Riegel | Thursday May 28th 2026 7-10pm PT | ZOOM [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-28T10:00:00-07:00",
-      "endAt": "2026-05-28T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-eden-riegel-thursday-may-28th-2025-7-10pm-pt-zoom",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "soundon-46c3c29651d5",
       "title": "5.24.26 - 2 Languages, Una Voz with Raul Ceballos! [SOLD OUT]",
       "provider": "soundonstudio",
