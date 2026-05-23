@@ -46,32 +46,6 @@
   ],
   "workshops": [
     {
-      "id": "van-d583c43ac0ca",
-      "title": "Animation Clinic - Ania O'Hare | Added Clinic for Waitlisters | Wednesday, May 27th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-27T10:00:00-07:00",
-      "endAt": "2026-05-27T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-may-27th-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-ad75a70f538c",
-      "title": "Video Game Clinic - Patrick Michalak | Added Clinic for Waitlisters | Thursday, May 21st, 2026 | 7-10pm PT | In Person [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-21T10:00:00-07:00",
-      "endAt": "2026-05-21T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-added-clinic-for-waitlisters-thursday-may-21st-2026-7-10pm-pt-in-person",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "van-bca67e6d18f8",
       "title": "Animation Clinic - Eden Riegel | Thursday May 28th 2026 7-10pm PT | ZOOM [SOLD OUT]",
       "provider": "van",
@@ -292,15 +266,6 @@
       "endAt": "2027-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
-    },
-    {
-      "id": "vodojo-7be2ea87e34e",
-      "title": "Thursday May 21St Vo Pro Fight Club Adr With Carrie Keranen",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-05-21T17:30:00-07:00",
-      "endAt": "2026-05-21T19:30:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/thursday-may-21st-vo-pro-fight-club-adr-with-carrie-keranen"
     },
     {
       "id": "vodojo-b35f0efcee3e",
