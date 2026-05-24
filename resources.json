@@ -46,32 +46,6 @@
   ],
   "workshops": [
     {
-      "id": "van-d583c43ac0ca",
-      "title": "Animation Clinic - Ania O'Hare | Added Clinic for Waitlisters | Wednesday, May 27th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-27T10:00:00-07:00",
-      "endAt": "2026-05-27T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-may-27th-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "soundon-46c3c29651d5",
-      "title": "5.24.26 - 2 Languages, Una Voz with Raul Ceballos! [SOLD OUT]",
-      "provider": "soundonstudio",
-      "host": "Sound On Studio",
-      "startAt": "2026-05-24T10:00:00-07:00",
-      "endAt": "2026-05-24T13:00:00-07:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup/p/52426-2-languages-una-voz-with-raul-ceballos",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "soundon-a3701a53d301",
       "title": "6.13.26 - Booking Video Games with Katelyn Gault [SOLD OUT]",
       "provider": "soundonstudio",
@@ -92,19 +66,6 @@
       "startAt": "2026-06-29T18:00:00-07:00",
       "endAt": "2026-06-29T21:00:00-07:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup/p/video-game-vo-for-gam3r-pr0s-with-andrew-russell",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "soundon-043f3dd01e96",
-      "title": "5.23.26 - VO Pajama Party with Kirsten Day! [SOLD OUT]",
-      "provider": "soundonstudio",
-      "host": "Sound On Studio",
-      "startAt": "2026-05-23T10:00:00-07:00",
-      "endAt": "2026-05-23T12:00:00-07:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup/p/vo-pajama-party-with-kirsten-day-51221-4wj88",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
