@@ -46,32 +46,6 @@
   ],
   "workshops": [
     {
-      "id": "van-ad75a70f538c",
-      "title": "Video Game Clinic - Patrick Michalak | Added Clinic for Waitlisters | Thursday, May 21st, 2026 | 7-10pm PT | In Person [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-21T10:00:00-07:00",
-      "endAt": "2026-05-21T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-added-clinic-for-waitlisters-thursday-may-21st-2026-7-10pm-pt-in-person",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-d583c43ac0ca",
-      "title": "Animation Clinic - Ania O'Hare | Added Clinic for Waitlisters | Wednesday, May 27th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-27T10:00:00-07:00",
-      "endAt": "2026-05-27T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-may-27th-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "soundon-a3701a53d301",
       "title": "6.13.26 - Booking Video Games with Katelyn Gault [SOLD OUT]",
       "provider": "soundonstudio",
