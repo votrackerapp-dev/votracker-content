@@ -46,19 +46,6 @@
   ],
   "workshops": [
     {
-      "id": "van-ad75a70f538c",
-      "title": "Video Game Clinic - Patrick Michalak | Added Clinic for Waitlisters | Thursday, May 21st, 2026 | 7-10pm PT | In Person [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-05-21T10:00:00-07:00",
-      "endAt": "2026-05-21T14:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-added-clinic-for-waitlisters-thursday-may-21st-2026-7-10pm-pt-in-person",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "van-d583c43ac0ca",
       "title": "Animation Clinic - Ania O'Hare | Added Clinic for Waitlisters | Wednesday, May 27th, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
       "provider": "van",
@@ -66,6 +53,19 @@
       "startAt": "2026-05-27T10:00:00-07:00",
       "endAt": "2026-05-27T14:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-ania-ohare-wednesday-may-27th-2026-7-10pm-pt-in-studio",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-ad75a70f538c",
+      "title": "Video Game Clinic - Patrick Michalak | Added Clinic for Waitlisters | Thursday, May 21st, 2026 | 7-10pm PT | In Person [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-05-21T10:00:00-07:00",
+      "endAt": "2026-05-21T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-added-clinic-for-waitlisters-thursday-may-21st-2026-7-10pm-pt-in-person",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -255,15 +255,6 @@
       "venue": "Online"
     },
     {
-      "id": "vodojo-b35f0efcee3e",
-      "title": "Tuesday May 26Th Vo Pro Fight Club Promo With Harry Dunn",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-05-26T17:30:00-07:00",
-      "endAt": "2026-05-26T19:30:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/tuesday-may-26th-vo-pro-fight-club-promo-with-harry-dunn"
-    },
-    {
       "id": "vodojo-04826d0bf97e",
       "title": "You Should Do Voiceover June 2026",
       "provider": "thevodojo",
@@ -280,6 +271,33 @@
       "startAt": "2026-06-03T10:00:00-07:00",
       "endAt": "2026-06-03T12:00:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/ask-the-sensei-with-caitlyn-elizabeth"
+    },
+    {
+      "id": "vodojo-32926272d9a5",
+      "title": "Thursday June 11Th Vo Pro Fight Club Animation With Andy Lerner",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-06-11T17:30:00-07:00",
+      "endAt": "2026-06-11T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/thursday-june-11th-vo-pro-fight-club-animation-with-andy-lerner"
+    },
+    {
+      "id": "vodojo-930024e4f2da",
+      "title": "Sunday June 14Th Vo Pro Fight Club Commercials With Andy Roth",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-06-14T14:00:00-07:00",
+      "endAt": "2026-06-14T16:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/sunday-june-14th-vo-pro-fight-club-commercials-with-andy-roth"
+    },
+    {
+      "id": "vodojo-19845211ca45",
+      "title": "Tuesday June 23Rd Vo Pro Fight Club Promo With Andrew Atkin",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-06-23T17:30:00-07:00",
+      "endAt": "2026-06-23T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/tuesday-june-23rd-vo-pro-fight-club-promo-with-andrew-atkin"
     },
     {
       "id": "vodojo-ab8add755018",
