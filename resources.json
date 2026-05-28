@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-05-27",
+  "lastUpdated": "2026-05-28",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -53,6 +53,19 @@
       "startAt": "2026-05-28T10:00:00-07:00",
       "endAt": "2026-05-28T14:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-eden-riegel-thursday-may-28th-2025-7-10pm-pt-zoom",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-ad75a70f538c",
+      "title": "Video Game Clinic - Patrick Michalak | Added Clinic for Waitlisters | Thursday, May 21st, 2026 | 7-10pm PT | In Person [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-05-21T10:00:00-07:00",
+      "endAt": "2026-05-21T14:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-patrick-michalak-added-clinic-for-waitlisters-thursday-may-21st-2026-7-10pm-pt-in-person",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -196,15 +209,6 @@
       "startAt": "2026-06-18T18:00:00-07:00",
       "endAt": "2026-06-18T21:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/acting-for-animation-with-brenna-larsen"
-    },
-    {
-      "id": "realvoice-0b8744379a07",
-      "title": "In-Person Level Two Video Game Intensive",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-05-20T18:30:00-07:00",
-      "endAt": "2026-05-20T21:30:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/in-person-level-two-video-game-intensive-1"
     },
     {
       "id": "realvoice-cca5a490a58b",
