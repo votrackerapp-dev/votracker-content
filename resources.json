@@ -185,13 +185,31 @@
       "registrationURL": "https://www.realvoicela.com/service-page/acting-for-animation-with-brenna-larsen"
     },
     {
-      "id": "realvoice-cca5a490a58b",
-      "title": "MAY - Games, Auditioning, and Advice",
+      "id": "realvoice-8a67412df228",
+      "title": "Creating Characters with Arianna Ratner",
       "provider": "realvoicela",
       "host": "Real Voice LA",
-      "startAt": "2026-05-30T11:00:00-07:00",
-      "endAt": "2026-05-30T14:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/may-games-auditioning-and-advice"
+      "startAt": "2026-07-14T12:00:00-07:00",
+      "endAt": "2026-07-14T15:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/creating-characters-with-arianna-ratner-2"
+    },
+    {
+      "id": "realvoice-55000d7bcb72",
+      "title": "In-PERSON Intro to Voiceover",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-06-23T18:30:00-07:00",
+      "endAt": "2026-06-23T21:30:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/in-person-intro-to-voiceover"
+    },
+    {
+      "id": "realvoice-d550c2059f17",
+      "title": "In-Person Commercial Bootcamp w/ Craig",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-07-01T18:30:00-07:00",
+      "endAt": "2026-07-01T21:30:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/in-person-commercial-bootcamp-w-craig-3"
     },
     {
       "id": "redscythe-89bc2fc384e7",
@@ -224,15 +242,6 @@
       "venue": "Online"
     },
     {
-      "id": "vodojo-e2b5a29e66a6",
-      "title": "Ask The Sensei With Caitlyn Elizabeth",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-06-03T10:00:00-07:00",
-      "endAt": "2026-06-03T12:00:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/ask-the-sensei-with-caitlyn-elizabeth"
-    },
-    {
       "id": "vodojo-32926272d9a5",
       "title": "Thursday June 11Th Vo Pro Fight Club Animation With Andy Lerner",
       "provider": "thevodojo",
@@ -249,6 +258,15 @@
       "startAt": "2026-06-14T14:00:00-07:00",
       "endAt": "2026-06-14T16:00:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/sunday-june-14th-vo-pro-fight-club-commercials-with-andy-roth"
+    },
+    {
+      "id": "vodojo-e9d54a9ea973",
+      "title": "Get To Know Vo Vo Scholarship Opportunity Ft Past Recipients",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-06-17T10:00:00-07:00",
+      "endAt": "2026-06-17T12:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/get-to-know-vo-vo-scholarship-opportunity-ft-past-recipients"
     },
     {
       "id": "vodojo-19845211ca45",
