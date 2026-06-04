@@ -190,6 +190,15 @@
       "registrationURL": "https://www.realvoicela.com/service-page/creating-characters-with-arianna-ratner-2"
     },
     {
+      "id": "realvoice-b8ac804eb0df",
+      "title": "Online Level One Video Game Intensive",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-07-20T14:00:00-07:00",
+      "endAt": "2026-07-20T17:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/online-level-one-video-game-intensive-1"
+    },
+    {
       "id": "realvoice-55000d7bcb72",
       "title": "In-PERSON Intro to Voiceover",
       "provider": "realvoicela",
@@ -263,6 +272,15 @@
       "startAt": "2026-06-17T10:00:00-07:00",
       "endAt": "2026-06-17T12:00:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/get-to-know-vo-vo-scholarship-opportunity-ft-past-recipients"
+    },
+    {
+      "id": "vodojo-778f4a22a6bd",
+      "title": "Daniel Escobar Scholarship Now Open",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-06-18T01:00:00-07:00",
+      "endAt": "2026-06-18T03:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/daniel-escobar-scholarship-now-open"
     },
     {
       "id": "vodojo-19845211ca45",
