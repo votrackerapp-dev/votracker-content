@@ -120,15 +120,6 @@
       "registrationURL": "https://halpacademy.com/events/"
     },
     {
-      "id": "realvoice-36eb81c58ad2",
-      "title": "Guest Director Mela Lee",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-06-02T18:00:00-07:00",
-      "endAt": "2026-06-02T21:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-mela-lee"
-    },
-    {
       "id": "realvoice-816e61274169",
       "title": "Guest Director Chris Faiella [SOLD OUT]",
       "provider": "realvoicela",
@@ -139,15 +130,6 @@
       "soldOut": true,
       "badgeText": "Sold Out",
       "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "realvoice-939f14d776e0",
-      "title": "British Accents ONLINE with Karen",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-06-08T18:30:00-07:00",
-      "endAt": "2026-06-08T21:30:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/british-accents-online-with-karen"
     },
     {
       "id": "realvoice-89c1aabf58eb",
@@ -286,6 +268,24 @@
       "startAt": "2026-07-11T09:00:00-07:00",
       "endAt": "2026-07-11T11:00:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-voiceover-launchpad-workouts-july-2026"
+    },
+    {
+      "id": "vodojo-c600d388708e",
+      "title": "The Vo Dojo At One Voice 2026",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-08-20T09:30:00-07:00",
+      "endAt": "2026-08-20T11:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/the-vo-dojo-at-one-voice-2026"
+    },
+    {
+      "id": "vodojo-cbad199f3b25",
+      "title": "Tish At One Voice 2026 Panel And Class",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-08-21T13:30:00-07:00",
+      "endAt": "2026-08-21T15:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/tish-at-one-voice-2026-panel-and-class"
     }
   ],
   "sections": [
