@@ -119,15 +119,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "realvoice-89c1aabf58eb",
-      "title": "Acting for Animation with Brenna Larsen",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-06-18T18:00:00-07:00",
-      "endAt": "2026-06-18T21:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/acting-for-animation-with-brenna-larsen"
-    },
-    {
       "id": "realvoice-8fd046e7699a",
       "title": "July - ONLINE Intro to Voiceover",
       "provider": "realvoicela",
@@ -171,6 +162,15 @@
       "startAt": "2026-07-01T18:30:00-07:00",
       "endAt": "2026-07-01T21:30:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/in-person-commercial-bootcamp-w-craig-3"
+    },
+    {
+      "id": "realvoice-66a7d79d76b5",
+      "title": "IN PERSON Gaming & Animation Workshop",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-07-18T11:00:00-07:00",
+      "endAt": "2026-07-18T14:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/in-person-gaming-animation-workshop"
     },
     {
       "id": "redscythe-89bc2fc384e7",
