@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-06-15",
+  "lastUpdated": "2026-06-16",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -117,6 +117,15 @@
       "soldOut": true,
       "badgeText": "Sold Out",
       "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "realvoice-89c1aabf58eb",
+      "title": "Acting for Animation with Brenna Larsen",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-06-18T18:00:00-07:00",
+      "endAt": "2026-06-18T21:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/acting-for-animation-with-brenna-larsen"
     },
     {
       "id": "realvoice-8fd046e7699a",
@@ -237,6 +246,24 @@
       "startAt": "2026-07-11T09:00:00-07:00",
       "endAt": "2026-07-11T11:00:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-voiceover-launchpad-workouts-july-2026"
+    },
+    {
+      "id": "vodojo-c04caf7d8370",
+      "title": "Thursday July 16Th Vo Pro Fight Club Commercials With Jim Kennelly",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-07-16T17:30:00-07:00",
+      "endAt": "2026-07-16T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/thursday-july-16th-vo-pro-fight-club-commercials-with-jim-kennelly"
+    },
+    {
+      "id": "vodojo-17de1cda0da1",
+      "title": "Tuesday July 28Th Vo Pro Fight Club Narration With Jodi Gottlieb",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-07-28T17:30:00-07:00",
+      "endAt": "2026-07-28T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/tuesday-july-28th-vo-pro-fight-club-narration-with-jodi-gottlieb"
     },
     {
       "id": "vodojo-c600d388708e",
