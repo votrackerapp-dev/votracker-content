@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-06-16",
+  "lastUpdated": "2026-06-17",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -105,18 +105,6 @@
       "startAt": "2026-06-27T14:00:00-07:00",
       "endAt": "2026-06-27T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
-    },
-    {
-      "id": "realvoice-816e61274169",
-      "title": "Guest Director Chris Faiella [SOLD OUT]",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-06-09T18:00:00-07:00",
-      "endAt": "2026-06-09T21:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-chris-faiella",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
     },
     {
       "id": "realvoice-89c1aabf58eb",
