@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-06-17",
+  "lastUpdated": "2026-06-18",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -116,6 +116,15 @@
       "registrationURL": "https://www.realvoicela.com/service-page/acting-for-animation-with-brenna-larsen"
     },
     {
+      "id": "realvoice-f7d1995cc5b0",
+      "title": "Weekly VO Workout with Katie",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-07-02T12:00:00-07:00",
+      "endAt": "2026-07-02T14:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/weekly-vo-workout-with-katie"
+    },
+    {
       "id": "realvoice-8fd046e7699a",
       "title": "July - ONLINE Intro to Voiceover",
       "provider": "realvoicela",
@@ -132,6 +141,15 @@
       "startAt": "2026-07-14T12:00:00-07:00",
       "endAt": "2026-07-14T15:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/creating-characters-with-arianna-ratner-2"
+    },
+    {
+      "id": "realvoice-0dcfba68a5ce",
+      "title": "Guest Director Marc Hawes",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-07-14T18:00:00-07:00",
+      "endAt": "2026-07-14T21:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-marc-hawes"
     },
     {
       "id": "realvoice-b8ac804eb0df",
