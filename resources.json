@@ -46,19 +46,6 @@
   ],
   "workshops": [
     {
-      "id": "soundon-a3701a53d301",
-      "title": "6.13.26 - Booking Video Games with Katelyn Gault [SOLD OUT]",
-      "provider": "soundonstudio",
-      "host": "Sound On Studio",
-      "startAt": "2026-06-13T10:00:00-07:00",
-      "endAt": "2026-06-13T13:00:00-07:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup/p/12925-booking-video-games-with-katelyn-gault",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "soundon-aef283e735ef",
       "title": "6.29.26 - Quest Log: VO - Video Game Workshop [SOLD OUT]",
       "provider": "soundonstudio",
@@ -216,15 +203,6 @@
       "endAt": "2027-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
-    },
-    {
-      "id": "vodojo-778f4a22a6bd",
-      "title": "Daniel Escobar Scholarship Now Open",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-06-18T01:00:00-07:00",
-      "endAt": "2026-06-18T03:00:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/daniel-escobar-scholarship-now-open"
     },
     {
       "id": "vodojo-19845211ca45",
