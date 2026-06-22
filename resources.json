@@ -94,15 +94,6 @@
       "registrationURL": "https://halpacademy.com/events/"
     },
     {
-      "id": "realvoice-89c1aabf58eb",
-      "title": "Acting for Animation with Brenna Larsen",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-06-18T18:00:00-07:00",
-      "endAt": "2026-06-18T21:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/acting-for-animation-with-brenna-larsen"
-    },
-    {
       "id": "realvoice-f7d1995cc5b0",
       "title": "Weekly VO Workout with Katie",
       "provider": "realvoicela",
@@ -146,6 +137,24 @@
       "startAt": "2026-07-20T14:00:00-07:00",
       "endAt": "2026-07-20T17:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/online-level-one-video-game-intensive-1"
+    },
+    {
+      "id": "realvoice-e863eb2f503c",
+      "title": "JULY - Level Up: Anime & Video Game",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-07-23T18:30:00-07:00",
+      "endAt": "2026-07-23T21:30:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/july-level-up-anime-video-game"
+    },
+    {
+      "id": "realvoice-586587b76ce7",
+      "title": "ONLINE - Auditioning for Video Games",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-07-29T18:00:00-07:00",
+      "endAt": "2026-07-29T21:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/online-auditioning-for-video-games"
     },
     {
       "id": "realvoice-55000d7bcb72",
@@ -221,6 +230,15 @@
       "startAt": "2026-07-11T09:00:00-07:00",
       "endAt": "2026-07-11T11:00:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-voiceover-launchpad-workouts-july-2026"
+    },
+    {
+      "id": "vodojo-c04caf7d8370",
+      "title": "Thursday July 16Th Vo Pro Fight Club Commercials With Jim Kennelly",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-07-16T17:30:00-07:00",
+      "endAt": "2026-07-16T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/thursday-july-16th-vo-pro-fight-club-commercials-with-jim-kennelly"
     },
     {
       "id": "vodojo-17de1cda0da1",
