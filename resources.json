@@ -59,32 +59,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "soundon-7d8b8617d62f",
-      "title": "6.20.26 - Dubbing Live Action TV with Andy Roth! [SOLD OUT]",
-      "provider": "soundonstudio",
-      "host": "Sound On Studio",
-      "startAt": "2026-06-20T10:00:00-07:00",
-      "endAt": "2026-06-20T13:00:00-07:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup/p/42725-dubbing-live-action-tv-with-andy-roth",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "soundon-5b72a7a440a5",
-      "title": "6.24.26 - Casting Commercials: Empower-UP Your Reads with Jayme Mantos! [SOLD OUT]",
-      "provider": "soundonstudio",
-      "host": "Sound On Studio",
-      "startAt": "2026-06-24T18:00:00-07:00",
-      "endAt": "2026-06-24T21:00:00-07:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup/p/12824-casting-commercial-voiceover-finding-empowerment-behind-the-mic-with-jayme-mantos",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "halp-14293ec00dbc",
       "title": "Events",
       "provider": "halp_academy",
