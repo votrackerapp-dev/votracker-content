@@ -13,6 +13,12 @@ from urllib.parse import urljoin
 import hashlib
 
 DEFAULT_TZ = "America/Los_Angeles"
+DATE_WITH_OPTIONAL_YEAR_RE = re.compile(
+    r'(?:(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\s*,?\s+)?'
+    r'(January|February|March|April|May|June|July|August|September|October|November|December)'
+    r'\s+(\d{1,2})(?:st|nd|rd|th)?(?:,?\s+(\d{2,4}))?',
+    re.IGNORECASE,
+)
 
 def log(msg):
     print(f"  {msg}")
@@ -129,6 +135,75 @@ def detect_sold_out(*texts):
     return False
 
 
+def extract_upcoming_date(text, tz=DEFAULT_TZ, reference=None):
+    """Extract a month/day date and infer the year when the page omits it."""
+    if not text:
+        return None
+
+    tzinfo = datetz.gettz(tz)
+    now = reference or datetime.now(tzinfo)
+
+    for match in DATE_WITH_OPTIONAL_YEAR_RE.finditer(text):
+        month_name, day_text, year_text = match.groups()
+        month = datetime.strptime(month_name[:3], "%b").month
+        day = int(day_text)
+
+        year = now.year
+        if year_text:
+            year = int(year_text)
+            if year < 100:
+                year += 2000
+
+        try:
+            candidate = datetime(year, month, day, tzinfo=tzinfo)
+        except ValueError:
+            continue
+
+        if not year_text and candidate < now - timedelta(days=30):
+            candidate = candidate.replace(year=candidate.year + 1)
+
+        return candidate
+
+    return None
+
+
+def extract_shopify_product_json(html):
+    """Pull the primary Shopify product payload from a product detail page."""
+    if not html:
+        return None
+
+    soup = BeautifulSoup(html, "html.parser")
+    script = soup.find("script", id=re.compile(r"^ProductJson-"))
+    if not script:
+        return None
+
+    raw = script.string or script.get_text()
+    if not raw:
+        return None
+
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        return None
+
+
+def shopify_product_is_sold_out(product_data):
+    """Use Shopify availability flags when the storefront hides the sold-out label."""
+    if not isinstance(product_data, dict):
+        return False
+
+    if product_data.get("available") is False:
+        return True
+
+    variants = product_data.get("variants") or []
+    variant_flags = [
+        variant.get("available")
+        for variant in variants
+        if isinstance(variant, dict) and "available" in variant
+    ]
+    return bool(variant_flags) and not any(variant_flags)
+
+
 def apply_status_badge(event, sold_out=False):
     """Attach sold-out metadata and a visible title suffix."""
     if not sold_out:
@@ -147,56 +222,101 @@ def apply_status_badge(event, sold_out=False):
 # ============================================================================
 # VOICE ACTORS NETWORK - FIXED TIME PARSING
 # ============================================================================
+def collect_van_product_links(base_url="https://voiceactorsnetwork.com/collections/all", max_pages=12):
+    """Follow VAN collection pagination so classes are not missed alphabetically."""
+    links = []
+    seen_links = set()
+    seen_pages = set()
+    page_url = base_url
+    page_count = 0
+
+    while page_url and page_url not in seen_pages and page_count < max_pages:
+        html = fetch(page_url)
+        if not html:
+            break
+
+        page_count += 1
+        seen_pages.add(page_url)
+        soup = BeautifulSoup(html, "html.parser")
+
+        page_links = 0
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            if "/products/" not in href:
+                continue
+
+            handle = href.split("/products/", 1)[1].split("?", 1)[0].split("#", 1)[0].strip("/")
+            if not handle:
+                continue
+
+            url = f"https://voiceactorsnetwork.com/collections/all/products/{handle}"
+            if url in seen_links:
+                continue
+
+            seen_links.add(url)
+            links.append(url)
+            page_links += 1
+
+        log(f"Page {page_count}: found {page_links} product pages")
+
+        next_tag = soup.find("link", rel="next")
+        page_url = urljoin(base_url, next_tag["href"]) if next_tag and next_tag.get("href") else None
+
+    log(f"Collected {len(links)} VAN product pages across {page_count} pages")
+    return links
+
+
 def scrape_van():
     """Voice Actors Network - with better error handling"""
     print("[VAN] Scraping Voice Actors Network...")
     events = []
-    
-    html = fetch("https://voiceactorsnetwork.com/collections/all")
-    if not html:
+
+    links = collect_van_product_links()
+    if not links:
         return events
-    
-    soup = BeautifulSoup(html, "html.parser")
-    
-    # Find ALL product links
-    links = set()
-    for a in soup.find_all("a", href=True):
-        if "/products/" in a["href"]:
-            url = urljoin("https://voiceactorsnetwork.com", a["href"])
-            links.add(url)
-    
-    log(f"Found {len(links)} product pages")
-    
-    # Check each product page
-    for url in list(links)[:30]:
+
+    for url in links:
         try:
             html = fetch(url)
             if not html:
                 continue
-            
+
             soup = BeautifulSoup(html, "html.parser")
-            text = soup.get_text()
-            
+            text = soup.get_text(" ", strip=True)
+            product_data = extract_shopify_product_json(html)
+            product_description = ""
+            if product_data:
+                product_description = product_data.get("content") or product_data.get("description") or ""
+
+            product_text = re.sub(r"\s+", " ", BeautifulSoup(product_description, "html.parser").get_text(" ", strip=True))
+
             # Skip non-workshops
-            if any(x in text.lower() for x in ["gift card", "donation", "membership", "t-shirt", "merch"]):
-                continue
-            
-            # Get title
-            title_tag = soup.find("h1") or soup.find("title")
-            title = title_tag.get_text(strip=True) if title_tag else "Workshop"
+            title = ""
+            if product_data:
+                title = (product_data.get("title") or "").strip()
+
+            if not title:
+                title_tag = soup.find("h1") or soup.find("title")
+                title = title_tag.get_text(strip=True) if title_tag else "Workshop"
+
             title = title.replace(" – Voice Actors Network", "").strip()
-            
-            # Find date
-            date_match = re.search(r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:st|nd|rd|th)?,?\s+\d{4}', text)
-            if not date_match:
+            lower_title = title.lower()
+            lower_text = f"{lower_title} {product_text.lower()} {text.lower()}"
+
+            if any(x in lower_text for x in ["gift card", "donation", "membership", "t-shirt", "merch"]):
                 continue
-            
-            date = parse_date(date_match.group(0))
+
+            if any(x in lower_title for x in ["audit a clinic", "wait list spot"]):
+                continue
+
+            date = extract_upcoming_date(" ".join([title, product_text]))
+            if not date:
+                date = extract_upcoming_date(text)
             if not date:
                 continue
-            
-            # Extract time - with better error handling
-            time_info = extract_time(text)
+
+            time_source = " ".join([title, product_text]) or text
+            time_info = extract_time(time_source)
             if time_info:
                 sh, sm, eh, em = time_info
                 try:
@@ -210,7 +330,8 @@ def scrape_van():
             else:
                 start = date.replace(hour=18, minute=0, second=0, microsecond=0)
                 end = start + timedelta(hours=2)
-            
+
+            venue_text = " ".join([title, product_text]).lower()
             event = {
                 "id": make_id("van", title, url),
                 "title": title,
@@ -219,16 +340,20 @@ def scrape_van():
                 "startAt": start.isoformat(),
                 "endAt": end.isoformat(),
                 "registrationURL": url,
-                "venue": "Zoom" if "zoom" in text.lower() else "See listing"
+                "venue": "Zoom" if "zoom" in venue_text else ("In Studio" if any(x in venue_text for x in ["in studio", "in person", "studio in burbank"]) else "See listing")
             }
-            event = apply_status_badge(event, detect_sold_out(html, text))
+
+            sold_out = shopify_product_is_sold_out(product_data) or detect_sold_out(title, product_text, text)
+            event = apply_status_badge(event, sold_out)
             events.append(event)
-            log(f"✓ {event['title'][:50]}")
-            
+
+            availability = "sold out" if sold_out else "available"
+            log(f"✓ {event['title'][:50]} ({availability})")
+
         except Exception as e:
             log(f"⚠️  Error on {url.split('/')[-1]}: {e}")
             continue
-    
+
     print(f"[VAN] Found {len(events)} events")
     return events
 
