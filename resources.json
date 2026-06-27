@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-06-27",
+  "lastUpdated": "2026-06-26",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -45,6 +45,58 @@
     }
   ],
   "workshops": [
+    {
+      "id": "van-7413feeec4e0",
+      "title": "Agency Clinic - VOX Talent Agency - Tom Lawless | Thursday, June 25th | 4-7pm PT | ZOOM [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-06-25T16:00:00-07:00",
+      "endAt": "2026-06-25T19:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/agency-clinic-tom-lawless-thursday-june-25th-4-7pm-pt-zoom-current",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-06fb084ad299",
+      "title": "Animation Clinic - Jennifer Abraham - Casting Director - Wednesday, November 5th | 6-9pm PST - ZOOM [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-11-05T18:00:00-08:00",
+      "endAt": "2026-11-05T21:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-jennifer-abraham-casting-director-wednesday-november-5th-6-9pm-pst-zoom",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-d53c9e33a3c3",
+      "title": "Video Game Clinic - Darragh O'Farrell- Casting and Voice Director - Thursday, November 6th | 5-8pm PST - ZOOM [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-11-06T17:00:00-08:00",
+      "endAt": "2026-11-06T20:00:00-08:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-darragh-ofarrell-casting-and-voice-director-thursday-november-6th-6-9pm-pst-zoom-copy",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-8d361a82fe96",
+      "title": "Video Game Clinic - Tyler Rhoads | Wednesday, June 24th | 7-10pm PT | IN STUDIO [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-06-24T19:00:00-07:00",
+      "endAt": "2026-06-24T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-tyler-rhoads-wednesday-june-24th-7-10pm-pt-in-studio",
+      "venue": "In Studio",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
     {
       "id": "soundon-aef283e735ef",
       "title": "6.29.26 - Quest Log: VO - Video Game Workshop [SOLD OUT]",
