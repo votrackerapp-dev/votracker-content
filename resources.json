@@ -111,58 +111,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-a62b944b6520",
-      "title": "Commercial Clinic - Kathryn Horan | Wednesday, July 15th, 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-07-15T19:00:00-07:00",
-      "endAt": "2026-07-15T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-kathryn-horan-wednesday-july-15th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-b1b514f4673f",
-      "title": "Singing for Animation Clinic - Trisha Hildebrandt | Wednesday, July 29th 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-07-29T19:00:00-07:00",
-      "endAt": "2026-07-29T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/singing-for-animation-clinic-trisha-hildebrandt-wednesday-july-29th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-d53c9e33a3c3",
-      "title": "Video Game Clinic - Darragh O'Farrell- Casting and Voice Director - Thursday, November 6th | 5-8pm PST - ZOOM [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-11-06T17:00:00-08:00",
-      "endAt": "2026-11-06T20:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-darragh-ofarrell-casting-and-voice-director-thursday-november-6th-6-9pm-pst-zoom-copy",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-aa7396f8f38a",
-      "title": "Video Game Clinic | Michael Csurics | Wednesday, July 8th 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-07-08T19:00:00-07:00",
-      "endAt": "2026-07-08T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-michael-csurics-wednesday-july-8th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "soundon-aef283e735ef",
       "title": "6.29.26 - Quest Log: VO - Video Game Workshop [SOLD OUT]",
       "provider": "soundonstudio",
@@ -252,8 +200,8 @@
       "title": "In-Person Commercial Bootcamp w/ Craig",
       "provider": "realvoicela",
       "host": "Real Voice LA",
-      "startAt": "2026-07-01T18:30:00-07:00",
-      "endAt": "2026-07-01T21:30:00-07:00",
+      "startAt": "2026-07-08T18:30:00-07:00",
+      "endAt": "2026-07-08T21:30:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/in-person-commercial-bootcamp-w-craig-3"
     },
     {
