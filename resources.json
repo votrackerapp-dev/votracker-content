@@ -111,19 +111,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "soundon-aef283e735ef",
-      "title": "6.29.26 - Quest Log: VO - Video Game Workshop [SOLD OUT]",
-      "provider": "soundonstudio",
-      "host": "Sound On Studio",
-      "startAt": "2026-06-29T18:00:00-07:00",
-      "endAt": "2026-06-29T21:00:00-07:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup/p/video-game-vo-for-gam3r-pr0s-with-andrew-russell",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "halp-14293ec00dbc",
       "title": "Events",
       "provider": "halp_academy",
