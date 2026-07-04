@@ -188,6 +188,15 @@
       "registrationURL": "https://www.realvoicela.com/service-page/in-person-gaming-animation-workshop"
     },
     {
+      "id": "realvoice-0fc335a4458b",
+      "title": "August In-Person Conversational VO",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-08-08T11:00:00-07:00",
+      "endAt": "2026-08-08T14:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/august-in-person-conversational-vo"
+    },
+    {
       "id": "redscythe-89bc2fc384e7",
       "title": "CHRIS HACKNEY — potluck clinic workshop",
       "provider": "redscythe_tidycal_classes",
