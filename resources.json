@@ -98,19 +98,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-aa7396f8f38a",
-      "title": "Video Game Clinic | Michael Csurics | Wednesday, July 8th 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-07-08T19:00:00-07:00",
-      "endAt": "2026-07-08T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-michael-csurics-wednesday-july-8th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "halp-14293ec00dbc",
       "title": "Events",
       "provider": "halp_academy",
