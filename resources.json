@@ -111,6 +111,19 @@
       "badgeColor": "#D32F2F"
     },
     {
+      "id": "van-b1b514f4673f",
+      "title": "Singing for Animation Clinic - Trisha Hildebrandt | Wednesday, July 29th 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-07-29T19:00:00-07:00",
+      "endAt": "2026-07-29T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/singing-for-animation-clinic-trisha-hildebrandt-wednesday-july-29th-2026-7-10pm-pt-in-studio",
+      "venue": "In Studio",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "halp-14293ec00dbc",
       "title": "Events",
       "provider": "halp_academy",
