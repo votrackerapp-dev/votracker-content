@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-07-07",
+  "lastUpdated": "2026-07-08",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -93,32 +93,6 @@
       "endAt": "2026-11-05T21:00:00-08:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-jennifer-abraham-casting-director-wednesday-november-5th-6-9pm-pst-zoom",
       "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-a62b944b6520",
-      "title": "Commercial Clinic - Kathryn Horan | Wednesday, July 15th, 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-07-15T19:00:00-07:00",
-      "endAt": "2026-07-15T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/commercial-clinic-kathryn-horan-wednesday-july-15th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-b1b514f4673f",
-      "title": "Singing for Animation Clinic - Trisha Hildebrandt | Wednesday, July 29th 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-07-29T19:00:00-07:00",
-      "endAt": "2026-07-29T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/singing-for-animation-clinic-trisha-hildebrandt-wednesday-july-29th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio",
       "soldOut": true,
       "badgeText": "Sold Out",
       "badgeColor": "#D32F2F"
