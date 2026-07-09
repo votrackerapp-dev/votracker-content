@@ -111,8 +111,8 @@
       "title": "Creating Characters with Arianna Ratner",
       "provider": "realvoicela",
       "host": "Real Voice LA",
-      "startAt": "2026-07-14T12:00:00-07:00",
-      "endAt": "2026-07-14T15:00:00-07:00",
+      "startAt": "2026-07-21T12:00:00-07:00",
+      "endAt": "2026-07-21T15:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/creating-characters-with-arianna-ratner-2"
     },
     {
@@ -216,6 +216,15 @@
       "endAt": "2027-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
+    },
+    {
+      "id": "vodojo-c8e3642a182f",
+      "title": "Potluck Picnic With The Vo Dojo",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-07-09T14:00:00-07:00",
+      "endAt": "2026-07-09T16:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/potluck-picnic-with-the-vo-dojo"
     },
     {
       "id": "vodojo-ab8add755018",
