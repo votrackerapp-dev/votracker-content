@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-07-09",
+  "lastUpdated": "2026-07-10",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -92,6 +92,19 @@
       "startAt": "2026-11-05T18:00:00-08:00",
       "endAt": "2026-11-05T21:00:00-08:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-jennifer-abraham-casting-director-wednesday-november-5th-6-9pm-pst-zoom",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "soundon-9545c62603ba",
+      "title": "8.2.26 - Sound Great from Home with Steve Bucino! [SOLD OUT]",
+      "provider": "soundonstudio",
+      "host": "Sound On Studio",
+      "startAt": "2026-08-02T10:00:00-07:00",
+      "endAt": "2026-08-02T12:00:00-07:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup/p/91924-sound-great-from-home-with-steve-bucino",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
