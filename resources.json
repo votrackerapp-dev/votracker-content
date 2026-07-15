@@ -293,6 +293,15 @@
       "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-audiobooks-with-ronnie-butler-2"
     },
     {
+      "id": "vodojo-1157a79a3d2a",
+      "title": "Thursday August 13Th Vo Pro Fight Club Commercials With Msaada Nia",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-08-13T17:30:00-07:00",
+      "endAt": "2026-08-13T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/thursday-august-13th-vo-pro-fight-club-commercials-with-msaada-nia"
+    },
+    {
       "id": "vodojo-c600d388708e",
       "title": "The Vo Dojo At One Voice 2026",
       "provider": "thevodojo",
@@ -309,6 +318,15 @@
       "startAt": "2026-08-21T13:30:00-07:00",
       "endAt": "2026-08-21T15:30:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/tish-at-one-voice-2026-panel-and-class"
+    },
+    {
+      "id": "vodojo-255d8e58660d",
+      "title": "Tuesday August 25Th Vo Pro Fight Club Animation With Rogin Rashidan",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-08-25T17:30:00-07:00",
+      "endAt": "2026-08-25T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/tuesday-august-25th-vo-pro-fight-club-animation-with-rogin-rashidan"
     }
   ],
   "sections": [
