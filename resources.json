@@ -200,13 +200,13 @@
       "registrationURL": "https://www.realvoicela.com/service-page/online-auditioning-for-video-games"
     },
     {
-      "id": "realvoice-d550c2059f17",
-      "title": "In-Person Commercial Bootcamp w/ Craig",
+      "id": "realvoice-52fc9d6d45a5",
+      "title": "August Weekly VO Workout with Katie",
       "provider": "realvoicela",
       "host": "Real Voice LA",
-      "startAt": "2026-07-08T18:30:00-07:00",
-      "endAt": "2026-07-08T21:30:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/in-person-commercial-bootcamp-w-craig-3"
+      "startAt": "2026-08-02T12:00:00-07:00",
+      "endAt": "2026-08-02T14:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/august-weekly-vo-workout-with-katie"
     },
     {
       "id": "realvoice-66a7d79d76b5",
@@ -225,6 +225,15 @@
       "startAt": "2026-08-08T11:00:00-07:00",
       "endAt": "2026-08-08T14:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/august-in-person-conversational-vo"
+    },
+    {
+      "id": "realvoice-e556683bf6c6",
+      "title": "August In-PERSON Intro to Voiceover",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-08-12T14:00:00-07:00",
+      "endAt": "2026-08-12T17:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/august-in-person-intro-to-voiceover"
     },
     {
       "id": "redscythe-89bc2fc384e7",
