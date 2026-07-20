@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-07-19",
+  "lastUpdated": "2026-07-20",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -111,13 +111,13 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "soundon-9545c62603ba",
-      "title": "8.2.26 - Sound Great from Home with Steve Bucino! [SOLD OUT]",
+      "id": "soundon-6992b2925aaa",
+      "title": "8.22.26 - Mind Games! A Cold Read - Video Game Workshop with Ratana [SOLD OUT]",
       "provider": "soundonstudio",
       "host": "Sound On Studio",
-      "startAt": "2026-08-02T10:00:00-07:00",
-      "endAt": "2026-08-02T12:00:00-07:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup/p/91924-sound-great-from-home-with-steve-bucino",
+      "startAt": "2026-08-22T10:00:00-07:00",
+      "endAt": "2026-08-22T13:00:00-07:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup/p/mind-games-a-real-time-video-game-workshop-with-ratana",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
