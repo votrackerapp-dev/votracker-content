@@ -137,6 +137,32 @@
       "badgeColor": "#D32F2F"
     },
     {
+      "id": "soundon-84be6a77b2c0",
+      "title": "8.27.26 - Climbing the Emotional Ladder with Brenna Larsen! [SOLD OUT]",
+      "provider": "soundonstudio",
+      "host": "Sound On Studio",
+      "startAt": "2026-08-27T18:00:00-07:00",
+      "endAt": "2026-08-27T21:00:00-07:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup/p/32724-climbing-the-emotional-ladder-with-brenna-larsen",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "soundon-71a3be183bcc",
+      "title": "8.29.26 - Anime and Video Games with Chris Hackney! [SOLD OUT]",
+      "provider": "soundonstudio",
+      "host": "Sound On Studio",
+      "startAt": "2026-08-29T11:00:00-07:00",
+      "endAt": "2026-08-29T14:00:00-07:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup/p/characters-for-anime-and-interactive-with-chris-hackney-103021-ls3kn",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "soundon-6992b2925aaa",
       "title": "8.22.26 - Mind Games! A Cold Read - Video Game Workshop with Ratana [SOLD OUT]",
       "provider": "soundonstudio",
