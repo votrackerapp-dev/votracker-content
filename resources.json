@@ -112,13 +112,16 @@
     },
     {
       "id": "soundon-fadc92fa0a43",
-      "title": "8.9.26 - VO Pajama Party with Kirsten Day!",
+      "title": "8.9.26 - VO Pajama Party with Kirsten Day! [SOLD OUT]",
       "provider": "soundonstudio",
       "host": "Sound On Studio",
       "startAt": "2026-08-09T10:00:00-07:00",
-      "endAt": "2026-08-09T13:00:00-07:00",
+      "endAt": "2026-08-09T12:00:00-07:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup/p/vo-pajama-party-with-kirsten-day-51221-4wj88",
-      "venue": "See listing"
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
     },
     {
       "id": "soundon-9545c62603ba",
@@ -336,6 +339,15 @@
       "startAt": "2026-08-21T13:30:00-07:00",
       "endAt": "2026-08-21T15:30:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/tish-at-one-voice-2026-panel-and-class"
+    },
+    {
+      "id": "vodojo-255d8e58660d",
+      "title": "Tuesday August 25Th Vo Pro Fight Club Animation With Rogin Rashidan",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-08-25T17:30:00-07:00",
+      "endAt": "2026-08-25T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/tuesday-august-25th-vo-pro-fight-club-animation-with-rogin-rashidan"
     }
   ],
   "sections": [
