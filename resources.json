@@ -111,19 +111,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-d53c9e33a3c3",
-      "title": "Video Game Clinic - Darragh O'Farrell- Casting and Voice Director - Thursday, November 6th | 5-8pm PST - ZOOM [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-11-06T17:00:00-08:00",
-      "endAt": "2026-11-06T20:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-darragh-ofarrell-casting-and-voice-director-thursday-november-6th-6-9pm-pst-zoom-copy",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "soundon-fadc92fa0a43",
       "title": "8.9.26 - VO Pajama Party with Kirsten Day! [SOLD OUT]",
       "provider": "soundonstudio",
@@ -265,8 +252,8 @@
       "title": "August In-PERSON Intro to Voiceover",
       "provider": "realvoicela",
       "host": "Real Voice LA",
-      "startAt": "2026-08-12T14:00:00-07:00",
-      "endAt": "2026-08-12T17:00:00-07:00",
+      "startAt": "2026-08-05T14:00:00-07:00",
+      "endAt": "2026-08-05T17:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/august-in-person-intro-to-voiceover"
     },
     {
