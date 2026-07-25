@@ -46,6 +46,19 @@
   ],
   "workshops": [
     {
+      "id": "van-7413feeec4e0",
+      "title": "Agency Clinic - VOX Talent Agency - Tom Lawless | Thursday, June 25th | 4-7pm PT | ZOOM [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2027-06-25T16:00:00-07:00",
+      "endAt": "2027-06-25T19:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/agency-clinic-tom-lawless-thursday-june-25th-4-7pm-pt-zoom-current",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "van-9dc3f4f16430",
       "title": "Animation Clinic - Ania O'Hare | Added Clinic for Waitlisters | Thursday, July 23rd 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
       "provider": "van",
