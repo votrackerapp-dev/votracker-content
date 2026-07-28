@@ -111,45 +111,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-fd10d6b77e8a",
-      "title": "Dubbing Clinic - Wolfie Trausch | Thursday, June 18th | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2027-06-18T19:00:00-07:00",
-      "endAt": "2027-06-18T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/dubbing-clinic-wolfie-trausch-thursday-june-18th-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-b1b514f4673f",
-      "title": "Singing for Animation Clinic - Trisha Hildebrandt | Wednesday, July 29th 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-07-29T19:00:00-07:00",
-      "endAt": "2026-07-29T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/singing-for-animation-clinic-trisha-hildebrandt-wednesday-july-29th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-d53c9e33a3c3",
-      "title": "Video Game Clinic - Darragh O'Farrell- Casting and Voice Director - Thursday, November 6th | 5-8pm PST - ZOOM [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-11-06T17:00:00-08:00",
-      "endAt": "2026-11-06T20:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-darragh-ofarrell-casting-and-voice-director-thursday-november-6th-6-9pm-pst-zoom-copy",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "soundon-fadc92fa0a43",
       "title": "8.9.26 - VO Pajama Party with Kirsten Day! [SOLD OUT]",
       "provider": "soundonstudio",
@@ -222,15 +183,6 @@
       "startAt": "2026-07-29T14:00:00-07:00",
       "endAt": "2026-07-29T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
-    },
-    {
-      "id": "realvoice-8a67412df228",
-      "title": "Creating Characters with Arianna Ratner",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-07-21T12:00:00-07:00",
-      "endAt": "2026-07-21T15:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/creating-characters-with-arianna-ratner-2"
     },
     {
       "id": "realvoice-e863eb2f503c",
@@ -351,6 +303,15 @@
       "startAt": "2026-08-13T17:30:00-07:00",
       "endAt": "2026-08-13T19:30:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/thursday-august-13th-vo-pro-fight-club-commercials-with-msaada-nia"
+    },
+    {
+      "id": "vodojo-069ffdb684e9",
+      "title": "Get To Know Vo All About Vo Awards With Sovas Joan Baker And Rudy Gaskins",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-08-19T10:00:00-07:00",
+      "endAt": "2026-08-19T12:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/get-to-know-vo-all-about-vo-awards-with-sovas-joan-baker-and-rudy-gaskins"
     },
     {
       "id": "vodojo-c600d388708e",
