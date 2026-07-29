@@ -47,13 +47,16 @@
   "workshops": [
     {
       "id": "van-18e48f137ff6",
-      "title": "Agency Clinic - Heather Dame | Wednesday, August 12th 2026 | 4-7pm PT | ZOOM",
+      "title": "Agency Clinic - Heather Dame | Wednesday, August 12th 2026 | 4-7pm PT | ZOOM [SOLD OUT]",
       "provider": "van",
       "host": "Voice Actors Network",
       "startAt": "2026-08-12T16:00:00-07:00",
       "endAt": "2026-08-12T19:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/agency-clinic-heather-dame-wednesday-august-12th-2026-4-7pm-pt-zoom",
-      "venue": "Zoom"
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
     },
     {
       "id": "van-7413feeec4e0",
@@ -109,23 +112,29 @@
     },
     {
       "id": "van-2f8ac78adfc8",
-      "title": "Animation Clinic - Kelly Ward | Thursday, August 27th 2026 | 7-10pm PT | IN STUDIO",
+      "title": "Animation Clinic - Kelly Ward | Thursday, August 27th 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
       "provider": "van",
       "host": "Voice Actors Network",
       "startAt": "2026-08-27T19:00:00-07:00",
       "endAt": "2026-08-27T22:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-kelly-ward-thursday-august-27th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio"
+      "venue": "In Studio",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
     },
     {
       "id": "van-e6a8cf1ae681",
-      "title": "Animation Clinic - Mick Wingert | Wednesday, August 26th 2026 | 7-10pm PT | IN STUDIO",
+      "title": "Animation Clinic - Mick Wingert | Wednesday, August 26th 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
       "provider": "van",
       "host": "Voice Actors Network",
       "startAt": "2026-08-26T19:00:00-07:00",
       "endAt": "2026-08-26T22:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-mick-wingert-wednesday-august-26th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio"
+      "venue": "In Studio",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
     },
     {
       "id": "van-2a70b626b7dc",
