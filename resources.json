@@ -46,6 +46,16 @@
   ],
   "workshops": [
     {
+      "id": "van-18e48f137ff6",
+      "title": "Agency Clinic - Heather Dame | Wednesday, August 12th 2026 | 4-7pm PT | ZOOM",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-08-12T16:00:00-07:00",
+      "endAt": "2026-08-12T19:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/agency-clinic-heather-dame-wednesday-august-12th-2026-4-7pm-pt-zoom",
+      "venue": "Zoom"
+    },
+    {
       "id": "van-7413feeec4e0",
       "title": "Agency Clinic - VOX Talent Agency - Tom Lawless | Thursday, June 25th | 4-7pm PT | ZOOM [SOLD OUT]",
       "provider": "van",
@@ -98,6 +108,26 @@
       "badgeColor": "#D32F2F"
     },
     {
+      "id": "van-2f8ac78adfc8",
+      "title": "Animation Clinic - Kelly Ward | Thursday, August 27th 2026 | 7-10pm PT | IN STUDIO",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-08-27T19:00:00-07:00",
+      "endAt": "2026-08-27T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-kelly-ward-thursday-august-27th-2026-7-10pm-pt-in-studio",
+      "venue": "In Studio"
+    },
+    {
+      "id": "van-e6a8cf1ae681",
+      "title": "Animation Clinic - Mick Wingert | Wednesday, August 26th 2026 | 7-10pm PT | IN STUDIO",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-08-26T19:00:00-07:00",
+      "endAt": "2026-08-26T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-mick-wingert-wednesday-august-26th-2026-7-10pm-pt-in-studio",
+      "venue": "In Studio"
+    },
+    {
       "id": "van-2a70b626b7dc",
       "title": "Animation Clinic - Tyler Chapman | Wednesday, June 10th | 7-10pm PT | IN STUDIO [SOLD OUT]",
       "provider": "van",
@@ -105,32 +135,6 @@
       "startAt": "2027-06-10T19:00:00-07:00",
       "endAt": "2027-06-10T22:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-tyler-chapman-wednesday-june-10th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-fd10d6b77e8a",
-      "title": "Dubbing Clinic - Wolfie Trausch | Thursday, June 18th | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2027-06-18T19:00:00-07:00",
-      "endAt": "2027-06-18T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/dubbing-clinic-wolfie-trausch-thursday-june-18th-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-b1b514f4673f",
-      "title": "Singing for Animation Clinic - Trisha Hildebrandt | Wednesday, July 29th 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-07-29T19:00:00-07:00",
-      "endAt": "2026-07-29T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/singing-for-animation-clinic-trisha-hildebrandt-wednesday-july-29th-2026-7-10pm-pt-in-studio",
       "venue": "In Studio",
       "soldOut": true,
       "badgeText": "Sold Out",
