@@ -137,19 +137,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-8d361a82fe96",
-      "title": "Video Game Clinic - Tyler Rhoads | Wednesday, June 24th | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2027-06-24T19:00:00-07:00",
-      "endAt": "2027-06-24T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-tyler-rhoads-wednesday-june-24th-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "soundon-fadc92fa0a43",
       "title": "8.9.26 - VO Pajama Party with Kirsten Day! [SOLD OUT]",
       "provider": "soundonstudio",
@@ -275,6 +262,15 @@
       "endAt": "2027-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
+    },
+    {
+      "id": "vodojo-184566a3eda3",
+      "title": "Ask The Sensei With Christie Cate",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-08-05T10:00:00-07:00",
+      "endAt": "2026-08-05T12:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/ask-the-sensei-with-christie-cate"
     },
     {
       "id": "vodojo-9277efed9e46",
