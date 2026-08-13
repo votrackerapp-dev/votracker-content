@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-08-12",
+  "lastUpdated": "2026-08-13",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -253,15 +253,6 @@
       "endAt": "2027-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
-    },
-    {
-      "id": "vodojo-9277efed9e46",
-      "title": "You Should Do Audiobooks With Ronnie Butler 2",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-08-11T16:00:00-07:00",
-      "endAt": "2026-08-11T18:00:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-audiobooks-with-ronnie-butler-2"
     },
     {
       "id": "vodojo-1157a79a3d2a",
