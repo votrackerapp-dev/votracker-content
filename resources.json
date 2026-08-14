@@ -298,6 +298,24 @@
       "startAt": "2026-09-17T17:30:00-07:00",
       "endAt": "2026-09-17T19:30:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/thursday-september-17th-vo-pro-fight-club-commercials-with-angela-mickey"
+    },
+    {
+      "id": "vodojo-38e1b7d4dc70",
+      "title": "Sunday September 20Th Vo Pro Fight Club Animation With Dawn Hershey",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-09-20T14:00:00-07:00",
+      "endAt": "2026-09-20T16:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/sunday-september-20th-vo-pro-fight-club-animation-with-dawn-hershey"
+    },
+    {
+      "id": "vodojo-b01164e8fc2d",
+      "title": "Tuesday September 29Th Vo Pro Fight Club Commercials With Steve Pogatch",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-09-29T17:30:00-07:00",
+      "endAt": "2026-09-29T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/tuesday-september-29th-vo-pro-fight-club-commercials-with-steve-pogatch"
     }
   ],
   "sections": [
