@@ -255,15 +255,6 @@
       "venue": "Online"
     },
     {
-      "id": "vodojo-1157a79a3d2a",
-      "title": "Thursday August 13Th Vo Pro Fight Club Commercials With Msaada Nia",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-08-13T17:30:00-07:00",
-      "endAt": "2026-08-13T19:30:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/thursday-august-13th-vo-pro-fight-club-commercials-with-msaada-nia"
-    },
-    {
       "id": "vodojo-069ffdb684e9",
       "title": "Get To Know Vo All About Vo Awards With Sovas Joan Baker And Rudy Gaskins",
       "provider": "thevodojo",
@@ -298,6 +289,15 @@
       "startAt": "2026-08-25T17:30:00-07:00",
       "endAt": "2026-08-25T19:30:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/tuesday-august-25th-vo-pro-fight-club-animation-with-rogin-rashidan"
+    },
+    {
+      "id": "vodojo-7e0b5756fb64",
+      "title": "Thursday September 17Th Vo Pro Fight Club Commercials With Angela Mickey",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-09-17T17:30:00-07:00",
+      "endAt": "2026-09-17T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/thursday-september-17th-vo-pro-fight-club-commercials-with-angela-mickey"
     }
   ],
   "sections": [
