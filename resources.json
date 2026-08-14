@@ -300,6 +300,24 @@
       "registrationURL": "https://www.thevodojo.com/new-events/tuesday-august-25th-vo-pro-fight-club-animation-with-rogin-rashidan"
     },
     {
+      "id": "vodojo-528b4a668e1b",
+      "title": "Ask The Sensei With Mocean Melvin",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-09-02T10:00:00-07:00",
+      "endAt": "2026-09-02T12:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/ask-the-sensei-with-mocean-melvin"
+    },
+    {
+      "id": "vodojo-efbca18b10e6",
+      "title": "Demo Listen Derby With Brittany Cox Amp Ryan Ricks",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-09-16T10:00:00-07:00",
+      "endAt": "2026-09-16T12:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/demo-listen-derby-with-brittany-cox-amp-ryan-ricks"
+    },
+    {
       "id": "vodojo-7e0b5756fb64",
       "title": "Thursday September 17Th Vo Pro Fight Club Commercials With Angela Mickey",
       "provider": "thevodojo",
