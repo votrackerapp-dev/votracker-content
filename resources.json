@@ -137,32 +137,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-fd10d6b77e8a",
-      "title": "Dubbing Clinic - Wolfie Trausch | Thursday, June 18th | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2027-06-18T19:00:00-07:00",
-      "endAt": "2027-06-18T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/dubbing-clinic-wolfie-trausch-thursday-june-18th-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-5869c0bb27da",
-      "title": "Promo Clinic - Craig Stinson - FOX PROMOS | Wednesday, August 19th 2026 | 7-10 pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-08-19T19:00:00-07:00",
-      "endAt": "2026-08-19T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/promo-clinic-craig-stinson-fox-promos-wednesday-august-19th-2026-7-10-pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "soundon-84be6a77b2c0",
       "title": "8.27.26 - Climbing the Emotional Ladder with Brenna Larsen! [SOLD OUT]",
       "provider": "soundonstudio",
@@ -209,6 +183,69 @@
       "startAt": "2026-08-19T14:00:00-07:00",
       "endAt": "2026-08-19T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
+    },
+    {
+      "id": "realvoice-4a1b20a4564c",
+      "title": "August - Level Up: Anime & Video Game",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-08-24T18:30:00-07:00",
+      "endAt": "2026-08-24T21:30:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/august-level-up-anime-video-game"
+    },
+    {
+      "id": "realvoice-cfbb9b1b379c",
+      "title": "September - ONLINE Intro to Voiceover",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-09-11T14:00:00-07:00",
+      "endAt": "2026-09-11T17:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/september-online-intro-to-voiceover"
+    },
+    {
+      "id": "realvoice-b5a65745b6a5",
+      "title": "Sept - Anime Intensive with Matthew Rudd",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-09-08T18:00:00-07:00",
+      "endAt": "2026-09-08T21:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/sept-anime-intensive-with-matthew-rudd"
+    },
+    {
+      "id": "realvoice-827856cb03e4",
+      "title": "September Weekly VO Workout with Katie",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-09-02T12:00:00-07:00",
+      "endAt": "2026-09-02T14:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/september-weekly-vo-workout-with-katie"
+    },
+    {
+      "id": "realvoice-e30cfbffa8d7",
+      "title": "ONLINE Commercial Bootcamp w/ Craig",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-09-14T14:00:00-07:00",
+      "endAt": "2026-09-14T17:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/online-commercial-bootcamp-w-craig-1"
+    },
+    {
+      "id": "realvoice-598823c590fc",
+      "title": "September In-PERSON Intro to Voiceover",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-09-22T14:00:00-07:00",
+      "endAt": "2026-09-22T17:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/september-in-person-intro-to-voiceover"
+    },
+    {
+      "id": "realvoice-9590aecadd9e",
+      "title": "In-Person Level 1 Video Games Intensive",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-09-30T18:30:00-07:00",
+      "endAt": "2026-09-30T21:30:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/in-person-level-1-video-games-intensive-1"
     },
     {
       "id": "redscythe-89bc2fc384e7",
