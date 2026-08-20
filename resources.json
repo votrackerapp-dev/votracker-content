@@ -124,32 +124,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-5869c0bb27da",
-      "title": "Promo Clinic - Craig Stinson - FOX PROMOS | Wednesday, August 19th 2026 | 7-10 pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-08-19T19:00:00-07:00",
-      "endAt": "2026-08-19T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/promo-clinic-craig-stinson-fox-promos-wednesday-august-19th-2026-7-10-pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-8d361a82fe96",
-      "title": "Video Game Clinic - Tyler Rhoads | Wednesday, June 24th | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2027-06-24T19:00:00-07:00",
-      "endAt": "2027-06-24T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-tyler-rhoads-wednesday-june-24th-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "soundon-84be6a77b2c0",
       "title": "8.27.26 - Climbing the Emotional Ladder with Brenna Larsen! [SOLD OUT]",
       "provider": "soundonstudio",
@@ -243,13 +217,13 @@
       "registrationURL": "https://www.realvoicela.com/service-page/online-commercial-bootcamp-w-craig-1"
     },
     {
-      "id": "realvoice-eac3377efb23",
-      "title": "4-Week Audition Focused Workout Group",
+      "id": "realvoice-3a8e88b028de",
+      "title": "4-Week Online Workout Group",
       "provider": "realvoicela",
       "host": "Real Voice LA",
       "startAt": "2026-09-26T11:00:00-07:00",
       "endAt": "2026-09-26T13:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/4-week-audition-focused-workout-group"
+      "registrationURL": "https://www.realvoicela.com/service-page/4-week-online-workout-group"
     },
     {
       "id": "realvoice-598823c590fc",
@@ -307,24 +281,6 @@
       "endAt": "2027-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
-    },
-    {
-      "id": "vodojo-069ffdb684e9",
-      "title": "Get To Know Vo All About Vo Awards With Sovas Joan Baker And Rudy Gaskins",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-08-19T10:00:00-07:00",
-      "endAt": "2026-08-19T12:00:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/get-to-know-vo-all-about-vo-awards-with-sovas-joan-baker-and-rudy-gaskins"
-    },
-    {
-      "id": "vodojo-c600d388708e",
-      "title": "The Vo Dojo At One Voice 2026",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-08-20T09:30:00-07:00",
-      "endAt": "2026-08-20T11:30:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/the-vo-dojo-at-one-voice-2026"
     },
     {
       "id": "vodojo-cbad199f3b25",
