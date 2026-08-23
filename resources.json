@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-08-22",
+  "lastUpdated": "2026-08-23",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -333,15 +333,6 @@
       "endAt": "2027-02-28T13:00:00-08:00",
       "registrationURL": "https://tidycal.com/redscythestudio/228june",
       "venue": "Online"
-    },
-    {
-      "id": "vodojo-cbad199f3b25",
-      "title": "Tish At One Voice 2026 Panel And Class",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-08-21T13:30:00-07:00",
-      "endAt": "2026-08-21T15:30:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/tish-at-one-voice-2026-panel-and-class"
     },
     {
       "id": "vodojo-255d8e58660d",
