@@ -124,6 +124,32 @@
       "badgeColor": "#D32F2F"
     },
     {
+      "id": "van-fd10d6b77e8a",
+      "title": "Dubbing Clinic - Wolfie Trausch | Thursday, June 18th | 7-10pm PT | IN STUDIO [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2027-06-18T19:00:00-07:00",
+      "endAt": "2027-06-18T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/dubbing-clinic-wolfie-trausch-thursday-june-18th-7-10pm-pt-in-studio",
+      "venue": "In Studio",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "van-5869c0bb27da",
+      "title": "Promo Clinic - Craig Stinson - FOX PROMOS | Wednesday, August 19th 2026 | 7-10 pm PT | IN STUDIO [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2026-08-19T19:00:00-07:00",
+      "endAt": "2026-08-19T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/promo-clinic-craig-stinson-fox-promos-wednesday-august-19th-2026-7-10-pm-pt-in-studio",
+      "venue": "In Studio",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "soundon-49e404bb1515",
       "title": "9.16.26 - Video Games and Animation with Brook Chalmers! [SOLD OUT]",
       "provider": "soundonstudio",
