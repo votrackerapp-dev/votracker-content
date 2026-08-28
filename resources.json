@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-08-27",
+  "lastUpdated": "2026-08-28",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -248,15 +248,6 @@
       "startAt": "2026-08-29T14:00:00-07:00",
       "endAt": "2026-08-29T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
-    },
-    {
-      "id": "realvoice-4a1b20a4564c",
-      "title": "August - Level Up: Anime & Video Game",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-08-24T18:30:00-07:00",
-      "endAt": "2026-08-24T21:30:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/august-level-up-anime-video-game"
     },
     {
       "id": "realvoice-cfbb9b1b379c",
