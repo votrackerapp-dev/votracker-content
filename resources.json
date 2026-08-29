@@ -295,6 +295,15 @@
       "registrationURL": "https://www.realvoicela.com/service-page/4-week-audition-focused-workout-group"
     },
     {
+      "id": "realvoice-598823c590fc",
+      "title": "September In-PERSON Intro to Voiceover",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-09-22T14:00:00-07:00",
+      "endAt": "2026-09-22T17:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/september-in-person-intro-to-voiceover"
+    },
+    {
       "id": "realvoice-66a7d79d76b5",
       "title": "IN PERSON Gaming & Animation Workshop",
       "provider": "realvoicela",
