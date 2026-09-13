@@ -260,6 +260,15 @@
       "registrationURL": "https://www.realvoicela.com/service-page/september-agent-night-with-micaela-hicks"
     },
     {
+      "id": "realvoice-5bbbf27cc0ca",
+      "title": "September - Level Up: Anime & Video Game",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-09-24T18:30:00-07:00",
+      "endAt": "2026-09-24T21:30:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/september-level-up-anime-video-game"
+    },
+    {
       "id": "realvoice-eac3377efb23",
       "title": "4-Week Audition Focused Workout Group",
       "provider": "realvoicela",
