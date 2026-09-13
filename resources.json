@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-09-12",
+  "lastUpdated": "2026-09-13",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -163,32 +163,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-b35c894217e3",
-      "title": "Video Game Clinic - Kal-El Bogdanove | Thursday, September 10th 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-09-10T19:00:00-07:00",
-      "endAt": "2026-09-10T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-kal-el-bogdanove-thursday-september-10th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-8d361a82fe96",
-      "title": "Video Game Clinic - Tyler Rhoads | Wednesday, June 24th | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2027-06-24T19:00:00-07:00",
-      "endAt": "2027-06-24T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-tyler-rhoads-wednesday-june-24th-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "soundon-49e404bb1515",
       "title": "9.16.26 - Video Games and Animation with Brook Chalmers! [SOLD OUT]",
       "provider": "soundonstudio",
@@ -245,8 +219,8 @@
       "title": "Events",
       "provider": "halp_academy",
       "host": "HALP Academy",
-      "startAt": "2026-09-12T14:00:00-07:00",
-      "endAt": "2026-09-12T16:00:00-07:00",
+      "startAt": "2026-09-17T14:00:00-07:00",
+      "endAt": "2026-09-17T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
     },
     {
