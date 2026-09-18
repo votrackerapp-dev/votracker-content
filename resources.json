@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-09-17",
+  "lastUpdated": "2026-09-18",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -219,8 +219,8 @@
       "title": "Events",
       "provider": "halp_academy",
       "host": "HALP Academy",
-      "startAt": "2026-09-17T14:00:00-07:00",
-      "endAt": "2026-09-17T16:00:00-07:00",
+      "startAt": "2026-09-23T14:00:00-07:00",
+      "endAt": "2026-09-23T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
     },
     {
