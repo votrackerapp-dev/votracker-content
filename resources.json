@@ -163,19 +163,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-b35c894217e3",
-      "title": "Video Game Clinic - Kal-El Bogdanove | Thursday, September 10th 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-09-10T19:00:00-07:00",
-      "endAt": "2026-09-10T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-kal-el-bogdanove-thursday-september-10th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "van-8d361a82fe96",
       "title": "Video Game Clinic - Tyler Rhoads | Wednesday, June 24th | 7-10pm PT | IN STUDIO [SOLD OUT]",
       "provider": "van",
@@ -303,15 +290,6 @@
       "startAt": "2026-09-30T18:30:00-07:00",
       "endAt": "2026-09-30T21:30:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/in-person-level-1-video-games-intensive-1"
-    },
-    {
-      "id": "vodojo-efbca18b10e6",
-      "title": "Demo Listen Derby With Brittany Cox Amp Ryan Ricks",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-09-16T10:00:00-07:00",
-      "endAt": "2026-09-16T12:00:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/demo-listen-derby-with-brittany-cox-amp-ryan-ricks"
     },
     {
       "id": "vodojo-7e0b5756fb64",
