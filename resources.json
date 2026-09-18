@@ -163,6 +163,19 @@
       "badgeColor": "#D32F2F"
     },
     {
+      "id": "van-8d361a82fe96",
+      "title": "Video Game Clinic - Tyler Rhoads | Wednesday, June 24th | 7-10pm PT | IN STUDIO [SOLD OUT]",
+      "provider": "van",
+      "host": "Voice Actors Network",
+      "startAt": "2027-06-24T19:00:00-07:00",
+      "endAt": "2027-06-24T22:00:00-07:00",
+      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-tyler-rhoads-wednesday-june-24th-7-10pm-pt-in-studio",
+      "venue": "In Studio",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "soundon-7ef58098275e",
       "title": "9.21.26 - Breaking Through with Brianna! (an Anime and Video Game workshop) [SOLD OUT]",
       "provider": "soundonstudio",
@@ -196,15 +209,6 @@
       "startAt": "2026-09-23T14:00:00-07:00",
       "endAt": "2026-09-23T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
-    },
-    {
-      "id": "realvoice-cfbb9b1b379c",
-      "title": "September - ONLINE Intro to Voiceover",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-09-11T14:00:00-07:00",
-      "endAt": "2026-09-11T17:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/september-online-intro-to-voiceover"
     },
     {
       "id": "realvoice-e30cfbffa8d7",
