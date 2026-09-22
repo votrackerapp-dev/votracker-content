@@ -186,12 +186,15 @@
     },
     {
       "id": "realvoice-34bd3a00eaed",
-      "title": "September Agent Night with Micaela Hicks",
+      "title": "September Agent Night with Micaela Hicks [SOLD OUT]",
       "provider": "realvoicela",
       "host": "Real Voice LA",
       "startAt": "2026-09-22T21:00:00-07:00",
       "endAt": "2026-09-22T23:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/september-agent-night-with-micaela-hicks"
+      "registrationURL": "https://www.realvoicela.com/service-page/september-agent-night-with-micaela-hicks",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
     },
     {
       "id": "realvoice-5bbbf27cc0ca",
