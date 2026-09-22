@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-09-21",
+  "lastUpdated": "2026-09-22",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -176,19 +176,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "soundon-7ef58098275e",
-      "title": "9.21.26 - Breaking Through with Brianna! (an Anime and Video Game workshop) [SOLD OUT]",
-      "provider": "soundonstudio",
-      "host": "Sound On Studio",
-      "startAt": "2026-09-21T18:00:00-07:00",
-      "endAt": "2026-09-21T21:00:00-07:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup/p/72424-breaking-through-with-brianna-an-anime-and-video-game-workshop",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "halp-14293ec00dbc",
       "title": "Events",
       "provider": "halp_academy",
@@ -199,15 +186,12 @@
     },
     {
       "id": "realvoice-34bd3a00eaed",
-      "title": "September Agent Night with Micaela Hicks [SOLD OUT]",
+      "title": "September Agent Night with Micaela Hicks",
       "provider": "realvoicela",
       "host": "Real Voice LA",
       "startAt": "2026-09-22T21:00:00-07:00",
       "endAt": "2026-09-22T23:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/september-agent-night-with-micaela-hicks",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "registrationURL": "https://www.realvoicela.com/service-page/september-agent-night-with-micaela-hicks"
     },
     {
       "id": "realvoice-5bbbf27cc0ca",
