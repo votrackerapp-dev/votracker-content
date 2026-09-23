@@ -350,6 +350,15 @@
       "startAt": "2026-10-30T07:00:00-07:00",
       "endAt": "2026-10-30T09:00:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/the-vo-dojo-at-la-comic-con-2026-ft-exclusive-panel"
+    },
+    {
+      "id": "vodojo-1c6ead910e02",
+      "title": "Nth Degree Career Catapult Intensive 2",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-11-06T11:00:00-08:00",
+      "endAt": "2026-11-06T13:00:00-08:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/nth-degree-career-catapult-intensive-2"
     }
   ],
   "sections": [
