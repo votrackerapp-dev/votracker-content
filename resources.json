@@ -189,6 +189,19 @@
       "badgeColor": "#D32F2F"
     },
     {
+      "id": "soundon-25af0c1b9f1d",
+      "title": "10.18.26 - TWO FACED with Kirsten Day! [SOLD OUT]",
+      "provider": "soundonstudio",
+      "host": "Sound On Studio",
+      "startAt": "2026-10-18T10:00:00-07:00",
+      "endAt": "2026-10-18T13:00:00-07:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup/p/two-faced-with-kirsten-day",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
       "id": "soundon-16595ff8da1d",
       "title": "10.31.26 - TRICK OR TREAT! Animation, VG, & Commercial VO with Joe Hernandez! [SOLD OUT]",
       "provider": "soundonstudio",
