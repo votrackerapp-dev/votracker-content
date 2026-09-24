@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-09-23",
+  "lastUpdated": "2026-09-24",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -105,19 +105,6 @@
       "startAt": "2027-06-10T19:00:00-07:00",
       "endAt": "2027-06-10T22:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/animation-clinic-tyler-chapman-wednesday-june-10th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-7bfea0a33335",
-      "title": "Dubbing Clinic - Stephanie Sheh | Wednesday, September 16th 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-09-16T19:00:00-07:00",
-      "endAt": "2026-09-16T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/dubbing-clinic-stephanie-sheh-wednesday-september-16th-2026-7-10pm-pt-in-studio",
       "venue": "In Studio",
       "soldOut": true,
       "badgeText": "Sold Out",
@@ -245,8 +232,8 @@
       "title": "Events",
       "provider": "halp_academy",
       "host": "HALP Academy",
-      "startAt": "2026-09-23T14:00:00-07:00",
-      "endAt": "2026-09-23T16:00:00-07:00",
+      "startAt": "2026-10-08T14:00:00-07:00",
+      "endAt": "2026-10-08T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
     },
     {
