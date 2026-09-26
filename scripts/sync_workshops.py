@@ -58,71 +58,105 @@ def make_id(source, title, url):
     return f"{source}-{hash_val}"
 
 def extract_time(text):
-    """Extract time from text - IMPROVED VERSION"""
-    # Try range first: 7pm-9pm, 7:00pm-9:00pm, 7-9pm
-    patterns = [
-        # Full range: 7:00pm-9:00pm
-        r'(\d{1,2})(?::(\d{2}))?\s*(am|pm)\s*[-–to]+\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)',
-        # Compact range: 7-9pm
-        r'(\d{1,2})\s*[-–]\s*(\d{1,2})\s*(am|pm)',
-    ]
-    
-    for pattern in patterns:
-        m = re.search(pattern, text, re.I)
-        if m:
-            groups = m.groups()
-            
-            # Handle compact format (7-9pm)
-            if len(groups) == 3:
-                sh = int(groups[0])
-                sm = 0
-                eh = int(groups[1])
-                em = 0
-                period = groups[2].lower()
-                
-                # Both times get same AM/PM
-                if period == 'pm' and sh < 12:
-                    sh += 12
-                if period == 'pm' and eh < 12:
-                    eh += 12
-                elif period == 'am' and sh == 12:
-                    sh = 0
-                elif period == 'am' and eh == 12:
-                    eh = 0
-            else:
-                # Full format
-                sh = int(groups[0])
-                sm = int(groups[1] or 0)
-                if groups[2].lower() == 'pm' and sh < 12:
-                    sh += 12
-                elif groups[2].lower() == 'am' and sh == 12:
-                    sh = 0
-                
-                eh = int(groups[3])
-                em = int(groups[4] or 0)
-                if groups[5].lower() == 'pm' and eh < 12:
-                    eh += 12
-                elif groups[5].lower() == 'am' and eh == 12:
-                    eh = 0
-            
-            # Validate hours
-            if 0 <= sh <= 23 and 0 <= eh <= 23:
-                return sh, sm, eh, em
-    
-    # Try single time: 7pm, 7:00pm
-    m = re.search(r'(\d{1,2})(?::(\d{2}))?\s*(am|pm)', text, re.I)
-    if m:
-        sh = int(m.group(1))
-        sm = int(m.group(2) or 0)
-        if m.group(3).lower() == 'pm' and sh < 12:
+    """Extract time from text with support for compact ranges like 10-1pm."""
+    if not text:
+        return None
+
+    # Full range:
+    # 7pm-9pm
+    # 7:00pm-9:00pm
+    full_range = re.search(
+        r'(\d{1,2})(?::(\d{2}))?\s*(am|pm)\s*[-–]\s*'
+        r'(\d{1,2})(?::(\d{2}))?\s*(am|pm)',
+        text,
+        re.I
+    )
+
+    if full_range:
+        sh = int(full_range.group(1))
+        sm = int(full_range.group(2) or 0)
+        sp = full_range.group(3).lower()
+
+        eh = int(full_range.group(4))
+        em = int(full_range.group(5) or 0)
+        ep = full_range.group(6).lower()
+
+        if sp == "pm" and sh < 12:
             sh += 12
-        elif m.group(3).lower() == 'am' and sh == 12:
+        elif sp == "am" and sh == 12:
             sh = 0
-        
-        # Validate hour
-        if 0 <= sh <= 23:
-            return sh, sm, sh + 2, sm  # Default 2hr duration
-    
+
+        if ep == "pm" and eh < 12:
+            eh += 12
+        elif ep == "am" and eh == 12:
+            eh = 0
+
+        return sh, sm, eh, em
+
+    # Compact range where AM/PM appears only once:
+    #
+    # 7-9pm   = 7pm-9pm
+    # 10-1pm  = 10am-1pm
+    # 9-12pm  = 9am-12pm
+    # 9-11am  = 9am-11am
+    compact = re.search(
+        r'(\d{1,2})\s*[-–]\s*(\d{1,2})\s*(am|pm)',
+        text,
+        re.I
+    )
+
+    if compact:
+        sh = int(compact.group(1))
+        eh = int(compact.group(2))
+        period = compact.group(3).lower()
+
+        sm = 0
+        em = 0
+
+        if period == "pm":
+            if eh == 12:
+                # 9-12pm means 9am-noon.
+                pass
+            elif sh > eh:
+                # 10-1pm means 10am-1pm.
+                eh += 12
+            else:
+                # 7-9pm means 7pm-9pm.
+                if sh < 12:
+                    sh += 12
+                if eh < 12:
+                    eh += 12
+
+        else:  # AM
+            if sh == 12:
+                sh = 0
+            if eh == 12:
+                eh = 0
+
+        return sh, sm, eh, em
+
+    # Single time
+    single = re.search(
+        r'(\d{1,2})(?::(\d{2}))?\s*(am|pm)',
+        text,
+        re.I
+    )
+
+    if single:
+        sh = int(single.group(1))
+        sm = int(single.group(2) or 0)
+        period = single.group(3).lower()
+
+        if period == "pm" and sh < 12:
+            sh += 12
+        elif period == "am" and sh == 12:
+            sh = 0
+
+        # Default to a 2-hour class.
+        end_dt = datetime(2000, 1, 1, sh, sm) + timedelta(hours=2)
+
+        return sh, sm, end_dt.hour, end_dt.minute
+
     return None
 
 
@@ -490,14 +524,168 @@ def extract_soundon_detail_info(html):
 
 
 def scrape_soundon():
-    """Sound On Studio - parse Squarespace product cards and detail pages"""
+    """Sound On Studio - parse Squarespace product cards and detail pages."""
     print("[SOUND ON STUDIO] Scraping...")
     events = []
-    
+
     base_url = "https://www.soundonstudio.com/classsignup"
     html = fetch(base_url)
+
     if not html:
         return events
+
+    soup = BeautifulSoup(html, "html.parser")
+    cards = soup.select("div.product-list-item")
+
+    log(f"Found {len(cards)} product cards")
+
+    for card in cards:
+        try:
+            link = card.select_one("a.product-list-item-link[href]")
+            title_tag = card.select_one(".product-list-item-title")
+
+            if not link or not title_tag:
+                continue
+
+            title = clean_text(title_tag.get_text(" ", strip=True))
+
+            date = parse_soundon_title_date(title)
+
+            if not date:
+                log(f"Skipping product with unparseable date: {title[:50]}")
+                continue
+
+            detail_url = urljoin(base_url, link["href"])
+
+            # ---------------------------------------------------------
+            # AVAILABILITY
+            # ---------------------------------------------------------
+            #
+            # IMPORTANT:
+            # Do NOT scan the entire Squarespace detail HTML for
+            # "sold out". Squarespace can contain hidden/store UI text
+            # which causes false positives.
+            #
+            # The class card on /classsignup reflects the CURRENT
+            # availability shown to customers.
+            # ---------------------------------------------------------
+
+            card_text = clean_text(
+                card.get_text(" ", strip=True)
+            )
+
+            card_text_lower = card_text.lower()
+
+            if "limited availability" in card_text_lower:
+                sold_out = False
+
+            elif re.search(
+                r"\bsold[\s-]*out\b",
+                card_text_lower,
+                re.IGNORECASE
+            ):
+                sold_out = True
+
+            elif "sold-out" in (card.get("class") or []):
+                sold_out = True
+
+            else:
+                sold_out = False
+
+            # ---------------------------------------------------------
+            # TIME / VENUE
+            # ---------------------------------------------------------
+
+            time_info = None
+            venue = "See listing"
+
+            detail_html = fetch(detail_url)
+
+            if detail_html:
+                time_info, venue = extract_soundon_detail_info(detail_html)
+
+            if time_info:
+                sh, sm, eh, em = time_info
+
+                start = date.replace(
+                    hour=sh,
+                    minute=sm,
+                    second=0,
+                    microsecond=0
+                )
+
+                end = date.replace(
+                    hour=eh,
+                    minute=em,
+                    second=0,
+                    microsecond=0
+                )
+
+                # Safety check in case a site's time formatting produces
+                # an impossible range.
+                if end <= start:
+                    log(
+                        f"⚠️ Invalid Sound On time range "
+                        f"{sh:02d}:{sm:02d}-{eh:02d}:{em:02d}; "
+                        f"using 3-hour duration"
+                    )
+
+                    end = start + timedelta(hours=3)
+
+            else:
+                # Most Sound On workshops are roughly 3 hours.
+                start = date.replace(
+                    hour=10,
+                    minute=0,
+                    second=0,
+                    microsecond=0
+                )
+
+                end = start + timedelta(hours=3)
+
+            event = {
+                "id": make_id(
+                    "soundon",
+                    title,
+                    detail_url
+                ),
+                "title": title,
+                "provider": "soundonstudio",
+                "host": "Sound On Studio",
+                "startAt": start.isoformat(),
+                "endAt": end.isoformat(),
+                "registrationURL": detail_url,
+                "venue": venue
+            }
+
+            event = apply_status_badge(
+                event,
+                sold_out
+            )
+
+            events.append(event)
+
+            availability = (
+                "sold out"
+                if sold_out
+                else "available"
+            )
+
+            log(
+                f"✓ {event['title'][:50]} "
+                f"({availability})"
+            )
+
+        except Exception as e:
+            log(f"⚠️ Error: {e}")
+            continue
+
+    print(
+        f"[SOUND ON STUDIO] Found "
+        f"{len(events)} events"
+    )
+
+    return events
     
     soup = BeautifulSoup(html, "html.parser")
     cards = soup.select("div.product-list-item")
