@@ -352,48 +352,166 @@
       "registrationURL": "https://www.thevodojo.com/new-events/nth-degree-career-catapult-intensive-2"
     }
   ],
-  "sections": [
+ "sections": [
     {
-      "title": "Rates & Industry Guides",
+      "title": "Start Here",
       "items": [
         {
-          "title": "GVAA Rate Guide",
-          "subtitle": "Rate standards, best practices, and usage guidance.",
-          "icon": "doc.text.magnifyingglass",
-          "url": "https://globalvoiceacademy.com/gvaa-rate-guide-2/",
-          "isPremium": false
-        },
-        {
           "title": "I Want To Be A Voice Actor",
-          "subtitle": "Straightforward VO info — training, demos, agents, and more.",
+          "subtitle": "Straightforward guidance on training, demos, agents, auditions, and building a VO career.",
           "icon": "sparkles",
           "url": "https://iwanttobeavoiceactor.com/",
           "isPremium": false
         },
         {
+          "title": "NAVA",
+          "subtitle": "Advocacy, education, AI guidance, contracts, safety, health resources, and industry support.",
+          "icon": "shield.fill",
+          "url": "https://navavoices.org/",
+          "isPremium": false
+        },
+        {
+          "title": "Voice Over Resource Guide",
+          "subtitle": "Find studios, agents, training, demo producers, casting services, events, and more.",
+          "icon": "magnifyingglass",
+          "url": "https://voiceoverresourceguide.com/",
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "title": "Rates & Business",
+      "items": [
+        {
+          "title": "GVAA Rate Guide",
+          "subtitle": "Industry rate guidance for commercial, narration, games, eLearning, and more.",
+          "icon": "dollarsign.circle.fill",
+          "url": "https://globalvoiceacademy.com/gvaa-rate-guide-2/",
+          "isPremium": false
+        },
+        {
+          "title": "Voice Acting Club Indie Rate Guide",
+          "subtitle": "Rate guidance for indie games, animation, student projects, and smaller productions.",
+          "icon": "gamecontroller.fill",
+          "url": "https://voiceactingclub.com/rates/",
+          "isPremium": false
+        },
+        {
+          "title": "SAG-AFTRA Voiceover Resources",
+          "subtitle": "Official union agreements, rates, safety information, and voiceover resources.",
+          "icon": "doc.text.fill",
+          "url": "https://www.sagaftra.org/contracts-industry-resources/voiceover",
+          "isPremium": false
+        },
+        {
+          "title": "NAVA AI Rider",
+          "subtitle": "Free synthetic voice and AI rider language created specifically for voice actors.",
+          "icon": "doc.badge.shield.checkmark",
+          "url": "https://navavoices.org/ai-rider/",
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "title": "Auditions & Opportunities",
+      "items": [
+        {
+          "title": "Ahab Talent",
+          "subtitle": "Create a talent profile, find voiceover opportunities, and audition for projects.",
+          "icon": "mic.fill",
+          "url": "https://www.ahabtalent.com/",
+          "isPremium": false
+        },
+        {
+          "title": "ACX",
+          "subtitle": "Find and audition for audiobook narration projects.",
+          "icon": "book.fill",
+          "url": "https://www.acx.com/",
+          "isPremium": false
+        },
+        {
+          "title": "Casting Call Club",
+          "subtitle": "Beginner- and indie-friendly casting calls for voice acting and creative projects.",
+          "icon": "person.wave.2.fill",
+          "url": "https://www.castingcall.club/",
+          "isPremium": false
+        },
+        {
+          "title": "Voice Acting Club",
+          "subtitle": "Free VO community with indie casting calls, resources, feedback, and discussion.",
+          "icon": "person.3.fill",
+          "url": "https://voiceactingclub.com/",
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "title": "Home Studio",
+      "items": [
+        {
+          "title": "Source-Connect",
+          "subtitle": "Professional remote recording software used for directed voiceover sessions.",
+          "icon": "waveform",
+          "url": "https://www.source-elements.com/products/source-connect/",
+          "isPremium": false
+        },
+        {
+          "title": "REAPER",
+          "subtitle": "Powerful, affordable professional recording and editing software.",
+          "icon": "slider.horizontal.3",
+          "url": "https://www.reaper.fm/",
+          "isPremium": false
+        },
+        {
+          "title": "Audacity",
+          "subtitle": "Free, open-source recording and audio editing software.",
+          "icon": "waveform.badge.mic",
+          "url": "https://www.audacityteam.org/",
+          "isPremium": false
+        },
+        {
+          "title": "Sweetwater Beginner Recording Guide",
+          "subtitle": "Beginner-friendly help choosing microphones, interfaces, headphones, and recording gear.",
+          "icon": "headphones",
+          "url": "https://www.sweetwater.com/insync/best-recording-gear-beginners/",
+          "isPremium": false
+        }
+      ]
+    },
+    {
+      "title": "Learning & Community",
+      "items": [
+        {
+          "title": "SAG-AFTRA Foundation Voiceover Labs",
+          "subtitle": "Voiceover classes, workshops, booth sessions, and technical support for eligible members.",
+          "icon": "mic.circle.fill",
+          "url": "https://sagaftra.foundation/voiceover-labs/",
+          "isPremium": false
+        },
+        {
+          "title": "VO Buzz Weekly",
+          "subtitle": "Free interviews with voice actors, agents, directors, coaches, and other industry pros.",
+          "icon": "play.rectangle.fill",
+          "url": "https://vobuzzweekly.com/",
+          "isPremium": false
+        },
+        {
           "title": "Adventures in Voice Acting",
-          "subtitle": "Interviews, community, and tons of VO resources.",
+          "subtitle": "Interviews, education, community, and voiceover industry resources.",
           "icon": "headphones",
           "url": "https://www.adventuresinvoiceacting.com/",
           "isPremium": false
         }
       ]
     },
-    {
-      "title": "Casting & Auditions",
+       {
+      "title": "Protect Yourself",
       "items": [
         {
-          "title": "Voices.com",
-          "subtitle": "One of the largest online voice acting marketplaces.",
-          "icon": "mic.fill",
-          "url": "https://www.voices.com/",
-          "isPremium": false
-        },
-        {
-          "title": "Voice123",
-          "subtitle": "Connect with clients looking for voice talent.",
-          "icon": "person.wave.2.fill",
-          "url": "https://voice123.com/",
+          "title": "NAVA AI Voice Actor Resources",
+          "subtitle": "AI terminology, synthetic voice guidance, rider information, and actor protections.",
+          "icon": "lock.shield.fill",
+          "url": "https://navavoices.org/synth-ai-info/ai-voice-actor-resources/",
           "isPremium": false
         }
       ]
