@@ -64,10 +64,22 @@ jobs:
           echo ""
         continue-on-error: true
 
-      - name: Commit changes (if any)
+           - name: Commit changes (if any)
         run: |
           git config user.name "votracker-bot"
           git config user.email "actions@github.com"
+
           git add "$RESOURCES_JSON_PATH"
-          git diff --cached --quiet || git commit -m "Sync workshops"
-          git push
+
+          if git diff --cached --quiet; then
+            echo "No workshop changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Sync workshops"
+
+          echo "Checking for newer commits on main..."
+          git pull --rebase origin main
+
+          echo "Pushing workshop update..."
+          git push origin HEAD:main
