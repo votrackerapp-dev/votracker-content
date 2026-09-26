@@ -544,8 +544,22 @@ def scrape_soundon():
                 "registrationURL": detail_url,
                 "venue": venue
             }
-            sold_out = sold_out or detect_sold_out(detail_html, card.get_text(" ", strip=True))
-            event = apply_status_badge(event, sold_out)
+            # Determine availability from the current product card only.
+# Squarespace detail HTML can contain generic/hidden "Sold Out"
+# text even when the class is currently available.
+card_text = clean_text(card.get_text(" ", strip=True))
+card_text_lower = card_text.lower()
+
+if "limited availability" in card_text_lower:
+    sold_out = False
+
+elif detect_sold_out(card_text):
+    sold_out = True
+
+else:
+    sold_out = "sold-out" in (card.get("class") or [])
+
+event = apply_status_badge(event, sold_out)
             events.append(event)
 
             availability = "sold out" if sold_out else "available"
