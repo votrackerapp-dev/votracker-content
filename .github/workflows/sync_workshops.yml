@@ -16,6 +16,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     timeout-minutes: 12
+
     env:
       RESOURCES_JSON_PATH: "resources.json"
       SOURCES_JSON_PATH: "config/workshop_sources.json"
@@ -24,6 +25,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -55,31 +58,72 @@ jobs:
       - name: Quick Stats
         run: |
           echo "📊 Quick Workshop Stats:"
-          echo "  Total workshops: $(cat resources.json | jq '.workshops | length')"
+          echo "  Total workshops: $(jq '.workshops | length' resources.json)"
           echo "  By provider:"
-          cat resources.json | jq -r '.workshops | group_by(.provider) | map("    \(.[0].provider): \(length) events") | .[]' | sort
+          jq -r '.workshops | group_by(.provider) | map("    \(.[0].provider): \(length) events") | .[]' resources.json | sort
           echo ""
           echo "  Events with generic titles:"
-          cat resources.json | jq '[.workshops[] | select(.title | test("^(THE VO PROS|Workshop|Class|Event)$"; "i"))] | length'
+          jq '[.workshops[] | select(.title | test("^(THE VO PROS|Workshop|Class|Event)$"; "i"))] | length' resources.json
           echo ""
         continue-on-error: true
 
-           - name: Commit changes (if any)
+      - name: Commit changes safely
+        shell: bash
         run: |
+          set -euo pipefail
+
           git config user.name "votracker-bot"
           git config user.email "actions@github.com"
 
-          git add "$RESOURCES_JSON_PATH"
+          # Preserve the freshly scraped output before resetting to the newest main.
+          # On each push attempt we merge only workshops + lastUpdated into the
+          # newest resources.json, preserving manual edits to sections/sponsors/etc.
+          cp "$RESOURCES_JSON_PATH" /tmp/generated-resources.json
 
-          if git diff --cached --quiet; then
-            echo "No workshop changes to commit."
-            exit 0
-          fi
+          for attempt in 1 2 3; do
+            echo "Push attempt $attempt..."
 
-          git commit -m "Sync workshops"
+            git fetch origin main
+            git reset --hard origin/main
 
-          echo "Checking for newer commits on main..."
-          git pull --rebase origin main
+            python - <<'PY'
+          import json
+          import os
 
-          echo "Pushing workshop update..."
-          git push origin HEAD:main
+          resources_path = os.environ["RESOURCES_JSON_PATH"]
+          generated_path = "/tmp/generated-resources.json"
+
+          with open(generated_path, "r", encoding="utf-8") as f:
+              generated = json.load(f)
+
+          with open(resources_path, "r", encoding="utf-8") as f:
+              current = json.load(f)
+
+          current["workshops"] = generated.get("workshops", [])
+          current["lastUpdated"] = generated.get("lastUpdated")
+
+          with open(resources_path, "w", encoding="utf-8") as f:
+              json.dump(current, f, indent=2, ensure_ascii=False)
+              f.write("\n")
+          PY
+
+            git add "$RESOURCES_JSON_PATH"
+
+            if git diff --cached --quiet; then
+              echo "No workshop changes to commit."
+              exit 0
+            fi
+
+            git commit -m "Sync workshops"
+
+            if git push origin HEAD:main; then
+              echo "Workshop sync pushed successfully."
+              exit 0
+            fi
+
+            echo "Push was rejected because main changed again. Retrying..."
+            sleep 2
+          done
+
+          echo "Failed to push workshop sync after 3 attempts."
+          exit 1
