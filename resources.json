@@ -241,6 +241,27 @@
       "registrationURL": "https://halpacademy.com/events/"
     },
     {
+      "id": "realvoice-34bd3a00eaed",
+      "title": "September Agent Night with Micaela Hicks [SOLD OUT]",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-09-22T21:00:00-07:00",
+      "endAt": "2026-09-22T23:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/september-agent-night-with-micaela-hicks",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "realvoice-5bbbf27cc0ca",
+      "title": "September - Level Up: Anime & Video Game",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-09-24T18:30:00-07:00",
+      "endAt": "2026-09-24T20:30:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/september-level-up-anime-video-game"
+    },
+    {
       "id": "realvoice-eac3377efb23",
       "title": "4-Week Audition Focused Workout Group",
       "provider": "realvoicela",
@@ -250,16 +271,13 @@
       "registrationURL": "https://www.realvoicela.com/service-page/4-week-audition-focused-workout-group"
     },
     {
-      "id": "realvoice-1fa427443b79",
-      "title": "Guest Director Anne Yatco - AUDIT ONLY - Participant level SOLD OUT [SOLD OUT]",
+      "id": "realvoice-8c342c609006",
+      "title": "Guest Director Anne Yatco",
       "provider": "realvoicela",
       "host": "Real Voice LA",
       "startAt": "2026-09-29T18:00:00-07:00",
       "endAt": "2026-09-29T20:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-anne-yatco-audit-only-participant-level-sold-out",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-anne-yatco"
     },
     {
       "id": "realvoice-b82b228172e0",
@@ -280,15 +298,6 @@
       "registrationURL": "https://www.realvoicela.com/service-page/game-on-with-arianna-ratner"
     },
     {
-      "id": "realvoice-d5e625926911",
-      "title": "OCTOBER - ONLINE Intro to Voiceover",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-10-13T14:00:00-07:00",
-      "endAt": "2026-10-13T16:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/october-online-intro-to-voiceover"
-    },
-    {
       "id": "realvoice-598823c590fc",
       "title": "September In-PERSON Intro to Voiceover",
       "provider": "realvoicela",
@@ -296,6 +305,15 @@
       "startAt": "2026-09-22T14:00:00-07:00",
       "endAt": "2026-09-22T16:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/september-in-person-intro-to-voiceover"
+    },
+    {
+      "id": "realvoice-66a7d79d76b5",
+      "title": "IN PERSON Gaming & Animation Workshop",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-09-26T11:00:00-07:00",
+      "endAt": "2026-09-26T13:00:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/in-person-gaming-animation-workshop"
     },
     {
       "id": "realvoice-9590aecadd9e",
@@ -323,6 +341,36 @@
       "startAt": "2026-10-07T10:00:00-07:00",
       "endAt": "2026-10-07T11:15:00-07:00",
       "registrationURL": "https://www.thevodojo.com/new-events/ask-the-sensei-with-ariel-graham"
+    },
+    {
+      "id": "vodojo-83f7f8660e44",
+      "title": "Thursday October 15Th Vo Pro Fight Club Animation With Sirena Irwin [SOLD OUT]",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-10-15T17:30:00-07:00",
+      "endAt": "2026-10-15T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/thursday-october-15th-vo-pro-fight-club-animation-with-sirena-irwin",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "vodojo-f0d01119a448",
+      "title": "Sunday October 18Th Vo Pro Fight Club Audio Dramas With Paula Gammon Wilson",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-10-18T14:00:00-07:00",
+      "endAt": "2026-10-18T16:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/sunday-october-18th-vo-pro-fight-club-audio-dramas-with-paula-gammon-wilson"
+    },
+    {
+      "id": "vodojo-95d915e2e7c2",
+      "title": "Tuesday October 27Th Vo Pro Fight Club Commercials With Libby Clearfield",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-10-27T17:30:00-07:00",
+      "endAt": "2026-10-27T19:30:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/tuesday-october-27th-vo-pro-fight-club-commercials-with-libby-clearfield"
     },
     {
       "id": "vodojo-06b2ffd9a352",
