@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-09-29",
+  "lastUpdated": "2026-09-30",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -372,13 +372,13 @@
       "registrationURL": "https://www.realvoicela.com/service-page/find-your-archetypes-with-brent-mukai"
     },
     {
-      "id": "realvoice-598823c590fc",
-      "title": "September In-PERSON Intro to Voiceover",
+      "id": "realvoice-9590aecadd9e",
+      "title": "In-Person Level 1 Video Games Intensive",
       "provider": "realvoicela",
       "host": "Real Voice LA",
-      "startAt": "2026-09-22T14:00:00-07:00",
-      "endAt": "2026-09-22T16:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/september-in-person-intro-to-voiceover"
+      "startAt": "2026-09-30T18:30:00-07:00",
+      "endAt": "2026-09-30T21:30:00-07:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/in-person-level-1-video-games-intensive-1"
     },
     {
       "id": "vodojo-b01164e8fc2d",
