@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-10-01",
+  "lastUpdated": "2026-10-02",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -45,19 +45,6 @@
     }
   ],
   "workshops": [
-    {
-      "id": "van-7a2b272f7008",
-      "title": "Agency Clinic - Dean Panaro | Thursday, September 24th 2026 | 6-9pm PT | ZOOM [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-09-24T18:00:00-07:00",
-      "endAt": "2026-09-24T21:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/agency-clinic-dean-panaro-thursday-september-24th-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
     {
       "id": "van-7413feeec4e0",
       "title": "Agency Clinic - VOX Talent Agency - Tom Lawless | Thursday, June 25th | 4-7pm PT | ZOOM [SOLD OUT]",
@@ -358,8 +345,8 @@
       "title": "October - ONLINE - Auditioning for Video Games",
       "provider": "realvoicela",
       "host": "Real Voice LA",
-      "startAt": "2026-10-26T18:00:00-07:00",
-      "endAt": "2026-10-26T21:00:00-07:00",
+      "startAt": "2026-10-19T18:00:00-07:00",
+      "endAt": "2026-10-19T21:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/october-online-auditioning-for-video-games"
     },
     {
