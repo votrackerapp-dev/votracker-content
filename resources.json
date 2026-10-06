@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-10-05",
+  "lastUpdated": "2026-10-06",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -333,6 +333,15 @@
       "registrationURL": "https://www.thevodojo.com/new-events/sunday-october-18th-vo-pro-fight-club-audio-dramas-with-paula-gammon-wilson"
     },
     {
+      "id": "vodojo-7ada1c50a64a",
+      "title": "Get To Know Vo With Sebastien Croteau",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-10-21T10:00:00-07:00",
+      "endAt": "2026-10-21T12:00:00-07:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/get-to-know-vo-with-sebastien-croteau"
+    },
+    {
       "id": "vodojo-95d915e2e7c2",
       "title": "Tuesday October 27Th Vo Pro Fight Club Commercials With Libby Clearfield",
       "provider": "thevodojo",
@@ -358,6 +367,18 @@
       "startAt": "2026-11-06T11:00:00-08:00",
       "endAt": "2026-11-06T13:00:00-08:00",
       "registrationURL": "https://www.thevodojo.com/new-events/nth-degree-career-catapult-intensive-2"
+    },
+    {
+      "id": "vodojo-11fa08f3b5ea",
+      "title": "You Should Do Voiceover November [SOLD OUT]",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-11-07T17:00:00-08:00",
+      "endAt": "2026-11-07T19:00:00-08:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-voiceover-november",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
     }
   ],
   "sections": [
