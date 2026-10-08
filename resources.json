@@ -316,15 +316,6 @@
       "registrationURL": "https://www.realvoicela.com/service-page/october-online-intro-to-voiceover"
     },
     {
-      "id": "realvoice-0f1203d2176b",
-      "title": "October - ONLINE - Auditioning for Video Games",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-10-26T18:00:00-07:00",
-      "endAt": "2026-10-26T21:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/october-online-auditioning-for-video-games"
-    },
-    {
       "id": "realvoice-a618a3d4a212",
       "title": "Find Your Archetypes with Brent Mukai",
       "provider": "realvoicela",
@@ -334,13 +325,13 @@
       "registrationURL": "https://www.realvoicela.com/service-page/find-your-archetypes-with-brent-mukai"
     },
     {
-      "id": "vodojo-9efe768c7bca",
-      "title": "Ask The Sensei With Ariel Graham",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-10-07T10:00:00-07:00",
-      "endAt": "2026-10-07T11:15:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/ask-the-sensei-with-ariel-graham"
+      "id": "realvoice-13637a5b6652",
+      "title": "November Agent Night with Heather Dame",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-11-03T16:00:00-08:00",
+      "endAt": "2026-11-03T18:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/november-agent-night-with-heather-dame"
     },
     {
       "id": "vodojo-83f7f8660e44",
