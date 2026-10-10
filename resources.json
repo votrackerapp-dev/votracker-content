@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-10-09",
+  "lastUpdated": "2026-10-10",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -332,6 +332,33 @@
       "startAt": "2026-11-03T16:00:00-08:00",
       "endAt": "2026-11-03T18:00:00-08:00",
       "registrationURL": "https://www.realvoicela.com/service-page/november-agent-night-with-heather-dame"
+    },
+    {
+      "id": "realvoice-d21bd787044c",
+      "title": "Guest Director Workshop with Sébastien Croteau",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-11-17T21:00:00-08:00",
+      "endAt": "2026-11-17T23:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/guest-director-workshop-with-sébastien-croteau"
+    },
+    {
+      "id": "realvoice-bf7cacdad0f3",
+      "title": "November - Creating Characters with Arianna Ratner",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-11-03T12:00:00-08:00",
+      "endAt": "2026-11-03T14:00:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/november-creating-characters-with-arianna-ratner"
+    },
+    {
+      "id": "realvoice-bba024328975",
+      "title": "November In-Person Commercial Bootcamp w/ Craig",
+      "provider": "realvoicela",
+      "host": "Real Voice LA",
+      "startAt": "2026-11-04T18:30:00-08:00",
+      "endAt": "2026-11-04T20:30:00-08:00",
+      "registrationURL": "https://www.realvoicela.com/service-page/november-in-person-commercial-bootcamp-w-craig"
     },
     {
       "id": "vodojo-83f7f8660e44",
