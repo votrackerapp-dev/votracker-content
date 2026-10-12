@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-10-11",
+  "lastUpdated": "2026-10-12",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -296,15 +296,6 @@
       "startAt": "2026-10-14T12:00:00-07:00",
       "endAt": "2026-10-14T14:00:00-07:00",
       "registrationURL": "https://www.realvoicela.com/service-page/game-on-with-arianna-ratner"
-    },
-    {
-      "id": "realvoice-d5e625926911",
-      "title": "OCTOBER - ONLINE Intro to Voiceover",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-10-13T14:00:00-07:00",
-      "endAt": "2026-10-13T16:00:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/october-online-intro-to-voiceover"
     },
     {
       "id": "realvoice-0f1203d2176b",
