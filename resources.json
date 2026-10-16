@@ -275,8 +275,8 @@
       "title": "Events",
       "provider": "halp_academy",
       "host": "HALP Academy",
-      "startAt": "2026-10-14T14:00:00-07:00",
-      "endAt": "2026-10-14T16:00:00-07:00",
+      "startAt": "2026-10-25T14:00:00-07:00",
+      "endAt": "2026-10-25T16:00:00-07:00",
       "registrationURL": "https://halpacademy.com/events/"
     },
     {
@@ -359,18 +359,6 @@
       "startAt": "2026-11-04T18:30:00-08:00",
       "endAt": "2026-11-04T20:30:00-08:00",
       "registrationURL": "https://www.realvoicela.com/service-page/november-in-person-commercial-bootcamp-w-craig"
-    },
-    {
-      "id": "vodojo-83f7f8660e44",
-      "title": "Thursday October 15Th Vo Pro Fight Club Animation With Sirena Irwin [SOLD OUT]",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-10-15T17:30:00-07:00",
-      "endAt": "2026-10-15T19:30:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/thursday-october-15th-vo-pro-fight-club-animation-with-sirena-irwin",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
     },
     {
       "id": "vodojo-f0d01119a448",
