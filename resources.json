@@ -419,6 +419,33 @@
       "soldOut": true,
       "badgeText": "Sold Out",
       "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "vodojo-8bc8f0019a7f",
+      "title": "Thursday November 12Th Vo Pro Fight Club Video Games With Keythe Farley",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-11-12T17:30:00-08:00",
+      "endAt": "2026-11-12T19:30:00-08:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/thursday-november-12th-vo-pro-fight-club-video-games-with-keythe-farley"
+    },
+    {
+      "id": "vodojo-aec9cec549e5",
+      "title": "Sunday November 15Th Vo Pro Fight Club Commercials With Mark Riddle",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-11-15T14:00:00-08:00",
+      "endAt": "2026-11-15T16:00:00-08:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/sunday-november-15th-vo-pro-fight-club-commercials-with-mark-riddle"
+    },
+    {
+      "id": "vodojo-a26fb46cf06b",
+      "title": "Tuesday November 24Th Vo Pro Fight Club Automotive With Cliff Zellman",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-11-24T17:30:00-08:00",
+      "endAt": "2026-11-24T19:30:00-08:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/tuesday-november-24th-vo-pro-fight-club-automotive-with-cliff-zellman"
     }
   ],
   "sections": [
