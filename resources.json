@@ -223,13 +223,16 @@
     },
     {
       "id": "soundon-2b3430780c04",
-      "title": "11.14.26 - Video Games and Animation with Brook Chalmers!",
+      "title": "11.14.26 - Video Games and Animation with Brook Chalmers! [SOLD OUT]",
       "provider": "soundonstudio",
       "host": "Sound On Studio",
       "startAt": "2026-11-14T10:00:00-08:00",
       "endAt": "2026-11-14T13:00:00-08:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup/p/91626-video-games-and-animation-with-brook-chalmers",
-      "venue": "Zoom"
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
     },
     {
       "id": "soundon-16595ff8da1d",
@@ -242,6 +245,16 @@
       "venue": "Zoom"
     },
     {
+      "id": "soundon-8d12d8eca8b7",
+      "title": "11.21.26 - Auditioning Outside the Box with Heather Gonzalez!",
+      "provider": "soundonstudio",
+      "host": "Sound On Studio",
+      "startAt": "2026-11-21T10:00:00-08:00",
+      "endAt": "2026-11-21T13:00:00-08:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup/p/51424-auditioning-outside-the-box-with-heather-gonzalez",
+      "venue": "Zoom"
+    },
+    {
       "id": "soundon-47c2ba3265fa",
       "title": "10.25.26 - What EVIL Directors Want! with Christian La Monte [SOLD OUT]",
       "provider": "soundonstudio",
@@ -249,6 +262,19 @@
       "startAt": "2026-10-25T10:00:00-07:00",
       "endAt": "2026-10-25T13:00:00-07:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup/p/102223-what-evil-directors-want-with-christian-la-monte",
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
+    },
+    {
+      "id": "soundon-a43acc9d1671",
+      "title": "11.22.26 - Video Game & Anime In-Seitz! With Patrick Seitz [SOLD OUT]",
+      "provider": "soundonstudio",
+      "host": "Sound On Studio",
+      "startAt": "2026-11-22T10:00:00-08:00",
+      "endAt": "2026-11-22T13:00:00-08:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup/p/video-game-anime-in-seitz-with-patrick-seitz-111322",
       "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
