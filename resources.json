@@ -457,13 +457,6 @@
       "title": "Auditions & Opportunities",
       "items": [
         {
-          "title": "Ahab Talent",
-          "subtitle": "Create a talent profile, find voiceover opportunities, and audition for projects.",
-          "icon": "mic.fill",
-          "url": "https://www.ahabtalent.com/",
-          "isPremium": false
-        },
-        {
           "title": "ACX",
           "subtitle": "Find and audition for audiobook narration projects.",
           "icon": "book.fill",
