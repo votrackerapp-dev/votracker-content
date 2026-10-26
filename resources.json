@@ -200,13 +200,16 @@
     },
     {
       "id": "soundon-917c72a5b859",
-      "title": "10.27.26 - Cowboys and Gangsters: Performing Bold Characters in Video Games with Andrew Russell!",
+      "title": "10.27.26 - Cowboys and Gangsters: Performing Bold Characters in Video Games with Andrew Russell! [SOLD OUT]",
       "provider": "soundonstudio",
       "host": "Sound On Studio",
       "startAt": "2026-10-27T18:00:00-07:00",
       "endAt": "2026-10-27T21:00:00-07:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup/p/102726-cowboys-and-gangsters-performing-bold-characters-in-video-games-with-andrew-russell",
-      "venue": "Zoom"
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
     },
     {
       "id": "soundon-2b3430780c04",
