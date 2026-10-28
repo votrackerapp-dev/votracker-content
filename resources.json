@@ -196,19 +196,6 @@
       "venue": "Zoom"
     },
     {
-      "id": "soundon-917c72a5b859",
-      "title": "10.27.26 - Cowboys and Gangsters: Performing Bold Characters in Video Games with Andrew Russell! [SOLD OUT]",
-      "provider": "soundonstudio",
-      "host": "Sound On Studio",
-      "startAt": "2026-10-27T18:00:00-07:00",
-      "endAt": "2026-10-27T21:00:00-07:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup/p/102726-cowboys-and-gangsters-performing-bold-characters-in-video-games-with-andrew-russell",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
       "id": "soundon-2b3430780c04",
       "title": "11.14.26 - Video Games and Animation with Brook Chalmers! [SOLD OUT]",
       "provider": "soundonstudio",
@@ -273,15 +260,6 @@
       "registrationURL": "https://www.realvoicela.com/service-page/october-online-auditioning-for-video-games"
     },
     {
-      "id": "realvoice-a618a3d4a212",
-      "title": "Find Your Archetypes with Brent Mukai",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-10-20T21:30:00-07:00",
-      "endAt": "2026-10-20T23:30:00-07:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/find-your-archetypes-with-brent-mukai"
-    },
-    {
       "id": "realvoice-13637a5b6652",
       "title": "November Agent Night with Heather Dame",
       "provider": "realvoicela",
@@ -343,15 +321,6 @@
       "startAt": "2026-11-04T18:30:00-08:00",
       "endAt": "2026-11-04T20:30:00-08:00",
       "registrationURL": "https://www.realvoicela.com/service-page/november-in-person-commercial-bootcamp-w-craig"
-    },
-    {
-      "id": "vodojo-95d915e2e7c2",
-      "title": "Tuesday October 27Th Vo Pro Fight Club Commercials With Libby Clearfield",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-10-27T17:30:00-07:00",
-      "endAt": "2026-10-27T19:30:00-07:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/tuesday-october-27th-vo-pro-fight-club-commercials-with-libby-clearfield"
     },
     {
       "id": "vodojo-06b2ffd9a352",
