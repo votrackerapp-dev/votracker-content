@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-10-29",
+  "lastUpdated": "2026-10-30",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -106,19 +106,6 @@
       "endAt": "2027-06-18T22:00:00-07:00",
       "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/dubbing-clinic-wolfie-trausch-thursday-june-18th-7-10pm-pt-in-studio",
       "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-5995297beb70",
-      "title": "Dubbing Clinic TO PICTURE - Mami Okada | Clinic Added For Waitlisters | Thursday, October 22nd, 2026 | 7-10pm PT | In Studio [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-10-22T19:00:00-07:00",
-      "endAt": "2026-10-22T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/dubbing-clinic-to-picture-mami-okada-clinic-added-for-waitlisters-thursday-october-22nd-2026-7-10pm-pt-in-studio",
-      "venue": "Zoom",
       "soldOut": true,
       "badgeText": "Sold Out",
       "badgeColor": "#D32F2F"
@@ -421,6 +408,24 @@
       "startAt": "2026-11-15T14:00:00-08:00",
       "endAt": "2026-11-15T16:00:00-08:00",
       "registrationURL": "https://www.thevodojo.com/new-events/sunday-november-15th-vo-pro-fight-club-commercials-with-mark-riddle"
+    },
+    {
+      "id": "vodojo-a498492d10ef",
+      "title": "Get To Know Vo With All Things Video Games With Jesse Marciniak",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-11-18T10:00:00-08:00",
+      "endAt": "2026-11-18T12:00:00-08:00",
+      "registrationURL": "https://www.thevodojo.com/new-events/get-to-know-vo-with-all-things-video-games-with-jesse-marciniak"
+    },
+    {
+      "id": "vodojo-0eaefda8d8c5",
+      "title": "Get To Know Vo With All Things Video Games With Jesse Marciniak",
+      "provider": "thevodojo",
+      "host": "The VO Dojo",
+      "startAt": "2026-11-18T10:00:00-08:00",
+      "endAt": "2026-11-18T12:00:00-08:00",
+      "registrationURL": "https://thevodojola.squarespace.com/new-events/get-to-know-vo-with-all-things-video-games-with-jesse-marciniak"
     },
     {
       "id": "vodojo-a26fb46cf06b",
