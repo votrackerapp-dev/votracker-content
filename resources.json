@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-11-04",
+  "lastUpdated": "2026-11-05",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -205,15 +205,6 @@
       "startAt": "2026-11-03T14:00:00-08:00",
       "endAt": "2026-11-03T16:00:00-08:00",
       "registrationURL": "https://www.realvoicela.com/service-page/november-in-person-intro-to-voiceover"
-    },
-    {
-      "id": "vodojo-a504c87b4959",
-      "title": "Ask The Sensei With Erin Nicole Lundquist",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-11-04T10:00:00-08:00",
-      "endAt": "2026-11-04T11:15:00-08:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/ask-the-sensei-with-erin-nicole-lundquist"
     },
     {
       "id": "vodojo-1c6ead910e02",
