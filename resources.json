@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-11-07",
+  "lastUpdated": "2026-11-08",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -205,18 +205,6 @@
       "startAt": "2026-11-03T14:00:00-08:00",
       "endAt": "2026-11-03T16:00:00-08:00",
       "registrationURL": "https://www.realvoicela.com/service-page/november-in-person-intro-to-voiceover"
-    },
-    {
-      "id": "vodojo-11fa08f3b5ea",
-      "title": "You Should Do Voiceover November [SOLD OUT]",
-      "provider": "thevodojo",
-      "host": "The VO Dojo",
-      "startAt": "2026-11-07T17:00:00-08:00",
-      "endAt": "2026-11-07T19:00:00-08:00",
-      "registrationURL": "https://www.thevodojo.com/new-events/you-should-do-voiceover-november",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
     },
     {
       "id": "vodojo-8bc8f0019a7f",
