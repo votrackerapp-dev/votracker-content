@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-11-10",
+  "lastUpdated": "2026-11-11",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -98,42 +98,6 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "van-fd10d6b77e8a",
-      "title": "Dubbing Clinic - Wolfie Trausch | Thursday, June 18th | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2027-06-18T19:00:00-07:00",
-      "endAt": "2027-06-18T22:00:00-07:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/dubbing-clinic-wolfie-trausch-thursday-june-18th-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-ff315b126a54",
-      "title": "Video Game Clinic - Chris Faiella | Wednesday, November 11th, 2026 | 7-10pm PT | IN STUDIO [SOLD OUT]",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-11-11T19:00:00-08:00",
-      "endAt": "2026-11-11T22:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-chris-faiella-wednesday-november-11th-2026-7-10pm-pt-in-studio",
-      "venue": "In Studio",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
-    },
-    {
-      "id": "van-d53c9e33a3c3",
-      "title": "Video Game Clinic - Darragh O'Farrell- Casting and Voice Director - Thursday, November 6th | 5-8pm PST - ZOOM",
-      "provider": "van",
-      "host": "Voice Actors Network",
-      "startAt": "2026-11-06T17:00:00-08:00",
-      "endAt": "2026-11-06T20:00:00-08:00",
-      "registrationURL": "https://voiceactorsnetwork.com/collections/all/products/video-game-clinic-darragh-ofarrell-casting-and-voice-director-thursday-november-6th-6-9pm-pst-zoom-copy",
-      "venue": "Zoom"
-    },
-    {
       "id": "soundon-dd97ccc7415e",
       "title": "11.19.26 - Acting and Creating for Audio Dramas with Chelsea Krause!",
       "provider": "soundonstudio",
@@ -187,15 +151,6 @@
       "startAt": "2026-11-14T10:00:00-08:00",
       "endAt": "2026-11-14T12:00:00-08:00",
       "registrationURL": "https://halpacademy.com/events/"
-    },
-    {
-      "id": "realvoice-13637a5b6652",
-      "title": "November Agent Night with Heather Dame",
-      "provider": "realvoicela",
-      "host": "Real Voice LA",
-      "startAt": "2026-11-03T16:00:00-08:00",
-      "endAt": "2026-11-03T18:00:00-08:00",
-      "registrationURL": "https://www.realvoicela.com/service-page/november-agent-night-with-heather-dame"
     },
     {
       "id": "realvoice-d21bd787044c",
