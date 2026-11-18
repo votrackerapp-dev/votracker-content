@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "lastUpdated": "2026-11-17",
+  "lastUpdated": "2026-11-18",
   "announcements": [
     {
       "id": "welcome-featured",
@@ -109,13 +109,16 @@
     },
     {
       "id": "soundon-8d12d8eca8b7",
-      "title": "11.21.26 - Auditioning Outside the Box with Heather Gonzalez!",
+      "title": "11.21.26 - Auditioning Outside the Box with Heather Gonzalez! [SOLD OUT]",
       "provider": "soundonstudio",
       "host": "Sound On Studio",
       "startAt": "2026-11-21T10:00:00-08:00",
       "endAt": "2026-11-21T13:00:00-08:00",
       "registrationURL": "https://www.soundonstudio.com/classsignup/p/51424-auditioning-outside-the-box-with-heather-gonzalez",
-      "venue": "Zoom"
+      "venue": "Zoom",
+      "soldOut": true,
+      "badgeText": "Sold Out",
+      "badgeColor": "#D32F2F"
     },
     {
       "id": "soundon-a43acc9d1671",
@@ -153,8 +156,8 @@
       "title": "Guest Director Workshop with Sébastien Croteau",
       "provider": "realvoicela",
       "host": "Real Voice LA",
-      "startAt": "2026-11-17T21:00:00-08:00",
-      "endAt": "2026-11-17T23:00:00-08:00",
+      "startAt": "2026-12-08T21:00:00-08:00",
+      "endAt": "2026-12-08T23:00:00-08:00",
       "registrationURL": "https://www.realvoicela.com/service-page/guest-director-workshop-with-sébastien-croteau"
     },
     {
