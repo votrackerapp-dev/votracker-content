@@ -85,30 +85,24 @@
       "badgeColor": "#D32F2F"
     },
     {
-      "id": "soundon-8d12d8eca8b7",
-      "title": "11.21.26 - Auditioning Outside the Box with Heather Gonzalez! [SOLD OUT]",
+      "id": "soundon-96d493c14265",
+      "title": "12.12.26 - VO Pajama Party with Kirsten Day!",
       "provider": "soundonstudio",
       "host": "Sound On Studio",
-      "startAt": "2026-11-21T10:00:00-08:00",
-      "endAt": "2026-11-21T13:00:00-08:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup/p/51424-auditioning-outside-the-box-with-heather-gonzalez",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "startAt": "2026-12-12T10:00:00-08:00",
+      "endAt": "2026-12-12T12:00:00-08:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup/p/vo-pajama-party-with-kirsten-day-51221-4wj88",
+      "venue": "Zoom"
     },
     {
-      "id": "soundon-a43acc9d1671",
-      "title": "11.22.26 - Video Game & Anime In-Seitz! With Patrick Seitz [SOLD OUT]",
+      "id": "soundon-48f421d91643",
+      "title": "12.13.26 - Voiceover for Beginners with Abby Espiritu! An intro to Anime, Animation, and Video Games!",
       "provider": "soundonstudio",
       "host": "Sound On Studio",
-      "startAt": "2026-11-22T10:00:00-08:00",
-      "endAt": "2026-11-22T13:00:00-08:00",
-      "registrationURL": "https://www.soundonstudio.com/classsignup/p/video-game-anime-in-seitz-with-patrick-seitz-111322",
-      "venue": "Zoom",
-      "soldOut": true,
-      "badgeText": "Sold Out",
-      "badgeColor": "#D32F2F"
+      "startAt": "2026-12-13T11:00:00-08:00",
+      "endAt": "2026-12-13T14:00:00-08:00",
+      "registrationURL": "https://www.soundonstudio.com/classsignup/p/11825-voiceover-for-beginners-with-abby-espiritu-an-intro-to-anime-animation-and-video-games",
+      "venue": "Zoom"
     },
     {
       "id": "halp-14293ec00dbc",
